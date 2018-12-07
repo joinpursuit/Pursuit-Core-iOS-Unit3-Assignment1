@@ -13,22 +13,22 @@ Parsing JSON using Codable to create a tab bar controller consisting of Users an
 
 <details>
 <summary>Contacts TableView</summary>
-<img src="https://github.com/C4Q/AC-iOS-ParsingJSON-HW/blob/master/gifs/gif1.gif"/>
+<img src="https://github.com/joinpursuit/Pursuit-Core-iOS-Unit3-Assignment1/blob/master/gifs/gif1.gif"/>
 </details>
 
 <details>
 <summary>Contacts Detail View Controller</summary>
-<img src="https://github.com/C4Q/AC-iOS-ParsingJSON-HW/blob/master/gifs/gif2.gif"/>
+<img src="https://github.com/joinpursuit/Pursuit-Core-iOS-Unit3-Assignment1/blob/master/gifs/gif2.gif"/>
 </details>
 
 <details>
 <summary>Stocks TableView</summary>
-<img src="https://github.com/C4Q/AC-iOS-ParsingJSON-HW/blob/master/gifs/gif3.gif"/>
+<img src="https://github.com/joinpursuit/Pursuit-Core-iOS-Unit3-Assignment1/blob/master/gifs/gif3.gif"/>
 </details>
 
 <details>
 <summary>Stock Detail View Controller</summary>
-<img src="https://github.com/C4Q/AC-iOS-ParsingJSON-HW/blob/master/gifs/gif4.gif"/>
+<img src="https://github.com/joinpursuit/Pursuit-Core-iOS-Unit3-Assignment1/blob/master/gifs/gif4.gif"/>
 </details>
 
 ## Summary
