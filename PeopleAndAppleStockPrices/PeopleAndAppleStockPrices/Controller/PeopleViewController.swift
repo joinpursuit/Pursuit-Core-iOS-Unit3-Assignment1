@@ -57,7 +57,7 @@ class PeopleViewController: UIViewController {
         searchResult{people in
             if let peopleResult = people{
                 self.people = peopleResult
-                self.people = peopleResult.filter{$0.name.first.lowercased().contains(keyword.lowercased())}
+                self.people = peopleResult.filter{$0.name.first.lowercased().contains(keyword.lowercased()) || $0.name.last.lowercased().contains(keyword.lowercased())}
             }
         }
     }
