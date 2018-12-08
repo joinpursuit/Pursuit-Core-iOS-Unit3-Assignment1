@@ -19,16 +19,14 @@ class StockViewController: UIViewController {
     var month = [String]()
     var stocks = [[AppleStockInfo]]()
     var stockDate = ""
-    @IBOutlet weak var stockSearchBar: UISearchBar!
+    var average = [[Double]]()
     @IBOutlet weak var stockTableView: UITableView!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // stockSearchBar.delegate = self
         stockTableView.dataSource = self
         loadData()
-        
     }
     func loadData() {
         if let path = Bundle.main.path(forResource: "applstockinfo", ofType: "json") {
@@ -47,18 +45,20 @@ class StockViewController: UIViewController {
             if !month.contains("\(array[i][0]) \(arrayYear[i][0])") {
                 month.append("\(array[i][0]) \(arrayYear[i][0])")
                 stocks.append([])
+                average.append([])
             }
             stocks[stocks.endIndex - 1].append(stockInfo[i])
+            average[average.endIndex - 1].append(stockInfo[i].open)
         }
     }
 }
-
 extension StockViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return month.count
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(month[section])"
+        let averageTotal = String(format: "%.2f", average[section].reduce(0){$0 + $1}/Double(average[section].count))
+        return "\(month[section]): Average: $\(averageTotal) "
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stocks[section].count
@@ -71,3 +71,4 @@ extension StockViewController: UITableViewDataSource {
         return cell
     }
 }
+

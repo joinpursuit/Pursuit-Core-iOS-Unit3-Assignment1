@@ -144,12 +144,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pa1-Ph-ezM">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PhO-pF-i1u">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stockCell" id="1xc-A5-7am" customClass="StockCell" customModule="PeopleAndAppleStockPrices" customModuleProvider="target">
@@ -186,6 +182,7 @@
                                         <connections>
                                             <outlet property="leftLabel" destination="Zep-Ck-iU4" id="Fi9-Am-7BM"/>
                                             <outlet property="rightLabel" destination="1ZN-NR-Hs2" id="KxV-ih-ctt"/>
+                                            <segue destination="4Zt-lg-W0x" kind="show" id="sx3-bw-E9K"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -193,19 +190,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PhO-pF-i1u" firstAttribute="top" secondItem="pa1-Ph-ezM" secondAttribute="bottom" id="0sm-UB-pQI"/>
                             <constraint firstItem="qLu-bM-hSX" firstAttribute="trailing" secondItem="PhO-pF-i1u" secondAttribute="trailing" id="4wW-YZ-a9F"/>
-                            <constraint firstItem="pa1-Ph-ezM" firstAttribute="top" secondItem="qLu-bM-hSX" secondAttribute="top" id="6cn-pP-CgD"/>
                             <constraint firstItem="PhO-pF-i1u" firstAttribute="leading" secondItem="qLu-bM-hSX" secondAttribute="leading" id="8X4-7G-N2F"/>
-                            <constraint firstAttribute="trailing" secondItem="pa1-Ph-ezM" secondAttribute="trailing" id="biK-8f-gp9"/>
-                            <constraint firstItem="pa1-Ph-ezM" firstAttribute="leading" secondItem="qLu-bM-hSX" secondAttribute="leading" id="rlo-NT-w1Z"/>
+                            <constraint firstItem="PhO-pF-i1u" firstAttribute="top" secondItem="qLu-bM-hSX" secondAttribute="top" id="KQ9-0w-2s2"/>
                             <constraint firstItem="qLu-bM-hSX" firstAttribute="bottom" secondItem="PhO-pF-i1u" secondAttribute="bottom" id="vDu-qy-4US"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qLu-bM-hSX"/>
                     </view>
                     <navigationItem key="navigationItem" id="FCN-sE-Vu4"/>
                     <connections>
-                        <outlet property="stockSearchBar" destination="pa1-Ph-ezM" id="Xtl-Mb-DgK"/>
                         <outlet property="stockTableView" destination="PhO-pF-i1u" id="nN0-9T-pDY"/>
                     </connections>
                 </viewController>
@@ -235,26 +228,26 @@
         <scene sceneID="zwe-iR-3AY">
             <objects>
                 <viewController id="4Zt-lg-W0x" customClass="StockDetailController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SG5-zV-sX5">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="SG5-zV-sX5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ry-bm-RK6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ry-bm-RK6">
                                 <rect key="frame" x="0.0" y="177" width="375" height="333.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dE3-yx-NXS">
-                                <rect key="frame" x="11" y="90" width="353" height="21"/>
+                                <rect key="frame" x="11" y="134" width="353" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS1-I2-q4H">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS1-I2-q4H">
                                 <rect key="frame" x="11" y="560.5" width="164" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jW-Qu-0q1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jW-Qu-0q1">
                                 <rect key="frame" x="200" y="560.5" width="164" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
