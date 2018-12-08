@@ -70,6 +70,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="7O7-XY-bfq"/>
                     <connections>
                         <outlet property="myTableView" destination="2Pw-Re-n1g" id="hlq-Rb-Go8"/>
+                        <outlet property="peopleSearchBar" destination="qnm-iz-Jfr" id="63L-fK-XrU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

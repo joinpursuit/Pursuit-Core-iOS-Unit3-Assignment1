@@ -10,16 +10,23 @@ import UIKit
 
 class PeopleViewController: UIViewController {
     
-    var people = [People]()
+    var people = [People]() {
+        didSet {
+            myTableView.reloadData()
+        }
+    }
+    
     
     @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var peopleSearchBar: UISearchBar!
     
     
     
   override func viewDidLoad() {
     super.viewDidLoad()
     myTableView.dataSource = self
-    searchPeople()
+    peopleSearchBar.delegate = self
+    searchPeople(keyword: "")
   }
 
     private func searchResult(completion: @escaping([People]?) -> Void){
@@ -35,7 +42,7 @@ class PeopleViewController: UIViewController {
             }
         }
     }
-    private func searchPeople(){
+    private func searchPeople(keyword: String){
         searchResult{people in
             if let peopleResult = people{
                 self.people = peopleResult
@@ -50,9 +57,18 @@ extension PeopleViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
-        let user = people[indexPath.row]
+        let sortedPeople = people.sorted(by: {$0.name.first < $1.name.first})
+        let user = sortedPeople[indexPath.row]
         cell.textLabel?.text = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
         cell.detailTextLabel?.text = user.location.city.capitalized
         return cell
+    }
+}
+
+extension PeopleViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        people = people.filter{$0.name.first.lowercased().contains(searchText.lowercased())}
+        people = people.filter{$0.name.first.lowercased().contains(searchText.lowercased())}
     }
 }
