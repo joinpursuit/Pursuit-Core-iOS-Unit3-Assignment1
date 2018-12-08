@@ -30,3 +30,5 @@ struct LocationWrapper: Codable{
 struct PictureWrapper: Codable {
     var large: URL
 }
+
+

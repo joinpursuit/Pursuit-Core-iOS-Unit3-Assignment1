@@ -26,7 +26,11 @@ class PeopleViewController: UIViewController {
     super.viewDidLoad()
     myTableView.dataSource = self
     peopleSearchBar.delegate = self
-    searchPeople(keyword: "")
+    searchResult{people in
+        if let peopleResult = people{
+            self.people = peopleResult
+        }
+    }
   }
 
     private func searchResult(completion: @escaping([People]?) -> Void){
@@ -46,6 +50,7 @@ class PeopleViewController: UIViewController {
         searchResult{people in
             if let peopleResult = people{
                 self.people = peopleResult
+                self.people = peopleResult.filter{$0.name.first.lowercased().contains(keyword.lowercased())}
             }
         }
     }
@@ -67,8 +72,6 @@ extension PeopleViewController: UITableViewDataSource{
 
 extension PeopleViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        people = people.filter{$0.name.first.lowercased().contains(searchText.lowercased())}
-        people = people.filter{$0.name.first.lowercased().contains(searchText.lowercased())}
+        searchPeople(keyword: searchText)
     }
 }
