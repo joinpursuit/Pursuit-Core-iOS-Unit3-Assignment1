@@ -9,7 +9,7 @@
 import UIKit
 
 class StockDetailController: UIViewController {
-
+    var stockInfo: [AppleStockInfo]?
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var openLabel: UILabel!
     @IBOutlet weak var closeLabel: UILabel!

@@ -12,4 +12,5 @@ struct AppleStockInfo: Codable {
     let date: String
     let open: Double
     let close: Double
+    let label: String
 }

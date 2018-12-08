@@ -152,29 +152,41 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stockCell" textLabel="BPX-hq-gfw" detailTextLabel="ARk-YM-0b6" style="IBUITableViewCellStyleSubtitle" id="1xc-A5-7am">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stockCell" id="1xc-A5-7am" customClass="StockCell" customModule="PeopleAndAppleStockPrices" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1xc-A5-7am" id="d8K-PI-6G0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BPX-hq-gfw">
-                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zep-Ck-iU4">
+                                                    <rect key="frame" x="15" y="11" width="165" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ARk-YM-0b6">
-                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-NR-Hs2">
+                                                    <rect key="frame" x="180" y="11" width="180" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Zep-Ck-iU4" firstAttribute="top" secondItem="d8K-PI-6G0" secondAttribute="topMargin" id="B6T-pa-81z"/>
+                                                <constraint firstItem="Zep-Ck-iU4" firstAttribute="leading" secondItem="d8K-PI-6G0" secondAttribute="leadingMargin" id="D2Y-ee-wMR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Zep-Ck-iU4" secondAttribute="trailing" multiplier="2" id="V7t-0D-7gP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1ZN-NR-Hs2" secondAttribute="bottom" id="WWF-fU-wtJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1ZN-NR-Hs2" secondAttribute="trailing" id="ixZ-Nr-k4A"/>
+                                                <constraint firstItem="1ZN-NR-Hs2" firstAttribute="top" secondItem="d8K-PI-6G0" secondAttribute="topMargin" id="ufs-dY-xQr"/>
+                                                <constraint firstItem="1ZN-NR-Hs2" firstAttribute="leading" secondItem="Zep-Ck-iU4" secondAttribute="trailing" id="x3i-mL-SJI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Zep-Ck-iU4" secondAttribute="bottom" id="yZd-US-y0I"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="leftLabel" destination="Zep-Ck-iU4" id="Fi9-Am-7BM"/>
+                                            <outlet property="rightLabel" destination="1ZN-NR-Hs2" id="KxV-ih-ctt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
