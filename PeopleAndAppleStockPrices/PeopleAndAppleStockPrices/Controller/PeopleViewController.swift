@@ -10,6 +10,7 @@ import UIKit
 
 class PeopleViewController: UIViewController {
     
+    private var sortedPeople = [People]()
     var people = [People]() {
         didSet {
             myTableView.reloadData()
@@ -35,9 +36,10 @@ class PeopleViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = myTableView.indexPathForSelectedRow,
             let peopleDetailViewController = segue.destination as? PeopleDetailViewController else {return}
-        let user = people[indexPath.row]
+        let user = sortedPeople[indexPath.row]//REASON FOR ERROR
         peopleDetailViewController.user = user
     }
+    
     private func searchResult(completion: @escaping([People]?) -> Void){
         if let path = Bundle.main.path(forResource: "userinfo", ofType: "json"){
             let myUrl = URL.init(fileURLWithPath: path)
@@ -67,7 +69,7 @@ extension PeopleViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
-        let sortedPeople = people.sorted(by: {$0.name.first < $1.name.first})
+        sortedPeople = people.sorted(by: {$0.name.first < $1.name.first})
         let user = sortedPeople[indexPath.row]
         cell.textLabel?.text = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
         cell.detailTextLabel?.text = user.location.city.capitalized
@@ -78,5 +80,6 @@ extension PeopleViewController: UITableViewDataSource{
 extension PeopleViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchPeople(keyword: searchText)
+        if searchText.text = "" {}
     }
 }

@@ -33,6 +33,9 @@ class PeopleDetailViewController: UIViewController {
                 print(error)
             }
         }
+        userNameLabel.text = "\(user.name.first) \(user.name.last)"
+        userEmailLabel.text = user.email
+        userCity.text = user.location.city
     }
 
 }
