@@ -9,21 +9,17 @@
 import UIKit
 
 class PeopleViewController: UIViewController {
+    var people = [People]() 
     
     @IBOutlet weak var peopleSearchBar: UISearchBar!
     @IBOutlet weak var peopleTableView: UITableView!
     
-    private var people = [People]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.peopleTableView.reloadData()
-            }
-        }
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        peopleTableView.dataSource = self
         
     }
     func loadData() {
@@ -44,8 +40,8 @@ class PeopleViewController: UIViewController {
 extension PeopleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PeopleCell", for: indexPath)
-        let peopleInfo = people[indexPath.row]
-        cell.textLabel?.text = (peopleInfo.first + peopleInfo.last)
+       let peopleInfo = people[indexPath.row]
+        cell.textLabel?.text = peopleInfo.first
         cell.detailTextLabel?.text = peopleInfo.state
         return cell
     }

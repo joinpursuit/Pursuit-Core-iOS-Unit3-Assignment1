@@ -8,19 +8,42 @@
 
 import Foundation
 
+//struct People: Codable {
+//    struct DisplayPeople: Codable {
+//        let peopleCount: Int
+//        let results: [People]
+//    }
+//    struct Picture: Codable {
+//        let thumbnail: URL
+//        let mediumImage: URL
+//    }
+//
+//    let title: String?
+//    let first: String?
+//    let last: String?
+//    let state: String?
+//
+//}
+
 struct People: Codable {
     struct DisplayPeople: Codable {
         let peopleCount: Int
-        let results: [People]
+        let results: [ResultWrapper]
     }
-    struct Picture: Codable {
-        let thumbnail: URL
-        let mediumImage: URL
+    struct ResultWrapper: Codable {
+        let gender: String
+        let name: NameWrapper
+        let location: LocationWrapper
     }
     
-    let title: String
-    let first: String
-    let last: String
-    let state: String
+    struct NameWrapper: Codable {
+        let title: String
+        let first: String
+        let last: String 
+    }
     
+    struct LocationWrapper: Codable {
+        let city: String
+    }
 }
+
