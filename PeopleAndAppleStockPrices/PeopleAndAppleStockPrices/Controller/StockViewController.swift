@@ -28,6 +28,11 @@ class StockViewController: UIViewController {
         stockTableView.dataSource = self
         loadData()
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = stockTableView.indexPathForSelectedRow, let stockVC = segue.destination as? StockDetailController else {fatalError("Index path, stockVC is nil")}
+        let appleStock = stocks[indexPath.section][indexPath.row]
+        stockVC.stockInfo = appleStock
+    }
     func loadData() {
         if let path = Bundle.main.path(forResource: "applstockinfo", ofType: "json") {
             let myUrl = URL.init(fileURLWithPath: path)

@@ -19,7 +19,6 @@
 		9364331521BB155A00B14BB8 /* StockDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9364331421BB155A00B14BB8 /* StockDetailController.swift */; };
 		9364331921BB1E2D00B14BB8 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9364331821BB1E2D00B14BB8 /* UserInfo.swift */; };
 		9364331C21BB218200B14BB8 /* AppleStockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9364331B21BB218200B14BB8 /* AppleStockInfo.swift */; };
-		9364331E21BB22E800B14BB8 /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9364331D21BB22E800B14BB8 /* PeopleCell.swift */; };
 		9364332021BB22F600B14BB8 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9364331F21BB22F600B14BB8 /* StockCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		9364331421BB155A00B14BB8 /* StockDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailController.swift; sourceTree = "<group>"; };
 		9364331821BB1E2D00B14BB8 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		9364331B21BB218200B14BB8 /* AppleStockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStockInfo.swift; sourceTree = "<group>"; };
-		9364331D21BB22E800B14BB8 /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		9364331F21BB22F600B14BB8 /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */,
-				9364331D21BB22E800B14BB8 /* PeopleCell.swift */,
 				9364331221BB155100B14BB8 /* ContactViewController.swift */,
 				9364331021BB151B00B14BB8 /* StockViewController.swift */,
 				9364331F21BB22F600B14BB8 /* StockCell.swift */,
@@ -204,7 +201,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9364331E21BB22E800B14BB8 /* PeopleCell.swift in Sources */,
 				9364331C21BB218200B14BB8 /* AppleStockInfo.swift in Sources */,
 				9364331521BB155A00B14BB8 /* StockDetailController.swift in Sources */,
 				577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */,

@@ -14,7 +14,6 @@ class StockCell: UITableViewCell {
     @IBOutlet weak var rightLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
