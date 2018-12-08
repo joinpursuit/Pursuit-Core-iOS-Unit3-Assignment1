@@ -9,13 +9,18 @@
 import UIKit
 
 class PeopleViewController: UIViewController {
-    var userInfo = [UserInfo]()
+    var userInfo = [UserInfo]() {
+        didSet {
+            peopleTableView.reloadData()
+        }
+    }
     @IBOutlet weak var peopleSearchBar: UISearchBar!
     @IBOutlet weak var peopleTableView: UITableView!
     
     override func viewDidLoad() {
     super.viewDidLoad()
         peopleTableView.dataSource = self
+        peopleSearchBar.delegate = self
         loadData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,4 +55,24 @@ extension PeopleViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = fullLocation.capitalized
         return cell
     }
+}
+
+extension PeopleViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if let path = Bundle.main.path(forResource:"userinfo", ofType: "json") {
+            let myUrl = URL.init(fileURLWithPath: path)
+            if let data = try? Data.init(contentsOf: myUrl) {
+                do {
+                    userInfo = try JSONDecoder().decode(Results.self, from: data).results
+                    userInfo = userInfo.filter{$0.name.first.contains(searchText.lowercased())} + userInfo.filter{$0.name.last.contains(searchText.lowercased())}
+                    if searchText.isEmpty {
+                        userInfo = try JSONDecoder().decode(Results.self, from: data).results
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    }
+    
 }

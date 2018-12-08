@@ -17,7 +17,7 @@ struct UserInfo: Codable {
     let email: String
     let picture: PictureWrapper
 }
-struct NameWrapper:Codable {
+struct NameWrapper: Codable {
     let first: String
     let last: String
 }
