@@ -23,6 +23,13 @@ class StockDetailController: UIViewController {
         dateLabel.text = stockInfo.date
         openLabel.text = "Open: $\(String(format: "%.2f", stockInfo.open))"
         closeLabel.text = "Close: $\(String(format: "%.2f", stockInfo.close))"
+        if stockInfo.open > stockInfo.close {
+            imageView.image = UIImage(named: "thumbsUp")
+            view.backgroundColor = .green
+        } else if stockInfo.open < stockInfo.close {
+            imageView.image = UIImage(named: "thumbsDown")
+            view.backgroundColor = .red
+        }
     }
 }
 
