@@ -80,6 +80,12 @@ extension PeopleViewController: UITableViewDataSource{
 extension PeopleViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchPeople(keyword: searchText)
-        if searchText.text = "" {}
+        if searchBar.text!.isEmpty{
+            searchResult{people in
+                if let peopleResult = people{
+                    self.people = peopleResult
+                }
+            }
+        }
     }
 }
