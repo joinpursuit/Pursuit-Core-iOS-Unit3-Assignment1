@@ -9,13 +9,23 @@
 import UIKit
 
 class PeopleViewController: UIViewController {
-    var people = [People]()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    loadData()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
+    
+    @IBOutlet weak var peopleSearchBar: UISearchBar!
+    @IBOutlet weak var peopleTableView: UITableView!
+    
+    private var people = [People]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.peopleTableView.reloadData()
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadData()
+        
+    }
     func loadData() {
         if let path = Bundle.main.path(forResource: "userinfo", ofType: "json")
         {
@@ -29,6 +39,17 @@ class PeopleViewController: UIViewController {
             }
         }
     }
-
 }
 
+extension PeopleViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PeopleCell", for: indexPath)
+        let peopleInfo = people[indexPath.row]
+        cell.textLabel?.text = (peopleInfo.first + peopleInfo.last)
+        cell.detailTextLabel?.text = peopleInfo.state
+        return cell
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return people.count
+    }
+}
