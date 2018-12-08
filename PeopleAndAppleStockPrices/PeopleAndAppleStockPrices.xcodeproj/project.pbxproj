@@ -18,6 +18,7 @@
 		D5637B7021BB183D003821F5 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5637B6F21BB183D003821F5 /* StocksViewController.swift */; };
 		D5637B7221BB184E003821F5 /* StocksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5637B7121BB184E003821F5 /* StocksDetailViewController.swift */; };
 		D5637B7621BB1A22003821F5 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5637B7521BB1A22003821F5 /* People.swift */; };
+		D5637B7A21BC74A5003821F5 /* Stocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5637B7921BC74A5003821F5 /* Stocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D5637B6F21BB183D003821F5 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
 		D5637B7121BB184E003821F5 /* StocksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksDetailViewController.swift; sourceTree = "<group>"; };
 		D5637B7521BB1A22003821F5 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		D5637B7921BC74A5003821F5 /* Stocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				D5637B7521BB1A22003821F5 /* People.swift */,
+				D5637B7921BC74A5003821F5 /* Stocks.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			files = (
 				577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */,
 				D5637B6E21BB182B003821F5 /* PeopleDetailViewController.swift in Sources */,
+				D5637B7A21BC74A5003821F5 /* Stocks.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
 				D5637B7021BB183D003821F5 /* StocksViewController.swift in Sources */,
 				D5637B7621BB1A22003821F5 /* People.swift in Sources */,
