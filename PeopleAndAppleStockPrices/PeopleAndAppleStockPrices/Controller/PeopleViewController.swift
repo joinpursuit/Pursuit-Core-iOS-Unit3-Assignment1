@@ -32,7 +32,12 @@ class PeopleViewController: UIViewController {
         }
     }
   }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = myTableView.indexPathForSelectedRow,
+            let peopleDetailViewController = segue.destination as? PeopleDetailViewController else {return}
+        let user = people[indexPath.row]
+        peopleDetailViewController.user = user
+    }
     private func searchResult(completion: @escaping([People]?) -> Void){
         if let path = Bundle.main.path(forResource: "userinfo", ofType: "json"){
             let myUrl = URL.init(fileURLWithPath: path)
