@@ -71,7 +71,7 @@ extension PeopleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = peopleTableView.dequeueReusableCell(withIdentifier: "PeopleCell", for: indexPath)
         let person = people[indexPath.row]
-        
+    
         cell.textLabel?.text = "\(person.name.first.capitalized) \(person.name.last.capitalized)"
         cell.detailTextLabel?.text = "\(person.location.city.capitalized), \(person.location.state.capitalized)"
         

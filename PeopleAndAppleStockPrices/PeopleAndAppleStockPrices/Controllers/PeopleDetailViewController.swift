@@ -23,7 +23,10 @@ class PeopleDetailViewController: UIViewController {
     }
     
     func loadPage() {
+        //???Why this doesn't work?
+        //personImage.image = Brain.urlToImage(person.picture.large)
         DispatchQueue.global().async {
+            //???why I need to put self in do-catch function?
             do {
                 let imageData = try Data(contentsOf: self.person.picture.large)
                 DispatchQueue.main.async {

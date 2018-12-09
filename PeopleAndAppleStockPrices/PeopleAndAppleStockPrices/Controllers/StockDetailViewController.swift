@@ -9,22 +9,23 @@
 import UIKit
 
 class StockDetailViewController: UIViewController {
-
+    
+    @IBOutlet weak var stockChangeImg: UIImageView!
+    @IBOutlet weak var openingPrice: UILabel!
+    @IBOutlet weak var closingPrice: UILabel!
+    
+    var stockDay: StockDay!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set opening price
+        //set closing price
+        
+        
+        //compare opening & closing price to set 1) img  2) background color
+            //increase = green color, cat image
+            //decrease = red color, bear image
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
