@@ -10,15 +10,16 @@ import UIKit
 
 class ContactsViewController: UIViewController {
   
-  private var contacts = [ContactsBrain]()
+  private var contacts = [ContactInfo]()
   
   @IBOutlet weak var contactsTableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     loadContacts()
-    contactsTableView.dataSource = self
     dump(contacts)
+
+    contactsTableView.dataSource = self
   }
   
   func loadContacts(){
@@ -26,8 +27,8 @@ class ContactsViewController: UIViewController {
       let contactsURL = URL.init(fileURLWithPath: path)
       if let data = try? Data.init(contentsOf: contactsURL){
         do{
-          self.contacts = try JSONDecoder().decode([ContactsBrain].self
-            , from: data)
+          let contactToSet = try JSONDecoder().decode(ContactsBrain.self, from: data)
+          contacts = contactToSet.results
           
         } catch {
           print(error)

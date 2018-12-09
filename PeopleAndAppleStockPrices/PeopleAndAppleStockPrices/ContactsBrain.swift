@@ -8,14 +8,47 @@
 
 import Foundation
 
+struct ContactsBrain: Codable{
+  let results: [ContactInfo]
+}
+
+struct ContactInfo: Codable{
+  let name: FullName
+  let email: Email
+  let phoneNumber: PhoneNumber
+  let contactPicture: Picture
+}
+
+struct FullName: Codable{
+  let first: String
+  let last: String
+
+  func getFullName() -> String {
+    let fullName = first.capitalized + " " + last.capitalized
+    return fullName
+  }
+}
+
+struct Email: Codable{
+  let email: String?
+}
+
+struct PhoneNumber: Codable{
+  let cell: String
+}
+
+struct Picture: Codable {
+    let medium: String
+}
 
 
 
-
+//
+//
 //struct ContactsBrain: Codable {
 //
 //  struct ResultData: Codable {
-//    let results: [ContactsBrain]
+//    let results: ContactsBrain
 //  }
 //
 //  struct Name: Codable {
