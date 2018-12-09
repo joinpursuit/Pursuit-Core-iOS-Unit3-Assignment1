@@ -32,11 +32,19 @@ class StockDetailedViewController: UIViewController {
   }
   
   func stockDetailedInfo() {
-    upDownImage.image = UIImage.init(named: "thumbsUp")
-    dateDetailedStock.text = stockDetailed.date
-    openPriceDetail.text = String(stockDetailed.open)
-    closingPriceDetailed.text = String(stockDetailed.close)
+
     
+    if stockDetailed.open < stockDetailed.close{
+    upDownImage.image = UIImage.init(named: "thumbsUp")
+    view.backgroundColor = .green
+    } else if stockDetailed.open > stockDetailed.close {
+    upDownImage.image = UIImage.init(named: "thumbsDown")
+      view.backgroundColor = .red
+    }
+    
+    dateDetailedStock.text = "Date: \(stockDetailed.date)"
+    openPriceDetail.text = "Opening price: \(stockDetailed.open)"
+    closingPriceDetailed.text = "Closing price: \(stockDetailed.close)"
     
   }
   
