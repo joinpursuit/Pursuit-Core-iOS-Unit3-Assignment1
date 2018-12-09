@@ -19,6 +19,7 @@
 		D64CF8B121BB269200CABD45 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64CF8B021BB269200CABD45 /* StockDetailViewController.swift */; };
 		D64CF8B321BC27B200CABD45 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64CF8B221BC27B200CABD45 /* Person.swift */; };
 		D64CF8B521BC28B100CABD45 /* StockDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64CF8B421BC28B100CABD45 /* StockDay.swift */; };
+		D64CF8B721BCDE0500CABD45 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64CF8B621BCDE0500CABD45 /* Brain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D64CF8B021BB269200CABD45 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		D64CF8B221BC27B200CABD45 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		D64CF8B421BC28B100CABD45 /* StockDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDay.swift; sourceTree = "<group>"; };
+		D64CF8B621BCDE0500CABD45 /* Brain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				D64CF8B221BC27B200CABD45 /* Person.swift */,
 				D64CF8B421BC28B100CABD45 /* StockDay.swift */,
+				D64CF8B621BCDE0500CABD45 /* Brain.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				D64CF8B321BC27B200CABD45 /* Person.swift in Sources */,
 				D64CF8B121BB269200CABD45 /* StockDetailViewController.swift in Sources */,
+				D64CF8B721BCDE0500CABD45 /* Brain.swift in Sources */,
 				577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */,
 				D64CF8AD21BB266C00CABD45 /* PeopleDetailViewController.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,

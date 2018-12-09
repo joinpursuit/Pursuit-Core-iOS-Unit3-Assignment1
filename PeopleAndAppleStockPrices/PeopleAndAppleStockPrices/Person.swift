@@ -25,7 +25,7 @@ struct Person: Codable {
     }
     
     struct PictureType: Codable {
-        let large: String
+        let large: URL
     }
     
     let name: FullName

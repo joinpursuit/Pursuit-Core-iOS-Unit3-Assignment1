@@ -22,13 +22,12 @@ class PeopleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         peopleTableView.dataSource = self
-        peopleTableView.delegate = self
         peopleSearchBar.delegate = self
         
         loadData()
-        dump(people)
     }
     
+    //get data from JSON and assigned to variable people
     func loadData() {
     
         guard let pathInString = Bundle.main.path(forResource: "userinfo", ofType: "json") else {
@@ -47,6 +46,18 @@ class PeopleViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = peopleTableView.indexPathForSelectedRow,
+            let PeopleDetailVC = segue.destination as? PeopleDetailViewController else { return }
+        
+        //change Navigation BackButton Text
+        let backItem = UIBarButtonItem()
+        backItem.title = "People"
+        navigationItem.backBarButtonItem = backItem
+        
+        let person = people[indexPath.row]
+        PeopleDetailVC.person = person
+    }
 }
 
 
@@ -70,20 +81,22 @@ extension PeopleViewController: UITableViewDataSource {
 }
 
 
-extension PeopleViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //initiate
-    }
-    
-}
-
-
 extension PeopleViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //update search as the user types
-        //if it's a blank or space reload the whole thing
+        loadData()
+        
+        if searchText == "" {
+            return
+        } else {
+            people = people.filter{ (person: Person) -> Bool in
+                let fullName = "\(person.name.first) \(person.name.last)".lowercased()
+                print("\(fullName.prefix(searchText.count)) == \(searchText.lowercased())")
+                
+                return fullName.prefix(searchText.count) == searchText.lowercased()
+            }
+        }
     }
+    
     
 }
