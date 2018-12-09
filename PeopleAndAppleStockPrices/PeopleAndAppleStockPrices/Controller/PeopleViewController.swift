@@ -9,6 +9,7 @@
 import UIKit
 
 class PeopleViewController: UIViewController {
+    var sortedUser = [UserInfo]()
     var userInfo = [UserInfo]() {
         didSet {
             peopleTableView.reloadData()
@@ -47,10 +48,12 @@ extension PeopleViewController: UITableViewDataSource {
         return userInfo.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        sortedUser = userInfo.sorted{$0.name.first < $1.name.first}
         let cell = peopleTableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
-        let info = userInfo[indexPath.row]
+        let info = sortedUser[indexPath.row]
         let fullName = "\(info.name.first) \(info.name.last)"
         let fullLocation = "\(info.location.city), \(info.location.state)"
+        cell.imageView?.image = UIImage(named: "profileImage")
         cell.textLabel?.text = fullName.capitalized
         cell.detailTextLabel?.text = fullLocation.capitalized
         return cell
@@ -74,5 +77,4 @@ extension PeopleViewController: UISearchBarDelegate {
             }
         }
     }
-    
 }
