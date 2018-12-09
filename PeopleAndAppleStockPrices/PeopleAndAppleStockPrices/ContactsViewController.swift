@@ -28,3 +28,8 @@ class ContactsViewController: UIViewController {
     */
 
 }
+
+//  a function that invokes every time the user types on the Search Bar. 
+//func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//    <#code#>
+//}

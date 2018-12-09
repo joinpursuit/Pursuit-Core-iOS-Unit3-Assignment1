@@ -13,6 +13,10 @@
 		0DCF00B521BB31D2004B100F /* StocksDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF00B421BB31D2004B100F /* StocksDetailController.swift */; };
 		0DCF00B721BB3277004B100F /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF00B621BB3277004B100F /* Stock.swift */; };
 		0DCF00B921BB3281004B100F /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF00B821BB3281004B100F /* Contact.swift */; };
+		0DCF00BB21BC7D43004B100F /* ContactSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF00BA21BC7D43004B100F /* ContactSearchAPI.swift */; };
+		0DCF00BD21BC7D5B004B100F /* StockSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF00BC21BC7D5B004B100F /* StockSearchAPI.swift */; };
+		0DCF00BF21BCBE4A004B100F /* contact.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DCF00BE21BCBE4A004B100F /* contact.json */; };
+		0DCF00C121BCBE93004B100F /* stock.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DCF00C021BCBE93004B100F /* stock.json */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
 		577E5BF321BA8BA20083EB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF221BA8BA20083EB97 /* Assets.xcassets */; };
@@ -28,6 +32,10 @@
 		0DCF00B421BB31D2004B100F /* StocksDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksDetailController.swift; sourceTree = "<group>"; };
 		0DCF00B621BB3277004B100F /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		0DCF00B821BB3281004B100F /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		0DCF00BA21BC7D43004B100F /* ContactSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSearchAPI.swift; sourceTree = "<group>"; };
+		0DCF00BC21BC7D5B004B100F /* StockSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSearchAPI.swift; sourceTree = "<group>"; };
+		0DCF00BE21BCBE4A004B100F /* contact.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = contact.json; sourceTree = "<group>"; };
+		0DCF00C021BCBE93004B100F /* stock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stock.json; sourceTree = "<group>"; };
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577E5BF021BA8BA10083EB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +83,10 @@
 				0DCF00B021BB3048004B100F /* StocksViewController.swift */,
 				0DCF00B221BB31B2004B100F /* ContactsDetailController.swift */,
 				0DCF00B421BB31D2004B100F /* StocksDetailController.swift */,
+				0DCF00BA21BC7D43004B100F /* ContactSearchAPI.swift */,
+				0DCF00BC21BC7D5B004B100F /* StockSearchAPI.swift */,
+				0DCF00BE21BCBE4A004B100F /* contact.json */,
+				0DCF00C021BCBE93004B100F /* stock.json */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
 			);
@@ -159,10 +171,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DCF00BF21BCBE4A004B100F /* contact.json in Resources */,
 				577E5BFF21BA8C3B0083EB97 /* userinfo.json in Resources */,
 				577E5C0121BA8C5C0083EB97 /* applstockinfo.json in Resources */,
 				577E5BF621BA8BA20083EB97 /* LaunchScreen.storyboard in Resources */,
 				577E5BF321BA8BA20083EB97 /* Assets.xcassets in Resources */,
+				0DCF00C121BCBE93004B100F /* stock.json in Resources */,
 				577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,10 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DCF00B121BB3048004B100F /* StocksViewController.swift in Sources */,
+				0DCF00BD21BC7D5B004B100F /* StockSearchAPI.swift in Sources */,
 				0DCF00AF21BB3004004B100F /* ContactsViewController.swift in Sources */,
 				0DCF00B721BB3277004B100F /* Stock.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
 				0DCF00B321BB31B2004B100F /* ContactsDetailController.swift in Sources */,
+				0DCF00BB21BC7D43004B100F /* ContactSearchAPI.swift in Sources */,
 				0DCF00B521BB31D2004B100F /* StocksDetailController.swift in Sources */,
 				0DCF00B921BB3281004B100F /* Contact.swift in Sources */,
 			);
