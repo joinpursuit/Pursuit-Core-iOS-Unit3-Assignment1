@@ -8,38 +8,60 @@
 
 import Foundation
 
-struct ContactsBrain: Codable{
-  let results: [ContactInfo]
-}
 
-struct ContactInfo: Codable{
-  let name: FullName
-  let email: Email
-  let phoneNumber: PhoneNumber
-  let contactPicture: Picture
+struct User: Codable {
+  let results: [ResultsToSet]
 }
-
-struct FullName: Codable{
+struct ResultsToSet: Codable {
+  let location: StringToSet
+  let name: StringWrapper
+}
+struct StringWrapper: Codable {
+  let title: String
   let first: String
   let last: String
-
-  func getFullName() -> String {
-    let fullName = first.capitalized + " " + last.capitalized
-    return fullName
-  }
+  //    let location: String
+  //    let street: String
+  //    let city: String
 }
 
-struct Email: Codable{
-  let email: String?
+struct StringToSet: Codable {
+  let street: String
+  let city: String
 }
 
-struct PhoneNumber: Codable{
-  let cell: String
-}
-
-struct Picture: Codable {
-    let medium: String
-}
+//struct ContactsBrain: Codable{
+//  let results: [ContactInfo]
+//}
+//
+//struct ContactInfo: Codable{
+//  let name: FullName
+//  let email: Email
+//  let phoneNumber: PhoneNumber
+//  let contactPicture: Picture
+//}
+//
+//struct FullName: Codable{
+//  let first: String
+//  let last: String
+//
+//  func getFullName() -> String {
+//    let fullName = first.capitalized + " " + last.capitalized
+//    return fullName
+//  }
+//}
+//
+//struct Email: Codable{
+//  let email: String?
+//}
+//
+//struct PhoneNumber: Codable{
+//  let cell: String
+//}
+//
+//struct Picture: Codable {
+//    let medium: String
+//}
 
 
 

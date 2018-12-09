@@ -32,13 +32,13 @@ class StockDetailedViewController: UIViewController {
   }
   
   func stockDetailedInfo() {
-
+    
     
     if stockDetailed.open < stockDetailed.close{
-    upDownImage.image = UIImage.init(named: "thumbsUp")
-    view.backgroundColor = .green
+      upDownImage.image = UIImage.init(named: "thumbsUp")
+      view.backgroundColor = .green
     } else if stockDetailed.open > stockDetailed.close {
-    upDownImage.image = UIImage.init(named: "thumbsDown")
+      upDownImage.image = UIImage.init(named: "thumbsDown")
       view.backgroundColor = .red
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class ContactsViewController: UIViewController {
   
-  private var contacts = [ContactInfo]()
+  private var contacts = [ResultsToSet]()
   
   @IBOutlet weak var contactsTableView: UITableView!
   
@@ -27,9 +27,10 @@ class ContactsViewController: UIViewController {
       let contactsURL = URL.init(fileURLWithPath: path)
       if let data = try? Data.init(contentsOf: contactsURL){
         do{
-          let contactToSet = try JSONDecoder().decode(ContactsBrain.self, from: data)
-          contacts = contactToSet.results
+          let contactToSet = try JSONDecoder().decode(User.self, from: data)
           
+          contacts = contactToSet.results
+       
         } catch {
           print(error)
         }

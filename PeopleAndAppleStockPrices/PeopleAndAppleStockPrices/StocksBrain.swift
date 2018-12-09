@@ -14,6 +14,11 @@ struct Stocks: Codable {
   let close: Double
   let vwap: Double
   
+  func groupingStocksByMonths() {
+    
+    
+    
+  }
 }
 
 
