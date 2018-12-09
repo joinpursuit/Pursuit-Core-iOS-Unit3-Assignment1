@@ -155,21 +155,21 @@
                                 <rect key="frame" x="0.0" y="144" width="375" height="585"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" textLabel="q45-G4-HfN" detailTextLabel="pxo-lE-uVp" style="IBUITableViewCellStyleSubtitle" id="kyc-Cg-woV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" textLabel="WhD-19-I8L" detailTextLabel="iVt-RA-pv3" style="IBUITableViewCellStyleSubtitle" id="FTn-cz-H7O">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kyc-Cg-woV" id="rGH-bQ-FFd">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FTn-cz-H7O" id="TAY-bB-pgq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q45-G4-HfN">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WhD-19-I8L">
                                                     <rect key="frame" x="15" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pxo-lE-uVp">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iVt-RA-pv3">
                                                     <rect key="frame" x="14.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -179,7 +179,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="esX-h6-OIv" kind="show" id="XVW-A6-dtS"/>
+                                            <segue destination="esX-h6-OIv" kind="show" id="68o-Vm-afC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -261,6 +261,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2rf-Ge-eB6"/>
                     </view>
+                    <connections>
+                        <outlet property="cellPhone" destination="I5m-na-aSm" id="ll3-4V-YmF"/>
+                        <outlet property="contactImage" destination="ZNo-8i-4wE" id="e52-8A-jVE"/>
+                        <outlet property="email" destination="z20-T1-lwf" id="Mar-Eh-Hu2"/>
+                        <outlet property="fullName" destination="BQi-Ug-LVv" id="DKI-2c-LHX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atP-K2-GVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -38,6 +38,14 @@ class ContactsViewController: UIViewController {
     }
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let indexPath = contactsTableView.indexPathForSelectedRow,
+      let contactsDetailedVC = segue.destination as? ContactsDetailedViewController else {fatalError("Can't find segue info for contacts or index path")}
+    
+    let contactToSegue = contacts[indexPath.row]
+    contactsDetailedVC.detailedContactInfo = contactToSegue
+  }
+  
 }
 
 extension ContactsViewController: UITableViewDataSource{
@@ -46,9 +54,10 @@ extension ContactsViewController: UITableViewDataSource{
     
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell()
+    let cell = contactsTableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
     let currentContact = contacts[indexPath.row]
-    cell.textLabel?.text = currentContact.name.first
+    cell.textLabel?.text = currentContact.name.getFullName()
+    cell.detailTextLabel?.text = currentContact.location.city
     
     return cell
   }

@@ -16,13 +16,16 @@ struct ResultsToSet: Codable {
   let location: StringToSet
   let name: StringWrapper
 }
+
 struct StringWrapper: Codable {
-  let title: String
   let first: String
   let last: String
-  //    let location: String
-  //    let street: String
-  //    let city: String
+  
+    func getFullName() -> String {
+      let fullName = first.capitalized + " " + last.capitalized
+      return fullName
+    }
+  
 }
 
 struct StringToSet: Codable {

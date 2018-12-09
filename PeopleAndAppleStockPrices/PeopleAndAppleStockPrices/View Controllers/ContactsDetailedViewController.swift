@@ -9,12 +9,24 @@
 import UIKit
 
 class ContactsDetailedViewController: UIViewController {
+  
+  var detailedContactInfo: ResultsToSet!
 
+  @IBOutlet weak var contactImage: UIImageView!
+  @IBOutlet weak var fullName: UILabel!
+  @IBOutlet weak var cellPhone: UILabel!
+  @IBOutlet weak var email: UILabel!
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      setContactDetailedView()
     }
+  
+  func setContactDetailedView(){
+   fullName.text = detailedContactInfo.name.getFullName()
     
+  }
 
 
 }
