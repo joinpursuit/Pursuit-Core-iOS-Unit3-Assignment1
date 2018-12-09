@@ -60,8 +60,7 @@ extension StocksViewController: UITableViewDataSource{
         
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return
+        return "Hello \(section + 1)"
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let stock = filterByDates()[indexPath.section][indexPath.row]
