@@ -11,15 +11,31 @@ import UIKit
 class ContactsViewController: UIViewController {
     @IBOutlet weak var contactsSeachBar: UISearchBar!
     @IBOutlet weak var contactsTableView: UITableView!
+    private var refreshControl: UIRefreshControl!
     
-    var contacts = [ContactInfo]()
+    var contacts: [ContactInfo] = [] {
+        didSet {
+            contactsTableView.reloadData()
+        }
+    }
     var sortedContacts = [ContactInfo]()
+    
+    @objc private func fetchContacts() {
+        refreshControl.endRefreshing()
+        loadData()
+    }
+    private func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        contactsTableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(fetchContacts), for: .valueChanged)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        dump(contacts)
         contactsTableView.dataSource = self
+        contactsSeachBar.delegate = self
+        setupRefreshControl()
   }
     
     func loadData() {
@@ -61,5 +77,13 @@ extension ContactsViewController: UITableViewDataSource {
         cell.textLabel?.text = contact.name.first.capitalized + " " + contact.name.last.capitalized
         cell.detailTextLabel?.text = contact.location.state.capitalized
         return cell
+    }
+}
+
+extension ContactsViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        guard let searchTerm = searchBar.text else { return }
+        contacts = contacts.filter{ $0.name.first + " " + $0.name.last == searchTerm.lowercased() || $0.name.first == searchTerm.lowercased() || $0.name.last == searchTerm.lowercased()}
     }
 }
