@@ -11,14 +11,20 @@ import UIKit
 class UserViewController: UIViewController {
     var chosenUsers = [User]()
     @IBOutlet weak var userTableView: UITableView!
+    @IBOutlet weak var userSearchBar: UISearchBar!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
         userTableView.dataSource = self
-
+        userSearchBar.delegate = self
+        self.chosenUsers.sort(by: {($0.name.last, $0.name.first) < ($1.name.last, $1.name.first)})
       }
+//    private func searchUsers(keyword: String) {
+//
+//    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = userTableView.indexPathForSelectedRow,
             let userDetailViewController = segue.destination as? UserDetailViewController else {return}
@@ -53,5 +59,14 @@ extension UserViewController: UITableViewDataSource {
         cell.textLabel?.text = userToSet.name.first.capitalized + " " + userToSet.name.last.capitalized
         cell.detailTextLabel?.text = userToSet.location.city.capitalized
         return cell
+    }
+}
+extension UserViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = userSearchBar.text else {return}
+//        if searchText == "" || searchText == " " {
+//        }
+
+        
     }
 }

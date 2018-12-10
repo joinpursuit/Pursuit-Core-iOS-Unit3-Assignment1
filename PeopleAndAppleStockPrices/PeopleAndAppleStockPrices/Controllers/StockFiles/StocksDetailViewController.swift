@@ -9,22 +9,33 @@
 import UIKit
 
 class StocksDetailViewController: UIViewController {
-
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var stockImage: UIImageView!
+    @IBOutlet weak var openLabel: UILabel!
+    @IBOutlet weak var closedLabel: UILabel!
+    @IBOutlet var viewColor: UIView!
+    
+    public var stockSelected: StockModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateStock()
 
-        // Do any additional setup after loading the view.
     }
-    
+    private func updateStock() {
+        guard let stockSelected = stockSelected else {fatalError("stock is nil")}
+        dateLabel.text = stockSelected.date
+        openLabel.text = String(format: "$%.2f", stockSelected.open)
+        closedLabel.text = String(format: "$%.2f", stockSelected.close)
+        if stockSelected.open >= stockSelected.close {
+            viewColor.backgroundColor = UIColor.red
+            stockImage.image = UIImage(named: "thumbsDown")!
+        } else {
+            viewColor.backgroundColor = UIColor.green
+            stockImage.image = UIImage(named: "thumbsUp")!
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        }        
     }
-    */
 
 }

@@ -69,6 +69,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Contacts" id="24q-jg-cYC"/>
                     <connections>
+                        <outlet property="userSearchBar" destination="ylw-XJ-1hE" id="B6h-r6-gHZ"/>
                         <outlet property="userTableView" destination="uBC-yW-7kp" id="f5F-HF-Ym3"/>
                     </connections>
                 </viewController>
@@ -222,7 +223,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="skH-zg-LqM">
-                                <rect key="frame" x="65.5" y="145" width="244" height="244"/>
+                                <rect key="frame" x="0.0" y="155" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="skH-zg-LqM" secondAttribute="height" multiplier="1:1" id="6ix-QL-7Cv"/>
                                 </constraints>
@@ -233,15 +234,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="open" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFt-AD-fLg">
-                                <rect key="frame" x="0.0" y="399" width="187.5" height="21"/>
-                                <color key="backgroundColor" red="1" green="0.72490782279999999" blue="0.29017969129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="open" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFt-AD-fLg">
+                                <rect key="frame" x="0.0" y="570" width="187.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="closed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8R-1j-0t9">
-                                <rect key="frame" x="187.5" y="399" width="187.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="closed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8R-1j-0t9">
+                                <rect key="frame" x="187.5" y="570" width="187.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -250,24 +250,31 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1kZ-tf-iLs" firstAttribute="width" secondItem="NXm-IK-ipu" secondAttribute="width" id="AEq-OQ-GUf"/>
-                            <constraint firstItem="skH-zg-LqM" firstAttribute="width" secondItem="NXm-IK-ipu" secondAttribute="width" multiplier="0.65" id="BO0-8a-TIK"/>
+                            <constraint firstItem="skH-zg-LqM" firstAttribute="width" secondItem="NXm-IK-ipu" secondAttribute="width" id="BO0-8a-TIK"/>
                             <constraint firstItem="1kZ-tf-iLs" firstAttribute="centerX" secondItem="k68-1z-O00" secondAttribute="centerX" id="IDE-ot-4eH"/>
                             <constraint firstItem="1kZ-tf-iLs" firstAttribute="top" secondItem="k68-1z-O00" secondAttribute="top" constant="20" id="KTU-y8-Sc0"/>
                             <constraint firstItem="1kZ-tf-iLs" firstAttribute="leading" secondItem="k68-1z-O00" secondAttribute="leading" id="KaN-A1-3Ez"/>
                             <constraint firstItem="SFt-AD-fLg" firstAttribute="leading" secondItem="k68-1z-O00" secondAttribute="leading" id="Mzn-Uj-e12"/>
                             <constraint firstItem="skH-zg-LqM" firstAttribute="centerX" secondItem="k68-1z-O00" secondAttribute="centerX" id="VSJ-64-moX"/>
                             <constraint firstItem="x8R-1j-0t9" firstAttribute="height" secondItem="SFt-AD-fLg" secondAttribute="height" id="W1y-2q-Ofu"/>
-                            <constraint firstItem="SFt-AD-fLg" firstAttribute="top" secondItem="skH-zg-LqM" secondAttribute="bottom" constant="10" id="XUf-8c-S7X"/>
+                            <constraint firstItem="SFt-AD-fLg" firstAttribute="top" secondItem="skH-zg-LqM" secondAttribute="bottom" constant="40" id="XUf-8c-S7X"/>
                             <constraint firstItem="x8R-1j-0t9" firstAttribute="width" secondItem="SFt-AD-fLg" secondAttribute="width" id="bzA-ZE-B4N"/>
                             <constraint firstItem="x8R-1j-0t9" firstAttribute="trailing" secondItem="k68-1z-O00" secondAttribute="trailing" id="pjP-BV-A2P"/>
                             <constraint firstItem="x8R-1j-0t9" firstAttribute="centerY" secondItem="SFt-AD-fLg" secondAttribute="centerY" id="rjo-4O-67m"/>
                             <constraint firstItem="SFt-AD-fLg" firstAttribute="width" secondItem="NXm-IK-ipu" secondAttribute="width" multiplier="0.5" id="u8B-0y-xg0"/>
                             <constraint firstItem="x8R-1j-0t9" firstAttribute="leading" secondItem="SFt-AD-fLg" secondAttribute="trailing" id="yrc-c6-ypC"/>
-                            <constraint firstItem="skH-zg-LqM" firstAttribute="top" secondItem="1kZ-tf-iLs" secondAttribute="bottom" constant="40" id="zPh-4m-VFE"/>
+                            <constraint firstItem="skH-zg-LqM" firstAttribute="top" secondItem="1kZ-tf-iLs" secondAttribute="bottom" constant="50" id="zPh-4m-VFE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k68-1z-O00"/>
                     </view>
                     <navigationItem key="navigationItem" id="WzP-kf-oVp"/>
+                    <connections>
+                        <outlet property="closedLabel" destination="x8R-1j-0t9" id="Hay-KG-BDc"/>
+                        <outlet property="dateLabel" destination="1kZ-tf-iLs" id="hez-Gd-whL"/>
+                        <outlet property="openLabel" destination="SFt-AD-fLg" id="o4f-tY-hJ2"/>
+                        <outlet property="stockImage" destination="skH-zg-LqM" id="2M7-d0-wHs"/>
+                        <outlet property="viewColor" destination="NXm-IK-ipu" id="uHb-4A-YC3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQK-eX-MXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
