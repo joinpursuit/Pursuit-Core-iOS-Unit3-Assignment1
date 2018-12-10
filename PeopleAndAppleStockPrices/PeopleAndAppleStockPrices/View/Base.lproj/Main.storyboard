@@ -191,6 +191,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ByL-wd-e2e"/>
                     </view>
+                    <connections>
+                        <outlet property="stockClose" destination="f3j-Jv-Hsl" id="fSw-Rl-lND"/>
+                        <outlet property="stockDate" destination="l43-AD-ktJ" id="sC9-9r-uL9"/>
+                        <outlet property="stockImage" destination="4ME-Kt-OKe" id="rkx-nu-Bat"/>
+                        <outlet property="stockOpen" destination="l4W-ML-8Io" id="oak-y1-MFA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqr-Fg-dQw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

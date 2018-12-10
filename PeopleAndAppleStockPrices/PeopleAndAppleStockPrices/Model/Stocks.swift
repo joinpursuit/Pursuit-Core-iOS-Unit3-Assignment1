@@ -16,3 +16,7 @@ struct Stocks: Codable {
     let close: Double
     let label: String
 }
+
+func filterDayMonthYear()  {
+    
+}
