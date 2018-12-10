@@ -25,7 +25,7 @@ class PeopleViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = peopleTableView.indexPathForSelectedRow, let contactVC = segue.destination as? ContactViewController else {fatalError("Index path, contactVC is nil")}
-        let people = userInfo[indexPath.row]
+        let people = sortedUser[indexPath.row]
         contactVC.people = people
     }
     func loadData() {

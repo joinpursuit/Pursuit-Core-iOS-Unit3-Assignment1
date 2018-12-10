@@ -16,7 +16,7 @@ class ContactViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUp()
+        self.setUp()
     }
 
     private func setUp() {
