@@ -17,7 +17,6 @@ class PeopleViewController: UIViewController {
     }
     @IBOutlet weak var peopleSearchBar: UISearchBar!
     @IBOutlet weak var peopleTableView: UITableView!
-    
     override func viewDidLoad() {
     super.viewDidLoad()
         peopleTableView.dataSource = self
@@ -42,7 +41,6 @@ class PeopleViewController: UIViewController {
         }
     }
 }
-
 extension PeopleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userInfo.count
@@ -59,7 +57,6 @@ extension PeopleViewController: UITableViewDataSource {
         return cell
     }
 }
-
 extension PeopleViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let path = Bundle.main.path(forResource:"userinfo", ofType: "json") {

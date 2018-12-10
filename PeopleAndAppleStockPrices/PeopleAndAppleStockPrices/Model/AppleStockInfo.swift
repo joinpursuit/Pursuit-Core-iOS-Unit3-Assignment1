@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AppleStockInfo: Codable {
+class AppleStockInfo: Codable {
     let date: String
     let open: Double
     let close: Double

@@ -21,7 +21,6 @@ class StockViewController: UIViewController {
     var stockDate = ""
     var average = [[Double]]()
     @IBOutlet weak var stockTableView: UITableView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
