@@ -9,7 +9,7 @@
 import UIKit
 
 class StocksDetailViewController: UIViewController {
-
+    var stock: Stocks!
     
     @IBOutlet weak var stockImage: UIImageView!
     @IBOutlet weak var stockDate: UILabel!
@@ -19,9 +19,23 @@ class StocksDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateUI()
     }
     
 
-
+    func updateUI(){
+        if stock.change < 0 {
+            view.backgroundColor = .red
+            stockImage.image = UIImage(named: "thumbsDown")
+        } else if stock.change >= 0 {
+            view.backgroundColor = .green
+            stockImage.image = UIImage(named: "thumbsUp")
+        }
+        stockDate.text = stock.date.description
+        stockOpen.text = stock.open.description
+        stockClose.text = stock.close.description
+        
+        
+    }
 
 }

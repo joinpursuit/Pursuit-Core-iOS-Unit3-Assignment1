@@ -23,9 +23,18 @@ class StocksViewController: UIViewController {
         super.viewDidLoad()
         stocksTableView.dataSource = self
         loadData()
-        dump(stocks)
         print()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = stocksTableView.indexPathForSelectedRow,
+            let stocksDetailViewController = segue.destination as? StocksDetailViewController else {return}
+        let stock = stocks[indexPath.row]
+        stocksDetailViewController.stock = stock
+
+        
+    }
+    
     func loadData(){
         if let path = Bundle.main.path(forResource: "applstockinfo", ofType: "json"){
             let myUrl = URL.init(fileURLWithPath: path)
@@ -61,6 +70,7 @@ extension StocksViewController: UITableViewDataSource{
         
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
         var myString = String()
         let stocks = filterByDates()[section]
         for stock in stocks{

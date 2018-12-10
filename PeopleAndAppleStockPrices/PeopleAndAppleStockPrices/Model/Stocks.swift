@@ -11,12 +11,11 @@ import Foundation
 struct Stocks: Codable {
     let date: String
     let open: Double
-    let high: Double
-    let low: Double
+//    let high: Double
+//    let low: Double
     let close: Double
-    let label: String
+//    let label: String
+    let change: Double
 }
 
-func filterDayMonthYear()  {
-    
-}
+
