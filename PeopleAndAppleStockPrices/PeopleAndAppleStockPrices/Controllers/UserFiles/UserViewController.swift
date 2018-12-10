@@ -9,7 +9,11 @@
 import UIKit
 
 class UserViewController: UIViewController {
-    var chosenUsers = [User]()
+    var chosenUsers = [User]() {
+        didSet {
+            userTableView.reloadData()
+        }
+    }
     @IBOutlet weak var userTableView: UITableView!
     @IBOutlet weak var userSearchBar: UISearchBar!
     
@@ -68,5 +72,18 @@ extension UserViewController: UISearchBarDelegate {
 //        }
 
         
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        loadData()
+        
+        if searchText == "" {
+            return self.chosenUsers.sort(by: {($0.name.last, $0.name.first) < ($1.name.last, $1.name.first)})
+
+        } else {
+            chosenUsers = chosenUsers.filter{ (user: User) -> Bool in
+                let fullName = "\(user.name.first) \(user.name.last)".lowercased()                
+                return fullName.contains(searchText.lowercased())
+            }
+        }
     }
 }
