@@ -14,8 +14,6 @@ class StockViewController: UIViewController {
             stockTableView.reloadData()
         }
     }
-    var array = [[String]]()
-    var arrayYear = [[String]]()
     var month = [String]()
     var stocks = [[AppleStockInfo]]()
     var stockDate = ""
@@ -44,10 +42,9 @@ class StockViewController: UIViewController {
             }
         }
         for i in 0..<stockInfo.count {
-            array.append(stockInfo[i].label.components(separatedBy: " "))
-            arrayYear.append(stockInfo[i].date.components(separatedBy: "-"))
-            if !month.contains("\(array[i][0]) \(arrayYear[i][0])") {
-                month.append("\(array[i][0]) \(arrayYear[i][0])")
+            let monthYear = "\(stockInfo[i].label.components(separatedBy: " ")[0]) \(stockInfo[i].date.components(separatedBy: "-")[0])"
+            if !month.contains(monthYear) {
+                month.append(monthYear)
                 stocks.append([])
                 average.append([])
             }

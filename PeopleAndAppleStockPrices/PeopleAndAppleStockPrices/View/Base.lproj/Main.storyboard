@@ -212,6 +212,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Og8-Fr-09k" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mTy-58-nqL">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -262,6 +263,7 @@
                             <constraint firstItem="0jW-Qu-0q1" firstAttribute="baseline" secondItem="oS1-I2-q4H" secondAttribute="baseline" id="7q5-o9-n8C"/>
                             <constraint firstItem="JJ3-LK-A6W" firstAttribute="bottom" secondItem="0jW-Qu-0q1" secondAttribute="bottom" constant="36" id="8DC-eh-a7m"/>
                             <constraint firstItem="JJ3-LK-A6W" firstAttribute="trailing" secondItem="oS1-I2-q4H" secondAttribute="trailing" constant="200" id="CpH-U6-F4u"/>
+                            <constraint firstItem="0jW-Qu-0q1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oS1-I2-q4H" secondAttribute="trailing" constant="8" symbolic="YES" id="D1V-Nc-tMh"/>
                             <constraint firstItem="dE3-yx-NXS" firstAttribute="leading" secondItem="JJ3-LK-A6W" secondAttribute="leading" constant="11" id="D42-ss-XHO"/>
                             <constraint firstItem="0jW-Qu-0q1" firstAttribute="height" secondItem="oS1-I2-q4H" secondAttribute="height" id="E1c-lX-71c"/>
                             <constraint firstItem="0jW-Qu-0q1" firstAttribute="width" secondItem="oS1-I2-q4H" secondAttribute="width" id="G40-JA-LTc"/>
