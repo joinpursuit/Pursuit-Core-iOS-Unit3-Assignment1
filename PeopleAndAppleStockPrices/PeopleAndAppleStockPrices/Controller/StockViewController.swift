@@ -16,7 +16,6 @@ class StockViewController: UIViewController {
     }
     var month = [String]()
     var stocks = [[AppleStockInfo]]()
-    var stockDate = ""
     var average = [[Double]]()
     @IBOutlet weak var stockTableView: UITableView!
     
