@@ -39,7 +39,9 @@ class PeopleViewController: UIViewController {
         if let data = try? Data.init(contentsOf: urlObject) {
             do {
                 let peopleSearchData = try JSONDecoder().decode(Person.searchData.self, from: data)
-                people = peopleSearchData.results
+                people = peopleSearchData.results.sorted { (person1, person2) -> Bool in
+                    return person1.name.first < person2.name.first
+                }
             } catch {
                 print(error)
             }

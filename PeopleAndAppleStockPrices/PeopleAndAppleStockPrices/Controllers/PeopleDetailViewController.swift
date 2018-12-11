@@ -23,23 +23,29 @@ class PeopleDetailViewController: UIViewController {
     }
     
     func loadPage() {
-        //???Why this doesn't work?
-        //personImage.image = Brain.urlToImage(person.picture.large)
-        DispatchQueue.global().async {
-            //???why I need to put self in do-catch function?
-            do {
-                let imageData = try Data(contentsOf: self.person.picture.large)
-                DispatchQueue.main.async {
-                    self.personImage.image = UIImage(data: imageData)
-                }
-            } catch {
-                print("image URL Error!")
-            }
-        }
-        
         personName.text = "\(person.name.first.capitalized) \(person.name.last.capitalized)"
         personEmail.text = person.email
         personCell.text = person.cell
+        personImage.image = Brain.urlStringToImage(person.picture.large)
+        
+        
+//        //???Why this doesn't work?
+//        //personImage.image = Brain.urlToImage(person.picture.large)
+//        DispatchQueue.global().async {
+//            //???why I need to put self in do-catch function?
+//            do {
+//                guard let myImageURL = URL.init(string: self.person.picture.large) else { return }
+//
+//                let imageData = try Data(contentsOf: myImageURL)
+//                DispatchQueue.main.async {
+//                    self.personImage.image = UIImage(data: imageData)
+//                }
+//            } catch {
+//                print("image URL Error!")
+//            }
+//        }
+        
+
     }
 
 

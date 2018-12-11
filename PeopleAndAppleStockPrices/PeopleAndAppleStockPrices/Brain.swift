@@ -8,38 +8,43 @@
 
 import UIKit
 
-//DispatchQueue.global().async {
-//    do {    //"try" keyword means try this. If it fails, catch it.
-//        let imageData = try Data(contentsOf: movie.artworkUrl100)
-//
-//        //need to dispatch back to main thread
-//        //create an image from imageData
-//        DispatchQueue.main.async {
-//            cell.imageView?.image = UIImage(data: imageData)
-//        }
-//    } catch {
-//        print("contents of url error: \(error)")
-//    }
-//}
-
 struct Brain {
     
-    static func urlToImage(_ urlLink: URL) -> UIImage! {
-        
-        var image = UIImage.init(named: "profileImage")
-        
-        DispatchQueue.global().async {
-            do {
-                let imageData = try Data(contentsOf: urlLink)
-                DispatchQueue.main.async {
-                    image = UIImage(data: imageData)!
-                }
-            } catch {
-                print("image URL Error!")
-            }
+    static var months = [1:"January", 2:"February", 3:"March", 4:"April", 5:"May", 6:"June", 7:"July", 8:"August", 9:"September", 10:"October", 11:"November", 12:"December"]
+    
+    static func urlStringToImage(_ urlLink: String) -> UIImage? {
+
+        let defaultImg = UIImage.init(named: "profileImage")
+        guard let myImageURL = URL.init(string: urlLink) else { return defaultImg }
+
+        do {
+            let imageData = try Data(contentsOf: myImageURL)
+            return UIImage(data: imageData)
+        } catch {
+            print("image URL Error!")
+            return defaultImg
         }
-        
-        return image
+    }
+    
+//    static func urlStringToImage(_ urlLink: String) -> UIImage? {
+//
+//        let defaultImg = UIImage.init(named: "profileImage")
+//        guard let myImageURL = URL.init(string: urlLink) else { return defaultImg }
+//
+//
+//        do {
+//            let imageData = try Data(contentsOf: myImageURL)
+//            return UIImage(data: imageData)
+//        } catch {
+//            print("image URL Error!")
+//            return defaultImg
+//        }
+//    }
+    
+    static func averageOfNums(_ numbers: [Double]) -> Double {
+        let sum = numbers.reduce(0) {$0 + $1}
+        let average = sum / Double(numbers.count)
+        return Double(Int(average * 100) / 100)
     }
     
 }

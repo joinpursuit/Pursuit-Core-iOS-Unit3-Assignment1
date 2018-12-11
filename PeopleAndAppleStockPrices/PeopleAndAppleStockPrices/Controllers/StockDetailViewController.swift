@@ -18,14 +18,17 @@ class StockDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //set opening price
-        //set closing price
-        
-        
-        //compare opening & closing price to set 1) img  2) background color
-            //increase = green color, cat image
-            //decrease = red color, bear image
 
+        openingPrice.text = "Open: $\(stockDay.open)"
+        closingPrice.text = "Close: $\(stockDay.close)"
+        
+        if stockDay.close > stockDay.open {
+            stockChangeImg.image = UIImage.init(named: "catThumbsUp")
+            self.view.backgroundColor = .green
+        } else {
+            self.view.backgroundColor = .red
+            stockChangeImg.image = UIImage.init(named: "bearThumbsDown")
+        }
     }
     
 }
