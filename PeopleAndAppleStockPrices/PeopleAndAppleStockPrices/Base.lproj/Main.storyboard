@@ -49,7 +49,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="3ak-18-rRh" kind="show" id="cl7-zw-0Ng"/>
+                                            <segue destination="3ak-18-rRh" kind="show" id="fG9-A9-KNW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

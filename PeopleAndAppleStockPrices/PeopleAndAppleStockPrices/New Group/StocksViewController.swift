@@ -109,6 +109,11 @@ class StocksViewController: UIViewController {
             }
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? StocksDetailViewController, let indexPath = stocksTableView.indexPathForSelectedRow else { return }
+        let stockToSend = stocksByMonthAndYear[indexPath.section][indexPath.row]
+        destination.stock = stockToSend
+    }
 }
 
 extension StocksViewController: UITableViewDataSource {
@@ -117,7 +122,7 @@ extension StocksViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = stocksTableView.dequeueReusableCell(withIdentifier: "stocksCell", for: indexPath)
         let stockToSet = stocksByMonthAndYear[indexPath.section][indexPath.row]
         cell.textLabel?.text = stockToSet.date
         cell.detailTextLabel?.text = stockToSet.open.description
