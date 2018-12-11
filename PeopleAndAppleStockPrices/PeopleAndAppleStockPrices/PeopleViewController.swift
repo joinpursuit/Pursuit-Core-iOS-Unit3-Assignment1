@@ -11,14 +11,21 @@ import UIKit
 class PeopleViewController: UIViewController {
     
     
+    @IBOutlet weak var peopleSearchBar: UISearchBar!
     @IBOutlet weak var peopleTableView: UITableView!
     
     var sortedPeople = [ResultsWrapper]()
-    var peopleList = [ResultsWrapper]()
+    
+    var peopleList = [ResultsWrapper]() {
+        didSet {
+            peopleTableView.reloadData()
+        }
+    }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     peopleTableView.dataSource = self
+    peopleSearchBar.delegate = self
     loadData()
   }
     
@@ -29,6 +36,7 @@ class PeopleViewController: UIViewController {
                 do {
                     let people = try JSONDecoder().decode(People.self, from: data)
                     peopleList = people.results
+                    
                 } catch {
                     print(error)
                 }
@@ -59,5 +67,24 @@ extension PeopleViewController: UITableViewDataSource {
         cell.textLabel?.text = fullName
         cell.detailTextLabel?.text = peopleToSet.location.state.capitalized
         return cell
+    }
+}
+
+extension PeopleViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if let path = Bundle.main.path(forResource: "userinfo", ofType: "json") {
+            let myUrl = URL.init(fileURLWithPath: path)
+            if let data = try? Data.init(contentsOf: myUrl) {
+                do {
+                    let people = try JSONDecoder().decode(People.self, from: data)
+                    peopleList = people.results.filter {$0.name.first.contains(searchText.lowercased())} + people.results.filter {$0.name.last.contains(searchText.lowercased())}
+                    if searchText.isEmpty {
+                        peopleList = people.results
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
 }

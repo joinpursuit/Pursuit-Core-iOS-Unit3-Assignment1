@@ -69,6 +69,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kbj-tV-40e"/>
                     <connections>
+                        <outlet property="peopleSearchBar" destination="wF4-k4-jxx" id="Iat-j1-8FB"/>
                         <outlet property="peopleTableView" destination="9O0-Cz-dl0" id="K8f-M9-bS6"/>
                     </connections>
                 </viewController>
@@ -143,6 +144,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NZQ-c9-Alw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NU6-XE-YpA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
