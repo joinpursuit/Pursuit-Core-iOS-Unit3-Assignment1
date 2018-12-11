@@ -12,14 +12,19 @@ class ContactsViewController: UIViewController {
   
   private var contacts = [ResultsToSet]()
   
+  @IBOutlet weak var contactsSearchBar: UISearchBar!
+  
   @IBOutlet weak var contactsTableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "Users"
     loadContacts()
     dump(contacts)
 
     contactsTableView.dataSource = self
+    contactsSearchBar.delegate = self
+    
   }
   
   func loadContacts(){
@@ -29,7 +34,17 @@ class ContactsViewController: UIViewController {
         do{
           let contactToSet = try JSONDecoder().decode(User.self, from: data)
           
-          contacts = contactToSet.results
+          contacts = contactToSet.results.sorted{
+          
+          $0.name.fullName < $1.name.fullName
+          
+          
+          }
+          
+          
+          
+          
+          
        
         } catch {
           print(error)
@@ -56,10 +71,16 @@ extension ContactsViewController: UITableViewDataSource{
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = contactsTableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
     let currentContact = contacts[indexPath.row]
-    cell.textLabel?.text = currentContact.name.getFullName()
+    cell.textLabel?.text = currentContact.name.fullName
     cell.detailTextLabel?.text = currentContact.location.city
     
     return cell
+  }
+}
+
+extension ContactsViewController: UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    print()
   }
 }
 

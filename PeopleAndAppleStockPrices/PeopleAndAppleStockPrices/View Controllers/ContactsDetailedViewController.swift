@@ -14,8 +14,8 @@ class ContactsDetailedViewController: UIViewController {
 
   @IBOutlet weak var contactImage: UIImageView!
   @IBOutlet weak var fullName: UILabel!
-  @IBOutlet weak var cellPhone: UILabel!
   @IBOutlet weak var email: UILabel!
+  @IBOutlet weak var address: UILabel!
   
   
     override func viewDidLoad() {
@@ -24,7 +24,12 @@ class ContactsDetailedViewController: UIViewController {
     }
   
   func setContactDetailedView(){
-   fullName.text = detailedContactInfo.name.getFullName()
+   fullName.text = detailedContactInfo.name.fullName
+    address.text = detailedContactInfo.location.fullAddress()
+    email.text = "email: \(detailedContactInfo.email)"
+    
+    contactImage.image = UIImage(named: "profileImage")
+    
     
   }
 

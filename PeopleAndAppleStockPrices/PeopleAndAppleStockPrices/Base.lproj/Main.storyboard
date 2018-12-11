@@ -204,6 +204,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="1sw-0V-FOZ"/>
                     <navigationItem key="navigationItem" id="aA6-Kd-r6c"/>
                     <connections>
+                        <outlet property="contactsSearchBar" destination="QNo-PR-fsS" id="jLr-Nl-Klw"/>
                         <outlet property="contactsTableView" destination="jzf-za-oNm" id="7h6-Yn-lRa"/>
                     </connections>
                 </viewController>
@@ -262,10 +263,10 @@
                         <viewLayoutGuide key="safeArea" id="2rf-Ge-eB6"/>
                     </view>
                     <connections>
-                        <outlet property="cellPhone" destination="I5m-na-aSm" id="ll3-4V-YmF"/>
+                        <outlet property="address" destination="I5m-na-aSm" id="0Qd-UV-4P5"/>
                         <outlet property="contactImage" destination="ZNo-8i-4wE" id="e52-8A-jVE"/>
-                        <outlet property="email" destination="z20-T1-lwf" id="Mar-Eh-Hu2"/>
-                        <outlet property="fullName" destination="BQi-Ug-LVv" id="DKI-2c-LHX"/>
+                        <outlet property="email" destination="z20-T1-lwf" id="pEu-00-LXg"/>
+                        <outlet property="fullName" destination="BQi-Ug-LVv" id="bHf-nE-KM9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atP-K2-GVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
