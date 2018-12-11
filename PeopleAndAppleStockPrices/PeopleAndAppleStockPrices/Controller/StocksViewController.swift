@@ -75,55 +75,55 @@ extension StocksViewController: UITableViewDataSource{
         let stocks = filterByDates()[section]
         for stock in stocks{
             if stock.date.contains("2016-12"){
-                myString = "December - 2016 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "December - 2016 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-01"){
-                myString = "January - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "January - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-02"){
-                myString = "February - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "February - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-03"){
-                myString = "March - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "March - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-04"){
-                myString = "April - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "April - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-05"){
-                myString = "May - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "May - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-06"){
-                myString = "June - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "June - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-07"){
-                myString = "July - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "July - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-08"){
-                myString = "August - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "August - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-09"){
-                myString = "September - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "September - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-10"){
-                myString = "October - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "October - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-11"){
-                myString = "November - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "November - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-12"){
-                myString = "December - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "December - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
            } else if stock.date.contains("2018-01"){
-                myString = "January - 2018 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "January - 2018 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2018-02"){
-                myString = "February - 2018 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "February - 2018 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2018-03"){
-                myString = "March - 2018 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "March - 2018 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2018-04"){
-                myString = "April - 2018 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "April - 2018 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2018-05"){
-                myString = "May - 2018 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "May - 2018 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2018-06"){
-                myString = "June - 2018 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "June - 2018 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2018-07"){
-                myString = "July - 2018 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "July - 2018 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2018-08"){
-                myString = "August - 2018 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "August - 2018 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2018-09"){
-                myString = "September - 2018 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "September - 2018 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-10"){
-                myString = "October - 2018 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "October - 2018 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2018-11"){
-                myString = "November - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "November - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
             } else if stock.date.contains("2017-12"){
-                myString = "December - 2017 Average: $\(Double(round(100 * stocks.reduce(0){$0 + $1.open / Double(stocks.count)})/100))"
+                myString = "December - 2017 Average: $\(Reduce.reduce(stocks: stocks))"
         }
             
         
