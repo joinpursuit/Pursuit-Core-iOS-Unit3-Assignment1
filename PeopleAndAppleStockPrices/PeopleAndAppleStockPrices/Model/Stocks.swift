@@ -13,3 +13,13 @@ struct Stocks: Codable {
     let open: Double
     let close: Double
 }
+
+struct calculate {
+    static func monthlyAverage(from arr: [Stocks]) -> Double {
+        var returnDouble: Double = 0
+        for element in arr {
+            returnDouble += element.open
+        }
+        return returnDouble/Double(arr.count)
+    }
+}

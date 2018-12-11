@@ -131,7 +131,7 @@ extension StocksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
             case 0:
-                return "December 2016: Average:"
+                return "December 2016 ~ Average: $\(String(format: "%.2f", calculate.monthlyAverage(from: stocksByMonthAndYear[0])))"
             case 1:
             return "January 2017: Average"
             case 2:

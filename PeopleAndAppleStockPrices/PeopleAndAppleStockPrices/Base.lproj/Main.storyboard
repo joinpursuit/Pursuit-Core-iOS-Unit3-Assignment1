@@ -60,7 +60,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QJk-VX-SE0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3HD-xs-QpT"/>
+                    <navigationItem key="navigationItem" title="Stocks" id="3HD-xs-QpT"/>
                     <connections>
                         <outlet property="stocksTableView" destination="gMc-6F-W79" id="arx-XF-A1X"/>
                     </connections>
@@ -89,13 +89,13 @@
                                     <constraint firstAttribute="width" secondItem="tLi-C4-Apl" secondAttribute="height" multiplier="3:2" id="uLA-50-nKb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closing Price: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yk3-5y-KXw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Close: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yk3-5y-KXw">
                                 <rect key="frame" x="11" y="496" width="392" height="26"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opening Price: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9U-Mm-yAl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9U-Mm-yAl">
                                 <rect key="frame" x="11" y="448" width="392" height="26"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -188,7 +188,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U8P-9a-u9B"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uDZ-rU-Fk0"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="uDZ-rU-Fk0"/>
                     <connections>
                         <outlet property="contactsSeachBar" destination="gpY-5r-KVR" id="1Gp-f8-uKh"/>
                         <outlet property="contactsTableView" destination="soh-cf-tLc" id="Czh-55-TX8"/>
