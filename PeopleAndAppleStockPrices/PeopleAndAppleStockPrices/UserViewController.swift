@@ -9,22 +9,25 @@
 import UIKit
 
 class UserViewController: UIViewController {
-    var people = [User]()
-    var searchActive : Bool = false
-    var filtered:[User] = []
+    var people = [User]() {
+        didSet {
+            userTableView.reloadData()
+        }
+    }
 
     @IBOutlet weak var userTableView: UITableView!
     
     @IBOutlet weak var userSearchBar: UISearchBar!
     override func viewDidLoad() {
     super.viewDidLoad()
-        loadData()
+        people = loadData()
         userTableView.dataSource = self
         userSearchBar.delegate = self
 
   }
-    func loadData() {
+    func loadData() -> [User] {
         
+        var results = [User]()
         if let path = Bundle.main.path(forResource: "userinfo", ofType: "json") {
             
             let myUrl = URL.init(fileURLWithPath: path)
@@ -32,12 +35,13 @@ class UserViewController: UIViewController {
             if let data = try? Data.init(contentsOf: myUrl) {
                 do {
                     let newPeople = try JSONDecoder().decode(Profile.self, from: data)
-                    people = newPeople.results.sorted { $0.name.first < $1.name.first }
+                    results = newPeople.results.sorted { $0.name.first < $1.name.first }
                 } catch {
                     print(error)
                 }
             }
         }
+        return results
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? UserDetailViewController,
@@ -46,9 +50,6 @@ class UserViewController: UIViewController {
         destination.profileView = personToSend
     }
 }
-
-
-
 
 extension UserViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,46 +80,16 @@ extension UserViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return people.count
     }
-    
-//            let filteredFullName = filtered[indexPath.row]
-//            if(searchActive){
-//                cell.textLabel?.text = filteredFullName.name.first
-//            } else {
-//                cell.textLabel?.text = fullNameSet
-//            }
-
-
 }
 
 extension UserViewController: UISearchBarDelegate {
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchActive = true
-    }
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchActive = false
-        
-    }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false
-    }
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false
-    }
-    //
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filtered = people.filter{$0.name.first.contains(searchText)}
-        if filtered.count == 0{
-            searchActive = false;
+        people = loadData()
+        if searchText == "" {
+            return
         } else {
-            searchActive = true;
+            people = loadData().filter{$0.name.first.lowercased().contains(searchText.lowercased())}
         }
-        self.userTableView.reloadData()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }
-
-
-
