@@ -11,6 +11,7 @@ import UIKit
 class StockDetailViewController: UIViewController {
     
     @IBOutlet weak var stockChangeImg: UIImageView!
+    @IBOutlet weak var stockDate: UILabel!
     @IBOutlet weak var openingPrice: UILabel!
     @IBOutlet weak var closingPrice: UILabel!
     
@@ -19,8 +20,9 @@ class StockDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        openingPrice.text = "Open: $\(stockDay.open)"
-        closingPrice.text = "Close: $\(stockDay.close)"
+        openingPrice.text = "Open: $\(String(format: "%.2f", stockDay.open))"
+        closingPrice.text = "Close: $\(String(format: "%.2f", stockDay.close))"
+        stockDate.text = stockDay.date
         
         if stockDay.close > stockDay.open {
             stockChangeImg.image = UIImage.init(named: "catThumbsUp")

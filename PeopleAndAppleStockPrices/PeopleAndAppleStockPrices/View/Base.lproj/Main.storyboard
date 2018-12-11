@@ -200,9 +200,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X2P-wr-fBq"/>
                     </view>
-                    <connections>
-                        <outlet property="stockTableView" destination="GVm-t5-IXP" id="CKe-tF-nmz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJH-XN-reM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,32 +213,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ScD-f7-gLK">
-                                <rect key="frame" x="16" y="85" width="343" height="226"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ScD-f7-gLK">
+                                <rect key="frame" x="30" y="168" width="315" height="315"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ScD-f7-gLK" secondAttribute="height" multiplier="1:1" id="6vf-g7-apZ"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOc-1y-faA">
-                                <rect key="frame" x="75" y="422" width="62" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open: $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOc-1y-faA">
+                                <rect key="frame" x="30" y="543" width="157.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Close: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2F-Wd-Xer">
-                                <rect key="frame" x="237" y="419" width="63" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Close: $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2F-Wd-Xer">
+                                <rect key="frame" x="187.5" y="543" width="157.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir1-4d-OjD">
+                                <rect key="frame" x="20" y="94" width="335" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MOc-1y-faA" firstAttribute="leading" secondItem="alb-xW-lWr" secondAttribute="leading" constant="30" id="21G-ew-bbc"/>
+                            <constraint firstItem="alb-xW-lWr" firstAttribute="trailing" secondItem="ir1-4d-OjD" secondAttribute="trailing" constant="20" id="8dV-9A-UKp"/>
+                            <constraint firstItem="H2F-Wd-Xer" firstAttribute="width" secondItem="MOc-1y-faA" secondAttribute="width" id="BnV-3g-ZvK"/>
+                            <constraint firstItem="ir1-4d-OjD" firstAttribute="top" secondItem="alb-xW-lWr" secondAttribute="top" constant="30" id="Kd4-JG-QTF"/>
+                            <constraint firstItem="H2F-Wd-Xer" firstAttribute="leading" secondItem="MOc-1y-faA" secondAttribute="trailing" id="SGB-s7-JXg"/>
+                            <constraint firstItem="H2F-Wd-Xer" firstAttribute="height" secondItem="MOc-1y-faA" secondAttribute="height" id="WfQ-gz-luq"/>
+                            <constraint firstItem="H2F-Wd-Xer" firstAttribute="centerY" secondItem="MOc-1y-faA" secondAttribute="centerY" id="dlp-Vb-ulJ"/>
+                            <constraint firstItem="H2F-Wd-Xer" firstAttribute="top" secondItem="ScD-f7-gLK" secondAttribute="bottom" constant="60" id="fwK-kX-Xvu"/>
+                            <constraint firstItem="MOc-1y-faA" firstAttribute="top" secondItem="ScD-f7-gLK" secondAttribute="bottom" constant="60" id="in7-mD-bG8"/>
+                            <constraint firstItem="alb-xW-lWr" firstAttribute="trailing" secondItem="H2F-Wd-Xer" secondAttribute="trailing" constant="30" id="lAs-bI-RD0"/>
+                            <constraint firstItem="H2F-Wd-Xer" firstAttribute="leading" secondItem="MOc-1y-faA" secondAttribute="trailing" id="nvX-2c-gD5"/>
+                            <constraint firstItem="ScD-f7-gLK" firstAttribute="top" secondItem="ir1-4d-OjD" secondAttribute="bottom" constant="50" id="pPu-sf-6QC"/>
+                            <constraint firstItem="ir1-4d-OjD" firstAttribute="leading" secondItem="alb-xW-lWr" secondAttribute="leading" constant="20" id="sgB-71-dra"/>
+                            <constraint firstItem="ScD-f7-gLK" firstAttribute="leading" secondItem="alb-xW-lWr" secondAttribute="leading" constant="30" id="uWW-j1-Yet"/>
+                            <constraint firstItem="alb-xW-lWr" firstAttribute="trailing" secondItem="ScD-f7-gLK" secondAttribute="trailing" constant="30" id="vzz-3x-kAh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="alb-xW-lWr"/>
                     </view>
                     <connections>
                         <outlet property="closingPrice" destination="H2F-Wd-Xer" id="54O-3g-neE"/>
                         <outlet property="openingPrice" destination="MOc-1y-faA" id="tKz-I3-Kit"/>
                         <outlet property="stockChangeImg" destination="ScD-f7-gLK" id="RAx-Y5-UCn"/>
+                        <outlet property="stockDate" destination="ir1-4d-OjD" id="Fod-Jf-VHY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruX-DB-UJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,6 +321,9 @@
                         <viewLayoutGuide key="safeArea" id="9GC-Wp-U07"/>
                     </view>
                     <navigationItem key="navigationItem" id="4Tr-xr-M6F"/>
+                    <connections>
+                        <outlet property="stockTableView" destination="Itc-9S-csA" id="www-b0-Uo1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mba-fr-ZGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

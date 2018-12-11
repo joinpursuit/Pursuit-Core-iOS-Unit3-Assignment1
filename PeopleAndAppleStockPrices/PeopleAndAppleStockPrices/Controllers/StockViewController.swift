@@ -13,19 +13,29 @@ class StockViewController: UIViewController {
     @IBOutlet weak var stockTableView: UITableView!
     
     var stockDays = [StockDay]()
-    var stockDaysByYear = [[StockDay]]()
-    
-    //stockDaysByMonth is what I need
     var stockDaysByMonth = [[StockDay]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         stockTableView.dataSource = self
         
-        loadData()
+        StockAPIAgent.getAllStocks { (stockDays, error) in
+            if let stockDays = stockDays {
+                self.stockDays = stockDays
+            }
+            
+            if let error = error {
+                print(error)
+            }
+        }
         
+        filterStockDays()
+    }
+    
+    private func filterStockDays() {
         //2
         //filter by year
+        var stockDaysByYear = [[StockDay]]()
         for year in 2016...2018 {
             stockDaysByYear.append(stockDays.filter{ (stockDay) -> Bool in
                 let currentDate = stockDay.date.components(separatedBy: "-")
@@ -35,53 +45,20 @@ class StockViewController: UIViewController {
         }
         
         //filter by month
-        for yearStocks in stockDaysByYear {
+        stockDaysByYear.forEach { (currentYearStocks) in
             for month in 1...12 {
-                let stockArr = yearStocks.filter { (stockDay) -> Bool in
+                let stockArr = currentYearStocks.filter { (stockDay) -> Bool in
                     let currentDate = stockDay.date.components(separatedBy: "-")
                     let currentMonth = Int(currentDate[1])!
                     return month == currentMonth
                 }
                 
-                if stockArr.isEmpty {
-                    continue
-                }
-                
+                if stockArr.isEmpty { continue }
                 stockDaysByMonth.append(stockArr)
             }
         }
-        
     }
     
-    //1
-    func loadData() {
-        //get path(String) with guard let
-        guard let path = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else {
-            print("path not found")
-            return
-        }
-        //convert to URL and turn it into data in guard let (URL error)
-        let url = URL.init(fileURLWithPath: path)
-        
-        if let data = try? Data.init(contentsOf: url) {
-            do {
-                self.stockDays = try JSONDecoder().decode([StockDay].self, from: data)
-            } catch {
-                print(error)
-            }
-        }
-        //???Why this doesn't work
-//        guard let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: path)) else {
-//            print("Bad URL")
-//            return
-//        }
-//
-//        do {
-//            self.stockDays = try JSONDecoder().decode([StockDay].self, from: data)
-//        } catch {
-//            print(error)
-//        }
-    }
     
     //6
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -91,7 +68,7 @@ class StockViewController: UIViewController {
             else { return }
         
         let backItem = UIBarButtonItem()
-        backItem.title = "Stock"
+        backItem.title = "Stocks"
         navigationItem.backBarButtonItem = backItem
         
         let stockDay = stockDaysByMonth[indexPath.section][indexPath.row]
@@ -107,6 +84,7 @@ extension StockViewController: UITableViewDataSource {
         return stockDaysByMonth.count
     }
     
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         //calculate average opening Prices
         let currentMonthOpeningPrices = stockDaysByMonth[section].map { (stockDay) -> Double in
@@ -120,23 +98,25 @@ extension StockViewController: UITableViewDataSource {
         let year = date[0]
         
         //set section title
-        return "\(Brain.months[month]!) - \(year) Average: $\(averageOpeningPrice)"
+        return "\(Brain.months[month]!) - \(year): Average: $\(averageOpeningPrice)"
     }
+    
     
     //4
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stockDaysByMonth[section].count
     }
     
+    
     //5
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //textLabel = date
-        //detailTextLabel = opening price
+
         let cell = stockTableView.dequeueReusableCell(withIdentifier: "StockCell", for: indexPath)
         let stockDay = stockDaysByMonth[indexPath.section][indexPath.row]
+        let openingPrice = String(format: "%.2f" ,stockDay.open)
         
         cell.textLabel?.text = stockDay.date
-        cell.detailTextLabel?.text = "$\(stockDay.open)"
+        cell.detailTextLabel?.text = "$\(openingPrice)"
         
         return cell
     }
