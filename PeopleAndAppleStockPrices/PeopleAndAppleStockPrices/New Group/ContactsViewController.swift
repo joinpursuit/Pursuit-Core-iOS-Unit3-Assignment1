@@ -58,7 +58,6 @@ class ContactsViewController: UIViewController {
         let personToSend = sortedContacts[contactIndexPath.row]
         destination.person = personToSend
     }
-    
 }
 
 extension ContactsViewController: UITableViewDataSource {
