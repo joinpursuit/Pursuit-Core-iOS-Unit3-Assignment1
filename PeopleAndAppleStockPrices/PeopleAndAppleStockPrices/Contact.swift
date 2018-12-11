@@ -8,7 +8,23 @@
 
 import Foundation
 
-
-struct Conact: Codable {
+struct Contact: Codable {
+    let results:[ContactInfo]
+}
+struct ContactInfo: Codable {
+    let name: Name
+    let location: Location
+    let email: String
+}
+struct Name: Codable {
+    let first: String
+    let last: String
     
+    public var fullName: String {
+        return first.capitalized + " " +  last.capitalized
+    }
+    
+}
+struct Location: Codable {
+    let state: String
 }

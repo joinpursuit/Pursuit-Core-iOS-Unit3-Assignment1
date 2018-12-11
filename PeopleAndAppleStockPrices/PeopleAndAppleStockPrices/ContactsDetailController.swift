@@ -9,7 +9,8 @@
 import UIKit
 
 class ContactsDetailController: UIViewController {
-
+var contacts = [ContactInfo]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
