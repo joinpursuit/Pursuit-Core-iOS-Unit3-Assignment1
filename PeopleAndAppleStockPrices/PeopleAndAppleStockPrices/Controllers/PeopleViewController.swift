@@ -24,35 +24,14 @@ class PeopleViewController: UIViewController {
         peopleTableView.dataSource = self
         peopleSearchBar.delegate = self
         
-        loadData()
-    }
-    
-    //get data from JSON and assigned to variable people
-    func loadData() {
-    
-        guard let pathInString = Bundle.main.path(forResource: "userinfo", ofType: "json") else {
-            print("path not found")
-            return
-        }
-        let urlObject = URL.init(fileURLWithPath: pathInString)
+        people = PeopleAPIClient.getPeople()
         
-        if let data = try? Data.init(contentsOf: urlObject) {
-            do {
-                let peopleSearchData = try JSONDecoder().decode(Person.searchData.self, from: data)
-                people = peopleSearchData.results.sorted { (person1, person2) -> Bool in
-                    return person1.name.first < person2.name.first
-                }
-            } catch {
-                print(error)
-            }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = peopleTableView.indexPathForSelectedRow,
             let PeopleDetailVC = segue.destination as? PeopleDetailViewController else { return }
         
-        //change Navigation BackButton Text
         let backItem = UIBarButtonItem()
         backItem.title = "People"
         navigationItem.backBarButtonItem = backItem
@@ -86,19 +65,20 @@ extension PeopleViewController: UITableViewDataSource {
 extension PeopleViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        loadData()
         
+        people = PeopleAPIClient.getPeople()
         if searchText == "" {
             return
         } else {
             people = people.filter{ (person: Person) -> Bool in
                 let fullName = "\(person.name.first) \(person.name.last)".lowercased()
-                print("\(fullName.prefix(searchText.count)) == \(searchText.lowercased())")
-                
                 return fullName.prefix(searchText.count) == searchText.lowercased()
             }
         }
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
     
 }

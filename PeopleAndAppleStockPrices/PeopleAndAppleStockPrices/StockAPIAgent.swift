@@ -38,16 +38,5 @@ struct StockAPIAgent {
             completionHandler(nil, .badDecoding(error))
         }
         
-        //???Why this doesn't work
-//                guard let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: path)) else {
-//                    print("Bad URL")
-//                    return
-//                }
-        //
-        //        do {
-        //            self.stockDays = try JSONDecoder().decode([StockDay].self, from: data)
-        //        } catch {
-        //            print(error)
-        //        }
     }
 }

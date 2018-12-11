@@ -26,26 +26,17 @@ class PeopleDetailViewController: UIViewController {
         personName.text = "\(person.name.first.capitalized) \(person.name.last.capitalized)"
         personEmail.text = person.email
         personCell.text = person.cell
-        personImage.image = Brain.urlStringToImage(person.picture.large)
         
+        Brain.urlStringToImage(person.picture.large, completionHandler: { (error, image) in
+            if let error = error {
+                print(error)
+            } else if let image = image {
+                DispatchQueue.main.async {
+                    self.personImage.image = image
+                }
+            }
+        })
         
-//        //???Why this doesn't work?
-//        //personImage.image = Brain.urlToImage(person.picture.large)
-//        DispatchQueue.global().async {
-//            //???why I need to put self in do-catch function?
-//            do {
-//                guard let myImageURL = URL.init(string: self.person.picture.large) else { return }
-//
-//                let imageData = try Data(contentsOf: myImageURL)
-//                DispatchQueue.main.async {
-//                    self.personImage.image = UIImage(data: imageData)
-//                }
-//            } catch {
-//                print("image URL Error!")
-//            }
-//        }
-        
-
     }
 
 
