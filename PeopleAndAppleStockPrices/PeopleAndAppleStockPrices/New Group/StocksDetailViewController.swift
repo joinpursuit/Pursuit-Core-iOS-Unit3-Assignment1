@@ -20,8 +20,8 @@ class StocksDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         stocksDateLabel.text = stock.date
-        stocksOpeningLabel.text = "Open: $" + String(format: "%.2f", stock.open.description)
-        stocksClosingLabel.text = "Close: $" + stock.close.description //String.format: "%.2f", stock.close.description)
+        stocksOpeningLabel.text = "Open: $" + String(format: "%.2f", stock.open)
+        stocksClosingLabel.text = "Close: $" + String(format: "%.2f", stock.close)
         if stock.close - stock.open >= 0 {
             stocksImage.image = UIImage(named: "thumbsUp")
             view.backgroundColor = .green
@@ -30,7 +30,4 @@ class StocksDetailViewController: UIViewController {
             view.backgroundColor = .red
         }
     }
-    
-
-
 }

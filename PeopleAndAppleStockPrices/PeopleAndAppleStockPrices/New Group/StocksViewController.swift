@@ -10,7 +10,6 @@ import UIKit
 
 class StocksViewController: UIViewController {
     
-    @IBOutlet weak var stocksSearchBar: UISearchBar!
     @IBOutlet weak var stocksTableView: UITableView!
     
     var stocks: [Stocks] = []
