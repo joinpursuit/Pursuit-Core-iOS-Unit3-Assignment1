@@ -187,6 +187,7 @@
                     <connections>
                         <outlet property="closeLabel" destination="624-ma-pe2" id="f4E-dO-mx0"/>
                         <outlet property="dateLabel" destination="NvH-xE-qaS" id="FRm-L0-mMg"/>
+                        <outlet property="imageView" destination="ZUf-Yy-ahk" id="CS3-fv-xda"/>
                         <outlet property="openLabel" destination="jjS-gs-1el" id="DUK-FY-zLR"/>
                     </connections>
                 </viewController>
