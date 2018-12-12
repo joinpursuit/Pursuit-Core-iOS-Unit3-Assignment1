@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F084AF821BB156400B3CED7 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084AF721BB156400B3CED7 /* ContactViewController.swift */; };
+		1F084AFA21BB15ED00B3CED7 /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084AF921BB15ED00B3CED7 /* StockViewController.swift */; };
+		1F084AFC21BB161400B3CED7 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084AFB21BB161400B3CED7 /* StockDetailViewController.swift */; };
+		1F084AFF21BB1E3700B3CED7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084AFE21BB1E3700B3CED7 /* UserInfo.swift */; };
+		1F084B0121BB218B00B3CED7 /* AppleStockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084B0021BB218B00B3CED7 /* AppleStockInfo.swift */; };
+		1F084B0421BB236D00B3CED7 /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084B0321BB236D00B3CED7 /* PeopleCell.swift */; };
+		1F084B0621BB239700B3CED7 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F084B0521BB239700B3CED7 /* StockCell.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
-		577E5BEE21BA8BA10083EB97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* ViewController.swift */; };
+		577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
 		577E5BF321BA8BA20083EB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF221BA8BA20083EB97 /* Assets.xcassets */; };
 		577E5BF621BA8BA20083EB97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF421BA8BA20083EB97 /* LaunchScreen.storyboard */; };
@@ -17,9 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F084AF721BB156400B3CED7 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		1F084AF921BB15ED00B3CED7 /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+		1F084AFB21BB161400B3CED7 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
+		1F084AFE21BB1E3700B3CED7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		1F084B0021BB218B00B3CED7 /* AppleStockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStockInfo.swift; sourceTree = "<group>"; };
+		1F084B0321BB236D00B3CED7 /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
+		1F084B0521BB239700B3CED7 /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		577E5BED21BA8BA10083EB97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		577E5BF021BA8BA10083EB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		577E5BF221BA8BA20083EB97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		577E5BF521BA8BA20083EB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +53,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F084AFD21BB196400B3CED7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */,
+				1F084AF721BB156400B3CED7 /* ContactViewController.swift */,
+				1F084AF921BB15ED00B3CED7 /* StockViewController.swift */,
+				1F084AFB21BB161400B3CED7 /* StockDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1F084B0221BB220D00B3CED7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F084AFE21BB1E3700B3CED7 /* UserInfo.swift */,
+				1F084B0021BB218B00B3CED7 /* AppleStockInfo.swift */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		577E5BDF21BA8BA10083EB97 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +93,11 @@
 		577E5BEA21BA8BA10083EB97 /* PeopleAndAppleStockPrices */ = {
 			isa = PBXGroup;
 			children = (
-				577E5BED21BA8BA10083EB97 /* ViewController.swift */,
+				1F084B0221BB220D00B3CED7 /* Model */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
+				1F084B0521BB239700B3CED7 /* StockCell.swift */,
+				1F084B0321BB236D00B3CED7 /* PeopleCell.swift */,
+				1F084AFD21BB196400B3CED7 /* Controllers */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
 			);
@@ -159,8 +197,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				577E5BEE21BA8BA10083EB97 /* ViewController.swift in Sources */,
+				1F084B0421BB236D00B3CED7 /* PeopleCell.swift in Sources */,
+				1F084B0121BB218B00B3CED7 /* AppleStockInfo.swift in Sources */,
+				1F084AFF21BB1E3700B3CED7 /* UserInfo.swift in Sources */,
+				1F084AFC21BB161400B3CED7 /* StockDetailViewController.swift in Sources */,
+				577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */,
+				1F084B0621BB239700B3CED7 /* StockCell.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
+				1F084AF821BB156400B3CED7 /* ContactViewController.swift in Sources */,
+				1F084AFA21BB15ED00B3CED7 /* StockViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
