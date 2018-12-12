@@ -10,9 +10,10 @@ import Foundation
 
 struct Stocks: Codable {
     let date: String
-    let open: Double?
-    let close: Double?
+    let open: Double
+    let close: Double
     let vwap: Double?
     let label: String
-
 }
+
+

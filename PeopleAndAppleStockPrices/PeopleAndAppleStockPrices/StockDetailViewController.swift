@@ -21,8 +21,10 @@ class StockDetailViewController: UIViewController {
         super.viewDidLoad()
         set()
         labelDate.text = stocksToSet.date
+        labelOpen.text = stocksToSet.open.description
+        labelClose.text = stocksToSet.close.description
     }
     func set() {
-        
+       
     }
 }

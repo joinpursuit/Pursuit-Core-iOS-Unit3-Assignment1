@@ -23,5 +23,16 @@ class DetailViewControllre: UIViewController {
      labelName.text = resultToSet.name.first.capitalized
      labelCity.text = resultToSet.location.city.capitalized
      labelEmail.text = resultToSet.email
+    loadImage()
+    }
+    func loadImage() {
+        DispatchQueue.global().sync {
+            do{
+             let image = try Data(contentsOf: self.resultToSet.picture.large)
+                self.imageView.image = UIImage(data: image)
+            }catch{
+                print(error)
+            }
+        }
     }
 }
