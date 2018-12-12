@@ -63,7 +63,7 @@ extension ContactViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = peopleTableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
         let personToSet = sortedPeople[indexPath.row]
       cell.textLabel?.text = "\(personToSet.name.last.capitalized)  \(personToSet.name.first.capitalized)"
-        cell.detailTextLabel?.text = personToSet.location.city
+        cell.detailTextLabel?.text = personToSet.location.city.capitalized
 return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -10,15 +10,15 @@ import Foundation
 
 struct StockInformation: Codable {
     var date: String
-    var open: Int
-    var high: Int
-    var low: Int
-    var close: Int
+    var open: Double
+    var high: Double
+    var low: Double
+    var close: Double
     var volume: Int
     var unadjustedVolume: Int
-    var change: Int
-    var changePercent: Int
-    var vwap: Int
+    var change: Double
+    var changePercent: Double
+    var vwap: Double
     var label: String
-    var changeOverTime: String
+    var changeOverTime: Double
 }

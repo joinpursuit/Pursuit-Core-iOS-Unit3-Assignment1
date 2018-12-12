@@ -21,6 +21,12 @@ class PeopleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updatePersonInfo()
+        do {
+            let imageData = try Data(contentsOf: presentPerson.picture.large)
+            personPhoto.image = UIImage(data: imageData)
+        } catch {
+            print(error)
+        }
 
         // Do any additional setup after loading the view.
     }
