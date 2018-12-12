@@ -12,7 +12,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PeopleViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ContactsViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="e8G-UL-sSA" detailTextLabel="eZR-fW-fMB" style="IBUITableViewCellStyleSubtitle" id="mW5-EC-Ebu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactsCell" textLabel="e8G-UL-sSA" detailTextLabel="eZR-fW-fMB" style="IBUITableViewCellStyleSubtitle" id="mW5-EC-Ebu">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mW5-EC-Ebu" id="UtW-ms-ey8">
@@ -68,15 +68,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="m0w-IY-bIR"/>
+                    <connections>
+                        <outlet property="contactsSearchBar" destination="t1V-Cy-RVL" id="ucD-7L-nzi"/>
+                        <outlet property="contactsTableView" destination="m9C-Lp-R6t" id="Ott-zK-F3y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1703.2" y="503.29835082458777"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Detail View Controller-->
         <scene sceneID="55K-2H-Sq4">
             <objects>
-                <viewController id="c0t-hw-krq" sceneMemberID="viewController">
+                <viewController id="c0t-hw-krq" customClass="ContactDetailViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ra-ef-hkG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,6 +134,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hbN-rj-nbc"/>
                     </view>
+                    <connections>
+                        <outlet property="contactImage" destination="9LA-2H-A6h" id="jyh-GH-evh"/>
+                        <outlet property="dateOfBirth" destination="aca-9M-bPf" id="DKH-ql-qkQ"/>
+                        <outlet property="email" destination="Ede-Sz-obu" id="mVM-ly-Nim"/>
+                        <outlet property="firstAndLastNames" destination="TEP-Uq-5e5" id="7V9-Ty-eeL"/>
+                        <outlet property="homeAddress" destination="GaH-wT-Wzh" id="pXx-r6-ehn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EV-sb-PUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,10 +171,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QJp-uK-LcC">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ApD-W3-8Yg" detailTextLabel="UNP-RY-QCV" style="IBUITableViewCellStyleSubtitle" id="gg7-PG-9tc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ApD-W3-8Yg" detailTextLabel="UNP-RY-QCV" style="IBUITableViewCellStyleValue1" id="gg7-PG-9tc">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gg7-PG-9tc" id="bxf-H8-mjg">
@@ -171,16 +182,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ApD-W3-8Yg">
-                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UNP-RY-QCV">
-                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UNP-RY-QCV">
+                                                    <rect key="frame" x="301" y="12" width="59" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -192,33 +203,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jkY-AV-JoS">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jkY-AV-JoS" firstAttribute="trailing" secondItem="p6U-DL-Gtt" secondAttribute="trailing" id="Ixk-KR-zDU"/>
-                            <constraint firstItem="jkY-AV-JoS" firstAttribute="top" secondItem="p6U-DL-Gtt" secondAttribute="top" id="KMC-xu-AH8"/>
+                            <constraint firstItem="QJp-uK-LcC" firstAttribute="top" secondItem="p6U-DL-Gtt" secondAttribute="top" id="L1R-ne-Ybp"/>
                             <constraint firstItem="p6U-DL-Gtt" firstAttribute="trailing" secondItem="QJp-uK-LcC" secondAttribute="trailing" id="PFe-aA-PhT"/>
                             <constraint firstItem="p6U-DL-Gtt" firstAttribute="bottom" secondItem="QJp-uK-LcC" secondAttribute="bottom" id="b36-WT-Z5y"/>
                             <constraint firstItem="QJp-uK-LcC" firstAttribute="leading" secondItem="p6U-DL-Gtt" secondAttribute="leading" id="mrG-hg-gBD"/>
-                            <constraint firstItem="QJp-uK-LcC" firstAttribute="top" secondItem="jkY-AV-JoS" secondAttribute="bottom" id="nsn-7C-15z"/>
-                            <constraint firstItem="jkY-AV-JoS" firstAttribute="leading" secondItem="p6U-DL-Gtt" secondAttribute="leading" id="p1y-Zt-5Fi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p6U-DL-Gtt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="2TB-qY-Ssh"/>
+                    <connections>
+                        <outlet property="stocksTableView" destination="QJp-uK-LcC" id="Owv-zZ-mm3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qDY-X0-H2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1703" y="1261"/>
         </scene>
-        <!--View Controller-->
+        <!--Stocks Detail View Controller-->
         <scene sceneID="To4-4a-get">
             <objects>
-                <viewController id="y2w-ww-jam" sceneMemberID="viewController">
+                <viewController id="y2w-ww-jam" customClass="StocksDetailViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nA3-Rh-04T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +240,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOI-7i-oyE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOI-7i-oyE" userLabel="date">
                                 <rect key="frame" x="40" y="99" width="295" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -263,6 +270,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iHH-ON-rCy"/>
                     </view>
+                    <connections>
+                        <outlet property="close" destination="6oi-KT-8Jt" id="xCY-Oq-9dF"/>
+                        <outlet property="date" destination="lOI-7i-oyE" id="M7O-wi-p3J"/>
+                        <outlet property="open" destination="sjm-IT-VYx" id="LLS-Dy-6b1"/>
+                        <outlet property="stocksImage" destination="FaP-u7-abG" id="olv-fA-gmY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPN-mV-Zxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

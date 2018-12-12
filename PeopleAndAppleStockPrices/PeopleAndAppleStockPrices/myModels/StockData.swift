@@ -7,3 +7,11 @@
 //
 
 import Foundation
+struct StockData : Codable {
+    let label : String
+    let open : String
+    let close : String
+    //let high : String
+    //let low : String
+    
+}
