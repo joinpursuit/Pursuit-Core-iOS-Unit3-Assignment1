@@ -33,14 +33,27 @@ class StockViewController: UIViewController {
             }
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? DetailStocksViewController,
+            let selectedIndexPath = stocksTableView.indexPathForSelectedRow else {return}
+        let stockToSend = stocks[selectedIndexPath.row]
+        destination.stocksView = stockToSend
+    }
 }
+
+
 extension StockViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stocksCell", for: indexPath)
         let stockToSet = stocks[indexPath.row]
         cell.textLabel?.text = stockToSet.date
         cell.detailTextLabel?.text = String(stockToSet.open)
-        
+        if stockToSet.close > stockToSet.open {
+            cell.backgroundColor = .green
+        } else {
+            cell.backgroundColor = .red
+        }
+
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

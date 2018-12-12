@@ -153,9 +153,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pfx-i4-2O9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pfx-i4-2O9">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stocksCell" textLabel="UFF-Lv-5wx" detailTextLabel="DqQ-FH-qBG" style="IBUITableViewCellStyleValue1" id="o4f-TY-6er">
@@ -189,6 +188,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pfx-i4-2O9" firstAttribute="trailing" secondItem="PJv-tt-SpU" secondAttribute="trailing" id="5nU-yv-ZOk"/>
+                            <constraint firstItem="pfx-i4-2O9" firstAttribute="top" secondItem="PJv-tt-SpU" secondAttribute="top" id="Cff-es-ejW"/>
+                            <constraint firstItem="pfx-i4-2O9" firstAttribute="leading" secondItem="PJv-tt-SpU" secondAttribute="leading" id="NXz-Em-zac"/>
+                            <constraint firstItem="pfx-i4-2O9" firstAttribute="bottom" secondItem="PJv-tt-SpU" secondAttribute="bottom" id="OQS-cq-w5F"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PJv-tt-SpU"/>
                     </view>
                     <navigationItem key="navigationItem" id="kll-Dd-lEx"/>
@@ -249,6 +254,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fVp-fG-Im4"/>
                     </view>
+                    <connections>
+                        <outlet property="appleImage" destination="lkk-29-yj7" id="fNr-LC-hsl"/>
+                        <outlet property="closeLabel" destination="dAm-Re-EYm" id="SBY-Lu-Rx4"/>
+                        <outlet property="dateLabel" destination="ESq-lO-aHV" id="f39-JS-YA6"/>
+                        <outlet property="openLabel" destination="Lkz-Bp-1HT" id="PHF-91-ElZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5PT-QD-WGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
