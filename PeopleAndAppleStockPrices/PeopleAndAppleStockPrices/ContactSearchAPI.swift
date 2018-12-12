@@ -8,19 +8,19 @@
 
 import Foundation
 
-
-enum ContactAPIError: Error {
-    case badURL(String) // asscociative type
-    case dataError(Error)
-    case decodingError(Error)
-}
-
-final class ContactSearchAPI {
-    static func getAllContacts (completionHandler: @escaping (([ContactInfo]?,ContactAPIError?) -> Void)) {
-        guard let url = URL.init(string: "https://newsapi.org/v2/top-headlines?country=us")
-            else {
-                completionHandler(nil,.badURL("url not working!"))
-                return
-            }
-        }
-}
+//
+//enum ContactAPIError: Error {
+//    case badURL(String) // asscociative type
+//    case dataError(Error)
+//    case decodingError(Error)
+//}
+//
+//final class ContactSearchAPI {
+//    static func getAllContacts (completionHandler: @escaping (([ContactInfo]?,ContactAPIError?) -> Void)) {
+//        guard let url = URL.init(string: "https://newsapi.org/v2/top-headlines?country=us")
+//            else {
+//                completionHandler(nil,.badURL("url not working!"))
+//                return
+//            }
+//        }
+//}

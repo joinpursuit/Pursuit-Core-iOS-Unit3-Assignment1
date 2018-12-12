@@ -14,11 +14,12 @@ class ContactsViewController: UIViewController {
    
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let contactsIndexPath = contactTableView.indexPathForSelectedRow,
-            let contactDetails = segue.destination as? ContactsDetailController else { return }
-        let contactPeople = contacts[contactsIndexPath.row]
-        contactDetails.contacts = [contactPeople]
+        guard let destination = segue.destination as? ContactsDetailController,
+            let selectedIndexPath = contactTableView.indexPathForSelectedRow else { return }
+        let contactToSend = contacts[selectedIndexPath.row ]
+        destination.contacts = [contactToSend]
     }
     var contacts = [ContactInfo](){
         didSet {

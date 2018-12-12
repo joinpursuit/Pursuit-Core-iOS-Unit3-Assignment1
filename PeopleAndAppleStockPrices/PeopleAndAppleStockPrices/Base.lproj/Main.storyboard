@@ -61,6 +61,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="htJ-mU-ytn"/>
                     </view>
+                    <connections>
+                        <outlet property="contactEmail" destination="uIG-7P-KGZ" id="SFt-m1-gfg"/>
+                        <outlet property="contactImage" destination="d1y-Dn-MWF" id="qcC-sN-MH2"/>
+                        <outlet property="contactLocation" destination="czQ-CD-wnz" id="PQ0-LG-C5y"/>
+                        <outlet property="contactName" destination="aEw-i1-Dfi" id="EcZ-Ee-ySJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIA-uf-KS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,6 +123,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="pig-vR-Ubm" kind="show" id="V49-YC-lZ6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -131,9 +140,6 @@
                         <viewLayoutGuide key="safeArea" id="TVL-0G-UeT"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stocks" id="F4J-mD-bFE"/>
-                    <connections>
-                        <segue destination="pig-vR-Ubm" kind="show" id="tJf-4g-8Lu"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKa-YC-IyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,6 +184,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5o4-9s-5O3" kind="show" id="y1M-HD-rDb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -198,7 +207,6 @@
                     <connections>
                         <outlet property="contactTableView" destination="1i5-2U-gjB" id="rkg-or-V4L"/>
                         <outlet property="searchBar" destination="8f0-XK-dSz" id="P1J-JU-lNg"/>
-                        <segue destination="5o4-9s-5O3" kind="show" id="huM-bB-8vV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25G-qW-m6n" userLabel="First Responder" sceneMemberID="firstResponder"/>

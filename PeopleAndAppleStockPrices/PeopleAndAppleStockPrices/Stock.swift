@@ -8,21 +8,17 @@
 
 import Foundation
 
-
-//struct Stock: Codable {
-//    let stocks = [Stock]
-//}
-//{
-//    "date": "2016-12-07",
-//    "open": 105.9402,
-//    "high": 107.8115,
-//    "low": 105.8432,
-//    "close": 107.6564,
-//    "volume": 29998719,
-//    "unadjustedVolume": 29998719,
-//    "change": 1.0472,
-//    "changePercent": 0.982,
-//    "vwap": 106.972,
-//    "label": "Dec 7, 16",
-//    "changeOverTime": 0
-//}
+struct StockInfo: Codable {
+    let date: String
+    let open: Double
+    let high: Double
+    let low: Double
+    let close: Double
+    let volume: Int
+    let unadjustedVolume: Int
+    let change: Double
+    let changePercent: Double
+    let vwap: Double
+    let label: String
+    let changeOverTime: Double
+}

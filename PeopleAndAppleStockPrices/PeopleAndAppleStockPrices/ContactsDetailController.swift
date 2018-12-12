@@ -11,21 +11,22 @@ import UIKit
 class ContactsDetailController: UIViewController {
 var contacts = [ContactInfo]()
     
+    @IBOutlet weak var contactImage: UIImageView!
+    
+    @IBOutlet weak var contactName: UILabel!
+    
+    @IBOutlet weak var contactEmail: UILabel!
+    
+    @IBOutlet weak var contactLocation: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+     
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateContact() {
+       // contactName.text = contactName
     }
-    */
 
 }
+
