@@ -18,7 +18,8 @@ class ContactsViewController: UIViewController {
         guard let destination = segue.destination as? ContactsDetailController,
             let selectedIndexPath = contactTableView.indexPathForSelectedRow else { return }
         let contactToSend = contacts[selectedIndexPath.row ]
-        destination.contacts = [contactToSend]
+        destination.contacts = contactToSend
+        
     }
     var contacts = [ContactInfo](){
         didSet {
@@ -62,16 +63,16 @@ extension ContactsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contactTableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
         let contactToSet = contacts[indexPath.row]
-//        guard let image = URL.init(string: contactToSet.picture.thumbnail) else { return UITableViewCell() }
-//        do {
-//             let data = try Data.init(contentsOf: image)
-//                cell.imageView?.image = UIImage.init(data: data)
-//            
-//        } catch {
-//            print(error)
-//        }
+        guard let image = URL.init(string: contactToSet.picture.thumbnail) else { return UITableViewCell() }
+        do {
+             let data = try Data.init(contentsOf: image)
+                cell.imageView?.image = UIImage.init(data: data)
+            
+        } catch {
+            print(error)
+        }
         cell.textLabel?.text = contactToSet.name.fullName
-        cell.detailTextLabel?.text = contactToSet.location.state
+        cell.detailTextLabel?.text = contactToSet.location.state.capitalized
         return cell
     }
     

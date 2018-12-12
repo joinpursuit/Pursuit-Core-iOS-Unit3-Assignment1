@@ -9,7 +9,8 @@
 import UIKit
 
 class ContactsDetailController: UIViewController {
-var contacts = [ContactInfo]()
+    
+    var contacts:ContactInfo!
     
     @IBOutlet weak var contactImage: UIImageView!
     
@@ -20,8 +21,19 @@ var contacts = [ContactInfo]()
     @IBOutlet weak var contactLocation: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-     
+        contactName.text = contacts.name.fullName
+        contactEmail.text = contacts.email
+        contactLocation.text = contacts.location.state
+      //  contactImage.image = contacts.picture.thumbnail
+//        guard let image = URL.init(string: contacts.picture.thumbnail) else { return }
+//                do {
+//                     let data = try Data.init(contentsOf: image)
+//                        contacts.picture.large = UIImage.init(data: data)
+//
+//                } catch {
+//                    print(error)
+//                }
+        
     }
     
     func updateContact() {

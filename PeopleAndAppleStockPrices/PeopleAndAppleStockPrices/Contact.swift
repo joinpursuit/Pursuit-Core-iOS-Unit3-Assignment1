@@ -32,5 +32,5 @@ struct Location: Codable {
 struct Picture: Codable {
     let thumbnail: String
     let medium: String
-    let large: String
+    let large: URL
 }
