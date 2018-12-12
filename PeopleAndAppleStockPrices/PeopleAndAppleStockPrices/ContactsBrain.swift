@@ -17,7 +17,7 @@ struct ResultsToSet: Codable {
   let name: Name
   let email: String
   let cell: String
-  let contactPicture: Picture?
+  let picture: Picture
 }
 
 struct Name: Codable {
@@ -27,10 +27,6 @@ struct Name: Codable {
   public var fullName: String {
     return first.capitalized + " " + last.capitalized
   }
-//    func getFullName() -> String {
-//      let fullName = first.capitalized + " " + last.capitalized
-//      return fullName
-//    }
   
 }
 
@@ -39,13 +35,13 @@ struct Address: Codable {
   let city: String
   let postcode: String
   
-  func fullAddress() -> String {
+  public var fullAddress: String {
    return street.capitalized + ", " + city.capitalized + ", " + postcode.uppercased()
   }
 }
 
 struct Picture: Codable {
-  let large: String
+  let large: URL
 }
 
 

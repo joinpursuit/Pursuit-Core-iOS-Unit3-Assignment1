@@ -46,9 +46,10 @@ class StockViewController: UIViewController {
   }
   
   
-  func getMonthYear(dateString: String) -> (month: String, year: String) {
+  func getMonthYear(dateString: String) -> (year: String, month: String) {
     let components = dateString.components(separatedBy: "-")
-    return (components[1], components[0])
+    print(components)
+    return (components[0], components[1])
   }
   
   
@@ -86,12 +87,12 @@ extension StockViewController: UITableViewDataSource{
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = stocksTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath) as? StockCustomCellTableViewCell else {return UITableViewCell()}
+    let cell = stocksTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
     
     let currentStock = stockInfo[indexPath.section][indexPath.row]
     
-    cell.date.text = currentStock.date
-    cell.openingPrice.text = "$" + String(format: "%.2f", currentStock.open)
+    cell.textLabel?.text = currentStock.date
+    cell.detailTextLabel?.text = "$" + String(format: "%.2f", currentStock.open)
     
     return cell
     
