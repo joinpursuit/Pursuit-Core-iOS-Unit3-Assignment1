@@ -10,37 +10,24 @@ import UIKit
 
 class StockViewController: UIViewController {
   
-  var stockInfo = [Stocks]()
+  var stockInfo = [[Stocks]]()
   
   @IBOutlet weak var stocksTableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Stocks"
-    makeSections()
+    stockInfo = makeSections()
     stocksTableView.dataSource = self
   }
   
-  
-  
-  
-  
-  
-  // if month, year is different from previous variable (month, year)
-  // e.g (11, 2016) => (12, 2016)
-  
-  // if (previous != current)
-  //stockPriceSections.append([Stocks]())
-  
-  //        print(getMonthYear(dateString: stockPrice.date))
   
   private func makeSections() -> [[Stocks]]{
     var stockPriceSections = [[Stocks]]()
     
     if let stockResults = loadData() {
-      // make 2d array
       
-      stockPriceSections.append([Stocks]()) // 2016-12-09 // break into components [0] year, [1] month
+      stockPriceSections.append([Stocks]())
       var startIndex = 0
       var date = (month: "12", year:"2016")
       
@@ -51,14 +38,14 @@ class StockViewController: UIViewController {
           stockPriceSections.append([Stocks]())
           startIndex += 1
         } else {
-          stockPriceSections[startIndex].append(stockPrice)
+         stockPriceSections[startIndex].append(stockPrice)
         }
       }
     }
     return stockPriceSections
   }
   
-  // 2016-12-02
+  
   func getMonthYear(dateString: String) -> (month: String, year: String) {
     let components = dateString.components(separatedBy: "-")
     return (components[1], components[0])
@@ -86,7 +73,7 @@ class StockViewController: UIViewController {
       let StockDetailedVC = segue.destination as? StockDetailedViewController
       else {fatalError("problems finding destination or indexPath in segue")}
     
-    let stockToSegue = stockInfo[indexPath.row]
+    let stockToSegue = stockInfo[indexPath.section][indexPath.row]
     StockDetailedVC.stockDetailed = stockToSegue
     
   }
@@ -95,16 +82,16 @@ class StockViewController: UIViewController {
 
 extension StockViewController: UITableViewDataSource{
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return stockInfo.count
+    return stockInfo[section].count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = stocksTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath) as? StockCustomCellTableViewCell else {return UITableViewCell()}
     
-    let currentStock = stockInfo[indexPath.row]
+    let currentStock = stockInfo[indexPath.section][indexPath.row]
     
     cell.date.text = currentStock.date
-    cell.openingPrice.text = NSString(format: "%.2f", currentStock.open) as String
+    cell.openingPrice.text = "$" + String(format: "%.2f", currentStock.open)
     
     return cell
     
@@ -113,11 +100,48 @@ extension StockViewController: UITableViewDataSource{
 
 extension StockViewController: UITableViewDelegate{
   func numberOfSections(in tableView: UITableView) -> Int {
-    
+    return stockInfo.count
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    <#code#>
+    
+    switch section{
+    case 1:
+      return "February"
+      
+    case 2:
+      return "March"
+      
+    case 3:
+      return "April"
+      
+    case 5:
+      return "May"
+      
+    case 6:
+      return "June"
+      
+    case 7:
+      return "July"
+      
+    case 8:
+      return "August"
+      
+    case 9:
+      return "September"
+      
+    case 10:
+      return "October"
+      
+    case 11:
+      return "November"
+      
+    case 12:
+      return "December"
+      
+    default:
+      return "Didn't find section"
+    }
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
