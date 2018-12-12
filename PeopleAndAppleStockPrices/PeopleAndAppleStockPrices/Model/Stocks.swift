@@ -26,13 +26,4 @@ struct Reduce {
     }
 }
 
-struct dates {
-    static func getDates(stock: Stocks) -> String {
-        var month = String()
-        var year = String()
-        let arr = stock.date.components(separatedBy: "-")
-        month = arr[0]
-        year = arr[1]
-        return "\(year)-\(month)"
-    }
-}
+

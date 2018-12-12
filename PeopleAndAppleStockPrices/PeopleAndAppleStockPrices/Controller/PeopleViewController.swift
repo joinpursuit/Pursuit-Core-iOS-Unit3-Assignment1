@@ -36,7 +36,7 @@ class PeopleViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = myTableView.indexPathForSelectedRow,
             let peopleDetailViewController = segue.destination as? PeopleDetailViewController else {return}
-        let user = sortedPeople[indexPath.row]//REASON FOR ERROR
+        let user = sortedPeople[indexPath.row]
         peopleDetailViewController.user = user
     }
     
@@ -56,7 +56,6 @@ class PeopleViewController: UIViewController {
     private func searchPeople(keyword: String){
         searchResult{people in
             if let peopleResult = people{
-                self.people = peopleResult
                 self.people = peopleResult.filter{$0.name.first.lowercased().contains(keyword.lowercased()) || $0.name.last.lowercased().contains(keyword.lowercased())}
             }
         }

@@ -31,7 +31,7 @@ class StocksDetailViewController: UIViewController {
             view.backgroundColor = .green
             stockImage.image = UIImage(named: "thumbsUp")
         }
-        stockDate.text = stock.date.description
+        stockDate.text = stock.date
         stockOpen.text = stock.open.description
         stockClose.text = stock.close.description
         
