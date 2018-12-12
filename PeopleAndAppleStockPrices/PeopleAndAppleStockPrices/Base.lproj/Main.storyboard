@@ -145,16 +145,17 @@
             </objects>
             <point key="canvasLocation" x="3327.1999999999998" y="174.96251874062969"/>
         </scene>
-        <!--View Controller-->
+        <!--Stock View Controller-->
         <scene sceneID="gex-9h-jQO">
             <objects>
-                <viewController id="35W-KY-NrN" sceneMemberID="viewController">
+                <viewController id="35W-KY-NrN" customClass="StockViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gcR-VB-uAr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pfx-i4-2O9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pfx-i4-2O9">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stocksCell" textLabel="UFF-Lv-5wx" detailTextLabel="DqQ-FH-qBG" style="IBUITableViewCellStyleValue1" id="o4f-TY-6er">
@@ -188,34 +189,70 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="pfx-i4-2O9" firstAttribute="top" secondItem="PJv-tt-SpU" secondAttribute="top" id="Kan-fq-I0K"/>
-                            <constraint firstItem="PJv-tt-SpU" firstAttribute="trailing" secondItem="pfx-i4-2O9" secondAttribute="trailing" id="ah6-w0-Pes"/>
-                            <constraint firstItem="pfx-i4-2O9" firstAttribute="leading" secondItem="PJv-tt-SpU" secondAttribute="leading" id="jfr-9s-cLx"/>
-                            <constraint firstItem="PJv-tt-SpU" firstAttribute="bottom" secondItem="pfx-i4-2O9" secondAttribute="bottom" id="suV-Fp-mWk"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PJv-tt-SpU"/>
                     </view>
                     <navigationItem key="navigationItem" id="kll-Dd-lEx"/>
+                    <connections>
+                        <outlet property="stocksTableView" destination="pfx-i4-2O9" id="ykF-6Z-Vd4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ebb-8Z-o9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1820" y="984"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Stocks View Controller-->
         <scene sceneID="Lpy-kS-T9b">
             <objects>
-                <viewController id="VS1-Ke-RBr" sceneMemberID="viewController">
+                <viewController id="VS1-Ke-RBr" customClass="DetailStocksViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Si9-g1-Ep4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lkk-29-yj7">
+                                <rect key="frame" x="67" y="133" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lkk-29-yj7" secondAttribute="height" multiplier="15:8" id="xpK-1u-Xis"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkz-Bp-1HT">
+                                <rect key="frame" x="49" y="402" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAm-Re-EYm">
+                                <rect key="frame" x="293" y="402" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESq-lO-aHV">
+                                <rect key="frame" x="127" y="303" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dAm-Re-EYm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lkz-Bp-1HT" secondAttribute="trailing" constant="8" symbolic="YES" id="9Bb-Ag-UxG"/>
+                            <constraint firstItem="ESq-lO-aHV" firstAttribute="top" secondItem="lkk-29-yj7" secondAttribute="bottom" constant="42" id="Aop-V9-8Pu"/>
+                            <constraint firstItem="lkk-29-yj7" firstAttribute="leading" secondItem="fVp-fG-Im4" secondAttribute="leading" constant="67" id="C6Q-EW-YSK"/>
+                            <constraint firstItem="lkk-29-yj7" firstAttribute="top" secondItem="fVp-fG-Im4" secondAttribute="top" constant="69" id="F7u-SL-nWV"/>
+                            <constraint firstItem="fVp-fG-Im4" firstAttribute="trailing" secondItem="dAm-Re-EYm" secondAttribute="trailing" constant="40" id="IKu-ff-ntM"/>
+                            <constraint firstItem="ESq-lO-aHV" firstAttribute="centerX" secondItem="lkk-29-yj7" secondAttribute="centerX" id="L14-77-fX3"/>
+                            <constraint firstItem="Lkz-Bp-1HT" firstAttribute="leading" secondItem="fVp-fG-Im4" secondAttribute="leading" constant="49" id="UWM-mm-7ei"/>
+                            <constraint firstItem="ESq-lO-aHV" firstAttribute="leading" secondItem="fVp-fG-Im4" secondAttribute="leading" constant="127" id="UwG-uU-rKq"/>
+                            <constraint firstItem="fVp-fG-Im4" firstAttribute="bottom" secondItem="Lkz-Bp-1HT" secondAttribute="bottom" constant="195" id="d0n-D6-8le"/>
+                            <constraint firstItem="fVp-fG-Im4" firstAttribute="trailing" secondItem="lkk-29-yj7" secondAttribute="trailing" constant="68" id="l5R-Tf-bpc"/>
+                            <constraint firstItem="Lkz-Bp-1HT" firstAttribute="baseline" secondItem="dAm-Re-EYm" secondAttribute="baseline" id="vhl-d1-KO8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fVp-fG-Im4"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5PT-QD-WGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2866" y="984"/>
+            <point key="canvasLocation" x="2864.8000000000002" y="983.65817091454278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aRb-4c-0Xc">

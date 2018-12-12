@@ -58,19 +58,6 @@ extension UserViewController: UITableViewDataSource{
         let namesToSet = peopleToSet.name
         let locationToSet = peopleToSet.location
         let fullNameSet = namesToSet.fullName
-
-        DispatchQueue.global().async {
-            do {
-                guard let url = URL.init(string: peopleToSet.picture.large!) else {return}
-                let peopleImageData = try Data(contentsOf: url)
-                DispatchQueue.main.async {
-                    cell.imageView!.image = UIImage.init(data: peopleImageData)
-                }
-            } catch {
-                print(error)
-            }
-            
-        }
     
         cell.textLabel?.text = fullNameSet
         cell.detailTextLabel?.text = locationToSet.city.capitalized
