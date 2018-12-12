@@ -15,6 +15,7 @@ struct ContactInfo: Codable {
     let name: Name
     let location: Location
     let email: String
+    let picture: Picture
 }
 struct Name: Codable {
     let first: String
@@ -27,4 +28,9 @@ struct Name: Codable {
 }
 struct Location: Codable {
     let state: String
+}
+struct Picture: Codable {
+    let thumbnail: String
+    let medium: String
+    let large: String
 }

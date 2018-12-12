@@ -12,6 +12,14 @@ class ContactsViewController: UIViewController {
     
     @IBOutlet weak var contactTableView: UITableView!
    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let contactsIndexPath = contactTableView.indexPathForSelectedRow,
+            let contactDetails = segue.destination as? ContactsDetailController else { return }
+        let contactPeople = contacts[contactsIndexPath.row]
+        contactDetails.contacts = [contactPeople]
+    }
     var contacts = [ContactInfo](){
         didSet {
             DispatchQueue.main.async {
@@ -23,6 +31,7 @@ class ContactsViewController: UIViewController {
         super.viewDidLoad()
         loadData()
         contactTableView.dataSource = self
+        searchBar.delegate = self
         //dump(contacts)
     }
     
@@ -51,23 +60,31 @@ extension ContactsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contactTableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
         let contactToSet = contacts[indexPath.row]
+        guard let image = URL.init(string: contactToSet.picture.thumbnail) else { return UITableViewCell() }
+        do {
+             let data = try Data.init(contentsOf: image)
+                cell.imageView?.image = UIImage.init(data: data)
+            
+        } catch {
+            print(error)
+        }
         cell.textLabel?.text = contactToSet.name.fullName
-       cell.detailTextLabel?.text = contactToSet.location.state
-//        } else {
-//            cell.detailTextLabel?.text = "No Name"
-//        }
-//        if let imageUrl = articleToSet.urlToImage {
-//            if let image = ImageClient.getImage(stringURL: imageUrl) {
-//                cell.imageView?.image = image
-//            }
-//        }
+        cell.detailTextLabel?.text = contactToSet.location.state
         return cell
     }
     
 }
 
 
-//  a function that invokes every time the user types on the Search Bar. 
-//func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//    <#code#>
-//}
+//  a function that invokes every time the user types on the Search Bar.
+
+
+extension ContactsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)  {
+        guard let searchText = searchBar.text else { return }
+        contacts = contacts.filter {$0.name.fullName.contains(searchText)}
+       // searchBar.resignFirstResponder()
+
+        }
+    }
+

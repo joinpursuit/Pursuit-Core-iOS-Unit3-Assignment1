@@ -19,25 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="d1y-Dn-MWF">
-                                <rect key="frame" x="85" y="31" width="205" height="205"/>
+                                <rect key="frame" x="129" y="75" width="117" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="d1y-Dn-MWF" secondAttribute="height" multiplier="1:1" id="wAZ-r1-wl4"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEw-i1-Dfi">
-                                <rect key="frame" x="11" y="256" width="353" height="21"/>
+                                <rect key="frame" x="11" y="212" width="353" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIG-7P-KGZ">
-                                <rect key="frame" x="11" y="292" width="353" height="21"/>
+                                <rect key="frame" x="11" y="248" width="353" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czQ-CD-wnz">
-                                <rect key="frame" x="11" y="328" width="353" height="21"/>
+                                <rect key="frame" x="11" y="284" width="353" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -131,6 +131,9 @@
                         <viewLayoutGuide key="safeArea" id="TVL-0G-UeT"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stocks" id="F4J-mD-bFE"/>
+                    <connections>
+                        <segue destination="pig-vR-Ubm" kind="show" id="tJf-4g-8Lu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKa-YC-IyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -194,6 +197,8 @@
                     <tabBarItem key="tabBarItem" title="Contacts" id="5W4-Wt-rqE"/>
                     <connections>
                         <outlet property="contactTableView" destination="1i5-2U-gjB" id="rkg-or-V4L"/>
+                        <outlet property="searchBar" destination="8f0-XK-dSz" id="P1J-JU-lNg"/>
+                        <segue destination="5o4-9s-5O3" kind="show" id="huM-bB-8vV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25G-qW-m6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
