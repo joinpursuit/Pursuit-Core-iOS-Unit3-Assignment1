@@ -67,9 +67,7 @@ extension UserViewController: UITableViewDataSource {
 }
 extension UserViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = userSearchBar.text else {return}
-//        if searchText == "" || searchText == " " {
-//        }
+        
 
         
     }
@@ -81,7 +79,8 @@ extension UserViewController: UISearchBarDelegate {
 
         } else {
             chosenUsers = chosenUsers.filter{ (user: User) -> Bool in
-                let fullName = "\(user.name.first) \(user.name.last)".lowercased()                
+                let fullName = "\(user.name.first) \(user.name.last)".lowercased()
+                //return alphabetical
                 return fullName.contains(searchText.lowercased())
             }
         }
