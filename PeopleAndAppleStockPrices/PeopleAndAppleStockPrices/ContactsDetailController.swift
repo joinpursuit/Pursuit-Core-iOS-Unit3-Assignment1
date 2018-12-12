@@ -25,8 +25,8 @@ var contacts = [ContactInfo]()
     }
     
     func updateContact() {
-       // contactName.text = contactName
+        
+
     }
 
 }
-
