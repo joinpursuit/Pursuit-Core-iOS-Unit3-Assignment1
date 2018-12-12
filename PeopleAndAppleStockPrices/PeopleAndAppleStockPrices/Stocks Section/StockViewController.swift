@@ -47,7 +47,7 @@ extension StockViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stocksCell", for: indexPath)
         let stockToSet = stocks[indexPath.row]
         cell.textLabel?.text = stockToSet.date
-        cell.detailTextLabel?.text = String(stockToSet.open)
+        cell.detailTextLabel?.text = String(format: "%.2f",stockToSet.open)
         if stockToSet.close > stockToSet.open {
             cell.backgroundColor = .green
         } else {

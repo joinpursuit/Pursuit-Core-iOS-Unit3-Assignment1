@@ -21,8 +21,8 @@ class DetailStocksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dateLabel?.text = stocksView.date
-        openLabel?.text = "\(stocksView.open)"
-        closeLabel?.text = "\(stocksView.close)"
+        openLabel?.text = String(format: "%.2f",stocksView.open)
+        closeLabel?.text = String(format: "%.2f",stocksView.close)
         getImageAndChangeColor()
     }
     func getImageAndChangeColor(){
