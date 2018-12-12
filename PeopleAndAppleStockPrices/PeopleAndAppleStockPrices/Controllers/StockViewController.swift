@@ -79,7 +79,8 @@ extension StockViewController: UITableViewDataSource {
         return month.count
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return month[section]
+        let average2 = String(format: "%.2f", average[section].reduce(0){$0 + $1} / Double(average[section].count))
+        return  month[section] + ":      Average \(average2)"
     }
     
     
