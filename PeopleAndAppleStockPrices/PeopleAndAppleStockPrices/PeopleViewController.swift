@@ -24,6 +24,7 @@ class PeopleViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = "Contacts"
     peopleTableView.dataSource = self
     peopleSearchBar.delegate = self
     loadData()

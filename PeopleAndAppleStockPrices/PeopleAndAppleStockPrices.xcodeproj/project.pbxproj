@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		09A6603021BD96FD007565FF /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6602F21BD96FD007565FF /* PeopleList.swift */; };
 		09A6603421BDBD6B007565FF /* PeopleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6603321BDBD6B007565FF /* PeopleDetailViewController.swift */; };
+		09A6608F21C04730007565FF /* StockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6608E21C04730007565FF /* StockList.swift */; };
+		09A6609121C04A48007565FF /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6609021C04A48007565FF /* StocksViewController.swift */; };
+		09A6609321C04AA3007565FF /* StocksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6609221C04AA3007565FF /* StocksDetailViewController.swift */; };
+		09A6609521C058AB007565FF /* StocksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A6609421C058AB007565FF /* StocksCell.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
 		577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
@@ -21,6 +25,10 @@
 /* Begin PBXFileReference section */
 		09A6602F21BD96FD007565FF /* PeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleList.swift; sourceTree = "<group>"; };
 		09A6603321BDBD6B007565FF /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
+		09A6608E21C04730007565FF /* StockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockList.swift; sourceTree = "<group>"; };
+		09A6609021C04A48007565FF /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
+		09A6609221C04AA3007565FF /* StocksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksDetailViewController.swift; sourceTree = "<group>"; };
+		09A6609421C058AB007565FF /* StocksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksCell.swift; sourceTree = "<group>"; };
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +72,11 @@
 			children = (
 				577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */,
 				09A6603321BDBD6B007565FF /* PeopleDetailViewController.swift */,
+				09A6609021C04A48007565FF /* StocksViewController.swift */,
+				09A6609221C04AA3007565FF /* StocksDetailViewController.swift */,
 				09A6602F21BD96FD007565FF /* PeopleList.swift */,
+				09A6608E21C04730007565FF /* StockList.swift */,
+				09A6609421C058AB007565FF /* StocksCell.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
@@ -166,9 +178,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				09A6603421BDBD6B007565FF /* PeopleDetailViewController.swift in Sources */,
+				09A6609321C04AA3007565FF /* StocksDetailViewController.swift in Sources */,
+				09A6609521C058AB007565FF /* StocksCell.swift in Sources */,
 				09A6603021BD96FD007565FF /* PeopleList.swift in Sources */,
 				577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */,
+				09A6609121C04A48007565FF /* StocksViewController.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
+				09A6608F21C04730007565FF /* StockList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
