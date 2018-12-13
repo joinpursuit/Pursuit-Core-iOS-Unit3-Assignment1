@@ -15,24 +15,9 @@ class StockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         stocksTableView.dataSource = self
-        loadData()
+        stocks = StockInfoService.loadData()
     }
-    func loadData(){
-        
-     
-        if let path = Bundle.main.path(forResource: "applstockinfo", ofType: "json") {
-            
-            let myUrl = URL.init(fileURLWithPath: path)
-            
-            if let data = try? Data.init(contentsOf: myUrl) {
-                do {
-                    self.stocks = try JSONDecoder().decode([AppleStocks].self, from: data)
-                } catch {
-                    print(error)
-                }
-            }
-        }
-    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? DetailStocksViewController,
             let selectedIndexPath = stocksTableView.indexPathForSelectedRow else {return}
