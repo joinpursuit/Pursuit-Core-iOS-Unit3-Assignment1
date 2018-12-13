@@ -145,22 +145,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZUf-Yy-ahk">
-                                <rect key="frame" x="0.0" y="229" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="226.5" width="414" height="448"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvH-xE-qaS">
-                                <rect key="frame" x="11" y="94" width="392" height="21"/>
+                                <rect key="frame" x="11" y="138" width="392" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjS-gs-1el">
-                                <rect key="frame" x="50" y="727" width="164" height="20.5"/>
+                                <rect key="frame" x="50" y="724.5" width="164" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="624-ma-pe2">
-                                <rect key="frame" x="322" y="727" width="42" height="20.5"/>
+                                <rect key="frame" x="246" y="724.5" width="118" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -169,7 +169,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZUf-Yy-ahk" firstAttribute="centerY" secondItem="d75-XF-6av" secondAttribute="centerY" id="51C-mw-sfc"/>
-                            <constraint firstItem="624-ma-pe2" firstAttribute="leading" secondItem="jjS-gs-1el" secondAttribute="trailing" constant="108" id="FoG-no-U8w"/>
+                            <constraint firstItem="624-ma-pe2" firstAttribute="leading" secondItem="jjS-gs-1el" secondAttribute="trailing" constant="32" id="FoG-no-U8w"/>
                             <constraint firstItem="624-ma-pe2" firstAttribute="top" secondItem="ZUf-Yy-ahk" secondAttribute="bottom" constant="50" id="KKX-DV-0GK"/>
                             <constraint firstItem="jjS-gs-1el" firstAttribute="leading" secondItem="d75-XF-6av" secondAttribute="leading" constant="50" id="Qw0-Mw-DKz"/>
                             <constraint firstItem="ZUf-Yy-ahk" firstAttribute="width" secondItem="VcG-1q-cAy" secondAttribute="width" id="Xgr-2d-5sp"/>
@@ -253,6 +253,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="7yz-cW-Woh" kind="show" id="Dso-3d-Z27"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

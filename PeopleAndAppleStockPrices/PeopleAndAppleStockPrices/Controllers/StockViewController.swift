@@ -24,6 +24,10 @@ var appleInfo = [AppleStockInfo]()
         super.viewDidLoad()
         stockTableView.dataSource = self 
         loadData()
+        
+        
+        
+        
         for i in 0..<appleInfo.count {
             let monthYear = "\(appleInfo[i].label.components(separatedBy: " ")[0]) \(appleInfo[i].date.components(separatedBy: "-")[0])"
             if !month.contains(monthYear) {
