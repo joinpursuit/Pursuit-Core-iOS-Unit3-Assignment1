@@ -38,9 +38,11 @@ class StockViewController: UIViewController {
             let selectedIndexPath = stocksTableView.indexPathForSelectedRow else {return}
         let stockToSend = stocks[selectedIndexPath.row]
         destination.stocksView = stockToSend
+        let backButton = UIBarButtonItem()
+        backButton.title = "Stocks"
+        navigationItem.backBarButtonItem = backButton
     }
 }
-
 
 extension StockViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

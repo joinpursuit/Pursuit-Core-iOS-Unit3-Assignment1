@@ -26,7 +26,7 @@ class DetailStocksViewController: UIViewController {
         getImageAndChangeColor()
     }
     func getImageAndChangeColor(){
-        if Double(stocksView.close) > Double(stocksView.open) {
+        if stocksView.close > stocksView.open {
             self.view.backgroundColor = .green
             appleImage.image = UIImage.init(named: "thumbsUp")
         } else {

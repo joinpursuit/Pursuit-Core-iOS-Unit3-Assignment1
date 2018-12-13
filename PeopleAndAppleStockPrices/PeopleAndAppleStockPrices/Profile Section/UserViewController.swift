@@ -20,34 +20,19 @@ class UserViewController: UIViewController {
     @IBOutlet weak var userSearchBar: UISearchBar!
     override func viewDidLoad() {
     super.viewDidLoad()
-        people = loadData()
+        people = UserInfoService.loadData()
         userTableView.dataSource = self
         userSearchBar.delegate = self
 
   }
-    func loadData() -> [User] {
-        
-        var results = [User]()
-        if let path = Bundle.main.path(forResource: "userinfo", ofType: "json") {
-            
-            let myUrl = URL.init(fileURLWithPath: path)
-            
-            if let data = try? Data.init(contentsOf: myUrl) {
-                do {
-                    let newPeople = try JSONDecoder().decode(Profile.self, from: data)
-                    results = newPeople.results.sorted { $0.name.first < $1.name.first }
-                } catch {
-                    print(error)
-                }
-            }
-        }
-        return results
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? UserDetailViewController,
             let selectedIndexPath = userTableView.indexPathForSelectedRow else {return}
         let personToSend = people[selectedIndexPath.row]
         destination.profileView = personToSend
+        let backButton = UIBarButtonItem()
+        backButton.title = "Profile"
+        navigationItem.backBarButtonItem = backButton
     }
 }
 
@@ -72,11 +57,11 @@ extension UserViewController: UITableViewDataSource{
 extension UserViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        people = loadData()
+        people = UserInfoService.loadData()
         if searchText == "" {
             return
         } else {
-            people = loadData().filter{$0.name.first.lowercased().contains(searchText.lowercased())}
+            people = UserInfoService.loadData().filter{$0.name.first.lowercased().contains(searchText.lowercased()) || $0.name.last.lowercased().contains(searchText.lowercased())}
         }
     }
 }
