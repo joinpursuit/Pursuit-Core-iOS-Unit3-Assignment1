@@ -28,10 +28,7 @@ class ContactsDetailedViewController: UIViewController {
     address.text = detailedContactInfo.location.fullAddress
     email.text = "email: \(detailedContactInfo.email)"
     
-    //    contactImage.image = UIImage(named: "profileImage")
-    
     DispatchQueue.global().async {
-      
       do{
         let data = try Data(contentsOf: self.detailedContactInfo.picture.large)
         DispatchQueue.main.async {

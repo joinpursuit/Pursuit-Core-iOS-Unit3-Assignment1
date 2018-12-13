@@ -10,7 +10,9 @@ import UIKit
 
 class StockViewController: UIViewController {
   
+  
   var stockInfo = [[Stocks]]()
+//  var monthYear = (month:"", year:"")
   
   @IBOutlet weak var stocksTableView: UITableView!
   
@@ -25,11 +27,15 @@ class StockViewController: UIViewController {
   private func makeSections() -> [[Stocks]]{
     var stockPriceSections = [[Stocks]]()
     
+    
     if let stockResults = loadData() {
       
       stockPriceSections.append([Stocks]())
+      
       var startIndex = 0
+      
       var date = (month: "12", year:"2016")
+      
       
       for stockPrice in stockResults {
         
@@ -37,21 +43,20 @@ class StockViewController: UIViewController {
           date = getMonthYear(dateString: stockPrice.date)
           stockPriceSections.append([Stocks]())
           startIndex += 1
-        } else {
-         stockPriceSections[startIndex].append(stockPrice)
+          
         }
+         stockPriceSections[startIndex].append(stockPrice)
       }
     }
     return stockPriceSections
   }
   
+//  2017-12-01 -> [2017,12,01] -> (12, 2017)
   
-  func getMonthYear(dateString: String) -> (year: String, month: String) {
+  func getMonthYear(dateString: String) -> (month: String, year: String) {
     let components = dateString.components(separatedBy: "-")
-    print(components)
-    return (components[0], components[1])
+    return (components[1], components[0])
   }
-  
   
   
   func loadData() -> [Stocks]? {
@@ -104,51 +109,68 @@ extension StockViewController: UITableViewDelegate{
     return stockInfo.count
   }
   
+  
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//    stockInfo[section].reduce{} //add them all and divide by count
     
-    switch section{
-    case 1:
-      return "February"
-      
-    case 2:
-      return "March"
-      
-    case 3:
-      return "April"
-      
-    case 5:
-      return "May"
-      
-    case 6:
-      return "June"
-      
-    case 7:
-      return "July"
-      
-    case 8:
-      return "August"
-      
-    case 9:
-      return "September"
-      
-    case 10:
-      return "October"
-      
-    case 11:
-      return "November"
-      
-    case 12:
-      return "December"
-      
-    default:
-      return "Didn't find section"
-    }
+    let x = getMonthYear(dateString: stockInfo[section][0].date)
+    let y = stockInfo[section].reduce(0){$0 + $1.vwap}
+    let z = y / Double(stockInfo[section].count)
+    
+    print("this is y: \(y)")
+    print("this is z: \(z)")
+    
+  
+    
+    
+    return "\(x.year) - \(x.month). Average: $\(String(format: "%.2f", z))"
+    
+  
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 100
+    
   }
   
   
 }
 
+
+//    switch section{
+//    case 1:
+//      return "February"
+//
+//    case 2:
+//      return "March"
+//
+//    case 3:
+//      return "April"
+//
+//    case 5:
+//      return "May"
+//
+//    case 6:
+//      return "June"
+//
+//    case 7:
+//      return "July"
+//
+//    case 8:
+//      return "August"
+//
+//    case 9:
+//      return "September"
+//
+//    case 10:
+//      return "October"
+//
+//    case 11:
+//      return "November"
+//
+//    case 12:
+//      return "December"
+//
+//    default:
+//      return "Didn't find section"
+//    }
