@@ -42,7 +42,7 @@ var appleInfo = [AppleStockInfo]()
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = stockTableView.indexPathForSelectedRow, let cvc = segue.destination as? StockDetailViewController
             else{fatalError("indexPath CVC is nil")}
-        let apple = appleInfo[indexPath.row]
+        let apple = array[indexPath.section][indexPath.row]
         cvc.appl = apple
         
     }
