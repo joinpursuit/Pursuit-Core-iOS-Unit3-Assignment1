@@ -9,28 +9,31 @@
 import Foundation
 
 struct UserInformation:Codable{
-    var results: [resultsWrapper]
+    var results: [Person]
 }
 
-struct resultsWrapper: Codable {
+struct Person: Codable {
     var gender: String
-    var name:fullNameWrapper
-    var location: locationWrapper
+    var name:Name
+    var location: Location
     var email: String
     var login: LoginInfoWrapper
     var dob: String
     var registered: String
     var phone: String
     var cell: String
-    var id:identityWrapper
-    var picture: pictureWrapper
+    var id:Identity
+    var picture: Picture
 }
-struct fullNameWrapper: Codable{
+struct Name: Codable{
     var title: String
     var first: String
     var last: String
+    var fullName: String {
+        return "\(first) \(last)".capitalized
+    }
 }
-struct locationWrapper: Codable {
+struct Location: Codable {
     var street: String
     var city: String
     var state: String
@@ -45,11 +48,11 @@ struct LoginInfoWrapper: Codable {
     var sha256: String
 }
 
-struct identityWrapper:Codable {
+struct Identity:Codable {
     var name: String
     var value: String
 }
-struct pictureWrapper:Codable {
+struct Picture:Codable {
     var large: URL
     var medium: URL
     var thumbnail: URL

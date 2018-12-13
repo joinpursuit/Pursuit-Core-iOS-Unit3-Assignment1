@@ -9,7 +9,7 @@
 import UIKit
 
 class PeopleDetailViewController: UIViewController {
-    var presentPerson:resultsWrapper!
+    var presentPerson:Person!
     
     @IBOutlet weak var personPhoto: UIImageView!
     
@@ -34,7 +34,7 @@ class PeopleDetailViewController: UIViewController {
 
     private func updatePersonInfo (){
       personPhoto.image = UIImage.init(named: "profileImage")
-        personName.text = "\(presentPerson.name.last.capitalized) \(presentPerson.name.first.capitalized)"
+        personName.text = presentPerson.name.fullName
         personEmail.text = presentPerson.email
         personCity.text = presentPerson.location.city.capitalized
 
