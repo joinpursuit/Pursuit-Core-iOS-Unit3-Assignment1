@@ -94,8 +94,6 @@ extension StocksViewController: UITableViewDataSource {
 
 extension StocksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        //let thisSection = sectionNames[section]
-        //        let stocksInThisSection = allStocks.filter({$0.sectionName == thisSection})
         return sectionNames[section]
     }
 }
