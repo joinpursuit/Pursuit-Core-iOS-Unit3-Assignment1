@@ -24,6 +24,9 @@ class ContactsDetailController: UIViewController {
         contactName.text = contacts.name.fullName
         contactEmail.text = contacts.email
         contactLocation.text = contacts.location.state
+        
+        
+        //contactImage.image = contacts.picture.large
       //  contactImage.image = contacts.picture.thumbnail
 //        guard let image = URL.init(string: contacts.picture.thumbnail) else { return }
 //                do {
