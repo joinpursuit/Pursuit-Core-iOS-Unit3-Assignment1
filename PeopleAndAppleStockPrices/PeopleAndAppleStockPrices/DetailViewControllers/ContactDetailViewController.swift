@@ -18,12 +18,26 @@ class ContactDetailViewController: UIViewController {
     var contact : ContactDetails!
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactImage.image?.accessibilityIdentifier = contact.picture.medium
+        contactImage.image =  contact.setImage(UIImage(named: <#T##String#>))
+        //sender.setImage(UIImage(named: "o"), for: .normal)
+        contactImage.image? = contact.picture.medium
         firstAndLastNames.text = contact.name.first.lowercased()
         email.text = contact.email
         dateOfBirth.text = contact.dob
        
+        if let url = URL.init(string : contactToSet.picture.thumbnail){
+            do {
+                let data = try Data.init(contentsOf: url)
+                if let image = UIImage.init(data: data){
+                    cell.imageView?.image = image
+                }
+            }catch{
+                print(error)
+        
+        
     }
     
 
+}
+}
 }

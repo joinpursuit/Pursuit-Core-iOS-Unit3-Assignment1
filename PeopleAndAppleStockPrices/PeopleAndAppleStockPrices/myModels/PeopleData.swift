@@ -14,6 +14,7 @@ struct ContactDetails : Codable {
     struct NameWrapper : Codable {
         let first : String
         let last : String
+   
     }
     let name : NameWrapper
     struct LocationWrapper : Codable {
