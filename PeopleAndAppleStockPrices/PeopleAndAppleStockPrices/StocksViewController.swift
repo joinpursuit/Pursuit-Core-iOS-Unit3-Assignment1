@@ -17,13 +17,9 @@ class StocksViewController: UIViewController {
     
     
     
-    var stocks = [Stock]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.stocksTableView.reloadData()
-            }
-        }
-    }
+    var stocks = [Stock]()
+        
+    
     var sectionsNames = [String]()
     
     override func viewDidLoad() {
@@ -65,9 +61,8 @@ class StocksViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? StocksDetailViewController,
         let selectedRow = stocksTableView.indexPathForSelectedRow else {return}
-        let stockThisSection = stockBySection(section: selectedRow.row)
-        let thisStock = stockThisSection[selectedRow.row]
-        destination.aStock = thisStock
+        let stockToSend = stocks[selectedRow.row]
+        destination.aStock = stockToSend
     }
 }
 
@@ -78,8 +73,7 @@ extension StocksViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = stocksTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath) as? StockViewCell else {return UITableViewCell()}
-        let stockInSection = stockBySection(section: indexPath.section)
-        let stock = stockInSection[indexPath.row]
+        let stock = stocks[indexPath.row]
         cell.dateLabel?.text = "\(stock.date)"
         cell.openPriceLabel?.text = "\(String(format: "%.2f", stock.open))"
         if stock.open < stock.close {

@@ -16,7 +16,7 @@ class StocksDetailViewController: UIViewController {
     @IBOutlet weak var stockDate: UILabel!
     var aStock: Stock!
     func setupView() {
-        if aStock.close > aStock.open {
+        if aStock.close < aStock.open {
             view.backgroundColor = .green
             stockImage.image = UIImage.init(named: "thumbsUp")
         } else {
