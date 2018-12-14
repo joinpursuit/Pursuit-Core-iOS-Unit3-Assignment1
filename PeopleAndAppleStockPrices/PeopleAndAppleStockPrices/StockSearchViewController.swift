@@ -40,7 +40,7 @@ class StockSearchViewController: UIViewController {
             let monthNumberString = eachDate[monthStartIndex..<monthEndIndex]
             let monthNumberInt = Int(monthNumberString)
 
-            let monthNames = ["January", "February", "March", "April","May","June","July","August","September","October","November","December"]
+            let monthNames = ["January", "February","March", "April","May","June","July","August","September","October","November","December"]
 
             let monthName = monthNames[monthNumberInt!-1]
             var monthYear = monthName + " - " + year
@@ -132,7 +132,6 @@ extension StockSearchViewController: UITableViewDataSource{
         cell.textLabel?.text = theStock.date
         cell.detailTextLabel?.text = "$" + String(format: "%.2f", theStock.open)
         //cell.detailTextLabel?.text = currentStocks.open.description
-     
          return cell
     }
     
@@ -148,8 +147,10 @@ extension StockSearchViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
        // return  monthYearValues[section]
         let average = String(format: " $%.02f", stockAveragesDict[monthYearValues[section]] ?? 0)
-        return  "\(monthYearValues[section]): Average:\(average)"
         
+    
+        
+        return  "\(monthYearValues[section]): Average:\(average)"
     }
     
 }

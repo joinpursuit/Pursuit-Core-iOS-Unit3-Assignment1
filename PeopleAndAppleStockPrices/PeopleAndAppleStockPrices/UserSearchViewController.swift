@@ -75,7 +75,7 @@ extension UserSearchViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
 //        var userToSet: ResultsToSet
-        var userToSet = sorte[indexPath.row]
+       var userToSet = sorte[indexPath.row]
         if isFiltering() {
             userToSet = filteredUsers[indexPath.row]
         } else {
