@@ -23,11 +23,14 @@ class StocksDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 configureData()
+        
        
     }
     
     func configureData() {
         self.stockTitle?.text = stock.date
+        self.stockOpen?.text = "Open: $\(stock.open)"
+        self.stockClose?.text = "Close: $\(stock.close)"
         if stock.open > stock.close {
             self.stockImage?.image = UIImage(named: "thumbsUp")
             view.backgroundColor = .green

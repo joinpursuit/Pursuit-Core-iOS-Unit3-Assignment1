@@ -60,7 +60,7 @@ class StocksViewController: UIViewController {
                     
                     
                 } catch {
-                    
+                    print(error)
                 }
                 
             }
