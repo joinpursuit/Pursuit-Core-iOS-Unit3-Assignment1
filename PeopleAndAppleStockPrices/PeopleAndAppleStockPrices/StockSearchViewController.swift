@@ -15,22 +15,22 @@ class StockSearchViewController: UIViewController {
     
     var userStock = [Stocks]()
     
+    //The following is used in the tableview
     var stockArray = [StockClass]()
-    
     var stockAveragesDict = [String:Double]()
+    var stocksArrangedByMonthYear = [[StockClass]]()
+    var monthYearValues = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
         tableView.dataSource = self
-//        dump(userStock)
         calculateAveragesAndLoadStocks()
     }
     
-    var monthYearValues = [String]()
-    
     func calculateAveragesAndLoadStocks() {
         for stock in userStock {
+            
             let eachDate = stock.date
             let yearIndex = eachDate.index(eachDate.startIndex, offsetBy: 4)
             let year = eachDate[..<yearIndex]
@@ -43,26 +43,25 @@ class StockSearchViewController: UIViewController {
             let monthNames = ["January", "February", "March", "April","May","June","July","August","September","October","November","December"]
 
             let monthName = monthNames[monthNumberInt!-1]
-            let monthYear = monthName + " - " + year
-            
+            var monthYear = monthName + " - " + year
+
             if monthYearValues.contains(monthYear) == false {
                 monthYearValues.append(monthYear)
             }
             
+
             let label = stock.label
             let vwap = stock.vwap
             let open = stock.open
             let close = stock.close
+            let change = stock.change
             
-            let stockToAdd = StockClass(date: eachDate, open: open, close: close, vwap: vwap ?? 0, monthYear: monthYear, label: label)
-            
-            stockArray.append(stockToAdd)
-            
-            print(monthYearValues)
-            print(monthYear)
 
+            let stockToAdd = StockClass(date: eachDate, open: open, close: close, vwap: vwap ?? 0, monthYear: monthYear, label: label,change: change)
+
+            stockArray.append(stockToAdd)
         }
-        
+
         for element in monthYearValues {
             var totalVal = 0.0
             var totalCount = 0.0
@@ -73,21 +72,39 @@ class StockSearchViewController: UIViewController {
                 }
             }
             let monthAverage = totalVal / totalCount
+            
+            let numberOfPlaces = 2.0
+            let multiplier = pow(10.0, numberOfPlaces)
+            let roundedMonthAverage = round(monthAverage * multiplier) / multiplier
+            print(roundedMonthAverage)
+            
             stockAveragesDict[element] = monthAverage
         }
         print(stockAveragesDict)
-
+        
+        for i in 0..<monthYearValues.count {
+            var specificArray = [StockClass]()
+            for item in stockArray {
+                if item.monthYear == monthYearValues[i] {
+                    specificArray.append(item)
+                }
+            }
+            stocksArrangedByMonthYear.append(specificArray)
+        }
+        print(stocksArrangedByMonthYear)
     }
     
-    
-
+    func setSections(date: String)->(month: String,year: String) {
+        let detail = date.components(separatedBy: "-")
+        return (detail[1], detail[0])
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? StockDetailViewController,
         let indexPath = tableView.indexPathForSelectedRow else { fatalError("error is in here")}
-        let stockInfo = userStock[indexPath.row]
-        destination.stocksToSet = stockInfo
+        let stockToSend = stocksArrangedByMonthYear[indexPath.section][indexPath.row]
+        destination.stocksToSet = stockToSend
     }
     
     func loadData() {
@@ -105,28 +122,34 @@ class StockSearchViewController: UIViewController {
 }
 
 extension StockSearchViewController: UITableViewDataSource{
-   
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //This needs to be updated with code that indicates the number of stocks for each month
-        return userStock.count
-    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
-        let currentStocks = userStock[indexPath.row]
-        cell.textLabel?.text = currentStocks.date
-        cell.detailTextLabel?.text = "$" + String(format: "%.2f", currentStocks.open)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
+        _ = UITableViewCell()
+        let monthYearSection = stocksArrangedByMonthYear[indexPath.section]
+        let theStock = monthYearSection[indexPath.row]
+
+        cell.textLabel?.text = theStock.date
+        cell.detailTextLabel?.text = "$" + String(format: "%.2f", theStock.open)
         //cell.detailTextLabel?.text = currentStocks.open.description
      
          return cell
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(section + 1)"
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return monthYearValues.count
     }
-  
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //This needs to be updated with code that indicates the number of stocks for each month
+        return stocksArrangedByMonthYear[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+       // return  monthYearValues[section]
+        let average = String(format: " $%.02f", stockAveragesDict[monthYearValues[section]] ?? 0)
+        return  "\(monthYearValues[section]): Average:\(average)"
+        
+    }
+    
 }
-
-
-
-
-
-

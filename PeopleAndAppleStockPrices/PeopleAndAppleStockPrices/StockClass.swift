@@ -15,13 +15,16 @@ class StockClass {
     let vwap: Double
     let label: String
     let monthYear: String
+    let change: Double
     
-    init(date: String, open: Double,close: Double,vwap: Double,monthYear:String,label: String) {
+    init(date: String, open: Double,close: Double,vwap: Double,monthYear:String,label: String,change: Double) {
         self.date = date
         self.close = close
         self.open = open
         self.vwap = vwap
         self.label = label
         self.monthYear = monthYear
+        self.change = change
     }
+   
 }

@@ -12,14 +12,14 @@ class UserSearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var results = [ResultsToSet]()
-   
+    var sorte = [ResultsToSet]()
+    
     let searchController = UISearchController(searchResultsController: nil)
     var filteredUsers = [ResultsToSet]()
     
     func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
-    
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredUsers = results.filter({( user : ResultsToSet) -> Bool in
             let boolValue = user.name.first.contains(searchText.lowercased()) || user.name.last.contains(searchText.lowercased())
@@ -27,9 +27,8 @@ class UserSearchViewController: UIViewController {
         })
         tableView.reloadData()
     }
-    
     func isFiltering() -> Bool {
-        return searchController.isActive && !searchBarIsEmpty()
+        return !searchBarIsEmpty()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,14 +45,13 @@ class UserSearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? DetailViewControllre,
             let indexPath = tableView.indexPathForSelectedRow else {return}
-        let user = results[indexPath.row]
-        destination.resultToSet = user
+            let user = isFiltering() ? filteredUsers[indexPath.row]: results[indexPath.row]
+                destination.resultToSet = user
     }
     func loadData() {
        if let filePath = Bundle.main.path(forResource: "userinfo", ofType: "json") {
            let myUrl = URL.init(fileURLWithPath: filePath)
             if let data = try? Data.init(contentsOf: myUrl){
-    
                 do{
                     let user = try JSONDecoder().decode(User.self, from: data)
                    results = user.results
@@ -69,14 +67,15 @@ extension UserSearchViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
             return filteredUsers.count
-        } 
-        
+        }
         return results.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
-        var userToSet: ResultsToSet
+        sorte = results.sorted(by: {$0.name.first < $1.name.first})
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
+//        var userToSet: ResultsToSet
+        var userToSet = sorte[indexPath.row]
         if isFiltering() {
             userToSet = filteredUsers[indexPath.row]
         } else {
