@@ -27,7 +27,7 @@ class ContactViewController: UIViewController {
             print(error)
         }
         guard let people = people else {fatalError("people is nil")}
-        nameLabel.text = "\(people.name.first.capitalized) \(people.name.last.capitalized)"
+        nameLabel.text = people.name.fullName.capitalized
         emailLabel.text = people.email
         locationLabel.text = "\(people.location.city.capitalized) \(people.location.state.capitalized)"
     }
