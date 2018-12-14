@@ -12,7 +12,7 @@ class StockViewController: UIViewController {
   
   
   var stockInfo = [[Stocks]]()
-//  var monthYear = (month:"", year:"")
+  //  var monthYear = (month:"", year:"")
   
   @IBOutlet weak var stocksTableView: UITableView!
   
@@ -45,13 +45,13 @@ class StockViewController: UIViewController {
           startIndex += 1
           
         }
-         stockPriceSections[startIndex].append(stockPrice)
+        stockPriceSections[startIndex].append(stockPrice)
       }
     }
     return stockPriceSections
   }
   
-//  2017-12-01 -> [2017,12,01] -> (12, 2017)
+  //  2017-12-01 -> [2017,12,01] -> (12, 2017)
   
   func getMonthYear(dateString: String) -> (month: String, year: String) {
     let components = dateString.components(separatedBy: "-")
@@ -109,68 +109,23 @@ extension StockViewController: UITableViewDelegate{
     return stockInfo.count
   }
   
-  
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//    stockInfo[section].reduce{} //add them all and divide by count
     
-    let x = getMonthYear(dateString: stockInfo[section][0].date)
-    let y = stockInfo[section].reduce(0){$0 + $1.vwap}
-    let z = y / Double(stockInfo[section].count)
+    let monthDictionary = [01: "Jan", 02:"Feb", 03:"Mar", 04: "Apr", 05:"May", 06:"Jun", 07: "Jul", 08:"Aug", 09:"Sep", 10: "Oct", 11:"Nov", 12: "Dec" ]
     
-    print("this is y: \(y)")
-    print("this is z: \(z)")
+    var stringToReturn = ""
+    let accessToDateForSection = getMonthYear(dateString: stockInfo[section][0].date)
+    let sumOfMonthOpenPrice = stockInfo[section].reduce(0){$0 + $1.open}
+    let averageOfOpenPrice = sumOfMonthOpenPrice / Double(stockInfo[section].count)
     
-  
-    
-    
-    return "\(x.year) - \(x.month). Average: $\(String(format: "%.2f", z))"
-    
-  
-  }
-  
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 100
+    for (key, value) in monthDictionary{
+      if Int(accessToDateForSection.month) == key {
+        stringToReturn = "\(accessToDateForSection.year) - \(value).            Average: $\(String(format: "%.2f", averageOfOpenPrice))"
+      }
+    }
+    return stringToReturn
     
   }
-  
   
 }
 
-
-//    switch section{
-//    case 1:
-//      return "February"
-//
-//    case 2:
-//      return "March"
-//
-//    case 3:
-//      return "April"
-//
-//    case 5:
-//      return "May"
-//
-//    case 6:
-//      return "June"
-//
-//    case 7:
-//      return "July"
-//
-//    case 8:
-//      return "August"
-//
-//    case 9:
-//      return "September"
-//
-//    case 10:
-//      return "October"
-//
-//    case 11:
-//      return "November"
-//
-//    case 12:
-//      return "December"
-//
-//    default:
-//      return "Didn't find section"
-//    }

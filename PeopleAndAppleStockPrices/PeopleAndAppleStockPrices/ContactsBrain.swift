@@ -36,7 +36,7 @@ struct Address: Codable {
   let postcode: String
   
   public var fullAddress: String {
-   return street.capitalized + ", " + city.capitalized + ", " + postcode.uppercased()
+    return street.capitalized + ", " + city.capitalized + ", " + postcode.uppercased()
   }
 }
 

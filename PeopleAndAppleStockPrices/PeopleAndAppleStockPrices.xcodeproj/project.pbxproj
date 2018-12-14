@@ -13,8 +13,6 @@
 		1E21DB4021BB1F9000B9BF58 /* StockDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E21DB3F21BB1F9000B9BF58 /* StockDetailedViewController.swift */; };
 		1E21DB4521BB26FE00B9BF58 /* ContactsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E21DB4421BB26FE00B9BF58 /* ContactsBrain.swift */; };
 		1E21DB4721BB271900B9BF58 /* StocksBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E21DB4621BB271900B9BF58 /* StocksBrain.swift */; };
-		1EAAA2B521C1AD9B000BA09D /* StockLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAA2B421C1AD9B000BA09D /* StockLogic.swift */; };
-		1EAAA2B721C1ADA7000BA09D /* ContactLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAAA2B621C1ADA7000BA09D /* ContactLogic.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
 		577E5BF321BA8BA20083EB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF221BA8BA20083EB97 /* Assets.xcassets */; };
@@ -30,8 +28,6 @@
 		1E21DB3F21BB1F9000B9BF58 /* StockDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailedViewController.swift; sourceTree = "<group>"; };
 		1E21DB4421BB26FE00B9BF58 /* ContactsBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsBrain.swift; sourceTree = "<group>"; };
 		1E21DB4621BB271900B9BF58 /* StocksBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksBrain.swift; sourceTree = "<group>"; };
-		1EAAA2B421C1AD9B000BA09D /* StockLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockLogic.swift; sourceTree = "<group>"; };
-		1EAAA2B621C1ADA7000BA09D /* ContactLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLogic.swift; sourceTree = "<group>"; };
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577E5BF021BA8BA10083EB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,8 +82,6 @@
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
 				1E21DB4421BB26FE00B9BF58 /* ContactsBrain.swift */,
 				1E21DB4621BB271900B9BF58 /* StocksBrain.swift */,
-				1EAAA2B421C1AD9B000BA09D /* StockLogic.swift */,
-				1EAAA2B621C1ADA7000BA09D /* ContactLogic.swift */,
 				1E21DB4121BB266900B9BF58 /* View Controllers */,
 				577E5C0221BA8C620083EB97 /* json */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
@@ -188,13 +182,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EAAA2B721C1ADA7000BA09D /* ContactLogic.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
 				1E21DB4521BB26FE00B9BF58 /* ContactsBrain.swift in Sources */,
 				1E21DB4021BB1F9000B9BF58 /* StockDetailedViewController.swift in Sources */,
 				1E21DB3E21BB1F7B00B9BF58 /* ContactsDetailedViewController.swift in Sources */,
 				1E21DB4721BB271900B9BF58 /* StocksBrain.swift in Sources */,
-				1EAAA2B521C1AD9B000BA09D /* StockLogic.swift in Sources */,
 				1E21DB3C21BB1F6100B9BF58 /* StockViewController.swift in Sources */,
 				1E21DB3A21BB1F5100B9BF58 /* ContactsViewController.swift in Sources */,
 			);
