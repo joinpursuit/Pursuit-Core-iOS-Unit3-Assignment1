@@ -43,7 +43,6 @@ class PeopleViewController: UIViewController {
                 }
             }
         }
-
     }
 }
 extension PeopleViewController: UITableViewDataSource {
