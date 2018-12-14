@@ -25,9 +25,7 @@ class UserViewController: UIViewController {
         userSearchBar.delegate = self
         self.chosenUsers.sort(by: {($0.name.last, $0.name.first) < ($1.name.last, $1.name.first)})
       }
-//    private func searchUsers(keyword: String) {
-//
-//    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = userTableView.indexPathForSelectedRow,
@@ -43,7 +41,6 @@ class UserViewController: UIViewController {
                 do {
                     let user = try JSONDecoder().decode(UserModel.self, from: data)
                     chosenUsers = user.results
-//                    dump(chosenUsers)
 
                 } catch {
                     print(error)

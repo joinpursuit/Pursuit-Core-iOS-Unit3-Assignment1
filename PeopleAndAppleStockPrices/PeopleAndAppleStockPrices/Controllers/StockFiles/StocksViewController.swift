@@ -19,7 +19,9 @@ class StocksViewController: UIViewController {
     var yearString = ""
     var monthNumberToWord = ""
     var stocksArray = [[StockModel]]()
-    var average = [[Double]]()
+    var monthOpenAmounts = [[Double]]()
+    var averages = [Double]()
+
     @IBOutlet weak var stockTableView: UITableView!
     
     override func viewDidLoad() {
@@ -81,16 +83,17 @@ class StocksViewController: UIViewController {
         for i in 0..<stocks.count {
             getDateMonth(dateString: stocks[i].date)
             let monthYear = "\(monthNumberToWord) \(yearString)"
-            
             if !sectionDate.contains(monthYear) {
                 sectionDate.append(monthYear)
                 stocksArray.append([])
-                average.append([])
-                print("1st print: \(average)")
+                monthOpenAmounts.append([])
+                averages.append(Double())
             }
             stocksArray[stocksArray.endIndex - 1].append(stocks[i])
-            average[average.endIndex - 1].append(stocks[i].open)
-            print("2nd print: \(average)")
+            monthOpenAmounts[monthOpenAmounts.endIndex - 1].append(stocks[i].open)
+        }
+        for i in 0..<monthOpenAmounts.count {
+            averages[i] = monthOpenAmounts[i].reduce(0){$0 + $1}/Double(monthOpenAmounts[i].count)
         }
         
     }
@@ -100,8 +103,7 @@ extension StocksViewController: UITableViewDataSource {
         return sectionDate.count
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        let averageTotal = String(format: "$%.2f", average[section].reduce(0){$0 + $1}/Double(average[section].count))
+        let averageTotal = String(format: "$%.2f", averages[section])
         return "\(sectionDate[section])    Average: \(averageTotal) "
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

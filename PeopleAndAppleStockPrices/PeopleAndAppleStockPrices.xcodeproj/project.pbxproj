@@ -20,7 +20,7 @@
 		970A0A6E21BB2EE6008DF202 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A0A6D21BB2EE6008DF202 /* UserDetailViewController.swift */; };
 		970A0A7021BB2EF5008DF202 /* StocksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A0A6F21BB2EF5008DF202 /* StocksDetailViewController.swift */; };
 		970A0A7521BC5CD8008DF202 /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A0A7421BC5CD8008DF202 /* StockTableViewCell.swift */; };
-		970A0AE921C36B61008DF202 /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A0AE821C36B61008DF202 /* UserAPIClient.swift */; };
+		970A0AE921C36B61008DF202 /* ImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A0AE821C36B61008DF202 /* ImageClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		970A0A6D21BB2EE6008DF202 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		970A0A6F21BB2EF5008DF202 /* StocksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksDetailViewController.swift; sourceTree = "<group>"; };
 		970A0A7421BC5CD8008DF202 /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
-		970A0AE821C36B61008DF202 /* UserAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
+		970A0AE821C36B61008DF202 /* ImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 			children = (
 				577E5BED21BA8BA10083EB97 /* UserViewController.swift */,
 				970A0A6D21BB2EE6008DF202 /* UserDetailViewController.swift */,
-				970A0AE821C36B61008DF202 /* UserAPIClient.swift */,
+				970A0AE821C36B61008DF202 /* ImageClient.swift */,
 			);
 			path = UserFiles;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				970A0A6021BB20FC008DF202 /* StocksViewController.swift in Sources */,
-				970A0AE921C36B61008DF202 /* UserAPIClient.swift in Sources */,
+				970A0AE921C36B61008DF202 /* ImageClient.swift in Sources */,
 				970A0A7021BB2EF5008DF202 /* StocksDetailViewController.swift in Sources */,
 				970A0A7521BC5CD8008DF202 /* StockTableViewCell.swift in Sources */,
 				970A0A6821BB228D008DF202 /* StockModel.swift in Sources */,
