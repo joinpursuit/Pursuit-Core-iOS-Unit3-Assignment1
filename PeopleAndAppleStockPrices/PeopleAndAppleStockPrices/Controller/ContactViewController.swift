@@ -10,7 +10,7 @@ import UIKit
 
 class ContactViewController: UIViewController {
     
-//    var people = [Person]()
+
     var sortedPeople = [Person]() {
         
         didSet {
@@ -88,11 +88,12 @@ extension ContactViewController: UITableViewDataSource, UITableViewDelegate{
 extension ContactViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         isBeingSearched = true
-        
-//        guard let searchWord = searchBar.text else {return}
+         searchBar.resignFirstResponder()
+
         searchResult = sortedPeople.filter{$0.name.fullName.lowercased().contains(searchText.lowercased())}
         peopleTableView.reloadData()
         if searchBar.text == "" {
+           
             isBeingSearched = false
             peopleTableView.reloadData()
         }

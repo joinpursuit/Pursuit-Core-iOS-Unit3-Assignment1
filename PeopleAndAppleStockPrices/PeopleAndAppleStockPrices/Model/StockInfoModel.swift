@@ -10,6 +10,17 @@ import Foundation
 
 struct StockInformation: Codable {
     var date: String
+    var formattedDate: String {
+        var Ddate = date
+       let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: date){
+            dateFormatter.dateFormat = "MMMM-yyyy"
+            Ddate = dateFormatter.string(from: date)
+          
+        }
+      return Ddate
+    }
     var open: Double
     var high: Double
     var low: Double
@@ -31,6 +42,11 @@ struct StockInformation: Codable {
      return Int(components[1])!
     }
     
+    
+    var stockSectionName:String {
+        return formattedDate
+    }
+    
 }
 
 
@@ -39,14 +55,17 @@ struct StockSection: Codable {
     var month: Int
     var stocks: [StockInformation]
     var label: String
-    var average: Double {
+    
+    
+    
+    var average: String {
         var sum = Double()
         var averageCounter = Double()
         for price in stocks{
             sum += price.open
             averageCounter += 1
         }
-        return (sum/averageCounter)
+        return String(format: "%0.2f", sum/averageCounter)
     }
     
     static func createSections(from stocks: [StockInformation]) -> [StockSection] {
@@ -75,7 +94,8 @@ struct StockSection: Codable {
             
            
             
-            let section = StockSection(year: year, month: month, stocks: stocks, label: firstElment.label ?? "")
+            let section = StockSection(year: year, month: month, stocks: stocks, label: firstElment.formattedDate)
+
             
             results.append(section)
         }

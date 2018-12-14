@@ -21,14 +21,8 @@ class PeopleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updatePersonInfo()
-        do {
-            let imageData = try Data(contentsOf: presentPerson.picture.large)
-            personPhoto.image = UIImage(data: imageData)
-        } catch {
-            print(error)
-        }
+      
 
-        // Do any additional setup after loading the view.
     }
     
 
@@ -37,8 +31,12 @@ class PeopleDetailViewController: UIViewController {
         personName.text = presentPerson.name.fullName
         personEmail.text = presentPerson.email
         personCity.text = presentPerson.location.city.capitalized
-
-    
+        do {
+            let imageData = try Data(contentsOf: presentPerson.picture.large)
+            personPhoto.image = UIImage(data: imageData)
+        } catch {
+            print(error)
+        }
     }
-
+    
 }
