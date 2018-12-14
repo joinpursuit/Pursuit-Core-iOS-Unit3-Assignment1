@@ -20,6 +20,9 @@ struct UserInfo: Codable {
 struct NameWrapper: Codable {
     let first: String
     let last: String
+    public var fullName: String {
+        return "\(first) \(last)"
+    }
 }
 struct LocationWrapper: Codable {
     let city: String

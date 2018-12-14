@@ -41,14 +41,14 @@ class StockViewController: UIViewController {
             }
         }
         for i in 0..<stockInfo.count {
-            let monthYear = "\(stockInfo[i].label.components(separatedBy: " ")[0]) \(stockInfo[i].date.components(separatedBy: "-")[0])"
-            if !month.contains(monthYear) {
-                month.append(monthYear)
-                stocks.append([])
-                average.append([])
+            let monthYear = "\(stockInfo[i].label.components(separatedBy: " ")[0]) \(stockInfo[i].date.components(separatedBy: "-")[0])" // monthYear = "Jan 2017"
+            if !month.contains(monthYear) { // if month array doesn't contain monthYear "Jan 2017"
+                month.append(monthYear) // Adds "Jan 2017" to month, month now has ["Jan 2017"] Value
+                stocks.append([]) // Starts new matrix in the matrix array
+                average.append([]) // same here
             }
-            stocks[stocks.endIndex - 1].append(stockInfo[i])
-            average[average.endIndex - 1].append(stockInfo[i].open)
+            stocks[stocks.endIndex - 1].append(stockInfo[i]) // adds to the matrix array until the if statement is met
+            average[average.endIndex - 1].append(stockInfo[i].open) // then it will add to the new matrix array it started
         }
     }
 }
@@ -57,8 +57,7 @@ extension StockViewController: UITableViewDataSource {
         return month.count
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let averageTotal = String(format: "%.2f", average[section].reduce(0){$0 + $1}/Double(average[section].count))
-        return "\(month[section]): Average: $\(averageTotal) "
+        return "\(month[section]):    Average: $\(String(format: "%.2f", average[section].reduce(0){$0 + $1}/Double(average[section].count))) "
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stocks[section].count

@@ -21,24 +21,29 @@ class PeopleViewController: UIViewController {
     super.viewDidLoad()
         peopleTableView.dataSource = self
         peopleSearchBar.delegate = self
-        loadData()
+        loadData(keyword: "")
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = peopleTableView.indexPathForSelectedRow, let contactVC = segue.destination as? ContactViewController else {fatalError("Index path, contactVC is nil")}
         let people = sortedUser[indexPath.row]
         contactVC.people = people
     }
-    func loadData() {
+    func loadData(keyword: String) {
         if let path = Bundle.main.path(forResource:"userinfo", ofType: "json") {
             let myUrl = URL.init(fileURLWithPath: path)
             if let data = try? Data.init(contentsOf: myUrl) {
                 do {
                     userInfo = try JSONDecoder().decode(Results.self, from: data).results
+                    userInfo = userInfo.filter{$0.name.fullName.contains(keyword.lowercased())}
+                    if keyword.isEmpty {
+                        userInfo = try JSONDecoder().decode(Results.self, from: data).results
+                    }
                 } catch {
                     print(error)
                 }
             }
         }
+
     }
 }
 extension PeopleViewController: UITableViewDataSource {
@@ -49,29 +54,15 @@ extension PeopleViewController: UITableViewDataSource {
         sortedUser = userInfo.sorted{$0.name.first < $1.name.first}
         let cell = peopleTableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
         let info = sortedUser[indexPath.row]
-        let fullName = "\(info.name.first) \(info.name.last)"
         let fullLocation = "\(info.location.city), \(info.location.state)"
         cell.imageView?.image = UIImage(named: "profileImage")
-        cell.textLabel?.text = fullName.capitalized
+        cell.textLabel?.text = info.name.fullName.capitalized
         cell.detailTextLabel?.text = fullLocation.capitalized
         return cell
     }
 }
 extension PeopleViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if let path = Bundle.main.path(forResource:"userinfo", ofType: "json") {
-            let myUrl = URL.init(fileURLWithPath: path)
-            if let data = try? Data.init(contentsOf: myUrl) {
-                do {
-                    userInfo = try JSONDecoder().decode(Results.self, from: data).results
-                    userInfo = userInfo.filter{$0.name.first.contains(searchText.lowercased())} + userInfo.filter{$0.name.last.contains(searchText.lowercased())}
-                    if searchText.isEmpty {
-                        userInfo = try JSONDecoder().decode(Results.self, from: data).results
-                    }
-                } catch {
-                    print(error)
-                }
-            }
-        }
+        loadData(keyword: searchText)
     }
 }
