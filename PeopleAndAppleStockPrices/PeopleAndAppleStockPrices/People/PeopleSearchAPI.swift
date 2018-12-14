@@ -8,16 +8,16 @@
 
 import Foundation
 
-//enum PeopleAPIError: Error {
-//    case badUrl(String)
-//    case networkError(Error)
-//    case decodingError(Error)
-//}
-//
-//
+enum PeopleAPIError: Error {
+    case badUrl(String)
+    case networkError(Error)
+    case decodingError(Error)
+}
+
+
 //final class PeopleSearchAPI {
 //    static func search(keyword: String, completion: @escaping (PeopleAPIError?, [People]?) -> Void) {
-//        let urlString = 
+//        let urlString 
 //    }
 //    
 //}

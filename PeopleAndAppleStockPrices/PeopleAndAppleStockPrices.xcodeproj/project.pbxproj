@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		051E713221BB181500E2F8D6 /* PeopleSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E713121BB181500E2F8D6 /* PeopleSearchAPI.swift */; };
 		051E713421BB1D1600E2F8D6 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E713321BB1D1600E2F8D6 /* PeopleModel.swift */; };
+		051E713621BC6B9C00E2F8D6 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E713521BC6B9C00E2F8D6 /* StockModel.swift */; };
+		051E713821BD687B00E2F8D6 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E713721BD687B00E2F8D6 /* StocksViewController.swift */; };
+		05733F8721C066DF00B9A28C /* PeopleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05733F8621C066DF00B9A28C /* PeopleDetailViewController.swift */; };
+		05733FEC21C455F500B9A28C /* StocksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05733FEB21C455F500B9A28C /* StocksDetailViewController.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
 		577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
@@ -21,6 +25,10 @@
 /* Begin PBXFileReference section */
 		051E713121BB181500E2F8D6 /* PeopleSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSearchAPI.swift; sourceTree = "<group>"; };
 		051E713321BB1D1600E2F8D6 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
+		051E713521BC6B9C00E2F8D6 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
+		051E713721BD687B00E2F8D6 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
+		05733F8621C066DF00B9A28C /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
+		05733FEB21C455F500B9A28C /* StocksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksDetailViewController.swift; sourceTree = "<group>"; };
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +51,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05733FAF21C1A80700B9A28C /* Stocks */ = {
+			isa = PBXGroup;
+			children = (
+				051E713721BD687B00E2F8D6 /* StocksViewController.swift */,
+				05733FEB21C455F500B9A28C /* StocksDetailViewController.swift */,
+				051E713521BC6B9C00E2F8D6 /* StockModel.swift */,
+			);
+			path = Stocks;
+			sourceTree = "<group>";
+		};
+		05733FB021C1A81700B9A28C /* People */ = {
+			isa = PBXGroup;
+			children = (
+				051E713321BB1D1600E2F8D6 /* PeopleModel.swift */,
+				05733F8621C066DF00B9A28C /* PeopleDetailViewController.swift */,
+				577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */,
+				051E713121BB181500E2F8D6 /* PeopleSearchAPI.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
 		577E5BDF21BA8BA10083EB97 = {
 			isa = PBXGroup;
 			children = (
@@ -62,10 +91,9 @@
 		577E5BEA21BA8BA10083EB97 /* PeopleAndAppleStockPrices */ = {
 			isa = PBXGroup;
 			children = (
-				577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
-				051E713321BB1D1600E2F8D6 /* PeopleModel.swift */,
-				051E713121BB181500E2F8D6 /* PeopleSearchAPI.swift */,
+				05733FAF21C1A80700B9A28C /* Stocks */,
+				05733FB021C1A81700B9A28C /* People */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
 			);
@@ -165,8 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05733FEC21C455F500B9A28C /* StocksDetailViewController.swift in Sources */,
 				051E713421BB1D1600E2F8D6 /* PeopleModel.swift in Sources */,
+				051E713621BC6B9C00E2F8D6 /* StockModel.swift in Sources */,
 				051E713221BB181500E2F8D6 /* PeopleSearchAPI.swift in Sources */,
+				051E713821BD687B00E2F8D6 /* StocksViewController.swift in Sources */,
+				05733F8721C066DF00B9A28C /* PeopleDetailViewController.swift in Sources */,
 				577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
 			);
