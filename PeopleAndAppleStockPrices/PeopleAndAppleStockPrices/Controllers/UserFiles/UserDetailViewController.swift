@@ -27,6 +27,11 @@ class UserDetailViewController: UIViewController {
         userName.text = userSelected.name.first.capitalized + " " + userSelected.name.last.capitalized
         userEmail.text = userSelected.email
         userLocation.text = userSelected.location.city
+        if let imageUrl = userSelected.picture.large {
+            if let image = ImageClient.getImage(StringURL: imageUrl) {
+                userImage.image = image
+            }
+        }
     }
 
 

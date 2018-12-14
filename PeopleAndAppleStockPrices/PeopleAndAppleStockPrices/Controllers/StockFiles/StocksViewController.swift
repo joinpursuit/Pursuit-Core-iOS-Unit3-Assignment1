@@ -84,12 +84,13 @@ class StocksViewController: UIViewController {
             
             if !sectionDate.contains(monthYear) {
                 sectionDate.append(monthYear)
-                print(sectionDate)
                 stocksArray.append([])
                 average.append([])
+                print("1st print: \(average)")
             }
             stocksArray[stocksArray.endIndex - 1].append(stocks[i])
             average[average.endIndex - 1].append(stocks[i].open)
+            print("2nd print: \(average)")
         }
         
     }
@@ -100,8 +101,8 @@ extension StocksViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        let averageTotal = String(format: "%.2f", average[section].reduce(0){$0 + $1}/Double(average[section].count))
-        return "\(sectionDate[section]): Average: $\(averageTotal) "
+        let averageTotal = String(format: "$%.2f", average[section].reduce(0){$0 + $1}/Double(average[section].count))
+        return "\(sectionDate[section])    Average: \(averageTotal) "
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stocksArray[section].count

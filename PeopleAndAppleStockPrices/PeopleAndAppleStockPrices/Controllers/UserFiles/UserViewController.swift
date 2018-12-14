@@ -62,6 +62,11 @@ extension UserViewController: UITableViewDataSource {
         let userToSet = chosenUsers[indexPath.row]
         cell.textLabel?.text = userToSet.name.first.capitalized + " " + userToSet.name.last.capitalized
         cell.detailTextLabel?.text = userToSet.location.city.capitalized
+        if let imageUrl = userToSet.picture.thumbnail {
+            if let image = ImageClient.getImage(StringURL: imageUrl) {
+                cell.imageView?.image = image
+            }
+        }
         return cell
     }
 }
