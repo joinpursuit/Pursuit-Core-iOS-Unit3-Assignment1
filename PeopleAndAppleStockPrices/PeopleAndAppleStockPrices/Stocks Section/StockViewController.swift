@@ -12,10 +12,23 @@ class StockViewController: UIViewController {
     var stocks = [AppleStocks]()
     
     @IBOutlet weak var stocksTableView: UITableView!
+    var sectionName = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         stocksTableView.dataSource = self
         stocks = StockInfoService.loadData()
+        fillSectionName()
+    }
+    func stockBySection(section: Int) -> [AppleStocks] {
+        return stocks.filter{$0.sectionName == sectionName[section]}
+    }
+    
+    func fillSectionName() {
+        for stock in stocks {
+            if !sectionName.contains(stock.sectionName) {
+                sectionName.append(stock.sectionName)
+            }
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -35,18 +48,22 @@ extension StockViewController: UITableViewDataSource {
         let stockToSet = stocks[indexPath.row]
         cell.textLabel?.text = stockToSet.date
         cell.detailTextLabel?.text = String(format: "%.2f",stockToSet.open)
-        if stockToSet.close > stockToSet.open {
-            cell.backgroundColor = .green
-        } else {
-            cell.backgroundColor = .red
-        }
+
 
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return stocks.count
+        return stockBySection(section: section).count
     }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionName.count
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let thisSection = sectionName[section]
+        return thisSection
+    }
+   
     
 }
 

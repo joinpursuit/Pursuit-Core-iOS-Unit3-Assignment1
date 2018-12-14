@@ -19,7 +19,7 @@ class StockInfoService {
             
             if let data = try? Data.init(contentsOf: myUrl) {
                 do {
-                    results = try JSONDecoder().decode([AppleStocks].self, from: data)
+                    results = try JSONDecoder().decode([AppleStocks].self, from: data).sorted{$0.date < $1.date}
                 } catch {
                     print(error)
                 }
@@ -28,3 +28,4 @@ class StockInfoService {
         return results
     }
 }
+

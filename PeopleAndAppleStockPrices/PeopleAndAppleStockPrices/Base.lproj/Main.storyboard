@@ -314,11 +314,11 @@
             </objects>
             <point key="canvasLocation" x="492" y="181.25937031484258"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="pJC-K2-3v0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PVU-dx-Ydw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="w7l-Kf-Fz6"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-contract_job_filled" selectedImage="icons8-contract_job_filled" id="w7l-Kf-Fz6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B2b-We-PPR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -333,11 +333,11 @@
             </objects>
             <point key="canvasLocation" x="1431.2" y="181.25937031484258"/>
         </scene>
-        <!--Item-->
+        <!--Stocks-->
         <scene sceneID="K06-0a-XM0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AIN-4h-FFz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="QbB-dg-ohh"/>
+                    <tabBarItem key="tabBarItem" title="Stocks" image="icons8-stocks_filled" selectedImage="icons8-stocks_filled" id="QbB-dg-ohh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fBo-X9-Fkd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -353,4 +353,8 @@
             <point key="canvasLocation" x="838" y="984"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-contract_job_filled" width="25" height="25"/>
+        <image name="icons8-stocks_filled" width="25" height="25"/>
+    </resources>
 </document>
