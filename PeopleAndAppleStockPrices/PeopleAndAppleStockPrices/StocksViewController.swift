@@ -48,6 +48,7 @@ extension StocksViewController: UITableViewDataSource {
         let cell = stockTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
         let stockToSet = stocks[indexPath.row]
         cell.textLabel?.text = stockToSet.date
+        cell.detailTextLabel?.text = "\(stockToSet.open)"
         return cell
 }
 
