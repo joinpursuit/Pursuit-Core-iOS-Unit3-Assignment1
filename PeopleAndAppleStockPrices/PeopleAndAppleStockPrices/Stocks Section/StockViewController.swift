@@ -10,6 +10,7 @@ import UIKit
 
 class StockViewController: UIViewController {
     var stocks = [AppleStocks]()
+    var matrix = [[AppleStocks]]()
     
     @IBOutlet weak var stocksTableView: UITableView!
     var sectionName = [String]()
@@ -54,16 +55,16 @@ extension StockViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return stockBySection(section: section).count
+        return /*stockBySection(section: section).count*/ stocks.count
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionName.count
+        return /*sectionName.count*/ 1
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let thisSection = sectionName[section]
-        return thisSection
-    }
-   
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        let thisSection = sectionName[section]
+//        return thisSection
+//    }
+//
     
 }
 
