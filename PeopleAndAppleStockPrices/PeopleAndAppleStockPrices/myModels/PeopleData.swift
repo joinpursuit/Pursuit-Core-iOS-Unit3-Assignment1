@@ -11,11 +11,13 @@ struct ContactDetails : Codable {
     struct Contacts : Codable {
         let results :[ContactDetails]
     }
+        var fullName : String { return name.first + " " + name.last }
+        
     struct NameWrapper : Codable {
         let first : String
         let last : String
-   
-    }
+        
+  }
     let name : NameWrapper
     struct LocationWrapper : Codable {
         let street : String
@@ -34,4 +36,5 @@ struct ContactDetails : Codable {
         let thumbnail : String
     }
     let picture : PictureWrapper
-}
+    }
+

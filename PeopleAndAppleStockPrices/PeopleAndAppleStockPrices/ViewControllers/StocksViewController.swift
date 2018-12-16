@@ -12,7 +12,7 @@ class StocksViewController: UIViewController {
 
     @IBOutlet weak var stocksTableView: UITableView!
     
-    var stocks = [StockData]() // I think I need an array because I will need to provide infor in sections
+    var stocks = [StockData]() 
     
     
     override func viewDidLoad() {

@@ -39,6 +39,8 @@ class ContactsViewController: UIViewController {
             let selectedContactIndexPath = contactsTableView.indexPathForSelectedRow else {return}
         let contactToSet = contacts[selectedContactIndexPath.row]
         destination.contact = contactToSet
+        
+        
     }
     
     
@@ -49,7 +51,8 @@ class ContactsViewController: UIViewController {
         if let data = try? Data.init(contentsOf : url){
                 do{
                     let newContacts = try JSONDecoder().decode(ContactDetails.Contacts.self, from: data)
-                    contacts = newContacts.results.sorted{$0.name.first < $1.name.first}
+                    contacts = newContacts.results
+                    //contacts.first?.name
                 }catch{
                     print(error)
                 }
@@ -66,8 +69,8 @@ extension ContactsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contactsTableView.dequeueReusableCell(withIdentifier: "contactsCell", for: indexPath)
         let contactToSet = contacts[indexPath.row]
-        cell.textLabel?.text = contactToSet.name.first + " " + contactToSet.name.last
-        cell.detailTextLabel?.text = contactToSet.location.city
+        cell.textLabel?.text = contactToSet.fullName.capitalized
+        cell.detailTextLabel?.text = contactToSet.location.city.capitalized
         if let url = URL.init(string : contactToSet.picture.thumbnail){
             do {
                 let data = try Data.init(contentsOf: url)
@@ -77,6 +80,7 @@ extension ContactsViewController : UITableViewDataSource {
             }catch{
                 print(error)
             }
+            
             
         }
         return cell
