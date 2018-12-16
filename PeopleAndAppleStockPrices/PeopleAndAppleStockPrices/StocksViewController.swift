@@ -26,8 +26,7 @@ class StocksViewController: UIViewController {
             let myUrl = URL.init(fileURLWithPath: path)
             if let data = try? Data.init(contentsOf: myUrl) {
                 do {
-                    results = try JSONDecoder().decode([StockPrice].self, from: data)
-                    //                    results = stocks.sorted {$0 > $1.date}
+                    results = try JSONDecoder().decode([StockPrice].self, from: data).sorted{$0.date < $1.date}
                 } catch {
                     print(error)
                 }
@@ -40,32 +39,51 @@ class StocksViewController: UIViewController {
         let components = dateString.components(separatedBy: "-")
         return (components[1], components[0])
     }
+    
     func fillSection() -> [[StockPrice]] {
         var sections = [[StockPrice]]()
-        sections.append([StockPrice]())
-        var startIndex = 0
-        var date = (month: "12", year: "2016")
-        
         
         
         if let dailyStockData = loadData() {
+            
+            sections.append([StockPrice]())
+            
+            var startIndex = 0
+            
+            var date = (month: "12", year: "2016")
+            
+            
+            
             for currentStockInfo in dailyStockData {
+                
+                
                 if date != getDateMonth(dateString: currentStockInfo.date ) {
-                    date = getDateMonth(dateString: currentStockInfo.date)
+//
                     sections.append([StockPrice]())
                     startIndex += 1
+                 
                 }
+                
+                   date = getDateMonth(dateString: currentStockInfo.date)
                 sections[startIndex].append(currentStockInfo)
             }
         }
         
-        
-        
         return sections
     }
     
+//    func getSectionNames() {
+//        for stock in stocks {
+//          // if !stock
+//        }
+//    }
+    
 }
 extension StocksViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return stocks.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stocks[section].count
         
@@ -81,3 +99,6 @@ extension StocksViewController: UITableViewDataSource {
     
     
 }
+
+// table delget and header in scetion
+

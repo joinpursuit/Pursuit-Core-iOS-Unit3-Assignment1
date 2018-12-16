@@ -14,25 +14,26 @@ class ContactsViewController: UIViewController {
    
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? ContactsDetailController,
             let selectedIndexPath = contactTableView.indexPathForSelectedRow else { return }
         let contactToSend = contacts[selectedIndexPath.row ]
         destination.contacts = contactToSend
-        
     }
     var contacts = [ContactInfo](){
         didSet {
             contactTableView.reloadData()
-            
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         contacts = loadData()
         contactTableView.dataSource = self
         searchBar.delegate = self
-        //dump(contacts)
     }
     
     func loadData() -> [ContactInfo] {
@@ -67,7 +68,6 @@ extension ContactsViewController: UITableViewDataSource {
         do {
              let data = try Data.init(contentsOf: image)
                 cell.imageView?.image = UIImage.init(data: data)
-            
         } catch {
             print(error)
         }
@@ -77,9 +77,6 @@ extension ContactsViewController: UITableViewDataSource {
     }
     
 }
-
-
-//  a function that invokes every time the user types on the Search Bar.
 extension ContactsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)  {
         contacts = loadData()

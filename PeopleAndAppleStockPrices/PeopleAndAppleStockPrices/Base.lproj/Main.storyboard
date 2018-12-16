@@ -285,6 +285,7 @@
                         <outlet property="closePriceLabel" destination="qsa-D3-iab" id="y2b-d6-X9U"/>
                         <outlet property="dateLabel" destination="puQ-SN-RWN" id="zbc-3y-lt9"/>
                         <outlet property="openPriceLabel" destination="lVq-kH-Mci" id="5yU-dx-phR"/>
+                        <outlet property="stockImage" destination="wVc-xi-av7" id="MEJ-nW-q34"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ye-xg-8WI" userLabel="First Responder" sceneMemberID="firstResponder"/>
