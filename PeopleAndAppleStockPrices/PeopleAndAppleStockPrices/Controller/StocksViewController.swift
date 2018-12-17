@@ -11,7 +11,7 @@ import UIKit
 class StocksViewController: UIViewController {
     var stockInfo = [StockInformation]()
     var sectionNames = [String]()
-    //var stocksBySection = [StockSection]()
+   
 
     @IBOutlet weak var stockTableView: UITableView!
     override func viewDidLoad() {
@@ -19,14 +19,7 @@ class StocksViewController: UIViewController {
         loadData()
         getSectionName()
         stockTableView.dataSource = self
-//            {
-//                let inputFormatter = DateFormatter()
-//                inputFormatter.dateFormat = "yyyy/MM/dd"
-//                let showDate = inputFormatter.date(from: date)
-//                inputFormatter.dateFormat = "MM-yyyy"
-//                let result = inputFormatter.string(from: showDate!)
-//
-//                return result
+
         title = "Stocks"
       
     }
@@ -38,7 +31,7 @@ class StocksViewController: UIViewController {
                         let data = try Data.init(contentsOf: url)
                     let stockDetails = try JSONDecoder().decode([StockInformation].self, from: data).sorted{$0.date < $1.date}
                     stockInfo = stockDetails
-                    //stocksBySection = StockSection.createSections(from: stockDetails)
+    
             
                 } catch {
                     print(error)
@@ -87,14 +80,14 @@ extension StocksViewController: UITableViewDataSource {
         for stock in stocksInSection {
             sum += stock.open
         }
-        let average = sum / Double(stocksInSection.count)
+        let average = String(format: "%0.2f", sum / Double(stocksInSection.count))
         return "\(stockSectionName)                                  $\(average)"
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = stockTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
         let stocksInSection = stocksBySections(sectionNum: indexPath.section)
         let stock = stocksInSection[indexPath.row]
-//        let stock = stocksBySection[indexPath.section].stocks[indexPath.row]
+        
         cell.textLabel?.text = stock.date
         cell.detailTextLabel?.text = String(format: "%0.2f", (stock.open))
         return cell
