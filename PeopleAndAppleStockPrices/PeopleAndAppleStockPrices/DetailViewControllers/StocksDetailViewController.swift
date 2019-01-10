@@ -15,12 +15,26 @@ class StocksDetailViewController: UIViewController {
     @IBOutlet weak var close: UILabel!
     @IBOutlet weak var open: UILabel!
     
+    var stock : StockData!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpUI()
     
     }
     
+    func setUpUI(){
+        date.text = stock.date
+        close.text = "\(stock.close)"
+        open.text = "\(stock.open)"
+        if stock.close > stock.open {
+            view.backgroundColor = .green
+            stocksImage.image = UIImage(named: "thumbsUp")
+        }else {
+            view.backgroundColor = .red
+            stocksImage.image = UIImage(named: "thumbsDown")
+        }
+    }
 
    
 }
