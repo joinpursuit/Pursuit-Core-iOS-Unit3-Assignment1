@@ -111,5 +111,5 @@ You will need to use Auto Layout to constrain your views.
 
 # Rubric
 
-![rubric](./gifs/stocksRubric.png)
+![rubric](./gifs/stockRubric.png)
 
