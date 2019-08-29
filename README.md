@@ -33,7 +33,7 @@ Parsing JSON using Codable to create a tab bar controller consisting of Users an
 
 ## Summary
 
-You are given two .json files.  Create a Tab Bar Controller that manages two View Controllers, each one with a Table View inside.  Selecting a row in a table view should segue to another View Controller with more information about the specific item selected.
+You are given two .json files.  Create a Tab Bar Controller that manages two View Controllers, each one with a Table View inside.  Selecting a row in a table view should segue to another View Controller with more information about the specific item selected.  You must also use include Unit Tests for your models.
 
 ## JSON
 
