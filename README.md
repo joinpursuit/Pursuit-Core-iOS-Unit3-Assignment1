@@ -111,14 +111,5 @@ You will need to use Auto Layout to constrain your views.
 
 # Rubric
 
-|Criterion|Points|
-|---|---|
-| App uses Auto Layout | 4 |
-| Variable Naming and Readability | 4 |
-| Loads an array of Contact objects using Codable | 8 |
-| Loads an array of Contact objects using Codable | 8 |
-| Table views are populated | 4 |
-| Contacts search bar works as expected | 4 |
-| Sections load appropriately in Stock table view | 4 |
-| Detail views and segues behave appropriately | 4 |
+![rubric](./gifs/stocksRubric.png)
 
