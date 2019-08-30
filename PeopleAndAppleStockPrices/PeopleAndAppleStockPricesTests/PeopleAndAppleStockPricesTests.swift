@@ -29,5 +29,28 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testLoadContacts() {
+        let data = getContactDataFromJSON()
+        let contacts = Results.getContacts(from: data)
+        XCTAssertTrue(contacts != nil, "There is no contact here")
+    }
+    
+    func testContactsHasTwoHundredElements() {
+        let data = getContactDataFromJSON()
+        let contacts = Results.getContacts(from: data)
+        XCTAssertTrue(contacts.count == 200, "There are \(contacts.count) contacts here")
+    }
+    
+    private func getContactDataFromJSON() -> Data {
+        guard let pathToData = Bundle.main.path(forResource: "userinfo", ofType: "json") else {fatalError("Could not find path")}
+        let url = URL(fileURLWithPath: pathToData)
+        do {
+            let data = try Data(contentsOf: url)
+            return data
+        } catch let jsonError {
+            fatalError("Error: \(jsonError)")
+        }
+    }
 
 }

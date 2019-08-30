@@ -19,6 +19,10 @@ struct Results: Codable {
             fatalError("Error: \(decodeError)")
         }
     }
+    
+    private enum CodingKeys: String, CodingKey {
+        case contacts = "results"
+    }
 }
 
 struct Contact: Codable {
