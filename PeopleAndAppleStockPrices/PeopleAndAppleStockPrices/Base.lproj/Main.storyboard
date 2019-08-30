@@ -16,7 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="wM2-ez-8Je">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m16-c6-LqA">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="34h-Hp-lI8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E1L-IB-SJj" firstAttribute="bottom" secondItem="m16-c6-LqA" secondAttribute="bottom" id="Kgi-Ez-ehS"/>
+                            <constraint firstItem="E1L-IB-SJj" firstAttribute="trailing" secondItem="34h-Hp-lI8" secondAttribute="trailing" id="Syr-o7-TvQ"/>
+                            <constraint firstItem="34h-Hp-lI8" firstAttribute="top" secondItem="E1L-IB-SJj" secondAttribute="top" id="YKm-tp-kmP"/>
+                            <constraint firstItem="m16-c6-LqA" firstAttribute="leading" secondItem="E1L-IB-SJj" secondAttribute="leading" id="ga3-HD-ZGM"/>
+                            <constraint firstItem="E1L-IB-SJj" firstAttribute="trailing" secondItem="m16-c6-LqA" secondAttribute="trailing" id="qyq-wa-t5F"/>
+                            <constraint firstItem="m16-c6-LqA" firstAttribute="firstBaseline" secondItem="34h-Hp-lI8" secondAttribute="baseline" id="svk-96-15U"/>
+                            <constraint firstItem="34h-Hp-lI8" firstAttribute="leading" secondItem="E1L-IB-SJj" secondAttribute="leading" id="vE5-Bc-jgE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="E1L-IB-SJj"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Apple Stocks" id="ogT-8D-iaa"/>
@@ -32,7 +51,26 @@
                     <view key="view" contentMode="scaleToFill" id="BHI-HR-gQz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uXc-d6-Mx0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zwR-SQ-Zhk">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zn4-Oc-m5v" firstAttribute="bottom" secondItem="zwR-SQ-Zhk" secondAttribute="bottom" id="5Cm-Qz-ZC6"/>
+                            <constraint firstItem="zn4-Oc-m5v" firstAttribute="trailing" secondItem="zwR-SQ-Zhk" secondAttribute="trailing" id="HhC-jY-mKT"/>
+                            <constraint firstItem="uXc-d6-Mx0" firstAttribute="leading" secondItem="zn4-Oc-m5v" secondAttribute="leading" id="Hy3-r3-rVo"/>
+                            <constraint firstItem="zn4-Oc-m5v" firstAttribute="trailing" secondItem="uXc-d6-Mx0" secondAttribute="trailing" id="TD7-5e-l9L"/>
+                            <constraint firstItem="zwR-SQ-Zhk" firstAttribute="top" secondItem="uXc-d6-Mx0" secondAttribute="bottom" id="mnx-4S-FXb"/>
+                            <constraint firstItem="uXc-d6-Mx0" firstAttribute="top" secondItem="zn4-Oc-m5v" secondAttribute="top" id="wIU-I3-hMV"/>
+                            <constraint firstItem="zwR-SQ-Zhk" firstAttribute="leading" secondItem="zn4-Oc-m5v" secondAttribute="leading" id="xOV-5T-slI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zn4-Oc-m5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Contacts" id="LoD-s7-eU0"/>
