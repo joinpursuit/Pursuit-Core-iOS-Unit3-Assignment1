@@ -8,6 +8,36 @@
 
 import Foundation
 
-struct Contacts: Codable {
+struct Results: Codable {
+    let contacts: [Contact]
+    
+    static func getContacts(from data: Data) -> [Contact] {
+        do {
+            let contactResults = try JSONDecoder().decode(Results.self, from: data)
+            return contactResults.contacts
+        } catch let decodeError {
+            fatalError("Error: \(decodeError)")
+        }
+    }
+}
+
+struct Contact: Codable {
+    let name: NameWrapper
+    let location: LocationWrapper
+    let email: String
+    let phone: String
+    let cell: String
+    
+    struct NameWrapper: Codable {
+        let first: String
+        let last: String
+    }
+    
+    struct LocationWrapper: Codable {
+        let street: String
+        let city: String
+        let state: String
+    }
     
 }
+
