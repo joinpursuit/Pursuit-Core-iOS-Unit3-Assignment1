@@ -42,8 +42,25 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         XCTAssertTrue(contacts.count == 200, "There are \(contacts.count) contacts here")
     }
     
+    func testStockHasFiveHundredThreeElements() {
+        let data = getStockDataFromJSON()
+        let stocks = Stock.getPrices(from: data)
+        XCTAssertTrue(stocks.count == 503, "There are \(stocks.count) stocks here")
+    }
+    
     private func getContactDataFromJSON() -> Data {
         guard let pathToData = Bundle.main.path(forResource: "userinfo", ofType: "json") else {fatalError("Could not find path")}
+        let url = URL(fileURLWithPath: pathToData)
+        do {
+            let data = try Data(contentsOf: url)
+            return data
+        } catch let jsonError {
+            fatalError("Error: \(jsonError)")
+        }
+    }
+    
+    private func getStockDataFromJSON() -> Data {
+        guard let pathToData = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else {fatalError("Could not fund path")}
         let url = URL(fileURLWithPath: pathToData)
         do {
             let data = try Data(contentsOf: url)

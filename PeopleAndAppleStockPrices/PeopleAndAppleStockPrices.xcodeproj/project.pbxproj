@@ -19,6 +19,7 @@
 		FC3B30BD2319B43E00FA66F0 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B30BC2319B43E00FA66F0 /* Stock.swift */; };
 		FC3B30C62319B59400FA66F0 /* PeopleAndAppleStockPricesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B30C52319B59400FA66F0 /* PeopleAndAppleStockPricesTests.swift */; };
 		FC3B30CD2319BC8E00FA66F0 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B30B82319B40900FA66F0 /* Contacts.swift */; };
+		FC3B30CE2319BFC100FA66F0 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B30BC2319B43E00FA66F0 /* Stock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +262,7 @@
 			files = (
 				FC3B30CD2319BC8E00FA66F0 /* Contacts.swift in Sources */,
 				FC3B30C62319B59400FA66F0 /* PeopleAndAppleStockPricesTests.swift in Sources */,
+				FC3B30CE2319BFC100FA66F0 /* Stock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
