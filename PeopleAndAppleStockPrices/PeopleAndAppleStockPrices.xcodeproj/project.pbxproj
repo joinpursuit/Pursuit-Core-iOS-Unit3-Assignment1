@@ -12,6 +12,8 @@
 		28D14AD12319C799001E4619 /* applstockinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5C0021BA8C5C0083EB97 /* applstockinfo.json */; };
 		28D14AD32319C9CB001E4619 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D14AD22319C9CB001E4619 /* UserModel.swift */; };
 		28D14AD52319C9F3001E4619 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D14AD42319C9F3001E4619 /* StockModel.swift */; };
+		28D14AD62319D049001E4619 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D14AD42319C9F3001E4619 /* StockModel.swift */; };
+		28D14AD72319D04D001E4619 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D14AD22319C9CB001E4619 /* UserModel.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
 		577E5BF321BA8BA20083EB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF221BA8BA20083EB97 /* Assets.xcassets */; };
@@ -95,8 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
-				28D14AD42319C9F3001E4619 /* StockModel.swift */,
 				28D14AD22319C9CB001E4619 /* UserModel.swift */,
+				28D14AD42319C9F3001E4619 /* StockModel.swift */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
 			);
@@ -228,6 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D14AD62319D049001E4619 /* StockModel.swift in Sources */,
+				28D14AD72319D04D001E4619 /* UserModel.swift in Sources */,
 				28D14AC92319C672001E4619 /* PeopleAndAppleStockPricesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
