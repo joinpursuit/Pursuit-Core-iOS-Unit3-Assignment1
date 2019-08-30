@@ -13,11 +13,15 @@ class RandomUserViewController:UIViewController {
     @IBOutlet weak var randomUserTableView: UITableView!
     var randomUser = [Results]() {
         didSet {
-            randomUserTableView.reloadData()
+            DispatchQueue.main.async {
+                self.randomUserTableView.reloadData()
+        }
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
+        getData()
     }
   private func getData() {
     UserAPIClient.shared.fetchData { (results) in
@@ -39,9 +43,21 @@ extension RandomUserViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = randomUserTableView.dequeueReusableCell(withIdentifier: "randomUser")
         cell?.textLabel?.text = randomUser[indexPath.row].name.getName()
-        cell?.detailTextLabel?.text = randomUser[indexPath.row].location.city
+        cell?.detailTextLabel?.text = randomUser[indexPath.row].location.capitalizeCity()
         return cell!
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let storyBoard = storyboard?.instantiateViewController(withIdentifier: "DetailViewControllerOne") as? DetailViewControllerOne {
+            
+            storyBoard.passingInfo = randomUser[indexPath.row]
+            
+            navigationController?.pushViewController(storyBoard, animated: true)
+        }
+    }
+    func setUp() {
+        randomUserTableView.dataSource = self
+        randomUserTableView.delegate = self
+        self.navigationItem.title = "Contacts"
+    }
     
 }

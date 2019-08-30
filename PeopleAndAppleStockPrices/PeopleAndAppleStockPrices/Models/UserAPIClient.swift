@@ -24,7 +24,7 @@ struct UserAPIClient {
             } catch let JSONError {
                 completionHandler(.failure(JSONError))
             }
-        }
+        }.resume()
 
 }
 }

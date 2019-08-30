@@ -35,6 +35,9 @@ struct Location:Codable {
     let city:String
     let state:String
     
+    func capitalizeCity() -> String {
+       return city.capitalizingFirstLetter()
+    }
     func getLocation() -> String {
         return """
         
