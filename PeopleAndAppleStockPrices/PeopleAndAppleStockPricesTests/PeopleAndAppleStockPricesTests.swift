@@ -18,16 +18,25 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testStock() {
+        let data = getStockDataFromJSON()
+        guard let stock = Stock.getStock(from: data) else {return}
+        XCTAssert(stock != nil, "Does not exist")
+    }
+    
+    private func getStockDataFromJSON() -> Data {
+        guard let pathToData = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else {fatalError("did not find path")}
+        
+        let url = URL(fileURLWithPath: pathToData)
+        
+        do {
+            let data = try Data(contentsOf: url)
+            return data
+        } catch let jsonError {
+            fatalError("\(jsonError)")
+        }
+        
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
 }
