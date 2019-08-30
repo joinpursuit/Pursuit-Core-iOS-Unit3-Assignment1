@@ -24,7 +24,6 @@ class PeopleViewController: UIViewController {
         contactsTableView.delegate = self
         contactsTableView.dataSource = self
         loadData()
-        // Do any additional setup after loading the view.
     }
     
 
@@ -39,7 +38,6 @@ class PeopleViewController: UIViewController {
             fatalError("Error: \(loadDataError)")
         }
     }
-
 }
 
 extension PeopleViewController: UITableViewDataSource, UITableViewDelegate {
@@ -54,6 +52,5 @@ extension PeopleViewController: UITableViewDataSource, UITableViewDelegate {
         cell.detailTextLabel?.text = oneContact.location.city
         return cell
     }
-    
-    
+
 }

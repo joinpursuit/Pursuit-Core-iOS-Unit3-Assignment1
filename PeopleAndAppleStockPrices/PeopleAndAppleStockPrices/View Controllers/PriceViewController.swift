@@ -9,23 +9,47 @@
 import UIKit
 
 class PriceViewController: UIViewController {
+    
+    var stocks = [Stock]() {
+        didSet {
+            priceTableView.reloadData()
+        }
+    }
 
     @IBOutlet weak var priceTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        priceTableView.delegate = self
+        priceTableView.dataSource = self
+        loadData()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func loadData() {
+        guard let pathToJSONFile = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else {fatalError("Could not find path")}
+        let url = URL(fileURLWithPath: pathToJSONFile)
+        do {
+            let data = try Data(contentsOf: url)
+            let stocksFromJSON = Stock.getPrices(from: data)
+            stocks = stocksFromJSON
+        } catch let loadDataError {
+            fatalError("Error: \(loadDataError)")
+        }
     }
-    */
 
+}
+
+extension PriceViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stocks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath)
+        let oneStock = stocks[indexPath.row]
+        cell.textLabel?.text = oneStock.date
+        cell.detailTextLabel?.text = "\(oneStock.close)"
+        return cell
+    }
+    
 }
