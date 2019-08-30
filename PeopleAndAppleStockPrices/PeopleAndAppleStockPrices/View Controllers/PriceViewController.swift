@@ -10,6 +10,7 @@ import UIKit
 
 class PriceViewController: UIViewController {
 
+    @IBOutlet weak var priceTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
