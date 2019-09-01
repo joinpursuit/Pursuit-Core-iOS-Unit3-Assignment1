@@ -9,9 +9,9 @@
 import Foundation
 
 struct Stock: Codable {
-    let date: String
-    let openPrice: String
-    let closePrice: String
+    var date: String
+    let openPrice: Double
+    let closePrice: Double
     
     
     private enum CodingKeys: String, CodingKey {
@@ -27,5 +27,13 @@ struct Stock: Codable {
         } catch {
             return nil
         }
+    }
+    
+    func getDateinDateFormat() -> Date {
+        return self.date.toDate(dateFormat: "yyyy-MM-dd")!
+    }
+    
+    static func getSortedArr(arr: [Stock]) -> [Stock] {
+        return arr.sorted{ $0.getDateinDateFormat() < $1.getDateinDateFormat() }
     }
 }
