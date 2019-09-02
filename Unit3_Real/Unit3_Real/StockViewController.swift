@@ -28,11 +28,30 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
         
     }
+    
+    private func loadData() {
+        //pathToJSONFile is just the string for the name of the file
+        guard let pathToJSONFile = Bundle.main.path(forResource: "applestockinfo", ofType: "json") else {
+            fatalError("Could not find bundle")
+        }
+        print(pathToJSONFile)
+        //url is the reference of the location of the json file
+        let url = URL(fileURLWithPath: pathToJSONFile)
+        do {
+            let data = try Data(contentsOf: url)
+            let resultsFromJSON = Stock.getStock(from: data)
+            stocks = resultsFromJSON
+            
+        } catch {
+            fatalError("Could not decode")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stockTableViewOutlet.dataSource = self
         stockTableViewOutlet.delegate = self
-        
+        loadData()
         // Do any additional setup after loading the view.
     }
     

@@ -12,9 +12,9 @@ import UIKit
 struct PeopleWrapper: Codable{
     let people: [Person]
     
-    static func getPeople(from data: Data) -> [PeopleWrapper]{
+    static func getPeople(from data: Data) -> PeopleWrapper{
         do{
-            let human = try JSONDecoder().decode([PeopleWrapper].self, from: data)
+            let human = try JSONDecoder().decode(PeopleWrapper.self, from: data)
             return human
         } catch let anError { fatalError( "\(anError)" )}
     }

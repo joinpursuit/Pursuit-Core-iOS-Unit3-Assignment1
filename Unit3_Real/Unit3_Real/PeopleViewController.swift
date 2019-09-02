@@ -17,13 +17,13 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return human.count
+        return human[0].people.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userTableViewOutlet.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-        let humas = human[indexPath.row]
-        cell.textLabel?.text = "\(humas.people[0].name.title) \(humas.people[0].name.first) \(humas.people[0].name.last) "
+        let humas = human[0].people[indexPath.row]
+        cell.textLabel?.text = "\(humas.name.title).\(humas.name.first) \(humas.name.last) "
         return cell
     }
     
@@ -38,7 +38,7 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
         do {
             let data = try Data(contentsOf: url)
             let resultsFromJSON = PeopleWrapper.getPeople(from: data)
-            human = resultsFromJSON
+            human = [resultsFromJSON]
             
         } catch {
             fatalError("Could not decode")
