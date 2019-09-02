@@ -12,9 +12,9 @@ import UIKit
 struct PeopleWrapper: Codable{
     let people: [Person]
     
-    static func getWeather(from data: Data) -> PeopleWrapper?{
+    static func getPeople(from data: Data) -> [PeopleWrapper]{
         do{
-            let human = try JSONDecoder().decode(PeopleWrapper.self, from: data)
+            let human = try JSONDecoder().decode([PeopleWrapper].self, from: data)
             return human
         } catch let anError { fatalError( "\(anError)" )}
     }
@@ -43,7 +43,7 @@ struct Stock: Codable {
     let label: String
     
     
-    static func getWeather(from data: Data) -> Stock?{
+    static func getStock(from data: Data) -> [Stock]{
         do{
             let money = try JSONDecoder().decode(Stock.self, from: data)
             return money

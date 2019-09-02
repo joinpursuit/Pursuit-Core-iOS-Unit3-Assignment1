@@ -27,10 +27,29 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    private func loadData() {
+        //pathToJSONFile is just the string for the name of the file
+        guard let pathToJSONFile = Bundle.main.path(forResource: "userinfo", ofType: "json") else {
+            fatalError("Could not find bundle")
+        }
+        print(pathToJSONFile)
+        //url is the reference of the location of the json file
+        let url = URL(fileURLWithPath: pathToJSONFile)
+        do {
+            let data = try Data(contentsOf: url)
+            let resultsFromJSON = PeopleWrapper.getPeople(from: data)
+            human = resultsFromJSON
+            
+        } catch {
+            fatalError("Could not decode")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userTableViewOutlet.dataSource = self
         userTableViewOutlet.delegate = self
+        loadData()
         // Do any additional setup after loading the view.
     }
 
