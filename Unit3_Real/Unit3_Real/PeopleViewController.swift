@@ -29,6 +29,8 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userTableViewOutlet.dataSource = self
+        userTableViewOutlet.delegate = self
         // Do any additional setup after loading the view.
     }
 

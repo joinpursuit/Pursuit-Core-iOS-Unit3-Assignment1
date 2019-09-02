@@ -30,6 +30,8 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        stockTableViewOutlet.dataSource = self
+        stockTableViewOutlet.delegate = self
 
         // Do any additional setup after loading the view.
     }
