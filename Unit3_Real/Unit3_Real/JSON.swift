@@ -45,7 +45,7 @@ struct Stock: Codable {
     
     static func getStock(from data: Data) -> [Stock]{
         do{
-            let money = try JSONDecoder().decode(Stock.self, from: data)
+            let money = try JSONDecoder().decode([Stock].self, from: data)
             return money
         } catch let anError { fatalError( "\(anError)" )}
     }
