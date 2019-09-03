@@ -27,7 +27,7 @@ class PeopleViewController: UIViewController {
             guard searchString != "" else {return contacts}
             
             
-            return contacts.filter{$0.name.first.contains(searchString)}
+            return contacts.filter{$0.fullName.contains(searchString)}
         }
     }
     

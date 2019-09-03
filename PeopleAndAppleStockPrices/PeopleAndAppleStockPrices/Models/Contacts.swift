@@ -24,14 +24,6 @@ struct Results: Codable {
         case contacts = "results"
     }
     
-    func fullName() -> [String] {
-        var fullNameArray = [String]()
-        for i in self.contacts {
-            fullNameArray.append("\(i.name.first) \(i.name.last)")
-        }
-        return fullNameArray
-    }
-    
 }
 
 
@@ -41,6 +33,10 @@ struct Contact: Codable {
     let email: String
     let phone: String
     let cell: String
+    var fullName: String {get {
+        return "\(name.first) \(name.last)"
+        }
+    }
     
     struct NameWrapper: Codable {
         let first: String
