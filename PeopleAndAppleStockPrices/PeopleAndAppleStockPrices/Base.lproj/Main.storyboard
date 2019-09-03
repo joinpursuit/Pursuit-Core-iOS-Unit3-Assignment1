@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gyN-NB-p4W">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactsCell" textLabel="8OO-Iu-Vsv" detailTextLabel="pqE-G6-tIq" style="IBUITableViewCellStyleSubtitle" id="KXc-t1-iuG">
@@ -47,15 +47,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LtJ-ic-6TB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gyN-NB-p4W" secondAttribute="trailing" id="4oy-pv-1KT"/>
-                            <constraint firstItem="gyN-NB-p4W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gje-Rk-vQW"/>
+                            <constraint firstItem="LtJ-ic-6TB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Zq-Uj-R89"/>
+                            <constraint firstItem="gyN-NB-p4W" firstAttribute="top" secondItem="LtJ-ic-6TB" secondAttribute="bottom" id="BgC-Lu-2RL"/>
+                            <constraint firstItem="gyN-NB-p4W" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NXp-A5-TX1"/>
+                            <constraint firstItem="LtJ-ic-6TB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Nr0-It-iH1"/>
                             <constraint firstItem="gyN-NB-p4W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QYG-on-VlX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gyN-NB-p4W" secondAttribute="bottom" id="Vmh-L5-HMG"/>
+                            <constraint firstItem="LtJ-ic-6TB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S4J-bo-FLF"/>
+                            <constraint firstItem="LtJ-ic-6TB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SjC-Nk-Zsb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gyN-NB-p4W" secondAttribute="bottom" id="occ-9t-z7Q"/>
                             <constraint firstItem="gyN-NB-p4W" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="psd-QA-5bY"/>
-                            <constraint firstItem="gyN-NB-p4W" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rw1-bu-F93"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -133,6 +140,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ndj-Vp-oma" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QK6-Y1-iTc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
