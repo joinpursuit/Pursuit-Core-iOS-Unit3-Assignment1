@@ -31,9 +31,8 @@ class ViewController: UIViewController {
             print(error)
         }
     }
-
-
 }
+
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return user.count
@@ -45,6 +44,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         cell?.detailTextLabel?.text = user[indexPath.row].name.title
         return cell!
     }
-    
-    
 }

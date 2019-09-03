@@ -18,7 +18,7 @@ struct UserBase: Codable {
         } catch let decodeError {
             fatalError("could not decode info\(decodeError)")
         }
-    }
+    } 
 }
 struct User: Codable{
     let gender: String
