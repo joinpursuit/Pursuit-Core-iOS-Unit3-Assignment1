@@ -31,6 +31,17 @@ struct User : Codable {
     let location : LocationWrapper
     let email: String
     let cell: String
+    
+    static func formattedName(index: Int, userArray: [User]) -> String {
+        let fullName = "\(userArray[index].name.title.capitalized). \(userArray[index].name.first.capitalized) \(userArray[index].name.last.capitalized)"
+        return fullName
+    }
+    
+    static func formattedAddress(index: Int, userArray: [User]) -> String {
+        let fullAddress = "\(userArray[index].location.street.capitalized)  \(userArray[index].location.city.capitalized), \(userArray[index].location.state.capitalized)  \(userArray[index].location.postcode.capitalized)"
+        return fullAddress
+    }
+    
 }
 
 struct NameWrapper : Codable {

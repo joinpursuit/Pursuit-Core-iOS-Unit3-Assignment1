@@ -10,6 +10,7 @@
 		0B04523C231EADBE0047C41C /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B04523B231EADBE0047C41C /* StockViewController.swift */; };
 		0B04523E231EAEAC0047C41C /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B04523D231EAEAC0047C41C /* UserStruct.swift */; };
 		0B045240231EAEB90047C41C /* StockStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B04523F231EAEB90047C41C /* StockStruct.swift */; };
+		0B045242231EB8F90047C41C /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B045241231EB8F90047C41C /* UserDetailViewController.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
 		577E5BEE21BA8BA10083EB97 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* UserViewController.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		0B04523B231EADBE0047C41C /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
 		0B04523D231EAEAC0047C41C /* UserStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
 		0B04523F231EAEB90047C41C /* StockStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockStruct.swift; sourceTree = "<group>"; };
+		0B045241231EB8F90047C41C /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577E5BED21BA8BA10083EB97 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				577E5BED21BA8BA10083EB97 /* UserViewController.swift */,
+				0B045241231EB8F90047C41C /* UserDetailViewController.swift */,
 				0B04523D231EAEAC0047C41C /* UserStruct.swift */,
 				0B04523B231EADBE0047C41C /* StockViewController.swift */,
 				0B04523F231EAEB90047C41C /* StockStruct.swift */,
@@ -170,6 +173,7 @@
 			files = (
 				577E5BEE21BA8BA10083EB97 /* UserViewController.swift in Sources */,
 				0B045240231EAEB90047C41C /* StockStruct.swift in Sources */,
+				0B045242231EB8F90047C41C /* UserDetailViewController.swift in Sources */,
 				0B04523C231EADBE0047C41C /* StockViewController.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
 				0B04523E231EAEAC0047C41C /* UserStruct.swift in Sources */,

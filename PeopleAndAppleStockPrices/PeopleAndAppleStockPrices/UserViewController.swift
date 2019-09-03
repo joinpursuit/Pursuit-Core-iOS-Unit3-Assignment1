@@ -23,14 +23,15 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userTableOutlet.dequeueReusableCell(withIdentifier: "user")
-        
-        cell?.textLabel?.text = "\(people[indexPath.row].name.title.capitalized). \(people[indexPath.row].name.first.capitalized) \(people[indexPath.row].name.last.capitalized)"
-        cell?.detailTextLabel?.text = "\(people[indexPath.row].location.street.capitalized) \(people[indexPath.row].location.city.capitalized), \(people[indexPath.row].location.state.capitalized) \(people[indexPath.row].location.postcode.capitalized)"
-        
+        cell?.textLabel?.text = User.formattedName(index: indexPath.row, userArray: people)
+        cell?.detailTextLabel?.text = User.formattedAddress(index: indexPath.row, userArray: people)
         return cell!
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let userDetailVC = segue.destination as? UserDetailViewController else { fatalError() }
+        userDetailVC.person = people[userTableOutlet.indexPathForSelectedRow!.row]
+    }
     
     
     private func LoadData() {
@@ -45,14 +46,8 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
-    
-    
-    
-    
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     userTableOutlet.delegate = self
     userTableOutlet.dataSource = self
     searchOutlet.delegate = self
