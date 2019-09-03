@@ -11,17 +11,13 @@ import XCTest
 class PeopleAndAppleStockPricesTests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
     
-    // Testing we are fetching data correctly
-    // See if it exists
-    // See if you get number
-    // Are you getting an object, an array of objects?
     func testStockDataFromFile() {
         let data = getStockDataFromJSON()
         XCTAssertNotNil(data)
@@ -103,6 +99,107 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         }
         
     }
+    
+    func testDateComponents() {
+        let date = "2019-07-12"
+        let parsedDate = Stock.getDateComponents(date: date)
+        XCTAssert(parsedDate == "2019-07", "Did not parse date correctly")
+    }
+    
+    
+    func testDictionaryofGroupedStocks() {
 
+        guard let data = getStockDataFromJSON() else {
+            XCTFail()
+            return
+        }
+        guard let stocks = Stock.getStock(from: data) else {
+            XCTFail()
+            return
+        }
+        
+        let DictionaryStocks = Stock.getGroupedStocks(arr: stocks)
+        
+        XCTAssertNotNil(DictionaryStocks["2019-07"])
+    }
+    
+    func testAverageofOpenStockPrice() {
+        
+        guard let data = getStockDataFromJSON() else {
+            XCTFail()
+            return
+        }
+        guard let stocks = Stock.getStock(from: data) else {
+            XCTFail()
+            return
+        }
+        
+        let DictionaryStocks = Stock.getGroupedStocks(arr: stocks)
+        
+        guard let DictionaryValue = DictionaryStocks["2017-08"] else {
+            XCTFail("Key does not exist")
+            return
+        }
+        
+        
+        let average = Stock.getAverageForMonth(arr: DictionaryValue)
+        XCTAssert(average == 167.09 , "Does not calculate average on Mothly Stocks")
+    }
+
+
+    func testUserDataFromFile() {
+        let data = getUserDataFromJSON()
+        XCTAssertNotNil(data)
+    }
+    
+    private func getUserDataFromJSON() -> Data? {
+        guard let pathToData = Bundle.main.path(forResource: "userinfo", ofType: "json") else {return nil}
+        
+        let url = URL(fileURLWithPath: pathToData)
+        
+        do {
+            let data = try Data(contentsOf: url)
+            return data
+        } catch let jsonError {
+            fatalError("\(jsonError)")
+        }
+        
+    }
+    
+    func testResultInUserWrapperIsAnArray() {
+        guard let data = getUserDataFromJSON() else {
+            XCTFail()
+            return
+        }
+        guard let users = UserWrapper.getUsers(from: data) else {
+            XCTFail()
+            return
+        }
+        XCTAssert(type(of: users) == [User].self, "You do not have an array of Users")
+    }
+    
+    func testUserIsNotEmpty() {
+        guard let data = getUserDataFromJSON() else {
+            XCTFail()
+            return
+        }
+        guard let users = UserWrapper.getUsers(from: data) else {
+            XCTFail()
+            return
+        }
+        XCTAssert(users.count > 0, "You have an empty array")
+    }
+    
+    func testGetsFullNameCapitalized() {
+        let person = Name(title: "mr", first: "mario", last: "lopez")
+        let location = Location(street: "", city: "", state: "", postcode: "")
+        
+        let user = User(name: person, email: "person@email.com", phone: "7181223455", dob: "00/00/1992", location: location )
+        
+        let name = user.getFullName()
+        
+        XCTAssert(name == "Mr. Mario Lopez", "You have an empty array")
+    }
+    
 
 }
