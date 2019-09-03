@@ -32,10 +32,59 @@
                     <view key="view" contentMode="scaleToFill" id="sux-gb-5gy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xx5-7V-JoU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R0M-2Y-ci5">
+                                <rect key="frame" x="0.0" y="144" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="user" textLabel="KWf-4n-QrQ" detailTextLabel="yMs-Xd-Nge" style="IBUITableViewCellStyleSubtitle" id="XCJ-lR-Xvj">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XCJ-lR-Xvj" id="c1p-Lu-GIY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KWf-4n-QrQ">
+                                                    <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yMs-Xd-Nge">
+                                                    <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xx5-7V-JoU" firstAttribute="leading" secondItem="pQt-1W-O4r" secondAttribute="leading" id="5c1-nR-ONn"/>
+                            <constraint firstItem="R0M-2Y-ci5" firstAttribute="height" secondItem="sux-gb-5gy" secondAttribute="height" id="J6V-P1-HpA"/>
+                            <constraint firstItem="R0M-2Y-ci5" firstAttribute="leading" secondItem="pQt-1W-O4r" secondAttribute="leading" id="Qh6-j4-k7h"/>
+                            <constraint firstItem="xx5-7V-JoU" firstAttribute="top" secondItem="pQt-1W-O4r" secondAttribute="top" id="Vcm-B3-N2K"/>
+                            <constraint firstItem="R0M-2Y-ci5" firstAttribute="width" secondItem="sux-gb-5gy" secondAttribute="width" id="b0T-Eu-NKs"/>
+                            <constraint firstItem="xx5-7V-JoU" firstAttribute="width" secondItem="sux-gb-5gy" secondAttribute="width" id="ca7-Kz-UoB"/>
+                            <constraint firstItem="R0M-2Y-ci5" firstAttribute="top" secondItem="xx5-7V-JoU" secondAttribute="bottom" id="uFQ-zI-Yy5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pQt-1W-O4r"/>
                     </view>
                     <navigationItem key="navigationItem" id="QVK-Wb-iR2"/>
+                    <connections>
+                        <outlet property="searchOutlet" destination="xx5-7V-JoU" id="toY-Kp-pM7"/>
+                        <outlet property="userTableOutlet" destination="R0M-2Y-ci5" id="eBc-uo-riF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prr-TJ-msu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
