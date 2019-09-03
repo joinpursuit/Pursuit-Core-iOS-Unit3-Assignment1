@@ -15,7 +15,53 @@ class PeopleViewController: UIViewController {
             contactsTableView.reloadData()
         }
     }
+    var searchString: String? = nil {
+        didSet {
+            self.contactsTableView.reloadData()
+        }
+    }
     
+    var searchResults: [Contact] {
+        get {
+            guard let searchString = searchString else {return contacts}
+            guard searchString != "" else {return contacts}
+            
+            
+            return contacts.filter{$0.name.first.contains(searchString)}
+        }
+    }
+    
+//    var searchResults: [[GOTEpisode]] {
+//        get {
+//            guard let searchString = searchString else {return gotSeries}
+//            guard searchString != "" else {return gotSeries}
+//
+//            if let scopeTitles = gotSearchBarOutlet.scopeButtonTitles {
+//                let currentScopeIndex = gotSearchBarOutlet.selectedScopeButtonIndex
+//
+//                switch scopeTitles[currentScopeIndex] {
+//                case "Episode":
+//
+//                    return
+//                        [gotSeries.joined().filter{$0.name.lowercased().contains(searchString.lowercased())}]
+//                case "Summary":
+//
+//                    return
+//                        [gotSeries.joined().filter{$0.summary.lowercased().contains(searchString.lowercased())}]
+//                default:
+//                    return gotSeries
+//                }
+//            }
+//            return gotSeries
+//        }
+//    }
+//    var searchString: String? = nil {
+//        didSet {
+//            self.tableViewOutlet.reloadData()
+//        }
+//    }
+    
+    @IBOutlet weak var searchBarOutlet: UISearchBar!
     @IBOutlet weak var contactsTableView: UITableView!
     
     
@@ -23,6 +69,7 @@ class PeopleViewController: UIViewController {
         super.viewDidLoad()
         contactsTableView.delegate = self
         contactsTableView.dataSource = self
+        searchBarOutlet.delegate = self
         loadData()
     }
     
@@ -38,16 +85,20 @@ class PeopleViewController: UIViewController {
             fatalError("Error: \(loadDataError)")
         }
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchString = searchBar.text?.lowercased()
+    }
 }
 
-extension PeopleViewController: UITableViewDataSource, UITableViewDelegate {
+extension PeopleViewController: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contactsTableView.dequeueReusableCell(withIdentifier: "contactsCell", for: indexPath)
-        let oneContact = contacts[indexPath.row]
+        let oneContact = searchResults[indexPath.row]
         cell.textLabel?.text = "\(oneContact.name.first) \(oneContact.name.last)"
         cell.detailTextLabel?.text = oneContact.location.city
         return cell

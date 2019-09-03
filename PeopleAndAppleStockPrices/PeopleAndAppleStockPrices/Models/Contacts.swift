@@ -23,7 +23,17 @@ struct Results: Codable {
     private enum CodingKeys: String, CodingKey {
         case contacts = "results"
     }
+    
+    func fullName() -> [String] {
+        var fullNameArray = [String]()
+        for i in self.contacts {
+            fullNameArray.append("\(i.name.first) \(i.name.last)")
+        }
+        return fullNameArray
+    }
+    
 }
+
 
 struct Contact: Codable {
     let name: NameWrapper
@@ -42,6 +52,7 @@ struct Contact: Codable {
         let city: String
         let state: String
     }
+    
     
 }
 

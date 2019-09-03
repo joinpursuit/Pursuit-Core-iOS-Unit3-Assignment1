@@ -69,6 +69,7 @@
                     <navigationItem key="navigationItem" id="vR0-X1-PLI"/>
                     <connections>
                         <outlet property="contactsTableView" destination="gyN-NB-p4W" id="10z-tw-2W5"/>
+                        <outlet property="searchBarOutlet" destination="LtJ-ic-6TB" id="Fl1-d9-lJp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
