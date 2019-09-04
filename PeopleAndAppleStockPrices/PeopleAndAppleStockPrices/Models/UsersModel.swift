@@ -8,15 +8,19 @@
 
 import Foundation
 
+enum jsonError: Error {
+    case decodingError(Error)
+}
+
 struct UserWrapper: Codable {
     let results: [User]
     
-    static func getUsers(from data: Data) -> [User]? {
+    static func getUsers(from data: Data) throws -> [User] {
         do {
             let newUser = try JSONDecoder().decode(UserWrapper.self, from: data)
             return newUser.results
         } catch {
-            return nil
+            throw jsonError.decodingError(error)
         }
     }
 }
@@ -37,10 +41,19 @@ struct User: Codable {
     }
     
     func getFullAddress() -> String {
+        let street = self.location.street.capitalized
+        let city = self.location.city.capitalized
+        let state = self.location.state.capitalized
+        let postcode = self.location.postcode!.uppercased()
         return """
-        \(self.location.street)
-        \(self.location.city), \(self.location.state), \(self.location.postcode!)
+        \(street)
+        \(city), \(state), \(postcode)
         """
+    }
+    
+    static func getSortedArray(arr: [User]) -> [User] {
+        let newarr = arr.sorted{$0.name.first < $1.name.first}
+        return newarr
     }
     
 }
