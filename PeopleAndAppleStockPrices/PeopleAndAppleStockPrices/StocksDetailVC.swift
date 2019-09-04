@@ -10,6 +10,7 @@ import UIKit
 
 class StocksDetailVC: UIViewController {
     
+    var previousDate: Stock!
     var selectedDate: Stock!
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -21,10 +22,21 @@ class StocksDetailVC: UIViewController {
     @IBOutlet weak var closeLabel: UILabel!
     
     
+    func loadBG(){
+        if previousDate.open < selectedDate.open{
+            view.backgroundColor = UIColor.green
+            stockImageView.image = UIImage(named: "thumbsUp")
+        } else {
+            view.backgroundColor = UIColor.red
+            stockImageView.image = UIImage(named: "thumbsDown")
+        }
+    }
+    
     override func viewDidLoad() {
         dateLabel.text = selectedDate.date
         openLabel.text = "Open: $\(selectedDate.open)"
         closeLabel.text = "Close: $\(selectedDate.close)"
+        loadBG()
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

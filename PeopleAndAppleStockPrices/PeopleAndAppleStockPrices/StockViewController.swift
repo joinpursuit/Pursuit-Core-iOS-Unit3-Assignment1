@@ -90,6 +90,7 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 fatalError("No row selected")
             }
             detailVC.selectedDate = stockData[selectedIndexPath.row]
+            detailVC.previousDate = stockData[selectedIndexPath.row - 1]
         default:
             fatalError("Unexpected segue identifier")
         }
