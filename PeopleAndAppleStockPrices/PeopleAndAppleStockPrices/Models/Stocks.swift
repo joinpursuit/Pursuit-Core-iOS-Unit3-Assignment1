@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct Stocks: Codable {
+    let stock: StockPrice?
+}
+
+struct StockPrice: Codable {
+    let date: String?
+    let open: Double?
+    let close: Double?
+}
