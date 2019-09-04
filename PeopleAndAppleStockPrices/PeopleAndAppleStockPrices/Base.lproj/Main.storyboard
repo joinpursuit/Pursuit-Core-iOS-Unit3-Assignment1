@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Stocks View Controller-->
         <scene sceneID="Iys-6Z-hUb">
             <objects>
-                <viewController id="513-wp-y3s" sceneMemberID="viewController">
+                <viewController id="513-wp-y3s" customClass="StocksViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bZx-Fq-sYq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="1637.68115942029" y="973.66071428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Contacts List View Controller-->
         <scene sceneID="AAF-Po-sV0">
             <objects>
-                <viewController id="ubC-H0-1n2" sceneMemberID="viewController">
+                <viewController id="ubC-H0-1n2" customClass="ContactsListViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tb4-kj-UL9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="1637.68115942029" y="304.6875"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Details View Controller-->
         <scene sceneID="t4w-8o-d2g">
             <objects>
-                <viewController id="dyq-OP-1jE" sceneMemberID="viewController">
+                <viewController id="dyq-OP-1jE" customClass="ContactDetailsViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aZq-7h-84t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,10 +207,10 @@
             </objects>
             <point key="canvasLocation" x="876.81159420289862" y="973.66071428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Stock Details View Controller-->
         <scene sceneID="P85-xT-fpf">
             <objects>
-                <viewController id="feE-Sy-j9M" sceneMemberID="viewController">
+                <viewController id="feE-Sy-j9M" customClass="StockDetailsViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JKa-pc-3mI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
