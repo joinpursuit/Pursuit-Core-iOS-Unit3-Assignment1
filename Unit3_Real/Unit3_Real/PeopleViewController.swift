@@ -24,6 +24,7 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = userTableViewOutlet.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         let humas = human[0].people[indexPath.row]
         cell.textLabel?.text = "\(humas.name.title).\(humas.name.first) \(humas.name.last) "
+        cell.detailTextLabel?.text = "\(humas.location)"
         return cell
     }
     
@@ -43,6 +44,16 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
         } catch {
             fatalError("Could not decode")
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier != nil else { fatalError("No identifier in segue")
+        }
+        guard let peopleVC = segue.destination as? PeopleDetailViewController
+            else { fatalError("Unexpected segue")}
+        guard let selectedIndexPath = userTableViewOutlet.indexPathForSelectedRow
+            else { fatalError("No row selected") }
+        peopleVC.userInfo = human[selectedIndexPath.row]
     }
     
     override func viewDidLoad() {

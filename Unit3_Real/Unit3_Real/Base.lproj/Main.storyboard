@@ -46,7 +46,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="BTL-r4-jcP" kind="show" id="lS5-PK-Ho8"/>
+                                            <segue destination="BTL-r4-jcP" kind="show" identifier="stockSegway" id="lS5-PK-Ho8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="984.05797101449286" y="279.91071428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Stock Detail View Controller-->
         <scene sceneID="gJi-cm-3Su">
             <objects>
-                <viewController id="BTL-r4-jcP" sceneMemberID="viewController">
+                <viewController id="BTL-r4-jcP" customClass="StockDetailViewController" customModule="Unit3_Real" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EuD-9c-3kk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="close" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="396-6D-Adc">
-                                <rect key="frame" x="209" y="616" width="46.5" height="40"/>
+                                <rect key="frame" x="209" y="632" width="205" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="205" id="RBc-L2-usd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -109,21 +112,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="396-6D-Adc" firstAttribute="trailing" secondItem="woI-8u-d9B" secondAttribute="trailing" id="27O-tD-br7"/>
                             <constraint firstItem="RhJ-Vc-9rl" firstAttribute="trailing" secondItem="EuD-9c-3kk" secondAttribute="trailingMargin" id="54o-iS-cBs"/>
-                            <constraint firstItem="hLX-HD-dpz" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="396-6D-Adc" secondAttribute="trailing" symbolic="YES" id="5yE-FJ-WOJ"/>
                             <constraint firstItem="jRq-BK-DX7" firstAttribute="leading" secondItem="EuD-9c-3kk" secondAttribute="leading" id="83A-UY-EAA"/>
-                            <constraint firstItem="396-6D-Adc" firstAttribute="leading" secondItem="jRq-BK-DX7" secondAttribute="trailing" constant="4" id="Bgi-Px-xBu"/>
                             <constraint firstItem="jRq-BK-DX7" firstAttribute="top" secondItem="RhJ-Vc-9rl" secondAttribute="bottom" constant="56" id="P2X-yw-UUk"/>
                             <constraint firstItem="hLX-HD-dpz" firstAttribute="bottom" secondItem="jRq-BK-DX7" secondAttribute="bottom" constant="157" id="PWT-as-nBo"/>
-                            <constraint firstItem="jRq-BK-DX7" firstAttribute="baseline" secondItem="396-6D-Adc" secondAttribute="baseline" id="b8Y-is-5lk"/>
+                            <constraint firstItem="396-6D-Adc" firstAttribute="baseline" secondItem="jRq-BK-DX7" secondAttribute="baseline" id="Pk6-Ib-CUi"/>
                             <constraint firstItem="RhJ-Vc-9rl" firstAttribute="top" secondItem="woI-8u-d9B" secondAttribute="bottom" constant="91" id="myl-Y0-Gqk"/>
                             <constraint firstItem="RhJ-Vc-9rl" firstAttribute="leading" secondItem="EuD-9c-3kk" secondAttribute="leadingMargin" id="pZq-UY-UX0"/>
                             <constraint firstItem="RhJ-Vc-9rl" firstAttribute="centerX" secondItem="woI-8u-d9B" secondAttribute="centerX" id="q0K-u7-JvX"/>
-                            <constraint firstItem="jRq-BK-DX7" firstAttribute="leading" secondItem="woI-8u-d9B" secondAttribute="leading" id="wXK-r8-x4y"/>
-                            <constraint firstItem="jRq-BK-DX7" firstAttribute="firstBaseline" secondItem="396-6D-Adc" secondAttribute="firstBaseline" id="yJm-YN-ifN"/>
+                            <constraint firstItem="396-6D-Adc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jRq-BK-DX7" secondAttribute="trailing" constant="4" id="wrq-ci-XGL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hLX-HD-dpz"/>
                     </view>
+                    <connections>
+                        <outlet property="closeLabel" destination="396-6D-Adc" id="1w8-82-keG"/>
+                        <outlet property="dateLabel" destination="woI-8u-d9B" id="HXZ-3n-jPl"/>
+                        <outlet property="image2Outlet" destination="RhJ-Vc-9rl" id="Qie-xw-ykE"/>
+                        <outlet property="openLabel" destination="jRq-BK-DX7" id="VMv-8T-Hzi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8g8-UJ-XXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,7 +172,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="PNC-rf-L3J" kind="show" id="0a5-fV-hNF"/>
+                                            <segue destination="PNC-rf-L3J" kind="show" identifier="peopleSegway" id="0a5-fV-hNF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -189,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="984.05797101449286" y="-366.29464285714283"/>
         </scene>
-        <!--View Controller-->
+        <!--People Detail View Controller-->
         <scene sceneID="P0N-QE-DPQ">
             <objects>
-                <viewController id="PNC-rf-L3J" sceneMemberID="viewController">
+                <viewController id="PNC-rf-L3J" customClass="PeopleDetailViewController" customModule="Unit3_Real" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F3d-vb-jHK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,6 +251,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Li9-iS-Db8"/>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="xRB-1B-QFY" id="zmv-dG-CBd"/>
+                        <outlet property="emailLabel" destination="zWQ-we-IE0" id="jaR-5T-Ybl"/>
+                        <outlet property="image1Outlet" destination="fbk-bz-8fb" id="Hx9-uB-iCC"/>
+                        <outlet property="nameLabel" destination="r6L-7G-Wjo" id="jin-5M-FjZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbh-cT-sO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
