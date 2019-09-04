@@ -20,6 +20,14 @@ class ContactsListViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view.
     }
     
+    //MARK: -- DataSource Methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 
     /*
     // MARK: - Navigation
