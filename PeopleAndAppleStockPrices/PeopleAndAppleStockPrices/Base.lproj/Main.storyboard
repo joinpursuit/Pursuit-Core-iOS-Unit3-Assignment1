@@ -162,6 +162,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bbg-j9-V7a"/>
                     </view>
+                    <connections>
+                        <outlet property="closeLabel" destination="qsG-tj-sLF" id="s0i-Hy-pbq"/>
+                        <outlet property="dateLabel" destination="apO-dH-DXc" id="i9C-O2-f5A"/>
+                        <outlet property="openLabel" destination="aIO-up-hLQ" id="qCk-Au-A9H"/>
+                        <outlet property="stockImageView" destination="WTP-UA-hzr" id="pVE-wu-Rb3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYQ-en-Jez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
