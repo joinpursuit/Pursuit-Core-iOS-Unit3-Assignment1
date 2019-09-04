@@ -19,16 +19,23 @@ class Unit3_RealTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPeopleLoaded (){
+        let data = getDataFromJSON(name: "userinfo")
+        let testPeople = PeopleWrapper.getPeople(from: data)
+        XCTAssertTrue(testPeople.self != nil, "user info failed to load")
+        
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    private func getDataFromJSON(name: String) -> Data {
+        guard let pathToData = Bundle.main.path(forResource: name , ofType: "json") else { fatalError("couldnt find json file called \(name).json")}
+        let url = URL(fileURLWithPath: pathToData)
+        do {
+            let data = try Data(contentsOf: url)
+            return data
+        } catch let jsonError {
+            fatalError("couldnt get data from json file \(jsonError)")
         }
     }
+
+    
 
 }

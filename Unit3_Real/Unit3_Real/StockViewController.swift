@@ -46,7 +46,6 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
             fatalError("Could not decode")
         }
     }
-    //test
     override func viewDidLoad() {
         super.viewDidLoad()
         stockTableViewOutlet.dataSource = self

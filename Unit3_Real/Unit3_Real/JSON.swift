@@ -11,6 +11,9 @@ import UIKit
 
 struct PeopleWrapper: Codable{
     let people: [Person]
+    let email: String
+    let frame: [Image]
+    let home: [Address]
     
     static func getPeople(from data: Data) -> PeopleWrapper{
         do{
@@ -21,6 +24,9 @@ struct PeopleWrapper: Codable{
     
     enum CodingKeys: String, CodingKey {
         case people = "results"
+        case email
+        case frame
+        case home
     }
 }
 struct Person: Codable {
@@ -32,7 +38,24 @@ struct Person: Codable {
         let last: String
     }
 }
+struct Image: Codable {
+    let picture: Picture
+    
+    struct Picture: Codable{
+        let large: String
+        let medium: String
+    }
+}
+struct Address: Codable{
+    let location: Location
+    
+    struct Location: Codable{
+        let city: String
+    }
+}
 
+
+//-----------------------------------------------------------------------------
 struct Stock: Codable {
     let date: String
     let close: Double
