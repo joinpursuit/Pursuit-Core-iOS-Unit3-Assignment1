@@ -31,35 +31,6 @@ class PeopleViewController: UIViewController {
         }
     }
     
-//    var searchResults: [[GOTEpisode]] {
-//        get {
-//            guard let searchString = searchString else {return gotSeries}
-//            guard searchString != "" else {return gotSeries}
-//
-//            if let scopeTitles = gotSearchBarOutlet.scopeButtonTitles {
-//                let currentScopeIndex = gotSearchBarOutlet.selectedScopeButtonIndex
-//
-//                switch scopeTitles[currentScopeIndex] {
-//                case "Episode":
-//
-//                    return
-//                        [gotSeries.joined().filter{$0.name.lowercased().contains(searchString.lowercased())}]
-//                case "Summary":
-//
-//                    return
-//                        [gotSeries.joined().filter{$0.summary.lowercased().contains(searchString.lowercased())}]
-//                default:
-//                    return gotSeries
-//                }
-//            }
-//            return gotSeries
-//        }
-//    }
-//    var searchString: String? = nil {
-//        didSet {
-//            self.tableViewOutlet.reloadData()
-//        }
-//    }
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     @IBOutlet weak var contactsTableView: UITableView!
