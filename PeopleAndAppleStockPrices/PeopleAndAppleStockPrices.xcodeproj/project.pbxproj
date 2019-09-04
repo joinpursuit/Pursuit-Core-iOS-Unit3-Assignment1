@@ -117,8 +117,8 @@
 		EAD5B5AE232078D500459B5F /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				EAD5B5B3232079D900459B5F /* applstockinfo.json */,
 				EAD5B5B4232079D900459B5F /* userinfo.json */,
+				EAD5B5B3232079D900459B5F /* applstockinfo.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
