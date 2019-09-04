@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ContactsListViewController: UIViewController {
-
+class ContactsListViewController: UIViewController, UITableViewDataSource {
+    
+    //MARK: -- IBOutlets
+    @IBOutlet weak var contactsListTableView: UITableView!
+    @IBOutlet weak var contactsSearchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
