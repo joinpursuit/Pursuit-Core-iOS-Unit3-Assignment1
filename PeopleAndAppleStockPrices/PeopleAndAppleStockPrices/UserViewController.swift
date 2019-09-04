@@ -27,9 +27,8 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
             guard searchString != "" else {
                 return userData.sortMe(users: userData.results)
             }
-            let currentIndex = userSearchBar.selectedScopeButtonIndex
-            let filtered = userData.results.filter{$0.name.fullName().contains(searchString)}
-            return userData.sortMe(users: filtered)
+//            let filtered = userData.results.filter{$0.name.fullName().contains(searchString)}
+            return userData.sortMe(users: userData.results.filter{$0.name.fullName().contains(searchString)})
             
             
             }
@@ -71,7 +70,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
+
     
 
     private func loadData() {

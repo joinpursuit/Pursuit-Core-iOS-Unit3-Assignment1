@@ -72,7 +72,7 @@ struct Picture: Codable {
     func loadImage(imageView: UIImageView){
         let urlStr = large
         guard let url = URL(string: urlStr) else {fatalError()}
-//        DispatchQueue.global(qos: .userInitiated).async
+        DispatchQueue.global(qos: .userInitiated).async {
         do { let data = try Data(contentsOf: url)
         imageView.image = UIImage(data: data)
         }
@@ -80,7 +80,7 @@ struct Picture: Codable {
             fatalError("unable to pull image")
         }
     }
+    }
 }
-
 
 
