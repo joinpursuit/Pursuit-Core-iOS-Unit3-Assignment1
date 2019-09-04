@@ -35,6 +35,15 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     @IBOutlet weak var contactsTableView: UITableView!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ContactsDetailViewController {
+            guard let indexPath = contactsTableView.indexPathForSelectedRow,
+                let contactsVC = segue.destination as? ContactsDetailViewController else {return}
+            let oneContact = contacts[indexPath.row]
+            contactsVC.contact = oneContact
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

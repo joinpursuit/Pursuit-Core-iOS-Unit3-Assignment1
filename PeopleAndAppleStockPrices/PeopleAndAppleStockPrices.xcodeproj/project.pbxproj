@@ -20,6 +20,8 @@
 		FC3B30C62319B59400FA66F0 /* PeopleAndAppleStockPricesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B30C52319B59400FA66F0 /* PeopleAndAppleStockPricesTests.swift */; };
 		FC3B30CD2319BC8E00FA66F0 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B30B82319B40900FA66F0 /* Contacts.swift */; };
 		FC3B30CE2319BFC100FA66F0 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B30BC2319B43E00FA66F0 /* Stock.swift */; };
+		FC3B312623205B0F00FA66F0 /* ContactsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B312523205B0F00FA66F0 /* ContactsDetailViewController.swift */; };
+		FC3B312823205B7000FA66F0 /* PricesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B312723205B7000FA66F0 /* PricesDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		FC3B30C32319B59400FA66F0 /* PeopleAndAppleStockPricesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeopleAndAppleStockPricesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3B30C52319B59400FA66F0 /* PeopleAndAppleStockPricesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAndAppleStockPricesTests.swift; sourceTree = "<group>"; };
 		FC3B30C72319B59400FA66F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC3B312523205B0F00FA66F0 /* ContactsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailViewController.swift; sourceTree = "<group>"; };
+		FC3B312723205B7000FA66F0 /* PricesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 				577E5C0221BA8C620083EB97 /* json */,
 				FC3B30BE2319B44400FA66F0 /* Models */,
 				FC3B30B72319B27500FA66F0 /* View Controllers */,
+				FC3B312923205B7700FA66F0 /* Detail View Controllers */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
@@ -143,6 +148,15 @@
 				FC3B30C72319B59400FA66F0 /* Info.plist */,
 			);
 			path = PeopleAndAppleStockPricesTests;
+			sourceTree = "<group>";
+		};
+		FC3B312923205B7700FA66F0 /* Detail View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC3B312723205B7000FA66F0 /* PricesDetailViewController.swift */,
+				FC3B312523205B0F00FA66F0 /* ContactsDetailViewController.swift */,
+			);
+			path = "Detail View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +264,8 @@
 			files = (
 				FC3B30B92319B40900FA66F0 /* Contacts.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
+				FC3B312823205B7000FA66F0 /* PricesDetailViewController.swift in Sources */,
+				FC3B312623205B0F00FA66F0 /* ContactsDetailViewController.swift in Sources */,
 				FC3B30B42319B26300FA66F0 /* PeopleViewController.swift in Sources */,
 				FC3B30BD2319B43E00FA66F0 /* Stock.swift in Sources */,
 				FC3B30B62319B26E00FA66F0 /* PriceViewController.swift in Sources */,

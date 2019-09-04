@@ -79,52 +79,71 @@
             </objects>
             <point key="canvasLocation" x="1676.8115942028987" y="-448.66071428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Contacts Detail View Controller-->
         <scene sceneID="AM6-me-mZL">
             <objects>
-                <viewController id="OvI-iy-Lwe" sceneMemberID="viewController">
+                <viewController id="OvI-iy-Lwe" customClass="ContactsDetailViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cor-pq-TDw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxI-ab-Ker">
-                                <rect key="frame" x="87" y="156" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxI-ab-Ker">
+                                <rect key="frame" x="87" y="146.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="ZP2-fL-bxz"/>
+                                    <constraint firstAttribute="height" constant="128" id="tLc-vb-vVR"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRw-jS-cHa">
-                                <rect key="frame" x="87" y="379" width="240" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjm-xw-fUF">
-                                <rect key="frame" x="87" y="501" width="240" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daD-sn-N4O">
-                                <rect key="frame" x="87" y="631" width="240" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="105" translatesAutoresizingMaskIntoConstraints="NO" id="UpV-Pl-tzn">
+                                <rect key="frame" x="20" y="314.5" width="374" height="272"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRw-jS-cHa">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjm-xw-fUF">
+                                        <rect key="frame" x="0.0" y="126" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daD-sn-N4O">
+                                        <rect key="frame" x="0.0" y="251.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UpV-Pl-tzn" firstAttribute="top" secondItem="dxI-ab-Ker" secondAttribute="bottom" constant="40" id="Xh2-t9-if2"/>
+                            <constraint firstItem="CMW-nm-Iys" firstAttribute="trailing" secondItem="UpV-Pl-tzn" secondAttribute="trailing" constant="20" id="gDM-xD-UDT"/>
+                            <constraint firstItem="UpV-Pl-tzn" firstAttribute="centerY" secondItem="CMW-nm-Iys" secondAttribute="centerY" id="i8F-NK-cDM"/>
+                            <constraint firstItem="CMW-nm-Iys" firstAttribute="bottom" secondItem="UpV-Pl-tzn" secondAttribute="bottom" constant="226.5" id="nmb-c1-LvF"/>
+                            <constraint firstItem="UpV-Pl-tzn" firstAttribute="leading" secondItem="CMW-nm-Iys" secondAttribute="leading" constant="20" id="o3G-rT-Lr6"/>
+                            <constraint firstItem="dxI-ab-Ker" firstAttribute="centerX" secondItem="CMW-nm-Iys" secondAttribute="centerX" id="owD-Ym-X3E"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CMW-nm-Iys"/>
                     </view>
+                    <connections>
+                        <outlet property="contactsImageViewOutlet" destination="dxI-ab-Ker" id="if2-17-Rch"/>
+                        <outlet property="emailLabelOutlet" destination="daD-sn-N4O" id="eGy-XF-dnu"/>
+                        <outlet property="nameLabelOutlet" destination="SRw-jS-cHa" id="UNf-Ld-U4r"/>
+                        <outlet property="phoneLabelOutlet" destination="Kjm-xw-fUF" id="Ver-0a-aJo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMh-y4-YlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2579.7101449275365" y="-449.33035714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Prices Detail View Controller-->
         <scene sceneID="p2e-VQ-DdV">
             <objects>
-                <viewController id="yZw-6v-8bt" sceneMemberID="viewController">
+                <viewController id="yZw-6v-8bt" customClass="PricesDetailViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QKu-kp-seZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
