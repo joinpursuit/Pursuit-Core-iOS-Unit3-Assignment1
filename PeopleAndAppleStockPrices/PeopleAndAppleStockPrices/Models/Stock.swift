@@ -13,6 +13,14 @@ struct Stock: Codable {
     let close: Double
     let open: Double
     let label: String
+    var formattedDate: Date {
+        get {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            return dateFormatter.date(from: date)!
+        }
+        
+    }
     
     
     static func getPrices(from data: Data) -> [Stock] {
@@ -23,4 +31,6 @@ struct Stock: Codable {
             fatalError("Error: \(decodeError)")
         }
     }
+    
+    
 }

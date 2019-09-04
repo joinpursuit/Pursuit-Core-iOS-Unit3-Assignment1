@@ -177,6 +177,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xBH-e3-WMi"/>
                     </view>
+                    <connections>
+                        <outlet property="closingPriceLabelOutlet" destination="hBm-HS-Lwl" id="66M-ks-8rm"/>
+                        <outlet property="dateLabelOutlet" destination="PLW-cS-Xt5" id="UMD-b9-ANo"/>
+                        <outlet property="openingPriceLabelOutlet" destination="CZd-hO-SCg" id="exY-NK-KuA"/>
+                        <outlet property="someImageOutlet" destination="THb-TP-knR" id="Rcd-Cy-6M8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4l-PX-d3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -83,5 +83,5 @@ extension PeopleViewController: UITableViewDataSource, UITableViewDelegate, UISe
         cell.detailTextLabel?.text = oneContact.location.city
         return cell
     }
-
+    
 }

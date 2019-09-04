@@ -17,6 +17,16 @@ class PriceViewController: UIViewController {
     }
 
     @IBOutlet weak var priceTableView: UITableView!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is PricesDetailViewController {
+            guard let indexPath = priceTableView.indexPathForSelectedRow,
+                let priceVC = segue.destination as? PricesDetailViewController else {return}
+            let onePrice = stocks[indexPath.row]
+            priceVC.price = onePrice
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         priceTableView.delegate = self
@@ -47,8 +57,8 @@ extension PriceViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell", for: indexPath)
         let oneStock = stocks[indexPath.row]
-        cell.textLabel?.text = oneStock.date
-        cell.detailTextLabel?.text = "\(oneStock.close)"
+        cell.textLabel?.text = "Date: \(oneStock.date)"
+        cell.detailTextLabel?.text = "Close: \(oneStock.close)"
         return cell
     }
     

@@ -9,22 +9,36 @@
 import UIKit
 
 class PricesDetailViewController: UIViewController {
+    
+    var price: Stock!
 
+    @IBOutlet weak var someImageOutlet: UIImageView!
+    @IBOutlet weak var dateLabelOutlet: UILabel!
+    @IBOutlet weak var openingPriceLabelOutlet: UILabel!
+    @IBOutlet weak var closingPriceLabelOutlet: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupView()
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupView() {
+        selectImage()
+        dateLabelOutlet.text = price.date
+        openingPriceLabelOutlet.text = "\(price.open)"
+        closingPriceLabelOutlet.text = "\(price.close)"
     }
-    */
 
+    private func selectImage() {
+        if price.open > price.close {
+            someImageOutlet.image = UIImage(named: "thumbsDown")
+        } else {
+            someImageOutlet.image = UIImage(named: "thumbsUp")
+        }
+    }
+    
 }
