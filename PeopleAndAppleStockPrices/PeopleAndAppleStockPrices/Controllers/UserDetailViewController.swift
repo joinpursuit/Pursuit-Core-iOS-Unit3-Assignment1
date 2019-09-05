@@ -25,7 +25,7 @@ class UserDetailViewController: UIViewController {
 
     private func configureObjects() {
         if let user = user {
-            nameLabel.text = "\(user.name.firstName.capitalized) \(user.name.lastName.capitalized)"
+            nameLabel.text = user.getFullName(firstName: user.name.firstName, lastName: user.name.lastName)
             emailLabel.text = user.email
             locationLabel.text = user.location.state.capitalized
             

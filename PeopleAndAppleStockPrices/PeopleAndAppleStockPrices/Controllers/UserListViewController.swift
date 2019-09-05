@@ -26,10 +26,10 @@ class UserListViewController: UIViewController {
         get {
             guard let searchString = searchString else { return allUsers }
             guard searchString != "" else { return allUsers }
-        
-            let filterFirstNameArr = allUsers.filter{$0.name.firstName.lowercased().contains(searchString.lowercased())}
-//            let filterLastNameArr = filterFirstNameArr.filter{$0.name.lastName.lowercased().contains(searchString.lowercased())}
-            return filterFirstNameArr
+            
+            let filterUserArr = allUsers.filter {$0.getFullName(firstName: $0.name.firstName, lastName: $0.name.lastName).lowercased().contains(searchString.lowercased())}
+
+            return filterUserArr
         }
     }
     
@@ -79,7 +79,7 @@ extension UserListViewController: UITableViewDataSource {
         let userCell = userListTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         
         //refactor to capitalize name in models
-        userCell.textLabel?.text = "\(currentUser.name.firstName.capitalized) \(currentUser.name.lastName.capitalized)"
+        userCell.textLabel?.text = currentUser.getFullName(firstName: currentUser.name.firstName, lastName: currentUser.name.lastName)
         userCell.detailTextLabel?.text = currentUser.location.state.capitalized
         
         return userCell

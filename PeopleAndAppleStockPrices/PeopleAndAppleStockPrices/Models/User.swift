@@ -26,6 +26,11 @@ struct User: Codable {
     let location: LocationWrapper
     let email: String
     let picture: ImageWrapper
+
+    func getFullName(firstName: String, lastName: String) -> String {
+        let fullName = "\(firstName.capitalized) \(lastName.capitalized)"
+        return fullName
+    }
 }
 
 struct NameWrapper: Codable {
