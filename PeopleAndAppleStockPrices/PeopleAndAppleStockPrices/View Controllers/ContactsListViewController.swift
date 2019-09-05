@@ -43,7 +43,7 @@ class ContactsListViewController: UIViewController, UITableViewDataSource {
     
     //MARK: -- DataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return filteredContactsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
