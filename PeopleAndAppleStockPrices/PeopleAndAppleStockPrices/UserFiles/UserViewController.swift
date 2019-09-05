@@ -33,7 +33,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
                 case "First Name":
                     let results = totalPeople.filter( {$0.name.first.lowercased().contains(searchString!.lowercased())})
                     return results
-                   
+                    
                 case "Last Name":
                 let results = totalPeople.filter( {$0.name.last.lowercased().contains(searchString!.lowercased())})
                 return results
@@ -73,7 +73,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userDetailVC = segue.destination as? UserDetailViewController else { fatalError() }
-        userDetailVC.person = totalPeople[userTableOutlet.indexPathForSelectedRow!.row]
+        userDetailVC.person = userSearchResults[userTableOutlet.indexPathForSelectedRow!.row]
     }
     
     private func LoadData() {
