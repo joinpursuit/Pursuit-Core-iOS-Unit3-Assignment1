@@ -9,7 +9,7 @@
 import Foundation
 
 struct Contacts: Codable {
-    let people: [Person]?
+    let people: Person?
     
     private enum CodingKeys: String, CodingKey {
         case people = "results"
