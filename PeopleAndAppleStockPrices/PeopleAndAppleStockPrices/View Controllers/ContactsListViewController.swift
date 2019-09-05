@@ -22,7 +22,8 @@ class ContactsListViewController: UIViewController, UITableViewDataSource, UISea
             if self.searchString == "" {
                 filteredContactsList = contacts
             } else if self.searchString.count >= 1 {
-                filteredContactsList = contacts.filter { String("\($0.name.first?.lowercased()) \($0.name.last?.lowercased())").contains(self.searchString) }
+                filteredContactsList = contacts.filter { String(($0.name.first!.lowercased()) +
+                     ($0.name.last!.lowercased()) ).contains(self.searchString) }
             } else {
                 filteredContactsList = contacts
             }
