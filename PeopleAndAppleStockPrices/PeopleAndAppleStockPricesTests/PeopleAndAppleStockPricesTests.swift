@@ -32,8 +32,11 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         let testLocationWrapper = LocationWrapper.init(state: "testLocation")
         let testPicture = ImageWrapper.init(imageURL: "testImage")
         let testUser = User.init(name: testNameWrapper, location: testLocationWrapper, email: "testEmail", picture: testPicture)
+        let actualResult = testUser.getFullName(firstName: testUser.name.firstName, lastName: testUser.name.lastName)
         
-        XCTAssertTrue(testUser.getFullName(firstName: testUser.name.firstName, lastName: testUser.name.lastName) == "Testfirstname Testlastname", "Could not get full name, got: \(testUser.getFullName(firstName: testUser.name.firstName, lastName: testUser.name.lastName))")
+        let expectedResult = "Testfirstname Testlastname"
+        
+        XCTAssertTrue(actualResult == expectedResult, "Could not get full name, got: \(actualResult)")
         
     }
     
@@ -45,4 +48,9 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         
         XCTAssertTrue(stockData != nil, "Could not load Stock data")
     }
+    
+    func testFilterDateByYearMonth() {
+        
+    }
+    
 }

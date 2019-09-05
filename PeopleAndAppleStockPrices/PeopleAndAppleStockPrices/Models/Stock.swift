@@ -21,4 +21,5 @@ struct Stock: Codable {
             return nil
         }
     }
+    
 }
