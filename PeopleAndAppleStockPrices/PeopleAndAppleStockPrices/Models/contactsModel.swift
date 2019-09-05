@@ -29,9 +29,10 @@ struct ResultsWrapper: Codable {
     }
     
     func getFullName () -> String {
+        let title = name.title.capitalized
         let firstName = name.first.capitalized
         let lastName = name.last.capitalized
-        return "\(firstName) \(lastName)"
+        return "\(title). \(firstName) \(lastName)"
     }
     
     func getLocation () -> String {
