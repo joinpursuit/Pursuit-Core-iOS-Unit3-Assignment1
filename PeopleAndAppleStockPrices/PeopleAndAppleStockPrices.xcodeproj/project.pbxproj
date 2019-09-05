@@ -60,7 +60,7 @@
 		EAD5B5C323207BC500459B5F /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		EAD5B5C523207BE900459B5F /* DataFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchingService.swift; sourceTree = "<group>"; };
 		EAD5B5C723207BFA00459B5F /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
-		EAD5B5CE2320925700459B5F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = PeopleAndAppleStockPrices/Models/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
+		EAD5B5CE2320925700459B5F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = "PeopleAndAppleStockPrices/Models/New Group/ImageHelper.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD5B5AE232078D500459B5F /* JSON */,
+				EAD5B6082321862100459B5F /* Clients */,
 				EAD5B5BA23207A2800459B5F /* Models */,
 				EAD5B5B7232079DF00459B5F /* Controllers */,
 				EAD5B5B8232079EA00459B5F /* Views */,
@@ -162,13 +163,20 @@
 		EAD5B5BA23207A2800459B5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EAD5B5C523207BE900459B5F /* DataFetchingService.swift */,
-				EAD5B5CE2320925700459B5F /* ImageHelper.swift */,
-				EAD5B5C723207BFA00459B5F /* ErrorHandler.swift */,
 				EAD5B5BB23207A4100459B5F /* User.swift */,
 				EAD5B5BD23207A4A00459B5F /* Stock.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EAD5B6082321862100459B5F /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				EAD5B5C523207BE900459B5F /* DataFetchingService.swift */,
+				EAD5B5CE2320925700459B5F /* ImageHelper.swift */,
+				EAD5B5C723207BFA00459B5F /* ErrorHandler.swift */,
+			);
+			path = Clients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
