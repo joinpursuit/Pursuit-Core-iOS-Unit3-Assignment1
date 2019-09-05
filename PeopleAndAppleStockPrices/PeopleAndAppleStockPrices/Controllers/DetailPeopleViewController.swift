@@ -24,9 +24,18 @@ class DetailPeopleViewController: UIViewController {
     // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpViews()
 
     }
     
+    // MARK: Private Methods
+    
+    func setUpViews() {
+        peopleImageView.image = UIImage(named: "profileImage")
+        nameLabel.text = person.name.description
+        emailLabel.text = person.email
+        dateOfBirthLabel.text = person.dob
+    }
 
     
 
