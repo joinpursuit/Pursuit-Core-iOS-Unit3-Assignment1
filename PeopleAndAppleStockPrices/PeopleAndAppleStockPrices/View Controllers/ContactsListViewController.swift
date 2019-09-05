@@ -53,6 +53,18 @@ class ContactsListViewController: UIViewController, UITableViewDataSource {
         cell.detailTextLabel?.text = "\(person.location.street?.capitalized ?? "N/A"), \(person.location.city?.capitalized ?? "N/A"), \(person.location.state?.capitalized ?? "N/A")"
         return cell
     }
+    
+    func getContacts() {
+        guard let pathToJSON = Bundle.main.path(forResource: "userinfo", ofType: ".json") else { return }
+        let url = URL(fileURLWithPath: pathToJSON)
+        do {
+            let data = try Data(contentsOf: url)
+            let contactsFromData = try JSONDecoder().decode(Contacts.self, from: data)
+            contacts = contactsFromData.people ?? [Person]()
+        } catch let error {
+            print(error)
+        }
+    }
 
     /*
     // MARK: - Navigation
