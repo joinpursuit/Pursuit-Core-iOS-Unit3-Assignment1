@@ -22,6 +22,11 @@
 		EAD5B5C423207BC500459B5F /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C323207BC500459B5F /* StockDetailViewController.swift */; };
 		EAD5B5C623207BE900459B5F /* DataFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C523207BE900459B5F /* DataFetchingService.swift */; };
 		EAD5B5C823207BFA00459B5F /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C723207BFA00459B5F /* ErrorHandler.swift */; };
+		EAD5B5C92320870F00459B5F /* userinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD5B5B4232079D900459B5F /* userinfo.json */; };
+		EAD5B5CA2320871100459B5F /* applstockinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD5B5B3232079D900459B5F /* applstockinfo.json */; };
+		EAD5B5CB2320871700459B5F /* DataFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C523207BE900459B5F /* DataFetchingService.swift */; };
+		EAD5B5CC2320872500459B5F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5BB23207A4100459B5F /* User.swift */; };
+		EAD5B5CD2320872800459B5F /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5BD23207A4A00459B5F /* Stock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +261,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD5B5C92320870F00459B5F /* userinfo.json in Resources */,
+				EAD5B5CA2320871100459B5F /* applstockinfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD5B5A42320783D00459B5F /* PeopleAndAppleStockPricesTests.swift in Sources */,
+				EAD5B5CB2320871700459B5F /* DataFetchingService.swift in Sources */,
+				EAD5B5CD2320872800459B5F /* Stock.swift in Sources */,
+				EAD5B5CC2320872500459B5F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

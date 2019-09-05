@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+struct DataFetchingService {
+    static func getUserDataFromJSON() -> Data {
+        guard let pathToUserData = Bundle.main.path(forResource: "userinfo", ofType: "json") else {
+            fatalError()
+        }
+        
+        let userURL = URL(fileURLWithPath: pathToUserData)
+        
+        do {
+            let userData = try Data(contentsOf: userURL)
+            return userData
+        } catch {
+            fatalError("\(error)")
+        }
+    }
+    
+    
+}
+
