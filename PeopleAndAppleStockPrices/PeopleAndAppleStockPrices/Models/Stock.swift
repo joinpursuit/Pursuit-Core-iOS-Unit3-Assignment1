@@ -13,6 +13,13 @@ struct Stock: Codable {
     let open: Double
     let close: Double
     
+    var dateForHeader: String {
+        var dateArr = date.components(separatedBy: "-")
+        let year = dateArr[0]
+        let month = dateArr[1]
+        return "\(month)/\(year)"
+    }
+    
     static func getAllStocks(from JSONData: Data ) -> [Stock]? {
         do {
             let allStocks = try JSONDecoder().decode([Stock]?.self, from: JSONData)

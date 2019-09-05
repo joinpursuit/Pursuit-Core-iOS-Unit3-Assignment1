@@ -49,8 +49,13 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         XCTAssertTrue(stockData != nil, "Could not load Stock data")
     }
     
-    func testFilterDateByYearMonth() {
+    func testGetDateForHeader() {
+        let testStock = Stock.init(date: "2017-08-29", open: 1.0, close: 1.0)
+        let actualResults = testStock.dateForHeader
         
+        let expectedResults = "08/2017"
+        
+        XCTAssert(actualResults == expectedResults, "Could not change date for header, got: \(actualResults)")
     }
     
 }
