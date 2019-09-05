@@ -21,13 +21,14 @@
 		EAD5B5C223207BB700459B5F /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C123207BB700459B5F /* UserDetailViewController.swift */; };
 		EAD5B5C423207BC500459B5F /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C323207BC500459B5F /* StockDetailViewController.swift */; };
 		EAD5B5C623207BE900459B5F /* DataAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C523207BE900459B5F /* DataAPIClient.swift */; };
-		EAD5B5C823207BFA00459B5F /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C723207BFA00459B5F /* ErrorHandler.swift */; };
+		EAD5B5C823207BFA00459B5F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C723207BFA00459B5F /* AppError.swift */; };
 		EAD5B5C92320870F00459B5F /* userinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD5B5B4232079D900459B5F /* userinfo.json */; };
 		EAD5B5CA2320871100459B5F /* applstockinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD5B5B3232079D900459B5F /* applstockinfo.json */; };
 		EAD5B5CB2320871700459B5F /* DataAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C523207BE900459B5F /* DataAPIClient.swift */; };
 		EAD5B5CC2320872500459B5F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5BB23207A4100459B5F /* User.swift */; };
 		EAD5B5CD2320872800459B5F /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5BD23207A4A00459B5F /* Stock.swift */; };
 		EAD5B60B232188AA00459B5F /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B60A232188AA00459B5F /* ImageHelper.swift */; };
+		EAD5B60D2321892B00459B5F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B60C2321892B00459B5F /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +60,9 @@
 		EAD5B5C123207BB700459B5F /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		EAD5B5C323207BC500459B5F /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		EAD5B5C523207BE900459B5F /* DataAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAPIClient.swift; sourceTree = "<group>"; };
-		EAD5B5C723207BFA00459B5F /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		EAD5B5C723207BFA00459B5F /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		EAD5B60A232188AA00459B5F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		EAD5B60C2321892B00459B5F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,9 +174,10 @@
 		EAD5B6082321862100459B5F /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				EAD5B60C2321892B00459B5F /* NetworkManager.swift */,
 				EAD5B5C523207BE900459B5F /* DataAPIClient.swift */,
 				EAD5B60A232188AA00459B5F /* ImageHelper.swift */,
-				EAD5B5C723207BFA00459B5F /* ErrorHandler.swift */,
+				EAD5B5C723207BFA00459B5F /* AppError.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -288,10 +291,11 @@
 				EAD5B5912320783C00459B5F /* UserListViewController.swift in Sources */,
 				EAD5B58F2320783C00459B5F /* AppDelegate.swift in Sources */,
 				EAD5B5C423207BC500459B5F /* StockDetailViewController.swift in Sources */,
+				EAD5B60D2321892B00459B5F /* NetworkManager.swift in Sources */,
 				EAD5B5C223207BB700459B5F /* UserDetailViewController.swift in Sources */,
 				EAD5B5BE23207A4A00459B5F /* Stock.swift in Sources */,
 				EAD5B5BC23207A4100459B5F /* User.swift in Sources */,
-				EAD5B5C823207BFA00459B5F /* ErrorHandler.swift in Sources */,
+				EAD5B5C823207BFA00459B5F /* AppError.swift in Sources */,
 				EAD5B5C023207B8E00459B5F /* StockListViewController.swift in Sources */,
 				EAD5B5C623207BE900459B5F /* DataAPIClient.swift in Sources */,
 			);

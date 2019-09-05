@@ -14,26 +14,26 @@ class ImageHelper {
     
     static let shared = ImageHelper()
     
-    func getImage(urlStr: String, completionHandler: @escaping (Result<UIImage,Error>) -> ()) {
+    func getImage(urlStr: String, completionHandler: @escaping (Result<UIImage,AppError>) -> ()) {
         
         guard let url = URL(string: urlStr) else {
-            completionHandler(.failure(ErrorHandler.badURL))
+            completionHandler(.failure(.badURL))
             return
         }
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             guard error == nil else {
-                completionHandler(.failure(ErrorHandler.noData))
+                completionHandler(.failure(.couldNotParseJSON))
                 return
             }
             
             guard let data = data else {
-                completionHandler(.failure(ErrorHandler.noData))
+                completionHandler(.failure(.couldNotParseJSON))
                 return
             }
             
             guard let image = UIImage(data: data) else {
-                completionHandler(.failure(ErrorHandler.noImage))
+                completionHandler(.failure(.noImage))
                 return
             }
             
