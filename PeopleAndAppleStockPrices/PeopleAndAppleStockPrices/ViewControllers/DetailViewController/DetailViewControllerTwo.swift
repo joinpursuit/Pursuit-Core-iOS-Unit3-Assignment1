@@ -34,7 +34,7 @@ class DetailViewControllerStocks:UIViewController {
            
                 
             
-            ImageHelper.shared.fetchImage(urlImage: bullMarket) { (result) in
+            ImageHelper.shared.fetchImage(urlImage: Pictures.bullMarket) { (result) in
                 switch result {
                 case .failure(let error):
                     print("can't receive image \(error)")
@@ -49,7 +49,7 @@ class DetailViewControllerStocks:UIViewController {
             
                 
             
-            ImageHelper.shared.fetchImage(urlImage: bearMarket) { (result) in
+            ImageHelper.shared.fetchImage(urlImage: Pictures.bearMarket) { (result) in
                 switch result {
                 case .failure(let error):
                     print("can't receive image \(error)")
