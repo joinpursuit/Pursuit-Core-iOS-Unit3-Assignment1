@@ -24,13 +24,6 @@ class userViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
-    var searchTerm = "" {
-        didSet {
-            loadData()
-        }
-    }
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return user.count
