@@ -71,6 +71,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RXL-Xz-x2i"/>
                     <connections>
+                        <outlet property="searchBar" destination="Uf5-n4-paB" id="E9m-QO-yOk"/>
                         <outlet property="userListTableView" destination="FY3-83-TXw" id="oFs-mO-OHH"/>
                     </connections>
                 </viewController>
