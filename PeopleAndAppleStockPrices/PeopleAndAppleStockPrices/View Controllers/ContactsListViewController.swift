@@ -62,7 +62,9 @@ class ContactsListViewController: UIViewController, UITableViewDataSource {
         do {
             let data = try Data(contentsOf: url)
             let contactsFromData = try JSONDecoder().decode(Contacts.self, from: data)
-            contacts = contactsFromData.people ?? [Person]()
+            contacts = contactsFromData.people!.sorted(by: { (person1, person2) -> Bool in
+                (person1.name.first! + person1.name.last!) < (person2.name.first! + person2.name.last!)
+            })
         } catch let error {
             print(error)
         }
