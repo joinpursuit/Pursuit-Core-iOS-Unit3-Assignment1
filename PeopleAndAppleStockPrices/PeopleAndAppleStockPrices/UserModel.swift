@@ -11,10 +11,10 @@ import Foundation
 struct People: Codable {
     let results: [Person]
     
-    static func getUsers(from data: Data) -> People {
+    static func getUsers(from data: Data) -> [Person] {
         do {
             let users = try JSONDecoder().decode(People.self, from: data)
-            return users
+            return users.results
         } catch {
             fatalError("could not decode info \(error)")
         }
