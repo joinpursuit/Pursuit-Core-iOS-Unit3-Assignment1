@@ -149,11 +149,11 @@
             </objects>
             <point key="canvasLocation" x="-266" y="138"/>
         </scene>
-        <!--Item 1-->
+        <!--People-->
         <scene sceneID="dpn-PE-6R4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ylq-GR-514" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ari-rK-4R2"/>
+                    <tabBarItem key="tabBarItem" title="People" id="ari-rK-4R2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jwu-fB-pXY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -168,11 +168,11 @@
             </objects>
             <point key="canvasLocation" x="652.17391304347836" y="-186.16071428571428"/>
         </scene>
-        <!--Item 2-->
+        <!--Stocks-->
         <scene sceneID="mSL-Mw-wOA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R7X-WZ-veM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="VVT-tr-CRY"/>
+                    <tabBarItem key="tabBarItem" title="Stocks" id="VVT-tr-CRY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DEs-iR-Q0P">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
