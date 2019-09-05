@@ -19,7 +19,7 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    private func getUserDataFromJSON() -> Data {
+    private func getPeopleDataFromJSON() -> Data {
         guard let pathToData = Bundle.main.path(forResource: "userinfo", ofType: "json") else {
             fatalError("couldn't find json file called userinfo.json")
         }
@@ -32,8 +32,8 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         }
     }
     
-    func testUserDataLoaded() {
-        let data = getUserDataFromJSON()
+    func testPeopleDataLoaded() {
+        let data = getPeopleDataFromJSON()
         let users = People.getUsers(from: data)
         XCTAssertTrue(users.results.count > 0, "No data could be found from json file")
     }
