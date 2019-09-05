@@ -33,7 +33,6 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
                 case "First Name":
                     let results = totalPeople.filter( {$0.name.first.lowercased().contains(searchString!.lowercased())})
                     return results
-                    
                 case "Last Name":
                 let results = totalPeople.filter( {$0.name.last.lowercased().contains(searchString!.lowercased())})
                 return results
@@ -94,6 +93,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     userTableOutlet.dataSource = self
     searchOutlet.delegate = self
     LoadData()
+    
   }
 
 
