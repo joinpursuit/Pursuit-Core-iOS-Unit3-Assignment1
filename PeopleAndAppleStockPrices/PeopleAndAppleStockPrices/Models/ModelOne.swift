@@ -17,6 +17,11 @@ struct Results:Codable {
     let location:Location
     let phone:String
     let dob:DOB
+    let picture:Picture
+}
+struct Picture:Codable {
+    let large: URL
+    let medium: URL
 }
 struct DOB:Codable {
     let date:String
@@ -27,7 +32,7 @@ struct Name:Codable {
     let first:String
     let last:String
     func getName() -> String {
-        return title.capitalizingFirstLetter() + " " + first.capitalizingFirstLetter() + " " + last.capitalizingFirstLetter()
+        return title.capitalizingFirstLetter() + "." + " " + first.capitalizingFirstLetter() + " " + last.capitalizingFirstLetter()
     }
 }
 struct Location:Codable {
@@ -36,18 +41,65 @@ struct Location:Codable {
     let state:String
     
     func capitalizeCity() -> String {
-       return city.capitalizingFirstLetter()
+      var emptyStr = ""
+        if city.contains(" ") || city.contains("-") {
+        if city.contains(" ") {
+            let array1 =  city.components(separatedBy: " ")
+            for city1 in array1 {
+                emptyStr += city1.capitalizingFirstLetter() + " "
+            }
+        } else {
+            let array1 = city.components(separatedBy: "-")
+            for city1 in array1 {
+                emptyStr += city1.capitalizingFirstLetter() + " "
+                
+            }
+        }
+        return emptyStr
+        } else {
+        return city.capitalizingFirstLetter()
+        }
+    }
+        func capitalizeState() -> String {
+            var emptyStr = ""
+            if state.contains(" ") || city.contains("-") {
+                if state.contains(" ") {
+                    let array1 =  state.components(separatedBy: " ")
+                    for state1 in array1 {
+                        emptyStr += state1.capitalizingFirstLetter() + " "
+                    }
+                } else {
+                    let array1 = state.components(separatedBy: "-")
+                    for state1 in array1 {
+                        emptyStr += state1.capitalizingFirstLetter() + " "
+                        
+                    }
+                }
+                return emptyStr
+            } else {
+                return state.capitalizingFirstLetter()
+            }
+    }
+            func capitalizeStreet() -> String {
+                var emptyStr = ""
+                        let array1 =  street.components(separatedBy: " ")
+                        for street1 in array1 {
+                            emptyStr += street1.capitalizingFirstLetter() + " "
+                }
+                    return emptyStr
+                
     }
     func getLocation() -> String {
         return """
         
         Address Information
         
-        State: \(state)
-        City: \(city)
-        Street: \(street)
+        State: \(capitalizeState())
+        City: \(capitalizeCity())
+        Street: \(capitalizeStreet())
         
         """
 }
+    
 }
 

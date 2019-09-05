@@ -8,25 +8,27 @@
 
 import Foundation
 import UIKit
-struct UserAPIClient {
-    static var shared = UserAPIClient()
-    let userURL =
-    
-     "https://randomuser.me/api/?results=50"
-    func fetchData(completionHandler:@escaping (Result<RandomUsers,Error>) -> ()) {
-        guard let url = URL(string: userURL) else {return}
+struct StockAPIClient {
+    static var shared = StockAPIClient()
+    let stockUrl =
+        
+"https://sandbox.iexapis.com/stable/stock/AAPL/chart/1m?token=Tpk_99a13d1c51654f2ab13764626efa902a"
+
+    func fetchData(completionHandler:@escaping (Result<[Stocks],Error>) -> ()) {
+        guard let url = URL(string: stockUrl) else {return}
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let err = error {
                 completionHandler(.failure(err))
             }
             guard let retrieveData = data else {fatalError(String(describing: error))}
             do {
-                let randomUser = try JSONDecoder().decode(RandomUsers.self, from: retrieveData)
-                completionHandler(.success(randomUser))
+                let stocks = try JSONDecoder().decode([Stocks].self, from: retrieveData)
+                
+                completionHandler(.success(stocks))
             } catch let JSONError {
                 completionHandler(.failure(JSONError))
             }
-        }.resume()
-
-}
+            }.resume()
+        
+    }
 }

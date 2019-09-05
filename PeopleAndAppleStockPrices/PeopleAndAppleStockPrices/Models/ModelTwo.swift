@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import UIKit
+
+
+struct Stocks:Codable {
+    let date: String
+  let  open: Double
+  let  close:Double
+  let  high: Double
+  let  low: Double
+}
