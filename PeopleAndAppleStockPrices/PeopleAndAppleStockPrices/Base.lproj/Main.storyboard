@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="1562.3188405797102" y="461.38392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--People View Controller-->
         <scene sceneID="rIj-OB-pSc">
             <objects>
-                <viewController id="uRl-Rt-dF6" sceneMemberID="viewController">
+                <viewController id="uRl-Rt-dF6" customClass="PeopleViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oC4-EK-A1b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
