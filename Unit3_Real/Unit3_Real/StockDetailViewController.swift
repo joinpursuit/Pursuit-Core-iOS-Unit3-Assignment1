@@ -18,9 +18,16 @@ class StockDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if apple.open < apple.close{
+            image2Outlet.image = UIImage(named: "thumbsDown")
+            self.view.backgroundColor = .red
+        }else {
+            image2Outlet.image = UIImage(named: "thumbsUp")
+            self.view.backgroundColor = .green
+        }
         dateLabel.text = apple.date
-        openLabel.text = "Open: \(apple.open)"
-        closeLabel.text = "Close: \(apple.close)"
+        openLabel.text = "Open: $\(apple.open)"
+        closeLabel.text = "Close: $\(apple.close)"
 
         // Do any additional setup after loading the view.
     }

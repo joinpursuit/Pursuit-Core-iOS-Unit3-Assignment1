@@ -7,22 +7,48 @@
 //
 
 import UIKit
+import Foundation
 
-class PeopleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PeopleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     @IBOutlet weak var userTableViewOutlet: UITableView!
-    var human = [Person]() {
-        didSet {
-            userTableViewOutlet.reloadData()
+    @IBOutlet weak var searchOutlet: UISearchBar!
+    
+    var human = [Person]()
+    
+    var searchString: String? = nil {
+        didSet{
+            self.userTableViewOutlet.reloadData()
         }
     }
     
+    var peopleSearchReults: [Person]{
+        guard let _ = searchString else{
+            return human
+        }
+        guard searchString != "" else {
+            return human
+        }
+        let results = human.filter{$0.name.first.lowercased().contains(searchString!.lowercased())}
+        return results
+    }
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchOutlet.resignFirstResponder()
+        searchString = searchBar.text
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchString = searchBar.text
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return human.count
+        return peopleSearchReults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userTableViewOutlet.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-        let humas = human[indexPath.row]
+        let humas = peopleSearchReults[indexPath.row]
         cell.textLabel?.text = "\(humas.name.title).\(humas.name.first) \(humas.name.last) "
         cell.detailTextLabel?.text = "\(humas.location)"
         return cell
@@ -45,7 +71,7 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier != nil else { fatalError("No identifier in segue")
@@ -61,10 +87,11 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         userTableViewOutlet.dataSource = self
         userTableViewOutlet.delegate = self
+        searchOutlet.delegate = self
         loadData()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
 }
 
