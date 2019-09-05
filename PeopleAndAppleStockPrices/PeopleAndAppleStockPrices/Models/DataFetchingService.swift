@@ -24,7 +24,7 @@ struct DataFetchingService {
         }
     }
     
-    static func getStockDataFromJSON() -> Data {
+    static func D() -> Data {
         guard let pathToStockData = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else {
             fatalError()
         }

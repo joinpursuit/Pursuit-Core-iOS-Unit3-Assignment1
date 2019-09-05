@@ -273,6 +273,9 @@
                         <viewLayoutGuide key="safeArea" id="mi9-G1-pEe"/>
                     </view>
                     <navigationItem key="navigationItem" id="peW-OZ-4NE"/>
+                    <connections>
+                        <outlet property="stockListTableView" destination="bmK-fA-kdE" id="kfW-Qg-lqW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1H-1L-Vby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
