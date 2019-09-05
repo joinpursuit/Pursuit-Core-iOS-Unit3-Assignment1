@@ -37,9 +37,8 @@ class ContactsListViewController: UIViewController, UITableViewDataSource, UISea
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewController()
         getContacts()
-        contactsListTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
     //MARK: -- DataSource Methods
@@ -56,6 +55,11 @@ class ContactsListViewController: UIViewController, UITableViewDataSource, UISea
     }
     
     //MARK: -- Custom Functions
+    private func configureViewController() {
+        contactsListTableView.dataSource = self
+        contactsSearchBar.delegate = self
+    }
+    
     func getContacts() {
         guard let pathToJSON = Bundle.main.path(forResource: "userinfo", ofType: ".json") else { return }
         let url = URL(fileURLWithPath: pathToJSON)
