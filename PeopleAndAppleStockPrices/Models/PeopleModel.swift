@@ -35,11 +35,11 @@ struct Picture: Codable {
 }
 
 class PeopleAPIManager {
-    private init () {}
+    private init() {}
     
     static let shared = PeopleAPIManager()
     
-    func getPeople(completionHandler: @escaping (Result<[People],Error>)-> Void){
+    func getPeople(completionHandler: @escaping (Result<[resultsInfo],Error>)-> Void){
         
         let urlString = "https://randomuser.me/api/?results=50"
         guard let url = URL(string: urlString) else {
@@ -58,8 +58,10 @@ class PeopleAPIManager {
             }
             do {
                 let peopleData = try
-                JSONDecoder().decode([People].self, from: data)
-                completionHandler(.success(peopleData))
+                JSONDecoder().decode(People.self, from: data)
+                completionHandler(.success(peopleData.results.sorted(by: { (info1, info2) -> Bool in
+                    return info1.name.first < info2.name.first
+                })))
             } catch {
                 completionHandler(.failure(ErrorHandling.decodingError))
             }
