@@ -40,7 +40,7 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         let data = getUserDataFromJSON()
         do {
             let users = try UserWrapper.getUserData(from: data)
-            XCTAssertTrue(users.count == 200)
+            XCTAssertTrue(users.count > 10)
         } catch {
             print(error)
         }
@@ -52,7 +52,15 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
     }
     
     
-    
+    func testIfStockDataLoaded() {
+        let data = getStockDataFromJSON()
+        do {
+            let prices = try AppleStockPrices.getStockData(from: data)
+            XCTAssertTrue(prices.count > 10)
+        } catch {
+            print(error)
+        }
+    }
     
     
     
