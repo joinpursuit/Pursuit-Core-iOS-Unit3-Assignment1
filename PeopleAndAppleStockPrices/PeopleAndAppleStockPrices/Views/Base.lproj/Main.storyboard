@@ -209,7 +209,7 @@
         <scene sceneID="pez-MG-FhQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eKN-E5-tqd" userLabel="Users" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4gR-Pa-PgQ" userLabel="Users"/>
+                    <tabBarItem key="tabBarItem" title="Users" id="4gR-Pa-PgQ" userLabel="Users"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tUN-4r-t7N">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -288,7 +288,7 @@
         <scene sceneID="h07-lD-L8L">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="33A-PQ-agt" userLabel="Stocks" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hTJ-6f-CG0" userLabel="Stocks"/>
+                    <tabBarItem key="tabBarItem" title="Stocks" id="hTJ-6f-CG0" userLabel="Stocks"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w3r-rx-uLd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

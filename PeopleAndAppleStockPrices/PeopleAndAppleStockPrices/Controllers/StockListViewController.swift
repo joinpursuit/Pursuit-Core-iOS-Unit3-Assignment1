@@ -32,11 +32,11 @@ class StockListViewController: UIViewController {
 
 extension StockListViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        <#code#>
+        return 0
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        <#code#>
+        return "?"
     }
 }
 
@@ -46,7 +46,7 @@ extension StockListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return UITableViewCell()
     }
     
     

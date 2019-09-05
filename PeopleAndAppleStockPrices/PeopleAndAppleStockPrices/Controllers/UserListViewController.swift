@@ -21,11 +21,17 @@ class UserListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        loadUserData()
     }
     
     private func configureTableView() {
         userListTableView.dataSource = self
         userListTableView.delegate = self
+    }
+    
+    private func loadUserData() {
+        let userData = DataFetchingService.getUserDataFromJSON()
+        allUsers = UserWrapper.getAllUsers(from: userData)!.results
     }
 
 }
@@ -34,11 +40,17 @@ extension UserListViewController: UITableViewDelegate {}
 
 extension UserListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return allUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let currentUser = allUsers[indexPath.row]
+        let userCell = userListTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
+        
+        userCell.textLabel?.text = "\(currentUser.name.firstName.capitalized) \(currentUser.name.lastName.capitalized)"
+        userCell.detailTextLabel?.text = currentUser.location.state.capitalized
+        
+        return userCell
     }
     
     
