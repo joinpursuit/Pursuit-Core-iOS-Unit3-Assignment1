@@ -125,7 +125,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="jhC-Gq-sCZ" kind="show" id="Tbx-6E-0pO"/>
+                                            <segue destination="jhC-Gq-sCZ" kind="show" identifier="segueToDetailPeople" id="Tbx-6E-0pO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

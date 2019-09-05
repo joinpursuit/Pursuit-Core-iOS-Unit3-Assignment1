@@ -41,7 +41,19 @@ class PeopleViewController: UIViewController {
         }
     }
     
+    // MARK: Navigation Method
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToDetailPeople" {
+            guard let detailPeopleVC = segue.destination as? DetailPeopleViewController else {
+                fatalError()
+            }
+            guard let selectedIndexPath = peopleTableView.indexPathForSelectedRow else {
+                fatalError()
+            }
+            detailPeopleVC.person = peopleModel[selectedIndexPath.row]
+        }
+    }
     
     
 }
