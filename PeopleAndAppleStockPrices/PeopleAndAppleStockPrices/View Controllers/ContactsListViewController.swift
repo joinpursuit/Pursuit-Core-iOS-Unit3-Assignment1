@@ -47,7 +47,11 @@ class ContactsListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let person = filteredContactsList[indexPath.row]
+        let cell = contactsListTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
+        cell.textLabel?.text = "\(person.name.first?.capitalized ?? "") \(person.name.last?.capitalized ?? "")"
+        cell.detailTextLabel?.text = "\(person.location.street)\n\(person.location.city), \(person.location.state)"
+        return cell
     }
 
     /*
