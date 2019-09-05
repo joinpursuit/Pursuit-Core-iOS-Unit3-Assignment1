@@ -29,7 +29,7 @@ struct Stock: Codable {
         }
     }
     
-    private func getDateinDateFormat() -> Date {
+    func getDateinDateFormat() -> Date {
         return self.date.toDate(dateFormat: "yyyy-MM-dd")!
     }
     

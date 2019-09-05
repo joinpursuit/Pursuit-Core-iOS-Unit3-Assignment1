@@ -47,12 +47,12 @@ struct User: Codable {
         let postcode = self.location.postcode!.uppercased()
         return """
         \(street)
-        \(city), \(state), \(postcode)
+        \(city), \(state) \(postcode)
         """
     }
     
     static func getSortedArray(arr: [User]) -> [User] {
-        let newarr = arr.sorted{$0.name.first < $1.name.first}
+        let newarr = arr.sorted{$0.getFullName() < $1.getFullName()}
         return newarr
     }
     
