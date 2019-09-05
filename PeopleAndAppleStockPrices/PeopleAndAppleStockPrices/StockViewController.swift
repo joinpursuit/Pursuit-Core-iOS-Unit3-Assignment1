@@ -13,20 +13,39 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //MARK: - Variables and Outlets
     
     var stockData: [Stock]!
+    var sectionNames = [String]()
+//    var matrixData = [[Stock]]()
+    
+    //MARK: - Stock Methods
+    //This Seperates stockData by sectionName into a new array of [Stock]
+    func stockBySection(sectionNumber: Int) -> [Stock] {
+        return stockData.filter({$0.sectionName == sectionNames[sectionNumber]})
+    }
+    
+    //for every stock in stockData: If sectionNames [Array of strings] does not contain selected stock.sectionName, append it to the array of sectionNames.
+    func getSectionNames() {
+        for stock in stockData {
+            if !sectionNames.contains(stock.sectionName) {
+                sectionNames.append(stock.sectionName)
+            }
+        }
+    }
+
+    
     @IBOutlet weak var stockTableView: UITableView!
     
     
     
     
     //MARK: - Tableview Methods
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stockData.count
+        return stockBySection(sectionNumber: section).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currentStock = stockData[indexPath.row]
         let cell = stockTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
+        let stockInSection = stockBySection(sectionNumber: indexPath.section)
+        let currentStock = stockInSection[indexPath.row]
         cell.textLabel?.text = currentStock.date
         cell.detailTextLabel?.text = "$\(currentStock.open)"
         return cell
@@ -37,15 +56,38 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sectionNames.count
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionNames[section]
+    }
+    
 
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        switch section {
-//            case
-//        }
-//    }
+
+    
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else {
+            fatalError("No identifier in segue")
+        }
+        switch segueIdentifier {
+        case "stockSegue":
+            guard let detailVC = segue.destination as? StocksDetailVC
+                else {
+                    fatalError("Unexpected segue")}
+            guard let selectedIndexPath = stockTableView.indexPathForSelectedRow else {
+                fatalError("No row selected")
+            }
+            detailVC.selectedStock = stockData[selectedIndexPath.row]
+            detailVC.previousStock = stockData[selectedIndexPath.row - 1]
+        default:
+            fatalError("Unexpected segue identifier")
+        }
+    }
+    
     
     
     //MARK: - Lifecycle Methods
@@ -69,31 +111,8 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
         stockTableView.delegate = self
         stockTableView.dataSource = self
         loadStocks()
+        getSectionNames()
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let segueIdentifier = segue.identifier else {
-            fatalError("No identifier in segue")
-        }
-        switch segueIdentifier {
-        case "stockSegue":
-            guard let detailVC = segue.destination as? StocksDetailVC
-                else {
-                    fatalError("Unexpected segue")}
-            guard let selectedIndexPath = stockTableView.indexPathForSelectedRow else {
-                fatalError("No row selected")
-            }
-            detailVC.selectedDate = stockData[selectedIndexPath.row]
-            detailVC.previousDate = stockData[selectedIndexPath.row - 1]
-        default:
-            fatalError("Unexpected segue identifier")
-        }
     }
 
 }

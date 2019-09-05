@@ -10,8 +10,8 @@ import UIKit
 
 class StocksDetailVC: UIViewController {
     
-    var previousDate: Stock!
-    var selectedDate: Stock!
+    var previousStock: Stock!
+    var selectedStock: Stock!
     
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -23,7 +23,7 @@ class StocksDetailVC: UIViewController {
     
     
     func loadBG(){
-        if previousDate.open < selectedDate.open{
+        if previousStock.open < selectedStock.open{
             view.backgroundColor = UIColor.green
             stockImageView.image = UIImage(named: "thumbsUp")
         } else {
@@ -33,9 +33,9 @@ class StocksDetailVC: UIViewController {
     }
     
     override func viewDidLoad() {
-        dateLabel.text = selectedDate.date
-        openLabel.text = "Open: $\(selectedDate.open)"
-        closeLabel.text = "Close: $\(selectedDate.close)"
+        dateLabel.text = selectedStock.date
+        openLabel.text = "Open: $\(selectedStock.open)"
+        closeLabel.text = "Close: $\(selectedStock.close)"
         loadBG()
         super.viewDidLoad()
 

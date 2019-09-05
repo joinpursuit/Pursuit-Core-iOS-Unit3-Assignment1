@@ -30,10 +30,6 @@ struct UserInfo: Codable {
     }
 
 
-
-
-
-
 struct User: Codable {
     var name: Name
     var location: Location
