@@ -59,6 +59,11 @@ class ContactsListViewController: UIViewController, UITableViewDataSource, UISea
         return cell
     }
     
+    //MARK: -- Delegate Methods
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchString = searchText.components(separatedBy: " ").joined().lowercased()
+    }
+    
     //MARK: -- Custom Functions
     private func configureViewController() {
         contactsListTableView.dataSource = self
