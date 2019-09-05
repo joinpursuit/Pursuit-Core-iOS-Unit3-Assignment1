@@ -16,27 +16,28 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     
     
-    var user: User?
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureObjects()
+        configureLabels()
+        loadImage()
     }
 
-    private func configureObjects() {
-        if let user = user {
-            nameLabel.text = user.getFullName(firstName: user.name.firstName, lastName: user.name.lastName)
-            emailLabel.text = user.email
-            locationLabel.text = user.location.state.capitalized
-            
-            ImageHelper.shared.getImage(urlStr: user.picture.imageURL) { (result) in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .failure(let error):
-                        print(error)
-                    case .success(let imageFromURL):
-                        self.userImage.image = imageFromURL
-                    }
+    private func configureLabels() {
+        nameLabel.text = user.getFullName(firstName: user.name.firstName, lastName: user.name.lastName)
+        emailLabel.text = user.email
+        locationLabel.text = user.location.state.capitalized
+    }
+    
+    private func loadImage() {
+        ImageHelper.shared.getImage(urlStr: user.picture.imageURL) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let imageFromURL):
+                    self.userImage.image = imageFromURL
                 }
             }
         }
