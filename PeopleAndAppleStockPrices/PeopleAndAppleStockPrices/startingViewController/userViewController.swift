@@ -9,39 +9,76 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var userSearch: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    var user = [User]()
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    tableView.delegate = self
-    tableView.dataSource = self
-    loadData()
-  }
-    private func loadData() {
-        guard let pathToJSONFile = Bundle.main.path(forResource: "userinfo", ofType: "json") else {
-            fatalError("coundn't find json file")}
-        let url = URL(fileURLWithPath: pathToJSONFile)
-        do {
-            let data = try
-                Data(contentsOf: url)
-            let userJson = try UserBase.getJokes(fron: data)
-            user = userJson.results
-        }
-        catch {
-            print(error)
+    var user = [User](){
+        didSet {
+            tableView.reloadData()
         }
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        loadData()
+        userSearch.delegate = self
+    }
+    var userSearchTerm: String? {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    var filteredPersonArr: [User]  {
+        guard let userSearchTerm = userSearchTerm else {
+            return user
+        }
+        guard userSearchTerm != "" else {
+            return user
+        }
+        
+        return user.filter({ (user) -> Bool in
+            user.name.first.lowercased().contains(userSearchTerm.lowercased())
+            })
+    }
+    
+    private func loadData() {
+        UserBase.getUser{(result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let userOnline):
+                    self.user = userOnline
+                }
+            }
+        }
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let jokeDetailVC = segue.destination as? userDetailViewController else {
+            fatalError("Unexpected segue")
+        }
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow
+            else { fatalError("No row selected") }
+        jokeDetailVC.userInfo = filteredPersonArr[selectedIndexPath.row]
+    }
+ 
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return user.count
+        return filteredPersonArr.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userTable")
-        cell?.textLabel?.text = user[indexPath.row].name.first
+        cell?.textLabel?.text = filteredPersonArr[indexPath.row].name.FullName()
         cell?.detailTextLabel?.text = user[indexPath.row].name.title
         return cell!
     }
 }
+extension ViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.userSearchTerm = searchText
+    }
+}
+
