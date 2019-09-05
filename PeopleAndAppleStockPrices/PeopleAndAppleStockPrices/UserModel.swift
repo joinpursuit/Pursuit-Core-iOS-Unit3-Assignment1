@@ -29,9 +29,13 @@ struct Person: Codable {
     let email: String
 }
 
-struct NameWrapper: Codable {
+struct NameWrapper: Codable, CustomStringConvertible {
     let first: String
     let last: String
+    
+    var description: String {
+        return "\(first) \(last)"
+    }
 }
 
 struct LocationWrapper: Codable {

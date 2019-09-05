@@ -26,8 +26,7 @@ class PeopleViewController: UIViewController {
         loadData()
     }
     
-    
-    
+    // MARK: Private Methods
     private func loadData() {
         guard let pathToJSONFile = Bundle.main.path(forResource: "userinfo", ofType: "json") else {
             fatalError("Could not find JSON file")
@@ -41,6 +40,8 @@ class PeopleViewController: UIViewController {
             fatalError()
         }
     }
+    
+    
 }
 
 
@@ -59,7 +60,7 @@ extension PeopleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
-        cell.textLabel?.text = peopleModel[indexPath.row].name.first
+        cell.textLabel?.text = peopleModel[indexPath.row].name.description
         cell.detailTextLabel?.text = peopleModel[indexPath.row].location.city
         return cell
     }
