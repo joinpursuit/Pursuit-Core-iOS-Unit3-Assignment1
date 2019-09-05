@@ -10,10 +10,11 @@ struct UserWrapper: Codable {
 
 struct User: Codable {
     let gender: String
-    let name: Name
     let email: String
-    let location: Location
     let cell: String
+    let name: Name
+    let location: Location
+    
     
     static func getUsers(from data: Data) -> [User] {
         
