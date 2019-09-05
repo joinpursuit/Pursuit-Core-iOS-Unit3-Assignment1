@@ -9,6 +9,7 @@
 import UIKit
 
 class StockDetailViewController: UIViewController {
+    var apple: Stock!
     @IBOutlet weak var image2Outlet: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var openLabel: UILabel!

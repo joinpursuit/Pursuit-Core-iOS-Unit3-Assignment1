@@ -9,7 +9,7 @@
 import UIKit
 
 class PeopleDetailViewController: UIViewController {
-    var userInfo: PeopleWrapper!
+    var peopleInfo: Person!
     
     @IBOutlet weak var image1Outlet: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -18,8 +18,26 @@ class PeopleDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        nameLabel.text = "\(peopleInfo.name.first) \(peopleInfo.name.last)"
+        emailLabel.text = peopleInfo.email
+        cityLabel.text = peopleInfo.location.city
+        loadImage(site: peopleInfo.picture.large)
+    }
+    
+    func loadImage(site: String){
+        let urlStr = site
+        guard let url = URL(string: urlStr) else{return}
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let data = try Data(contentsOf: url)
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.image1Outlet.image = image
+                }
+            } catch {
+                fatalError()
+            }
+        }
     }
     
 

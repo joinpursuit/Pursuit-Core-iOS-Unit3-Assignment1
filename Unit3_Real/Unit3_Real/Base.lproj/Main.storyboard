@@ -172,7 +172,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="PNC-rf-L3J" kind="show" identifier="peopleSegway" id="0a5-fV-hNF"/>
+                                            <segue destination="PNC-rf-L3J" kind="show" identifier="" id="0a5-fV-hNF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

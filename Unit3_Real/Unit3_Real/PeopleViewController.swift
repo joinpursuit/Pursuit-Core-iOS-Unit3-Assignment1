@@ -10,19 +10,19 @@ import UIKit
 
 class PeopleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var userTableViewOutlet: UITableView!
-    var human = [PeopleWrapper]() {
+    var human = [Person]() {
         didSet {
             userTableViewOutlet.reloadData()
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return human[0].people.count
+        return human.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userTableViewOutlet.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-        let humas = human[0].people[indexPath.row]
+        let humas = human[indexPath.row]
         cell.textLabel?.text = "\(humas.name.title).\(humas.name.first) \(humas.name.last) "
         cell.detailTextLabel?.text = "\(humas.location)"
         return cell
@@ -31,20 +31,21 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
     private func loadData() {
         //pathToJSONFile is just the string for the name of the file
         guard let pathToJSONFile = Bundle.main.path(forResource: "userinfo", ofType: "json") else {
-            fatalError("Could not find bundle")
+            fatalError("Could not find json file")
         }
-        print(pathToJSONFile)
         //url is the reference of the location of the json file
         let url = URL(fileURLWithPath: pathToJSONFile)
         do {
             let data = try Data(contentsOf: url)
             let resultsFromJSON = PeopleWrapper.getPeople(from: data)
-            human = [resultsFromJSON]
+            human = resultsFromJSON.results
             
         } catch {
             fatalError("Could not decode")
         }
     }
+    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier != nil else { fatalError("No identifier in segue")
@@ -53,7 +54,7 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
             else { fatalError("Unexpected segue")}
         guard let selectedIndexPath = userTableViewOutlet.indexPathForSelectedRow
             else { fatalError("No row selected") }
-        peopleVC.userInfo = human[selectedIndexPath.row]
+        peopleVC.peopleInfo = human[selectedIndexPath.row]
     }
     
     override func viewDidLoad() {

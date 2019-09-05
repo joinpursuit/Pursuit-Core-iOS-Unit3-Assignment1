@@ -46,6 +46,17 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
             fatalError("Could not decode")
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier != nil else { fatalError("No identifier in segue")
+        }
+        guard let stockVC = segue.destination as? StockDetailViewController
+            else { fatalError("Unexpected segue")}
+        guard let selectedIndexPath = stockTableViewOutlet.indexPathForSelectedRow
+            else { fatalError("No row selected") }
+        stockVC.apple = stocks[selectedIndexPath.row]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stockTableViewOutlet.dataSource = self

@@ -10,22 +10,16 @@ import Foundation
 import UIKit
 
 struct PeopleWrapper: Codable{
-    let people: [Person]
-    //    let email: String
-    //    let frame: [Image]
-    //    let home: [Address]
-    
+    let results: [Person]
+
     static func getPeople(from data: Data) -> PeopleWrapper{
         do{
             let human = try JSONDecoder().decode(PeopleWrapper.self, from: data)
             return human
         } catch let anError { fatalError( "\(anError)" )}
     }
-    
-    enum CodingKeys: String, CodingKey {
-        case people = "results"
-    }
 }
+
 struct Person: Codable {
     let name: Name
     let email: String
