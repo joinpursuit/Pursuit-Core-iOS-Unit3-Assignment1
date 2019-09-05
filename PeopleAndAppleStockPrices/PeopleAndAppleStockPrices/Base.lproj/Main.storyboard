@@ -102,7 +102,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="dyq-OP-1jE" kind="show" id="E3Z-Hf-dZC"/>
+                                            <segue destination="dyq-OP-1jE" kind="show" identifier="contactInfo" id="E3Z-Hf-dZC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
