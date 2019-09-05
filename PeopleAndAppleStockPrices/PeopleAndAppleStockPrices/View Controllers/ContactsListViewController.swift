@@ -50,7 +50,7 @@ class ContactsListViewController: UIViewController, UITableViewDataSource {
         let person = filteredContactsList[indexPath.row]
         let cell = contactsListTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         cell.textLabel?.text = "\(person.name.first?.capitalized ?? "") \(person.name.last?.capitalized ?? "")"
-        cell.detailTextLabel?.text = "\(person.location.street)\n\(person.location.city), \(person.location.state)"
+        cell.detailTextLabel?.text = "\(person.location.street?.capitalized ?? "N/A"), \(person.location.city?.capitalized ?? "N/A"), \(person.location.state?.capitalized ?? "N/A")"
         return cell
     }
 
