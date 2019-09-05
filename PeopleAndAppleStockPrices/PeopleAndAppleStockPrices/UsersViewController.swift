@@ -57,5 +57,24 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else {
+            fatalError("No identifier on segue")
+        }
+        
+        switch segueIdentifier {
+        case "userDetail":
+            
+            guard let userDetail = segue.destination as? UserDetailViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = usersTableView.indexPathForSelectedRow else {
+                fatalError("No row was selected")
+            }
+            userDetail.user = users[selectedIndexPath.row]
+        default:
+            fatalError("Unexpected segue identifier")
+        }
+    }
     
 }
