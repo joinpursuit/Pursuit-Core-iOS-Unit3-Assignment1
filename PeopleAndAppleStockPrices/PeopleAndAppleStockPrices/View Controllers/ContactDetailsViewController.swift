@@ -12,8 +12,11 @@ class ContactDetailsViewController: UIViewController {
     
     var person: Person!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
