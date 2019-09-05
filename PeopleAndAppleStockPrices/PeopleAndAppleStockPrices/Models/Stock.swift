@@ -13,6 +13,7 @@ struct Stock: Codable {
     let open: Double
     let close: Double
     
+    
     var dateForHeader: String {
         var dateArr = date.components(separatedBy: "-")
         let year = dateArr[0]
@@ -28,5 +29,4 @@ struct Stock: Codable {
             return nil
         }
     }
-    
 }
