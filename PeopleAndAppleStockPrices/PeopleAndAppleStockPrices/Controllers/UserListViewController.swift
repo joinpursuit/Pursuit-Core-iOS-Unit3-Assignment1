@@ -51,7 +51,7 @@ class UserListViewController: UIViewController {
     }
     
     private func loadUserData() {
-        let userData = DataFetchingService.getUserDataFromJSON()
+        let userData = DataAPIClient.getUserDataFromJSON()
         // refactor later to not force unwrap?
         allUsers = UserWrapper.getAllUsers(from: userData)!.results
     }
