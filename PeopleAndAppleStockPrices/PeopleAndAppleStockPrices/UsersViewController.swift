@@ -51,8 +51,8 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         
         let user = users[indexPath.row]
         
-        cell.textLabel?.text = "\(user.name.first) \(user.name.last)"
-        cell.detailTextLabel?.text = user.location.city
+        cell.textLabel?.text = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
+        cell.detailTextLabel?.text = user.location.city.capitalized
         
         return cell
     }

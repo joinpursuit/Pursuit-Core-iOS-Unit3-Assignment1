@@ -16,6 +16,7 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userCell: UILabel!
     @IBOutlet weak var userGender: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,12 @@ class UserDetailViewController: UIViewController {
     }
     
     private func loadUserData() {
-        userName.text = "\(user.name.first) \(user.name.last)"
-        userLocation.text = user.location.city
+        userImage.image = UIImage(named: "profileImage")
+        userName.text = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
+        userLocation.text = user.location.city.capitalized
         userEmail.text = user.email
         userCell.text = user.cell
-        userGender.text = user.gender
+        userGender.text = user.gender.capitalized
     }
-
+    
 }
