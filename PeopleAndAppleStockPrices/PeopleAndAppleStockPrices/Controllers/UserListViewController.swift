@@ -31,7 +31,17 @@ class UserListViewController: UIViewController {
     
     private func loadUserData() {
         let userData = DataFetchingService.getUserDataFromJSON()
+        // refactor later to not force unwrap?
         allUsers = UserWrapper.getAllUsers(from: userData)!.results
+    }
+    
+    //refactor to not use fatalerror
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedIndex = userListTableView.indexPathForSelectedRow else { fatalError("No cell was selected") }
+        guard segue.identifier == "userCellToDetailSegue" else { fatalError("Unidentified segue") }
+        guard let userDetailsVC = segue.destination as? UserDetailViewController else { fatalError("No destination View Controller") }
+        
+        userDetailsVC.user = allUsers[selectedIndex.row]
     }
 
 }
