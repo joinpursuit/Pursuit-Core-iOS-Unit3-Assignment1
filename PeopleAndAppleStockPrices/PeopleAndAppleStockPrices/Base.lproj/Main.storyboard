@@ -207,6 +207,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FSh-ms-L72"/>
                     </view>
+                    <connections>
+                        <outlet property="dateOfBirthLabel" destination="dcQ-uq-Eti" id="P5B-DZ-E2b"/>
+                        <outlet property="emailLabel" destination="n4d-kj-uPm" id="pJG-Fx-bg6"/>
+                        <outlet property="nameLabel" destination="htz-L6-GyL" id="33u-xY-Bej"/>
+                        <outlet property="peopleImageView" destination="vZ7-zC-oHb" id="ZMX-9u-UJX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xP-31-Aq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

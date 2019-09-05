@@ -12,7 +12,13 @@ class DetailPeopleViewController: UIViewController {
     
     // MARK: Outlets
     
+    @IBOutlet weak var peopleImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var dateOfBirthLabel: UILabel!
+    
     // MARK: Properties
+    
     var person: Person!
 
     // MARK: Lifecycle Methods
