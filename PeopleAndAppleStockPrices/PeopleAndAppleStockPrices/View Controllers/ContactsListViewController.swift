@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactsListViewController: UIViewController, UITableViewDataSource {
+class ContactsListViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
     
     //MARK: -- Properties
     var contacts = [Person]() {
