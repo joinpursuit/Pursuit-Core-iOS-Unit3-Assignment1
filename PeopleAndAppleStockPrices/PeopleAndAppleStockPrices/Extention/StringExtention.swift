@@ -18,12 +18,21 @@ extension String {
         return date
     }
     
-    func toDateFormat(dateFormat: String) -> String {
+    func toDateFormatInString(dateFormat: String) -> String {
         let Date = toDate(dateFormat: dateFormat)
         let formatter = DateFormatter()
         
         guard let date = Date else {return "No Date Found"}
         formatter.dateFormat = "MM/dd/yyyy"
+        return formatter.string(from: date)
+    }
+    
+    func changeDateFormatForHeader(dateFormat: String) -> String {
+        let Date = toDate(dateFormat: dateFormat)
+        let formatter = DateFormatter()
+        
+        guard let date = Date else {return "No Date Found"}
+        formatter.dateFormat = "MM/yyyy"
         return formatter.string(from: date)
     }
     

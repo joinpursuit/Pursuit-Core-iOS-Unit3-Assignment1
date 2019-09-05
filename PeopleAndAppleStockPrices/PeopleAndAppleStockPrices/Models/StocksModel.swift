@@ -20,17 +20,21 @@ struct Stock: Codable {
         case closePrice = "uClose"
     }
     
-    static func getStock(from data: Data) -> [Stock]? {
+    static func getStock(from data: Data) throws -> [Stock] {
         do {
             let newStock = try JSONDecoder().decode([Stock].self, from: data)
             return newStock
         } catch {
-            return nil
+            throw jsonError.decodingError(error)
         }
     }
     
-    func getDateinDateFormat() -> Date {
+    private func getDateinDateFormat() -> Date {
         return self.date.toDate(dateFormat: "yyyy-MM-dd")!
+    }
+    
+    func getDateInStringFormat() -> String {
+        return self.date.toDateFormatInString(dateFormat: "yyyy-MM-dd")
     }
     
     static func getSortedArr(arr: [Stock]) -> [Stock] {
@@ -66,5 +70,17 @@ struct Stock: Codable {
         let average = sum / Double(arr.count)
         return average.roundToTwoSpaces()
        
+    }
+  
+    
+    static func buildGroupStocks(_ arr: [Stock]) -> [String:[Stock]] {
+        let sortedStocks = getSortedArr(arr: arr)
+        let groupedStocks = getGroupedStocks(arr: sortedStocks)
+        return groupedStocks
+    }
+   
+    static func sortSections(arr: [String]) -> [String] {
+        let sortedArr = arr.sorted{$0.toDate(dateFormat: "yyyy-MM")! < $1.toDate(dateFormat: "yyyy-MM")! }
+        return sortedArr
     }
 }
