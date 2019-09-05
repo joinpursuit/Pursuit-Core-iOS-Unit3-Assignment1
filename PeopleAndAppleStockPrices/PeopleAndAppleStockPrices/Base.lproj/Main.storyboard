@@ -16,19 +16,63 @@
                     <view key="view" contentMode="scaleToFill" id="IzG-wD-QCd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="32d-Pi-VaD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="price" textLabel="dCF-zZ-evX" detailTextLabel="qBs-x4-Zxo" style="IBUITableViewCellStyleSubtitle" id="ho6-fn-i2f">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ho6-fn-i2f" id="KB9-ec-kBV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dCF-zZ-evX">
+                                                    <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qBs-x4-Zxo">
+                                                    <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="r65-Pf-fbj" kind="show" identifier="toStockDetail" id="Id5-EK-QM1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="32d-Pi-VaD" firstAttribute="width" secondItem="IzG-wD-QCd" secondAttribute="width" id="0vo-Nw-lyU"/>
+                            <constraint firstItem="32d-Pi-VaD" firstAttribute="top" secondItem="65h-85-SX5" secondAttribute="top" id="2E7-r6-SXC"/>
+                            <constraint firstItem="32d-Pi-VaD" firstAttribute="height" secondItem="IzG-wD-QCd" secondAttribute="height" id="9fF-6V-LTI"/>
+                            <constraint firstItem="32d-Pi-VaD" firstAttribute="leading" secondItem="65h-85-SX5" secondAttribute="leading" id="xXY-c0-mRD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="65h-85-SX5"/>
                     </view>
                     <navigationItem key="navigationItem" id="XwH-Rg-nb1"/>
+                    <connections>
+                        <outlet property="stockTableOutlet" destination="32d-Pi-VaD" id="a72-ub-8AY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5VN-9X-yuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="157.97101449275362" y="833.70535714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Stock Detail View Controller-->
         <scene sceneID="ZTA-KN-Iq0">
             <objects>
-                <viewController id="r65-Pf-fbj" sceneMemberID="viewController">
+                <viewController id="r65-Pf-fbj" customClass="StockDetailViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rra-si-FS1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
