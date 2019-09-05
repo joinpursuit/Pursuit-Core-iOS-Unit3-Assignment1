@@ -46,6 +46,6 @@ struct ImageWrapper: Codable {
     let imageURL: String
     
     private enum CodingKeys: String, CodingKey {
-        case imageURL = "medium"
+        case imageURL = "large"
     }
 }

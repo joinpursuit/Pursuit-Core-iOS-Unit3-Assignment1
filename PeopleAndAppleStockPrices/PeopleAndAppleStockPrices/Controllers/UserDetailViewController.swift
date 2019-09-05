@@ -28,6 +28,18 @@ class UserDetailViewController: UIViewController {
             nameLabel.text = "\(user.name.firstName.capitalized) \(user.name.lastName.capitalized)"
             emailLabel.text = user.email
             locationLabel.text = user.location.state.capitalized
+            
+            ImageHelper.shared.getImage(urlStr: user.picture.imageURL) { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let imageFromURL):
+                        self.userImage.image = imageFromURL
+                    }
+                }
+            }
         }
     }
+    
 }

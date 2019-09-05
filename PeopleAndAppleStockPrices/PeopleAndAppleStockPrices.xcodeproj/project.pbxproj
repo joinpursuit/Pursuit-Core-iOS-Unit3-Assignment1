@@ -27,6 +27,7 @@
 		EAD5B5CB2320871700459B5F /* DataFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5C523207BE900459B5F /* DataFetchingService.swift */; };
 		EAD5B5CC2320872500459B5F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5BB23207A4100459B5F /* User.swift */; };
 		EAD5B5CD2320872800459B5F /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5BD23207A4A00459B5F /* Stock.swift */; };
+		EAD5B5CF2320925700459B5F /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5B5CE2320925700459B5F /* ImageHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		EAD5B5C323207BC500459B5F /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		EAD5B5C523207BE900459B5F /* DataFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchingService.swift; sourceTree = "<group>"; };
 		EAD5B5C723207BFA00459B5F /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		EAD5B5CE2320925700459B5F /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = PeopleAndAppleStockPrices/Models/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD5B5C523207BE900459B5F /* DataFetchingService.swift */,
+				EAD5B5CE2320925700459B5F /* ImageHelper.swift */,
 				EAD5B5C723207BFA00459B5F /* ErrorHandler.swift */,
 				EAD5B5BB23207A4100459B5F /* User.swift */,
 				EAD5B5BD23207A4A00459B5F /* Stock.swift */,
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD5B5912320783C00459B5F /* UserListViewController.swift in Sources */,
+				EAD5B5CF2320925700459B5F /* ImageHelper.swift in Sources */,
 				EAD5B58F2320783C00459B5F /* AppDelegate.swift in Sources */,
 				EAD5B5C423207BC500459B5F /* StockDetailViewController.swift in Sources */,
 				EAD5B5C223207BB700459B5F /* UserDetailViewController.swift in Sources */,

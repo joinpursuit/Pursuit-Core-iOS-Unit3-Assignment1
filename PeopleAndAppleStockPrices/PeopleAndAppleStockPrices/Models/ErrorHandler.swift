@@ -8,5 +8,8 @@
 
 import Foundation
 
-enum ErrorHandler {
+enum ErrorHandler: Error {
+    case badURL
+    case noData
+    case noImage
 }
