@@ -147,29 +147,58 @@
             </objects>
             <point key="canvasLocation" x="-213.04347826086959" y="364.95535714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Stock View Controller-->
         <scene sceneID="OVX-5e-0s6">
             <objects>
-                <viewController id="WIg-xa-dUD" sceneMemberID="viewController">
+                <viewController id="WIg-xa-dUD" customClass="StockViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mwx-du-ud6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tbL-Fi-cKG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dda-C1-t8d">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stocks" textLabel="SdY-a6-IhH" detailTextLabel="dcA-4f-0D6" style="IBUITableViewCellStyleValue1" id="zQc-44-QVs">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zQc-44-QVs" id="ESu-8y-K5A">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SdY-a6-IhH">
+                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dcA-4f-0D6">
+                                                    <rect key="frame" x="350" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tbL-Fi-cKG" firstAttribute="top" secondItem="3HG-zA-lcC" secondAttribute="top" id="40Z-dh-yPv"/>
-                            <constraint firstItem="3HG-zA-lcC" firstAttribute="bottom" secondItem="tbL-Fi-cKG" secondAttribute="bottom" id="56T-FN-lYx"/>
-                            <constraint firstItem="tbL-Fi-cKG" firstAttribute="leading" secondItem="3HG-zA-lcC" secondAttribute="leading" id="7pH-b2-Mnn"/>
-                            <constraint firstItem="3HG-zA-lcC" firstAttribute="trailing" secondItem="tbL-Fi-cKG" secondAttribute="trailing" id="jMt-hd-7Zh"/>
+                            <constraint firstItem="dda-C1-t8d" firstAttribute="leading" secondItem="3HG-zA-lcC" secondAttribute="leading" id="4yD-9G-NaT"/>
+                            <constraint firstItem="dda-C1-t8d" firstAttribute="top" secondItem="3HG-zA-lcC" secondAttribute="top" id="JnG-px-uAE"/>
+                            <constraint firstItem="3HG-zA-lcC" firstAttribute="bottom" secondItem="dda-C1-t8d" secondAttribute="bottom" id="bRl-d3-8nz"/>
+                            <constraint firstItem="3HG-zA-lcC" firstAttribute="trailing" secondItem="dda-C1-t8d" secondAttribute="trailing" id="qmj-b0-ery"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3HG-zA-lcC"/>
                     </view>
                     <navigationItem key="navigationItem" id="gmp-Fu-S8Y"/>
+                    <connections>
+                        <outlet property="stockTableView" destination="dda-C1-t8d" id="2Tp-qz-yB1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXf-JK-V6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

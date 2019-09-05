@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import UIKit
+
+class DetailViewControllerStocks:UIViewController {
+   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}

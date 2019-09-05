@@ -75,11 +75,12 @@ extension RandomUserViewController: UITableViewDelegate{}
 extension RandomUserViewController:UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchBarText = searchBar.text
-self.navigationItem.title = showResults.showResults(int: searchResults.count)
-
+        self.navigationItem.title = showResults.showResults(int: searchResults.count)
+        
+        }
     }
     
-}
+
 
 extension RandomUserViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
