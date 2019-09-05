@@ -30,9 +30,16 @@ class StockViewController:UIViewController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       setUp()
         getData()
+    }
+}
+extension StockViewController:UITableViewDelegate{
+    func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
     }
 }
 extension StockViewController:UITableViewDataSource {
@@ -46,6 +53,21 @@ extension StockViewController:UITableViewDataSource {
         cell?.detailTextLabel?.text = stocks[indexPath.row].open.description
         return cell!
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let storyBoard = storyboard?.instantiateViewController(withIdentifier: "DetailViewControllerStocks") as? DetailViewControllerStocks {
+        
+        storyBoard.passingInfo = stocks[indexPath.row]
+        
+        navigationController?.pushViewController(storyBoard, animated: true)
+    }
+        
     
-    
+    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//    }
+    func setUp() {
+        stockTableView.dataSource = self
+        stockTableView.delegate = self
+    }
 }

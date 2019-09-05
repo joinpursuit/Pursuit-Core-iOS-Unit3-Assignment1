@@ -14,10 +14,14 @@
 		690190A6232143DC00636243 /* loadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690190A5232143DC00636243 /* loadImage.swift */; };
 		690190A8232149D300636243 /* showSearchResultNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690190A7232149D300636243 /* showSearchResultNumber.swift */; };
 		690190EC2321843B00636243 /* StockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690190EB2321843B00636243 /* StockAPIClient.swift */; };
+		690190EE23219DC600636243 /* JSONONE.json in Resources */ = {isa = PBXBuildFile; fileRef = 690190ED23219DC600636243 /* JSONONE.json */; };
+		690190F42321CBC000636243 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690190F32321CBC000636243 /* ImageHelper.swift */; };
+		690190F72321CC2500636243 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690190F62321CC2500636243 /* NetWorkManager.swift */; };
+		690190F92321CC4800636243 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690190F82321CC4800636243 /* ErrorHandler.swift */; };
 		6904C88D2319AF4900B6E563 /* ViewControllerOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6904C88C2319AF4900B6E563 /* ViewControllerOne.swift */; };
 		6904C88F2319AF5300B6E563 /* ViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6904C88E2319AF5300B6E563 /* ViewControllerTwo.swift */; };
-		6904C8912319AF6400B6E563 /* ModelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6904C8902319AF6400B6E563 /* ModelOne.swift */; };
-		6904C8932319AF7000B6E563 /* ModelTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6904C8922319AF7000B6E563 /* ModelTwo.swift */; };
+		6904C8912319AF6400B6E563 /* RandomUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6904C8902319AF6400B6E563 /* RandomUsers.swift */; };
+		6904C8932319AF7000B6E563 /* Stocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6904C8922319AF7000B6E563 /* Stocks.swift */; };
 		6904C8962319AF9B00B6E563 /* DetailViewControllerOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6904C8952319AF9B00B6E563 /* DetailViewControllerOne.swift */; };
 		6904C8982319AFA800B6E563 /* DetailViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6904C8972319AFA800B6E563 /* DetailViewControllerTwo.swift */; };
 		6904C89A2319B0B000B6E563 /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6904C8992319B0B000B6E563 /* UserAPIClient.swift */; };
@@ -35,10 +39,14 @@
 		690190A5232143DC00636243 /* loadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadImage.swift; sourceTree = "<group>"; };
 		690190A7232149D300636243 /* showSearchResultNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showSearchResultNumber.swift; sourceTree = "<group>"; };
 		690190EB2321843B00636243 /* StockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAPIClient.swift; sourceTree = "<group>"; };
+		690190ED23219DC600636243 /* JSONONE.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONONE.json; sourceTree = "<group>"; };
+		690190F32321CBC000636243 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		690190F62321CC2500636243 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
+		690190F82321CC4800636243 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		6904C88C2319AF4900B6E563 /* ViewControllerOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOne.swift; sourceTree = "<group>"; };
 		6904C88E2319AF5300B6E563 /* ViewControllerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTwo.swift; sourceTree = "<group>"; };
-		6904C8902319AF6400B6E563 /* ModelOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOne.swift; sourceTree = "<group>"; };
-		6904C8922319AF7000B6E563 /* ModelTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTwo.swift; sourceTree = "<group>"; };
+		6904C8902319AF6400B6E563 /* RandomUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUsers.swift; sourceTree = "<group>"; };
+		6904C8922319AF7000B6E563 /* Stocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stocks.swift; sourceTree = "<group>"; };
 		6904C8952319AF9B00B6E563 /* DetailViewControllerOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerOne.swift; sourceTree = "<group>"; };
 		6904C8972319AFA800B6E563 /* DetailViewControllerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTwo.swift; sourceTree = "<group>"; };
 		6904C8992319B0B000B6E563 /* UserAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
@@ -97,9 +105,20 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		690190F52321CBC800636243 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				690190F32321CBC000636243 /* ImageHelper.swift */,
+				690190F62321CC2500636243 /* NetWorkManager.swift */,
+				690190F82321CC4800636243 /* ErrorHandler.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		6904C8892319AF0F00B6E563 /* TBD */ = {
 			isa = PBXGroup;
 			children = (
+				690190ED23219DC600636243 /* JSONONE.json */,
 			);
 			path = TBD;
 			sourceTree = "<group>";
@@ -107,13 +126,14 @@
 		6904C88A2319AF1200B6E563 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6904C8902319AF6400B6E563 /* ModelOne.swift */,
-				6904C8922319AF7000B6E563 /* ModelTwo.swift */,
+				6904C8902319AF6400B6E563 /* RandomUsers.swift */,
+				6904C8922319AF7000B6E563 /* Stocks.swift */,
 				6904C8992319B0B000B6E563 /* UserAPIClient.swift */,
 				6904C89E231EC3DA00B6E563 /* createRGBColor.swift */,
 				690190A5232143DC00636243 /* loadImage.swift */,
 				690190A7232149D300636243 /* showSearchResultNumber.swift */,
 				690190EB2321843B00636243 /* StockAPIClient.swift */,
+				690190F52321CBC800636243 /* Helper */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690190EE23219DC600636243 /* JSONONE.json in Resources */,
 				577E5BF621BA8BA20083EB97 /* LaunchScreen.storyboard in Resources */,
 				577E5BF321BA8BA20083EB97 /* Assets.xcassets in Resources */,
 				577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */,
@@ -216,16 +237,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6904C8932319AF7000B6E563 /* ModelTwo.swift in Sources */,
+				6904C8932319AF7000B6E563 /* Stocks.swift in Sources */,
 				6904C89D2319BA0C00B6E563 /* Extensions.swift in Sources */,
 				6904C88D2319AF4900B6E563 /* ViewControllerOne.swift in Sources */,
 				6904C8962319AF9B00B6E563 /* DetailViewControllerOne.swift in Sources */,
-				6904C8912319AF6400B6E563 /* ModelOne.swift in Sources */,
+				690190F72321CC2500636243 /* NetWorkManager.swift in Sources */,
+				6904C8912319AF6400B6E563 /* RandomUsers.swift in Sources */,
+				690190F92321CC4800636243 /* ErrorHandler.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
 				690190A8232149D300636243 /* showSearchResultNumber.swift in Sources */,
 				6904C88F2319AF5300B6E563 /* ViewControllerTwo.swift in Sources */,
 				690190A6232143DC00636243 /* loadImage.swift in Sources */,
 				6904C89A2319B0B000B6E563 /* UserAPIClient.swift in Sources */,
+				690190F42321CBC000636243 /* ImageHelper.swift in Sources */,
 				6904C8982319AFA800B6E563 /* DetailViewControllerTwo.swift in Sources */,
 				6904C89F231EC3DA00B6E563 /* createRGBColor.swift in Sources */,
 				690190EC2321843B00636243 /* StockAPIClient.swift in Sources */,

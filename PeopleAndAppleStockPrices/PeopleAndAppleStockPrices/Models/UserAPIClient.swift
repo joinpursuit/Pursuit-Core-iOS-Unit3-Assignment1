@@ -22,6 +22,7 @@ struct UserAPIClient {
             guard let retrieveData = data else {fatalError(String(describing: error))}
             do {
                 let randomUser = try JSONDecoder().decode(RandomUsers.self, from: retrieveData)
+                
                 completionHandler(.success(randomUser))
             } catch let JSONError {
                 completionHandler(.failure(JSONError))

@@ -19,7 +19,7 @@ class RandomUserViewController:UIViewController {
             DispatchQueue.main.async {
                
                 self.randomUserTableView.reloadData()
-                
+              
         }
         }
     }
@@ -55,15 +55,15 @@ class RandomUserViewController:UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         setUp()
         getData()
-
     }
   private func getData() {
     UserAPIClient.shared.fetchData { (results) in
         switch results {
         case .success(let user):
-            self.randomUser = user.results
+            self.randomUser = user.results.sorted(by: {$0.name.first < $1.name.first})
         case .failure(let failure):
             print("could not retrieve Data \(failure)")
         }
@@ -95,7 +95,6 @@ extension RandomUserViewController:UITableViewDataSource {
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        seachingBar.resignFirstResponder()
 
         if let storyBoard = storyboard?.instantiateViewController(withIdentifier: "DetailViewControllerOne") as? DetailViewControllerOne {
             
@@ -115,11 +114,16 @@ extension RandomUserViewController:UITableViewDataSource {
         seachingBar.delegate = self
         self.navigationItem.title = "Contacts"
         colorGenerator()
+        
     }
     func colorGenerator(){
         rgbColor = RGBValue()
         self.navigationController?.navigationBar.backgroundColor = rgbColor.createRGBColor()
         
+    }
+    func sortByfirstName() {
+        randomUser.sort(by: {$0.name.first < $1.name.first})
+        randomUserTableView.reloadData()
     }
 }
 
