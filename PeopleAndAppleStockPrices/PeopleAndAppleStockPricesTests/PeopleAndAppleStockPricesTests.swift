@@ -27,4 +27,11 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         XCTAssertTrue(userData != nil, "Could not load User data")
     }
 
+    func testStockDataExists() {
+        let stockDataFromJSON = DataFetchingService.getStockDataFromJSON()
+        
+        let stockData = Stock.getAllStocks(from: stockDataFromJSON)
+        
+        XCTAssertTrue(stockData != nil, "Could not load Stock data")
+    }
 }
