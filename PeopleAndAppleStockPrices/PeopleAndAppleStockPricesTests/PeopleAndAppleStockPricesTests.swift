@@ -20,15 +20,26 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
     }
 
     func testUserDataExists() {
-        let userDataFromJSON = DataFetchingService.getUserDataFromJSON()
+        let userDataFromJSON = DataAPIClient.getUserDataFromJSON()
         
         let userData = UserWrapper.getAllUsers(from: userDataFromJSON)
         
         XCTAssertTrue(userData != nil, "Could not load User data")
     }
 
+    func testGetFullName() {
+        let testNameWrapper = NameWrapper.init(firstName: "testFirstName", lastName: "testLastName")
+        let testLocationWrapper = LocationWrapper.init(state: "testLocation")
+        let testPicture = ImageWrapper.init(imageURL: "testImage")
+        let testUser = User.init(name: testNameWrapper, location: testLocationWrapper, email: "testEmail", picture: testPicture)
+        
+        XCTAssertTrue(testUser.getFullName(firstName: testUser.name.firstName, lastName: testUser.name.lastName) == "Testfirstname Testlastname", "Could not get full name, got: \(testUser.getFullName(firstName: testUser.name.firstName, lastName: testUser.name.lastName))")
+        
+    }
+    
+    
     func testStockDataExists() {
-        let stockDataFromJSON = DataFetchingService.getStockDataFromJSON()
+        let stockDataFromJSON = DataAPIClient.getStockDataFromJSON()
         
         let stockData = Stock.getAllStocks(from: stockDataFromJSON)
         
