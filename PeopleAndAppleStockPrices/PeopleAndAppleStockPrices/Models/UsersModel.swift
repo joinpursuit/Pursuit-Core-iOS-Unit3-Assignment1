@@ -56,6 +56,12 @@ struct User: Codable {
         return newarr
     }
     
+    static func getFilteredResults(arr:[User], searchText: String) -> [User] {
+        var currentFilter: [User]
+        currentFilter = arr.filter{$0.getFullName().lowercased().contains(searchText.lowercased())}
+        return currentFilter
+    }
+    
 }
 
 struct Name: Codable {

@@ -17,10 +17,27 @@ class UsersViewController: UIViewController {
     
     var users: [User]!
     
+    var filteredUsers: [User] {
+        get {
+            guard let searchString = searchString else { return users }
+            
+            guard searchString != "" else { return users}
+            
+            return User.getFilteredResults(arr: users, searchText: searchString)
+        }
+    }
+    
+    var searchString: String? = nil {
+        didSet {
+            self.usersTableView.reloadData()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        configureSearchBar()
         loadData()
     }
     
@@ -28,6 +45,10 @@ class UsersViewController: UIViewController {
         usersTableView.dataSource = self
         usersTableView.delegate = self
         usersTableView.rowHeight = 80
+    }
+    
+    private func configureSearchBar() {
+       usersSearchBar.delegate = self
     }
     
     private func loadData() {
@@ -53,12 +74,12 @@ class UsersViewController: UIViewController {
 
 extension UsersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return filteredUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let user = users[indexPath.row]
+        let user = filteredUsers[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         
         cell.textLabel?.text = user.getFullName()
@@ -70,3 +91,9 @@ extension UsersViewController: UITableViewDataSource {
 }
 
 extension UsersViewController: UITableViewDelegate {}
+
+extension UsersViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchString = searchText
+    }
+}

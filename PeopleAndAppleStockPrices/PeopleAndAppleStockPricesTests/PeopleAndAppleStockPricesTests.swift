@@ -182,5 +182,6 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
 
         XCTAssert(sortedUsers[0].getFullName() < sortedUsers[1].getFullName() , "You do not have a sorted array based on full name")
     }
+    
 
 }
