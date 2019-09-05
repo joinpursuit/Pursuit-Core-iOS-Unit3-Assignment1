@@ -23,11 +23,7 @@ class PeopleViewController: UIViewController {
     
     var searchResults: [Contact] {
         get {
-            guard let searchString = searchString else {return contacts}
-            guard searchString != "" else {return contacts}
-            
-            
-            return contacts.filter{$0.fullName.contains(searchString)}
+            return Results.getSearchResults(contactArr: contacts, search: searchString)
         }
     }
     

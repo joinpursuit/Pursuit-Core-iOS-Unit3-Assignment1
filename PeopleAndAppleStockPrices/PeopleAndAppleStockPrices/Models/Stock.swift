@@ -30,6 +30,7 @@ struct Stock: Codable {
         } catch let decodeError {
             fatalError("Error: \(decodeError)")
         }
+        
     }
     
     

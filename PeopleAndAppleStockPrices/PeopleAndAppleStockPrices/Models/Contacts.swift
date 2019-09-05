@@ -24,6 +24,15 @@ struct Results: Codable {
         case contacts = "results"
     }
     
+    static func getSearchResults(contactArr: [Contact], search: String?) -> [Contact] {
+        guard let search = search else {return contactArr}
+        guard search != "" else {return contactArr}
+        
+        return contactArr.filter{$0.fullName.contains(search)
+        }
+        
+    }
+    
 }
 
 
@@ -49,6 +58,5 @@ struct Contact: Codable {
         let state: String
     }
     
-    
+   
 }
-
