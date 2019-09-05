@@ -28,7 +28,7 @@
         <!--Users View Controller-->
         <scene sceneID="QNW-Do-yMi">
             <objects>
-                <viewController id="qkL-GD-tFp" userLabel="Users View Controller" sceneMemberID="viewController">
+                <viewController id="qkL-GD-tFp" userLabel="Users View Controller" customClass="UsersViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nn5-BZ-IZF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,6 +85,9 @@
                         <viewLayoutGuide key="safeArea" id="IPs-C5-BJP"/>
                     </view>
                     <navigationItem key="navigationItem" id="s1e-sH-Gdh"/>
+                    <connections>
+                        <outlet property="usersTableView" destination="2hW-aC-IO8" id="5N0-0T-P6J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Vs-nJ-A2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

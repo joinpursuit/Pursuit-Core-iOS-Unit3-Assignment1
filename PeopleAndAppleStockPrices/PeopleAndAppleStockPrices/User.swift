@@ -15,7 +15,7 @@ struct User: Codable {
     let name: Name
     let location: Location
     
-    
+
     static func getUsers(from data: Data) -> [User] {
         
         do {
