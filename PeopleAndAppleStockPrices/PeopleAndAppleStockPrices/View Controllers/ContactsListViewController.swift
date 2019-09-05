@@ -55,6 +55,7 @@ class ContactsListViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    //MARK: -- Custom Functions
     func getContacts() {
         guard let pathToJSON = Bundle.main.path(forResource: "userinfo", ofType: ".json") else { return }
         let url = URL(fileURLWithPath: pathToJSON)
