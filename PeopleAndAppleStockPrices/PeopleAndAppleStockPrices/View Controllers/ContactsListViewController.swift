@@ -30,7 +30,11 @@ class ContactsListViewController: UIViewController, UITableViewDataSource, UISea
         }
     }
     
-    var filteredContactsList = [Person]()
+    var filteredContactsList = [Person]() {
+        didSet {
+            contactsListTableView.reloadData()
+        }
+    }
     
     //MARK: -- IBOutlets
     @IBOutlet weak var contactsListTableView: UITableView!
