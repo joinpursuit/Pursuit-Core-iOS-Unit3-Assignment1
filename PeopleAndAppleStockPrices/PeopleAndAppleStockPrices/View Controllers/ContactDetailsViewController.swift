@@ -26,6 +26,16 @@ class ContactDetailsViewController: UIViewController {
         nameLabel.text = "\(person.name.first?.capitalized ?? "") \(person.name.last?.capitalized ?? "")"
         locationLabel.text = "\(person.location.street?.capitalized ?? "N/A"), \(person.location.city?.capitalized ?? "N/A"), \(person.location.state?.capitalized ?? "N/A")"
         emailLabel.text = person.email
+        ProfileImageHelper.manager.getProfilePic(imageURL: person.picture.large!) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let imageFromInternet):
+                    self.profileImageView.image = imageFromInternet
+                }
+            }
+        }
     }
-
+    
 }
