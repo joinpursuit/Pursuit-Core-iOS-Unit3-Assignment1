@@ -124,6 +124,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jhC-Gq-sCZ" kind="show" id="Tbx-6E-0pO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
