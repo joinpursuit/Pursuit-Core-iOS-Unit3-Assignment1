@@ -156,8 +156,9 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
     func testGetsFullName() {
         let person = Name(title: "mr", first: "mario", last: "lopez")
         let location = Location(street: "", city: "", state: "", postcode: "")
+        let picture = Picture(picture: "")
         
-        let user = User(name: person, email: "person@email.com", phone: "7181223455", dob: "00/00/1992", location: location )
+          let user = User(name: person, email: "person@email.com", phone: "7181223455", dob: "00/00/1992", location: location, picture: picture  )
         
         let name = user.getFullName()
         
@@ -167,8 +168,9 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
     func testGetFullAddress() {
         let person = Name(title: "mr", first: "mario", last: "lopez")
         let location = Location(street: "166 gothic drive", city: "jamaica", state: "ny", postcode: "11432")
+        let picture = Picture(picture: "")
         
-        let user = User(name: person, email: "person@email.com", phone: "7181223455", dob: "00/00/1992", location: location )
+        let user = User(name: person, email: "person@email.com", phone: "7181223455", dob: "00/00/1992", location: location, picture: picture  )
         
         let address = user.getFullAddress()
         XCTAssert(address == """
@@ -181,6 +183,19 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         let sortedUsers = User.getSortedArray(arr: users)
 
         XCTAssert(sortedUsers[0].getFullName() < sortedUsers[1].getFullName() , "You do not have a sorted array based on full name")
+    }
+    
+    func testgetDOB() {
+        
+        let person = Name(title: "mr", first: "mario", last: "lopez")
+        let location = Location(street: "166 gothic drive", city: "jamaica", state: "ny", postcode: "11432")
+        let picture = Picture(picture: "")
+        
+        let user = User(name: person, email: "person@email.com", phone: "7181223455", dob: "1990-07-20 11:40:15", location: location, picture: picture  )
+        let newDate = user.getDOB()
+        
+        XCTAssert(newDate == "07/20/1990", "You do not have the correct format for date")
+        
     }
     
 

@@ -31,6 +31,7 @@ struct User: Codable {
     let phone: String
     let dob: String
     let location: Location
+    let picture: Picture
     
     func getFullName() -> String {
         let capTitle = name.title.capitalized
@@ -49,6 +50,10 @@ struct User: Codable {
         \(street)
         \(city), \(state) \(postcode)
         """
+    }
+    
+    func getDOB() -> String{
+        return dob.toDateFormatInString(dateFormat:"yyyy-MM-dd HH:mm:ss")
     }
     
     static func getSortedArray(arr: [User]) -> [User] {
@@ -99,6 +104,15 @@ struct Location: Codable {
         } else {
             postcode = try container.decode(String.self, forKey: .postcode)
         }
+    }
+    
+}
+
+struct Picture: Codable {
+    let picture: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case picture = "large"
     }
     
 }
