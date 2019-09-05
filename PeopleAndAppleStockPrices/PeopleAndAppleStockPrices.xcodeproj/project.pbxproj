@@ -18,6 +18,8 @@
 		A5995E11232051E6007801F7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5995E0F23204CA2007801F7 /* UserModel.swift */; };
 		A5995E4923213FA3007801F7 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5995E4823213FA3007801F7 /* PeopleViewController.swift */; };
 		A5995E4B232142BA007801F7 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5995E4A232142BA007801F7 /* StocksViewController.swift */; };
+		A5995E822321AD2D007801F7 /* DetailPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5995E812321AD2D007801F7 /* DetailPeopleViewController.swift */; };
+		A5995E842321AD51007801F7 /* DetailStocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5995E832321AD51007801F7 /* DetailStocksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		A5995E0F23204CA2007801F7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A5995E4823213FA3007801F7 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		A5995E4A232142BA007801F7 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
+		A5995E812321AD2D007801F7 /* DetailPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPeopleViewController.swift; sourceTree = "<group>"; };
+		A5995E832321AD51007801F7 /* DetailStocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStocksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 			children = (
 				A5995E4A232142BA007801F7 /* StocksViewController.swift */,
 				A5995E4823213FA3007801F7 /* PeopleViewController.swift */,
+				A5995E812321AD2D007801F7 /* DetailPeopleViewController.swift */,
+				A5995E832321AD51007801F7 /* DetailStocksViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -236,10 +242,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5995E842321AD51007801F7 /* DetailStocksViewController.swift in Sources */,
 				A5995E1023204CA2007801F7 /* UserModel.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
 				A5995E4923213FA3007801F7 /* PeopleViewController.swift in Sources */,
 				A5995E4B232142BA007801F7 /* StocksViewController.swift in Sources */,
+				A5995E822321AD2D007801F7 /* DetailPeopleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

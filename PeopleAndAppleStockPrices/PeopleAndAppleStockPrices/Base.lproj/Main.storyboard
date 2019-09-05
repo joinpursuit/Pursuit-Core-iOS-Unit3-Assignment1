@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="1562.3188405797102" y="461.38392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Stocks View Controller-->
         <scene sceneID="kJC-QN-dEu">
             <objects>
-                <viewController id="egV-6w-bCQ" sceneMemberID="viewController">
+                <viewController id="egV-6w-bCQ" customClass="DetailStocksViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KcH-Yp-uUG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1562.3188405797102" y="-186.16071428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail People View Controller-->
         <scene sceneID="0lv-Ag-s4P">
             <objects>
-                <viewController id="jhC-Gq-sCZ" sceneMemberID="viewController">
+                <viewController id="jhC-Gq-sCZ" customClass="DetailPeopleViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="quZ-Hk-uqR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
