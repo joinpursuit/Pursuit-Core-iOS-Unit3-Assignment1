@@ -182,6 +182,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6VD-Hr-Oa2"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="k1M-A2-WAw" id="tGC-kf-vAg"/>
+                        <outlet property="locationLabel" destination="pUv-Me-AOd" id="hr7-9m-AGF"/>
+                        <outlet property="nameLabel" destination="uMH-oj-kOq" id="eqI-co-PHy"/>
+                        <outlet property="userImage" destination="gNV-EN-LMh" id="GxP-8T-WTA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7X-sC-URR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

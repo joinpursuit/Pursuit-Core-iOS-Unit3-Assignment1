@@ -57,6 +57,7 @@ extension UserListViewController: UITableViewDataSource {
         let currentUser = allUsers[indexPath.row]
         let userCell = userListTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         
+        //refactor to capitalize name in models
         userCell.textLabel?.text = "\(currentUser.name.firstName.capitalized) \(currentUser.name.lastName.capitalized)"
         userCell.detailTextLabel?.text = currentUser.location.state.capitalized
         
