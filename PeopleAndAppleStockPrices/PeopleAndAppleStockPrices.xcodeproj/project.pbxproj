@@ -8,24 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
-		577E5BEE21BA8BA10083EB97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* ViewController.swift */; };
+		577E5BEE21BA8BA10083EB97 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* UserViewController.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
 		577E5BF321BA8BA20083EB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF221BA8BA20083EB97 /* Assets.xcassets */; };
 		577E5BF621BA8BA20083EB97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF421BA8BA20083EB97 /* LaunchScreen.storyboard */; };
 		577E5BFF21BA8C3B0083EB97 /* userinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BFE21BA8C3B0083EB97 /* userinfo.json */; };
 		577E5C0121BA8C5C0083EB97 /* applstockinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5C0021BA8C5C0083EB97 /* applstockinfo.json */; };
+		D4D20AF12321F715006FD0FC /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D20AF02321F715006FD0FC /* UserDetailViewController.swift */; };
+		D4D20AF32321F8F3006FD0FC /* ImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D20AF22321F8F3006FD0FC /* ImageClient.swift */; };
+		D4D20AF52321F959006FD0FC /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D20AF42321F959006FD0FC /* StocksViewController.swift */; };
+		D4D20AF72321F979006FD0FC /* StocksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D20AF62321F979006FD0FC /* StocksDetailViewController.swift */; };
+		D4D20AFC2321FA48006FD0FC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D20AFB2321FA48006FD0FC /* UserModel.swift */; };
+		D4D20AFE2321FA6A006FD0FC /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D20AFD2321FA6A006FD0FC /* StockModel.swift */; };
+		D4D20B012321FAF1006FD0FC /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D20B002321FAF1006FD0FC /* StockTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		577E5BED21BA8BA10083EB97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		577E5BED21BA8BA10083EB97 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		577E5BF021BA8BA10083EB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		577E5BF221BA8BA20083EB97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		577E5BF521BA8BA20083EB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		577E5BF721BA8BA20083EB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577E5BFE21BA8C3B0083EB97 /* userinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userinfo.json; sourceTree = "<group>"; };
 		577E5C0021BA8C5C0083EB97 /* applstockinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applstockinfo.json; sourceTree = "<group>"; };
+		D4D20AF02321F715006FD0FC /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		D4D20AF22321F8F3006FD0FC /* ImageClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageClient.swift; sourceTree = "<group>"; };
+		D4D20AF42321F959006FD0FC /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
+		D4D20AF62321F979006FD0FC /* StocksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksDetailViewController.swift; sourceTree = "<group>"; };
+		D4D20AFB2321FA48006FD0FC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D4D20AFD2321FA6A006FD0FC /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
+		D4D20B002321FAF1006FD0FC /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +72,12 @@
 		577E5BEA21BA8BA10083EB97 /* PeopleAndAppleStockPrices */ = {
 			isa = PBXGroup;
 			children = (
-				577E5BED21BA8BA10083EB97 /* ViewController.swift */,
+				D4D20B022321FB0B006FD0FC /* Views */,
+				D4D20AFF2321FA78006FD0FC /* Models */,
+				D4D20AFA2321FA1A006FD0FC /* Controllers */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
+				577E5BFE21BA8C3B0083EB97 /* userinfo.json */,
+				577E5C0021BA8C5C0083EB97 /* applstockinfo.json */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
 			);
@@ -69,7 +87,6 @@
 		577E5BFD21BA8BE20083EB97 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				577E5C0221BA8C620083EB97 /* json */,
 				577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */,
 				577E5BF221BA8BA20083EB97 /* Assets.xcassets */,
 				577E5BF421BA8BA20083EB97 /* LaunchScreen.storyboard */,
@@ -77,13 +94,49 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		577E5C0221BA8C620083EB97 /* json */ = {
+		D4D20AF82321F9E1006FD0FC /* UserFiles */ = {
 			isa = PBXGroup;
 			children = (
-				577E5BFE21BA8C3B0083EB97 /* userinfo.json */,
-				577E5C0021BA8C5C0083EB97 /* applstockinfo.json */,
+				577E5BED21BA8BA10083EB97 /* UserViewController.swift */,
+				D4D20AF02321F715006FD0FC /* UserDetailViewController.swift */,
+				D4D20AF22321F8F3006FD0FC /* ImageClient.swift */,
 			);
-			path = json;
+			path = UserFiles;
+			sourceTree = "<group>";
+		};
+		D4D20AF92321F9FE006FD0FC /* StockFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D4D20AF42321F959006FD0FC /* StocksViewController.swift */,
+				D4D20AF62321F979006FD0FC /* StocksDetailViewController.swift */,
+			);
+			path = StockFiles;
+			sourceTree = "<group>";
+		};
+		D4D20AFA2321FA1A006FD0FC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4D20AF82321F9E1006FD0FC /* UserFiles */,
+				D4D20AF92321F9FE006FD0FC /* StockFiles */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D4D20AFF2321FA78006FD0FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4D20AFB2321FA48006FD0FC /* UserModel.swift */,
+				D4D20AFD2321FA6A006FD0FC /* StockModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4D20B022321FB0B006FD0FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4D20B002321FAF1006FD0FC /* StockTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,8 +212,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				577E5BEE21BA8BA10083EB97 /* ViewController.swift in Sources */,
+				D4D20AFE2321FA6A006FD0FC /* StockModel.swift in Sources */,
+				D4D20AF72321F979006FD0FC /* StocksDetailViewController.swift in Sources */,
+				D4D20AFC2321FA48006FD0FC /* UserModel.swift in Sources */,
+				577E5BEE21BA8BA10083EB97 /* UserViewController.swift in Sources */,
+				D4D20B012321FAF1006FD0FC /* StockTableViewCell.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
+				D4D20AF32321F8F3006FD0FC /* ImageClient.swift in Sources */,
+				D4D20AF12321F715006FD0FC /* UserDetailViewController.swift in Sources */,
+				D4D20AF52321F959006FD0FC /* StocksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99U7KTL6KM;
 				INFOPLIST_FILE = PeopleAndAppleStockPrices/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,6 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99U7KTL6KM;
 				INFOPLIST_FILE = PeopleAndAppleStockPrices/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
