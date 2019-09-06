@@ -37,18 +37,18 @@ class UsersDetailViewController: UIViewController {
         
     }
     
+    
     private func loadImage() {
-        let urlStr = user.picture.picture
-        guard let url = URL(string: urlStr) else {return}
-        DispatchQueue.global(qos: .userInitiated).async {
-            do { let data = try Data(contentsOf: url)
-                let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    self.userImage.image = image
+        ImageHelper.shared.getImage(urlStr: user.picture.picture) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let imageFromOnline):
+                    self.userImage.image = imageFromOnline
                 }
-            } catch {fatalError()}
+            }
         }
     }
-    
 
 }
