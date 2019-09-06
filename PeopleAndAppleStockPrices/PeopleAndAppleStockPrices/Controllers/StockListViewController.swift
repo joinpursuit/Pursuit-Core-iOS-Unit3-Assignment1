@@ -41,6 +41,7 @@ class StockListViewController: UIViewController {
 }
 
 extension StockListViewController: UITableViewDelegate {
+    
     private func addSectionNames() {
         for stock in allStocks where !headerNames.contains(stock.dateForHeader) {
             headerNames.append(stock.dateForHeader)
@@ -48,32 +49,30 @@ extension StockListViewController: UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        print(headerNames.count)
         return headerNames.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        print(headerNames[section])
-        return headerNames[section]
+        let stocksForSection = allStocks.filter { $0.dateForHeader == headerNames[section] }
+        let averageStockPrice = Stock.getAverageForMonth(stockInSection: stocksForSection)
+        return "\(headerNames[section]) -- Average Open Price: $\(averageStockPrice)"
     }
 }
 
 extension StockListViewController: UITableViewDataSource {
-//    private func filterStockBySection(section: Int) -> [Stock] {
-//        let stocksForSection = allStocks.filter { $0.dateForHeader == headerName[section] }
-//        return stocksForSection
-//    }
-//
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let stocksForSection = allStocks.filter { $0.dateForHeader == headerNames[section] }
-        print(stocksForSection)
         return stocksForSection.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let stockCell = stockListTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
-        let currentStock = allStocks[indexPath.row]
+        let stocksForSection = allStocks.filter { $0.dateForHeader == headerNames[indexPath.section] }
+        let currentStock = stocksForSection[indexPath.row]
+        
         stockCell.textLabel?.text = currentStock.date
+        stockCell.detailTextLabel?.text = "$\(currentStock.open)"
         
         return stockCell
     }

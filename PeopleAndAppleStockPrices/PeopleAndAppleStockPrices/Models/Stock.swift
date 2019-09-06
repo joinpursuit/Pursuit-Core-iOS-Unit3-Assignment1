@@ -29,4 +29,18 @@ struct Stock: Codable {
             return nil
         }
     }
+    
+    static func getAverageForMonth(stockInSection: [Stock]) -> String {
+        var sum = 0.0
+        let numOfStocks = Double(stockInSection.count)
+        
+        for stock in stockInSection {
+            sum += stock.open
+        }
+        
+        let average = sum/numOfStocks
+        let averageStr = String(format: "%.2f", average)
+        
+        return averageStr
+    }
 }

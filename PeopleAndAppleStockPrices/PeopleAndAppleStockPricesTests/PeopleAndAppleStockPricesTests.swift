@@ -58,4 +58,16 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         XCTAssert(actualResults == expectedResults, "Could not change date for header, got: \(actualResults)")
     }
     
+    func testGetAverageForMonth() {
+        let stock1 = Stock.init(date: "N/A", open: 1.0, close: 0.0)
+        let stock2 = Stock.init(date: "N/A", open: 2.0, close: 0.0)
+        let stock3 = Stock.init(date: "N/A", open: 3.0, close: 0.0)
+        let stockArr = [stock1,stock2,stock3]
+        let actualResult = Stock.getAverageForMonth(stockInSection: stockArr)
+        
+        let expectedResult = "2.00"
+        
+        XCTAssert(actualResult == expectedResult, "Did not get average. Expected: \(expectedResult), got:\(actualResult)")
+    }
+
 }
