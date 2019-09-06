@@ -15,17 +15,14 @@ class StocksViewController: UIViewController, UITableViewDataSource {
     var stockInfo = [Stocks]().sorted(by: {$0.date > $1.date}) {
         didSet{
             StocksTableView.reloadData()
-            
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadStockData()
         StocksTableView.dataSource = self
-        //        peopleTableView.delegate = self
-        
+        //StocksTableView.delegate = self
     }
     
     func loadStockData() {
@@ -44,10 +41,29 @@ class StocksViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stockInfo.count
+       //return stockInfo.count
+       return stockInfo[section].date.count
     }
-    
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return ""
+        case 1:
+            return ""
+        default:
+            return ""
+        }
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 12
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let rowToSetup = indexPath.row
+        let currentSection = indexPath.section
+       // let dateAtRow = stockInfo[currentSection][rowToSetup]
         let cell = StocksTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
         let setupInfo = stockInfo[indexPath.row]
         cell.textLabel?.text = setupInfo.date
