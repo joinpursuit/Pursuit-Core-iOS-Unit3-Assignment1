@@ -17,6 +17,7 @@ func loadImages(url: URL) -> UIImage {
     return image
 }
 
+
 //func loadImage(url: URL) {
 //    DispatchQueue.global().async { [weak self] in
 //        if let data = try? Data(contentsOf: url) {

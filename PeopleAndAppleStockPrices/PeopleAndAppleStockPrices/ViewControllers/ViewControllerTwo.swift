@@ -37,11 +37,7 @@ class StockViewController:UIViewController {
         getData()
     }
 }
-extension StockViewController:UITableViewDelegate{
-    func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-    }
-}
+extension StockViewController:UITableViewDelegate{}
 extension StockViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stocks.count
@@ -49,8 +45,8 @@ extension StockViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = stockTableView.dequeueReusableCell(withIdentifier: "stocks")
-        cell?.textLabel?.text = stocks[indexPath.row].date
-        cell?.detailTextLabel?.text = stocks[indexPath.row].open.description
+        cell?.textLabel?.text = "Date : \(stocks[indexPath.row].date)"
+        cell?.detailTextLabel?.text = "Opening : \(stocks[indexPath.row].open.description)"
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -63,9 +59,7 @@ extension StockViewController:UITableViewDataSource {
         
     
     }
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//    }
+
     func setUp() {
         stockTableView.dataSource = self
         stockTableView.delegate = self

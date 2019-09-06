@@ -17,7 +17,6 @@ struct Stocks:Codable {
   let  high: Double
   let  low: Double
   let label:String
-
     func colorBackGroundColor() -> UIColor {
         if open > close {
             return .red
@@ -25,11 +24,21 @@ struct Stocks:Codable {
             return .green
         }
     }
+    func loadLocalImage() -> UIImage {
+        var picture = UIImage()
+        if open < close {
+            if let bullMarket = UIImage(named: "bullmarket") {
+                 picture = bullMarket
+            }
+            return picture
+        } else
+            if let bearMarket = UIImage(named:"bearmarket"){
+        picture = bearMarket
+        }
+        return picture
+    }
     
     
     }
-struct Pictures {
-   static let bullMarket = "https://business.nasdaq.com/media/AdobeStock_217094122_tcm5044-69163.jpeg"
-    static let bearMarket = "https://pbs.twimg.com/media/C5tEEC1U8AARFjI.jpg"
-}
+
 
