@@ -8,6 +8,27 @@
 
 import Foundation
 
-struct StockWrapper: Codable {
+enum StockJSONError: Error {
+    case decodingError(Error)
+}
+
+struct StockInfo: Codable {
+    
+    let date: String
+    let open: Double
+    let close: Double
+    let label: String
+    
+    static func getStockData(from data: Data) throws -> [StockInfo]{
+        do{
+            let stock = try JSONDecoder().decode([StockInfo].self, from: data)
+            return stock
+        } catch {
+            throw UserJSONError.decodingError(error)
+        }
+    }
     
 }
+
+
+
