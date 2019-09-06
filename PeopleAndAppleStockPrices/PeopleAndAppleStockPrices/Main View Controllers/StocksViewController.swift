@@ -39,7 +39,7 @@ class StocksViewController: UIViewController {
                 Stock.getStock(from: data)
             stocksfromJson = StockFromJSON
             groupedStocks = Stock.buildGroupStocks(stocksfromJson)
-q            sections = Array(groupedStocks.keys)
+            sections = Array(groupedStocks.keys)
             sections = Stock.sortSections(arr: sections)
 
         } catch {
