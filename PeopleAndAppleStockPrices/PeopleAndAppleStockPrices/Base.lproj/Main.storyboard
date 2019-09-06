@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="333.33333333333337" y="-432.58928571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--People Detail View Controller-->
         <scene sceneID="pjT-Um-RWN">
             <objects>
-                <viewController id="m0O-e3-dsa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PeopleDetailViewController" id="m0O-e3-dsa" customClass="PeopleDetailViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pXo-9c-HOl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,6 +185,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hjn-zY-VHA"/>
                     </view>
+                    <connections>
+                        <outlet property="contactCity" destination="dy7-sr-y4c" id="EA4-Z6-ZlW"/>
+                        <outlet property="contactEmail" destination="Sat-XC-zv6" id="UKH-YY-hYC"/>
+                        <outlet property="contactImage" destination="Mf0-me-sLc" id="m4o-Oy-87y"/>
+                        <outlet property="contactName" destination="3Pc-Ye-1ui" id="Mr5-x9-2WF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rsk-Jw-S2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

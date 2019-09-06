@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0BEF698923219D9900E86319 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF698823219D9900E86319 /* PeopleModel.swift */; };
 		0BEF698B2321A0AD00E86319 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF698A2321A0AD00E86319 /* ErrorHandling.swift */; };
+		0BEF698E2322023700E86319 /* PeopleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF698D2322023700E86319 /* PeopleDetailViewController.swift */; };
+		0BEF6990232295FB00E86319 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF698F232295FB00E86319 /* ImageHelper.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
 		577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		0BEF698823219D9900E86319 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
 		0BEF698A2321A0AD00E86319 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		0BEF698D2322023700E86319 /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
+		0BEF698F232295FB00E86319 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				0BEF698A2321A0AD00E86319 /* ErrorHandling.swift */,
+				0BEF698F232295FB00E86319 /* ImageHelper.swift */,
 			);
 			path = "URL Stuff";
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */,
+				0BEF698D2322023700E86319 /* PeopleDetailViewController.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
@@ -183,8 +189,10 @@
 			files = (
 				577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */,
 				0BEF698B2321A0AD00E86319 /* ErrorHandling.swift in Sources */,
+				0BEF698E2322023700E86319 /* PeopleDetailViewController.swift in Sources */,
 				0BEF698923219D9900E86319 /* PeopleModel.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
+				0BEF6990232295FB00E86319 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
