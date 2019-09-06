@@ -96,13 +96,8 @@
 		577E5BEA21BA8BA10083EB97 /* PeopleAndAppleStockPrices */ = {
 			isa = PBXGroup;
 			children = (
-				577E5BED21BA8BA10083EB97 /* ViewController.swift */,
-				6BF71797232056EA00C4617C /* userDetailedViewController.swift */,
-				6B3704812321870600ED2D41 /* stocksViewController.swift */,
-				6B3704CE2322B41C00ED2D41 /* imageble.swift */,
-				6B3704962321D00D00ED2D41 /* stockDetailedViewController.swift */,
+				6B3704D12322E4D600ED2D41 /* View Controllers */,
 				6BF23653231FF84D00533960 /* ApiClients */,
-				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
 				6BF23650231FF73400533960 /* Models */,
 				577E5C0221BA8C620083EB97 /* json */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
@@ -139,6 +134,42 @@
 			path = PeopleAndAppleStockPricesTests;
 			sourceTree = "<group>";
 		};
+		6B3704D02322E4B300ED2D41 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		6B3704D12322E4D600ED2D41 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				577E5BED21BA8BA10083EB97 /* ViewController.swift */,
+				6B3704812321870600ED2D41 /* stocksViewController.swift */,
+				6B3704D22322E4E500ED2D41 /* Detailed ViewControllers */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6B3704D22322E4E500ED2D41 /* Detailed ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6B3704962321D00D00ED2D41 /* stockDetailedViewController.swift */,
+				6BF71797232056EA00C4617C /* userDetailedViewController.swift */,
+				6B3704D32322E4FE00ED2D41 /* image Folder */,
+			);
+			path = "Detailed ViewControllers";
+			sourceTree = "<group>";
+		};
+		6B3704D32322E4FE00ED2D41 /* image Folder */ = {
+			isa = PBXGroup;
+			children = (
+				6B3704CE2322B41C00ED2D41 /* imageble.swift */,
+			);
+			path = "image Folder";
+			sourceTree = "<group>";
+		};
 		6BF23650231FF73400533960 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				6BF23651231FF84500533960 /* ContactsApiClient.swift */,
+				6B3704D02322E4B300ED2D41 /* StoryBoard */,
 			);
 			path = ApiClients;
 			sourceTree = "<group>";

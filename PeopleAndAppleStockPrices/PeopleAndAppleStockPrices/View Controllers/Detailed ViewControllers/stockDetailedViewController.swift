@@ -10,6 +10,8 @@ import UIKit
 
 class stockDetailedViewController: UIViewController {
     
+    @IBOutlet weak var downLabel: UILabel!
+    @IBOutlet weak var UPLabel: UILabel!
     
     @IBOutlet weak var stockImage: UIImageView!
     
@@ -17,6 +19,8 @@ class stockDetailedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         thumbsUpOrThumbsDownImage()
+        UPLabel.text = "\(currentStockinfo.uOpen)"
+        downLabel.text = "\(currentStockinfo.uClose)"
         
     }
     private func thumbsUpOrThumbsDownImage() {
