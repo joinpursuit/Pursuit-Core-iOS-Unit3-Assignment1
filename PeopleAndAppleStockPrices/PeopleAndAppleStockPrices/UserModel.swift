@@ -34,10 +34,14 @@ struct NameWrapper: Codable, CustomStringConvertible {
     let last: String
     
     var description: String {
-        return "\(first) \(last)"
+        return "\(first.capitalizingFirstLetter()) \(last.capitalizingFirstLetter())"
     }
 }
 
 struct LocationWrapper: Codable {
     let city: String
+    
+    func capitilizeFirstLetter() {
+        
+    }
 }

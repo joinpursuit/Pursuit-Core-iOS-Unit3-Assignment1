@@ -20,6 +20,7 @@
 		A5995E4B232142BA007801F7 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5995E4A232142BA007801F7 /* StocksViewController.swift */; };
 		A5995E822321AD2D007801F7 /* DetailPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5995E812321AD2D007801F7 /* DetailPeopleViewController.swift */; };
 		A5995E842321AD51007801F7 /* DetailStocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5995E832321AD51007801F7 /* DetailStocksViewController.swift */; };
+		A5995E862321C3F7007801F7 /* CapitalizeLetterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5995E852321C3F7007801F7 /* CapitalizeLetterExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A5995E4A232142BA007801F7 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
 		A5995E812321AD2D007801F7 /* DetailPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPeopleViewController.swift; sourceTree = "<group>"; };
 		A5995E832321AD51007801F7 /* DetailStocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStocksViewController.swift; sourceTree = "<group>"; };
+		A5995E852321C3F7007801F7 /* CapitalizeLetterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalizeLetterExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				A5995E0F23204CA2007801F7 /* UserModel.swift */,
+				A5995E852321C3F7007801F7 /* CapitalizeLetterExtension.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
 				A5995E4C232142EE007801F7 /* Controllers */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
@@ -245,6 +248,7 @@
 				A5995E842321AD51007801F7 /* DetailStocksViewController.swift in Sources */,
 				A5995E1023204CA2007801F7 /* UserModel.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
+				A5995E862321C3F7007801F7 /* CapitalizeLetterExtension.swift in Sources */,
 				A5995E4923213FA3007801F7 /* PeopleViewController.swift in Sources */,
 				A5995E4B232142BA007801F7 /* StocksViewController.swift in Sources */,
 				A5995E822321AD2D007801F7 /* DetailPeopleViewController.swift in Sources */,

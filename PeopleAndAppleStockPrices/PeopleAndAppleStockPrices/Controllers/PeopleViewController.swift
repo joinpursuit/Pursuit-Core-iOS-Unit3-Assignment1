@@ -35,7 +35,7 @@ class PeopleViewController: UIViewController {
         do {
           let data = try Data(contentsOf: url)
             let peopleFromJSON = People.getUsers(from: data)
-            peopleModel = peopleFromJSON
+            peopleModel = peopleFromJSON.sorted(by: {$0.name.description < $1.name.description})
         } catch {
             fatalError()
         }
