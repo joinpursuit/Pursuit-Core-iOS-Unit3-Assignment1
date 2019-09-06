@@ -8,8 +8,17 @@
 
 import UIKit
 
-class StocksViewController: UIViewController {
-
+class StocksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var stocks = [StockPrice]() {
+        didSet {
+            stocksTableView.reloadData()
+        }
+    }
+    
+    
+    @IBOutlet weak var stocksTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
