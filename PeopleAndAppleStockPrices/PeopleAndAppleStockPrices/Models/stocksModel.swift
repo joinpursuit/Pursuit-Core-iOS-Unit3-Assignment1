@@ -13,6 +13,10 @@ import Foundation
 struct Stock: Codable {
     let date: String
     let uOpen: Double
+    let uClose: Double
+    
+    
+    
     
     
     static func getStock(from data: Data) throws -> [Stock] {

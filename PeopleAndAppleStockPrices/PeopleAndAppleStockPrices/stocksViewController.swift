@@ -17,8 +17,6 @@ class stocksViewController: UITableViewController { //This is a UITableViewContr
         super.viewDidLoad()
         loadData()
         tableView.dataSource = self
-        
-        
     }
     
     
@@ -30,6 +28,7 @@ class stocksViewController: UITableViewController { //This is a UITableViewContr
         let currentStock = stocks[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell")
         cell?.textLabel?.text = currentStock.date
+        
         return cell!
         
     }
@@ -49,4 +48,29 @@ class stocksViewController: UITableViewController { //This is a UITableViewContr
         }
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
+        
+        switch segueIdentifer {
+            
+        case "segToDescription":
+            guard let destVC = segue.destination as? stockDetailedViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {fatalError("No row selected")
+                
+            }
+            
+            let currentinstock = stocks[selectedIndexPath.row]
+            destVC.currentStockinfo = currentinstock
+            
+        default:
+            fatalError("unexpected segue identifier")
+            
+        }
+    }
+    
 }
