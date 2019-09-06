@@ -45,7 +45,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ypF-ih-HE3" kind="show" id="rLq-kk-wOw"/>
+                                            <segue destination="ypF-ih-HE3" kind="show" identifier="stockCell" id="rLq-kk-wOw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -142,7 +142,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Ni8-vV-Nl1" firstAttribute="centerY" secondItem="PaS-0U-598" secondAttribute="centerY" id="CaE-iD-cp4"/>
                                     <constraint firstItem="0ef-ht-lEn" firstAttribute="leading" secondItem="PaS-0U-598" secondAttribute="leading" constant="20" id="IRX-3P-gpg"/>
@@ -165,6 +164,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9h7-Od-xOi"/>
                     </view>
+                    <connections>
+                        <outlet property="closePriceLabel" destination="mbX-hP-nli" id="TTg-Oj-dJk"/>
+                        <outlet property="dateLabel" destination="uIi-6S-msF" id="Lfb-QM-gwE"/>
+                        <outlet property="openPriceLabel" destination="gAL-ya-FgN" id="Wj8-Bm-7Cb"/>
+                        <outlet property="stocksView" destination="Qsc-7b-Dwq" id="TTZ-O2-l07"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogC-Yg-kW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

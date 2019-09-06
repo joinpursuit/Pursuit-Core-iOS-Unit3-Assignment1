@@ -79,6 +79,24 @@ extension StocksViewController : UITableViewDataSource {
         return "\(sectionKey.changeDateFormatForHeader(dateFormat: "yyyy-MM"))          Average Price: $\(Stock.getAverageForMonth(arr: stocks))"
     
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else {fatalError("No identifier in segue")}
+        
+        switch segueIdentifier {
+        case "stockCell":
+            guard let DetailVC = segue.destination as? StocksDetailViewController else {fatalError("unexpected segueVC")}
+            guard let selectedIndexPath = stocksTableView.indexPathForSelectedRow else{fatalError("no row selected")}
+            
+            let sectionKey = sections[selectedIndexPath.section]
+            guard let stocks = groupedStocks[sectionKey] else {fatalError("no stocks found")}
+            let currentStock = stocks[selectedIndexPath.row]
+            
+            DetailVC.stock = currentStock
+        default:
+            fatalError("unexpected segue identifies")
+        }
+    }
 
 }
 
