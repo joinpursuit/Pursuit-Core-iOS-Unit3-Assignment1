@@ -210,7 +210,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="h9d-Oh-K9q" kind="show" id="mJx-xF-76K"/>
+                                            <segue destination="h9d-Oh-K9q" kind="show" identifier="userSegue" id="mJx-xF-76K"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -349,6 +349,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WKX-7s-l4B"/>
                     </view>
+                    <connections>
+                        <outlet property="dateOfBirthLabel" destination="2iH-T0-rux" id="7T2-ze-dzq"/>
+                        <outlet property="emailLabel" destination="65b-Ad-gsE" id="LZ2-sb-qb2"/>
+                        <outlet property="nameLabel" destination="Og8-AU-4Fk" id="VMh-IJ-abq"/>
+                        <outlet property="phoneLabel" destination="BQm-Wc-4pm" id="kRP-gm-hnU"/>
+                        <outlet property="userImage" destination="jJ9-ft-PLG" id="8pV-eT-5dx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPd-Ke-lB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
