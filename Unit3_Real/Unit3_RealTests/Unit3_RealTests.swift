@@ -19,12 +19,6 @@ class Unit3_RealTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testPeopleLoaded (){
-        let data = getDataFromJSON(name: "userinfo")
-        let testPeople = PeopleWrapper.getPeople(from: data)
-        XCTAssertTrue(testPeople.self != nil, "user info failed to load")
-        
-    }
     private func getDataFromJSON(name: String) -> Data {
         guard let pathToData = Bundle.main.path(forResource: name , ofType: "json") else { fatalError("couldnt find json file called \(name).json")}
         let url = URL(fileURLWithPath: pathToData)
@@ -36,6 +30,26 @@ class Unit3_RealTests: XCTestCase {
         }
     }
 
+    /// testing for stuff
+    func testPeopleLoaded (){
+        let data = getDataFromJSON(name: "userinfo")
+        let testPeople = PeopleWrapper.getPeople(from: data).results
+        XCTAssertTrue(testPeople.self != nil, "user info failed to load")
+    }
     
-
+    func testAppleLoaded (){
+        let data = getDataFromJSON(name: "applestockInfo")
+        let testStock = Stock.getStock(from: data)
+        XCTAssertTrue(testStock.self != nil, "apple stock failed to load")
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

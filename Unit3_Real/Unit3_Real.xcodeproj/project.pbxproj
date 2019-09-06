@@ -110,13 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				8587DD86231DADEF00C56F0E /* Supporting Files */,
-				8587DD5A231DADDB00C56F0E /* PeopleViewController.swift */,
-				8587DE28232004E600C56F0E /* PeopleDetailViewController.swift */,
-				8587DD87231DAE6600C56F0E /* StockViewController.swift */,
-				8587DE2A2320050100C56F0E /* StockDetailViewController.swift */,
-				8587DD8D231DAEE900C56F0E /* JSON.swift */,
-				8587DD89231DAE9100C56F0E /* userinfo.json */,
-				8587DD8B231DAEA200C56F0E /* applestockinfo.json */,
+				85BEBF132321FFFB00EE74BE /* Model */,
+				85BEBF142322000900EE74BE /* Controller */,
 				8587DD5C231DADDB00C56F0E /* Main.storyboard */,
 				8587DD64231DADDD00C56F0E /* Info.plist */,
 			);
@@ -149,6 +144,27 @@
 				8587DD61231DADDD00C56F0E /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85BEBF132321FFFB00EE74BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8587DD8D231DAEE900C56F0E /* JSON.swift */,
+				8587DD89231DAE9100C56F0E /* userinfo.json */,
+				8587DD8B231DAEA200C56F0E /* applestockinfo.json */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85BEBF142322000900EE74BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8587DD87231DAE6600C56F0E /* StockViewController.swift */,
+				8587DE2A2320050100C56F0E /* StockDetailViewController.swift */,
+				8587DE28232004E600C56F0E /* PeopleDetailViewController.swift */,
+				8587DD5A231DADDB00C56F0E /* PeopleViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
