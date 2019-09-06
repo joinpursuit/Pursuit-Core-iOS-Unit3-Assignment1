@@ -15,6 +15,7 @@
 		0BEF69942322A41900E86319 /* StocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF69932322A41900E86319 /* StocksModel.swift */; };
 		0BEF699C2322C26200E86319 /* PeopleAndAppleStockPricesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF699B2322C26200E86319 /* PeopleAndAppleStockPricesTests.swift */; };
 		0BEF69A42322E21800E86319 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF69A32322E21800E86319 /* StockDetailViewController.swift */; };
+		0BEF69A52322F49F00E86319 /* StocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF69932322A41900E86319 /* StocksModel.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
 		577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
@@ -258,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BEF69A52322F49F00E86319 /* StocksModel.swift in Sources */,
 				0BEF699C2322C26200E86319 /* PeopleAndAppleStockPricesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
