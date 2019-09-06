@@ -10,8 +10,6 @@ import UIKit
 
 class StockViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     @IBOutlet weak var stockTableView: UITableView!
     
     var stockData = [StockInfo](){
@@ -22,8 +20,10 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        stockTableView.delegate = self
+        stockTableView.dataSource = self
+        loadData()
+    
         // Do any additional setup after loading the view.
     }
     
@@ -52,11 +52,15 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
     */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        stockData.count
+       return stockData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let stockInfo = stockData[indexPath.row]
+        let stockCell = stockTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
+        stockCell.textLabel?.text = stockInfo.date
+        stockCell.detailTextLabel?.text = "\(stockInfo.open)"
+        return stockCell
     }
 
 }

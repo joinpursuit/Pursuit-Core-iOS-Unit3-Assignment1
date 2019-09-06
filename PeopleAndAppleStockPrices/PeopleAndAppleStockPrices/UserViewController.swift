@@ -43,16 +43,24 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let segueIdentifier =  segue.identifier else{
+            fatalError("Unexpected Error: No identifier in segue")
+        }
+        switch segueIdentifier {
+        case "userMainToDetailSegue":
+            guard let userDetailVC = segue.destination as? UserDetailTableViewController else{
+                fatalError("Unexpected Error: No VC")
+            }
+            guard let selectedIndexPath =
+                self.userTableView.indexPathForSelectedRow else{
+                    fatalError("Unexpected Error:")
+            }
+            userDetailVC.userDetails = userData[selectedIndexPath.row]
+        default:
+            fatalError("Unexpected Error")
+        }
     }
-    */
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userData.count
@@ -61,8 +69,9 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let userInfo = userData[indexPath.row]
         let userCell = userTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-        userCell.textLabel?.text = userInfo.name.fullName
-        userCell.detailTextLabel?.text = userInfo.location.city
+//        userCell.textLabel?.text = "hey mami"
+        userCell.textLabel?.text = "\(userInfo.name.fullName)"
+        userCell.detailTextLabel?.text = "\(userInfo.location.city.capitalized)"
         return userCell
     }
 
