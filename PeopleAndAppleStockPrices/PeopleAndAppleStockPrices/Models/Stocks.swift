@@ -16,4 +16,5 @@ struct StockPrice: Codable {
     let date: String?
     let open: Double?
     let close: Double?
+    let changePercent: Double?
 }
