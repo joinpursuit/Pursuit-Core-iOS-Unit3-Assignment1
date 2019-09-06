@@ -10,6 +10,7 @@
 		1DA435F02322D55E00E23410 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA435EF2322D55E00E23410 /* UserInfo.swift */; };
 		1DA435F22322D8B300E23410 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA435F12322D8B300E23410 /* ErrorHandling.swift */; };
 		1DA435F72322E16A00E23410 /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA435F62322E16A00E23410 /* UserInfoTableViewController.swift */; };
+		1DA435F92322F5BA00E23410 /* stockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA435F82322F5BA00E23410 /* stockInfo.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
 		577E5BF321BA8BA20083EB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF221BA8BA20083EB97 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		1DA435EF2322D55E00E23410 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		1DA435F12322D8B300E23410 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		1DA435F62322E16A00E23410 /* UserInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewController.swift; sourceTree = "<group>"; };
+		1DA435F82322F5BA00E23410 /* stockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stockInfo.swift; sourceTree = "<group>"; };
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577E5BF021BA8BA10083EB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				1DA435EF2322D55E00E23410 /* UserInfo.swift */,
+				1DA435F82322F5BA00E23410 /* stockInfo.swift */,
 				1DA435F12322D8B300E23410 /* ErrorHandling.swift */,
 			);
 			path = Models;
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA435F92322F5BA00E23410 /* stockInfo.swift in Sources */,
 				1DA435F22322D8B300E23410 /* ErrorHandling.swift in Sources */,
 				1DA435F02322D55E00E23410 /* UserInfo.swift in Sources */,
 				1DA435F72322E16A00E23410 /* UserInfoTableViewController.swift in Sources */,
