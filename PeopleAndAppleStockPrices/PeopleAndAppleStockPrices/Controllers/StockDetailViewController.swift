@@ -10,21 +10,27 @@ import UIKit
 
 class StockDetailViewController: UIViewController {
 
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var openLabel: UILabel!
+    @IBOutlet weak var closeLabel: UILabel!
+    @IBOutlet weak var stockImage: UIImageView!
+    
+    var stock: Stock!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureLabels()
+        loadImage()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func configureLabels() {
+        openLabel.text = String(format: "%.2f", stock.open)
+        closeLabel.text = String(format: "%.2f", stock.close)
     }
-    */
+    
+    private func loadImage() {
+//        stockImage.image = UIImage(named: <#T##String#>)
+
+    }
 
 }

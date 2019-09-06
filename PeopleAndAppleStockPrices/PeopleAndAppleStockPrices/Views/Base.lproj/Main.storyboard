@@ -129,6 +129,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fiD-fU-Ybz"/>
                     </view>
+                    <connections>
+                        <outlet property="closeLabel" destination="CuF-cH-iAP" id="gRJ-GW-Vye"/>
+                        <outlet property="dateLabel" destination="tQR-rl-C2g" id="XEm-iy-sF9"/>
+                        <outlet property="openLabel" destination="4ak-nB-pGF" id="7Rt-2i-XUA"/>
+                        <outlet property="stockImage" destination="vJH-Er-y2S" id="ffb-IR-fRo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qE6-tW-XAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -200,6 +206,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="nYM-cX-WwQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oef-Aa-yVe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
