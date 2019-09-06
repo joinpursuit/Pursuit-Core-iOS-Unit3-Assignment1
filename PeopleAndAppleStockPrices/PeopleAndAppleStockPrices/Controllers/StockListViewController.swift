@@ -38,6 +38,15 @@ class StockListViewController: UIViewController {
         allStocks = Stock.getAllStocks(from: stockData)!
     }
     
+    //refactor to not use fatalerror
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedIndex = stockListTableView.indexPathForSelectedRow else { fatalError("No cell was selected") }
+        guard segue.identifier == "stockCellToDetailSegue" else { fatalError("Unidentified segue") }
+        guard let stockDetailsVC = segue.destination as? StockDetailViewController else { fatalError("No destination View Controller") }
+        
+        stockDetailsVC.stock = allStocks[selectedIndex.row]
+    }
+    
 }
 
 extension StockListViewController: UITableViewDelegate {

@@ -24,6 +24,7 @@ class StockDetailViewController: UIViewController {
     }
     
     private func configureLabels() {
+        dateLabel.text = stock.date
         openLabel.text = String(format: "%.2f", stock.open)
         closeLabel.text = String(format: "%.2f", stock.close)
     }
