@@ -53,10 +53,13 @@ struct User: Codable {
         """
     }
     
-    func getDOB() -> String{
+    func getDOB() -> String {
         return dob.toDateFormatInString(dateFormat:"yyyy-MM-dd HH:mm:ss")
     }
     
+    func getPhoneNumber() -> String {
+        return phone.replacingOccurrences(of: " ", with: "-")
+    }
     
     static func getSortedArray(arr: [User]) -> [User] {
         let newarr = arr.sorted{$0.getFullName() < $1.getFullName()}

@@ -16,6 +16,11 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
     var userData: Data!
     var users: [User]!
     
+    var person: Name!
+    var location: Location!
+    var picture: Picture!
+    var user: User!
+    
     override func setUp() {
         guard let jsonData = getStockDataFromJSON() else {
             XCTFail("Unable to fetch Stock Data From JSON")
@@ -46,6 +51,12 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
             XCTFail("Unable to fetch Users")
             return
         }
+        
+        person = Name(title: "mr", first: "mario", last: "lopez")
+        location = Location(street: "166 gothic drive", city: "jamaica", state: "ny", postcode: "11432")
+        picture = Picture(picture: "")
+        
+        user = User(name: person, email: "person@email.com", phone:"017683 99464", dob:"1945-03-14 09:49:13", location: location, picture: picture  )
     }
 
     override func tearDown() {
@@ -153,25 +164,13 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         XCTAssert(users.count > 0, "You have an empty array")
     }
     
-    func testGetsFullName() {
-        let person = Name(title: "mr", first: "mario", last: "lopez")
-        let location = Location(street: "", city: "", state: "", postcode: "")
-        let picture = Picture(picture: "")
-        
-          let user = User(name: person, email: "person@email.com", phone: "7181223455", dob: "00/00/1992", location: location, picture: picture  )
-        
+    func testGetsUserFullName() {
         let name = user.getFullName()
         
         XCTAssert(name == "Mr. Mario Lopez", "You have an empty array")
     }
     
-    func testGetFullAddress() {
-        let person = Name(title: "mr", first: "mario", last: "lopez")
-        let location = Location(street: "166 gothic drive", city: "jamaica", state: "ny", postcode: "11432")
-        let picture = Picture(picture: "")
-        
-        let user = User(name: person, email: "person@email.com", phone: "7181223455", dob: "00/00/1992", location: location, picture: picture  )
-        
+    func testGetUserFullAddress() {
         let address = user.getFullAddress()
         XCTAssert(address == """
             166 Gothic Drive
@@ -185,17 +184,15 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         XCTAssert(sortedUsers[0].getFullName() < sortedUsers[1].getFullName() , "You do not have a sorted array based on full name")
     }
     
-    func testgetDOB() {
-        
-        let person = Name(title: "mr", first: "mario", last: "lopez")
-        let location = Location(street: "166 gothic drive", city: "jamaica", state: "ny", postcode: "11432")
-        let picture = Picture(picture: "")
-        
-        let user = User(name: person, email: "person@email.com", phone: "7181223455", dob: "1990-07-20 11:40:15", location: location, picture: picture  )
+    func testgetUserDOB() {
         let newDate = user.getDOB()
         
-        XCTAssert(newDate == "07/20/1990", "You do not have the correct format for date")
-        
+        XCTAssert(newDate == "03/14/1945", "You do not have the correct format for date")
+    }
+    
+    func testgetUserPhoneNumber() {
+        let newNumber = user.getPhoneNumber()
+        XCTAssert(newNumber == "017683-99464", "You do not have the correct format for phoneNumber")
     }
     
 

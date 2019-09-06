@@ -31,7 +31,7 @@ class UsersDetailViewController: UIViewController {
     
     func setLabels() {
         nameLabel.text = user.getFullName()
-        phoneLabel.text = user.phone
+        phoneLabel.text = user.getPhoneNumber()
         emailLabel.text = user.email
         dateOfBirthLabel.text = user.getDOB()
         
@@ -49,5 +49,6 @@ class UsersDetailViewController: UIViewController {
             } catch {fatalError()}
         }
     }
+    
 
 }
