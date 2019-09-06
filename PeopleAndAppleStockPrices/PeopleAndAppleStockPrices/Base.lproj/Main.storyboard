@@ -125,7 +125,7 @@
                     <navigationItem key="navigationItem" id="k7Z-Mv-zJm"/>
                     <connections>
                         <outlet property="peopleTableView" destination="Pny-2a-dHU" id="M2f-af-nQT"/>
-                        <outlet property="searchBar" destination="3VA-go-elL" id="Byh-oL-rrV"/>
+                        <outlet property="userSearchBar" destination="3VA-go-elL" id="FXh-kk-PYZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hk1-U5-CVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
