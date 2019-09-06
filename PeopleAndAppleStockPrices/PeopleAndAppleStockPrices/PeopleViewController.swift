@@ -40,15 +40,14 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UISearchBar
             return peopleArr
         }
         return peopleArr.filter({$0.name.first.lowercased().contains(searchedText.lowercased())})
-        
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.userSearchedText = searchBar.text
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.userSearchedText = searchText
+        loadData()
+        if searchText == ""{
+            return
+        }
+        peopleArr = peopleArr.filter({$0.name.first.lowercased().contains(searchText.lowercased())})
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -57,12 +56,6 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UISearchBar
         searchBar.resignFirstResponder()
         self.peopleTableView.reloadData()
     }
-    
-    
-    //    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-    //       self.searchBar.showsCancelButton = true
-    //        self.peopleTableView.reloadData()
-    //    }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
         self.peopleTableView.reloadData()
