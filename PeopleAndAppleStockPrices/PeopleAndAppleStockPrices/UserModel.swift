@@ -29,19 +29,15 @@ struct Person: Codable {
     let email: String
 }
 
-struct NameWrapper: Codable, CustomStringConvertible {
+struct NameWrapper: Codable {
     let first: String
     let last: String
-    
-    var description: String {
-        return "\(first.capitalizingFirstLetter()) \(last.capitalizingFirstLetter())"
+    var fullyNamed: String {
+        return "\(first.capitalized) \(last.capitalized)"
     }
 }
 
 struct LocationWrapper: Codable {
     let city: String
     
-    func capitilizeFirstLetter() {
-        
-    }
 }

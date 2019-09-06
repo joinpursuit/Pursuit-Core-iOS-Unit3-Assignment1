@@ -35,7 +35,7 @@ class PeopleViewController: UIViewController {
         do {
           let data = try Data(contentsOf: url)
             let peopleFromJSON = People.getUsers(from: data)
-            peopleModel = peopleFromJSON.sorted(by: {$0.name.description < $1.name.description})
+            peopleModel = peopleFromJSON.sorted(by: {$0.name.fullyNamed < $1.name.fullyNamed})
         } catch {
             fatalError()
         }
@@ -74,7 +74,7 @@ extension PeopleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
-        cell.textLabel?.text = peopleModel[indexPath.row].name.description
+        cell.textLabel?.text = peopleModel[indexPath.row].name.fullyNamed
         cell.detailTextLabel?.text = peopleModel[indexPath.row].location.city
         return cell
     }

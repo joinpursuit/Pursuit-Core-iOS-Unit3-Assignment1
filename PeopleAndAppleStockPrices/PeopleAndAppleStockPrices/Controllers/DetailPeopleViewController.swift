@@ -32,7 +32,7 @@ class DetailPeopleViewController: UIViewController {
     
     func setUpViews() {
         peopleImageView.image = UIImage(named: "profileImage")
-        nameLabel.text = person.name.description
+        nameLabel.text = person.name.fullyNamed
         emailLabel.text = person.email
         dateOfBirthLabel.text = person.dob
     }
