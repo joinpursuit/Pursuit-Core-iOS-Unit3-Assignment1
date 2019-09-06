@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Stocks: Codable {
     let date: String
@@ -21,5 +22,21 @@ struct Stocks: Codable {
           fatalError("Could not decode \(error)")
         }
         
+    }
+    
+    func setImageForStockDVC() -> UIImage {
+        if open > close {
+            return UIImage(named: "thumbsUp")!
+        } else {
+            return UIImage(named: "thumbsDown")!
+        }
+    }
+    
+    func setBackgroundColorForStockDVC() -> UIColor {
+        if open > close {
+            return UIColor.green
+        } else {
+            return UIColor.red
+        }
     }
 }

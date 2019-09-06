@@ -135,6 +135,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jHQ-LQ-XGO"/>
                     </view>
+                    <connections>
+                        <outlet property="stockClosingLabel" destination="EUY-uM-v9X" id="kiI-2a-7Fm"/>
+                        <outlet property="stockDateLabel" destination="NUm-dD-Hpl" id="otx-tc-fhl"/>
+                        <outlet property="stockOpeningLabel" destination="O7c-PN-cLy" id="mOt-w1-e16"/>
+                        <outlet property="thumbsUpDownImage" destination="tZD-fr-TlG" id="HlN-Xv-lCe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0v-Dw-1BC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
