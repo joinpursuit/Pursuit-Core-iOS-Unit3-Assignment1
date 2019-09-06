@@ -38,7 +38,7 @@ class StockDetailsViewController: UIViewController {
     }
     
     private func setVisuals() {
-        if stockForDate.changePercent! > 0.0 {
+        if stockForDate.close! >= stockForDate.open! {
             stockImageView.image = UIImage(named: "thumbsUp")
             self.view.backgroundColor = UIColor.green
             changeTextColor(color: UIColor.black)
