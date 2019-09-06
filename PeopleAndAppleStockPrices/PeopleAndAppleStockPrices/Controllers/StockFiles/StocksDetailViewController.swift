@@ -28,11 +28,11 @@ class StocksDetailViewController: UIViewController {
         openLabel.text = String(format: "$%.2f", stockSelected.open)
         closedLabel.text = String(format: "$%.2f", stockSelected.close)
         if stockSelected.open >= stockSelected.close {
-            viewColor.backgroundColor = UIColor.green
-            stockImage.image = UIImage(named: "bullish")!
-        } else {
             viewColor.backgroundColor = UIColor.red
             stockImage.image = UIImage(named: "bear-mrkt")!
+        } else {
+            viewColor.backgroundColor = UIColor.green
+            stockImage.image = UIImage(named: "bullish")!
             
             
         }
