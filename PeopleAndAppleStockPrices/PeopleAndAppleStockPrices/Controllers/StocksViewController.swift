@@ -39,6 +39,18 @@ class StocksViewController: UIViewController {
         }
     }
 
+    // MARK: Navigation Metod
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToDetailStocks" {
+            guard let detailStockVC = segue.destination as? DetailStocksViewController else {
+                fatalError()
+            }
+            guard let selectedIndexPath = stocksTableView.indexPathForSelectedRow else {
+                fatalError()
+            }
+            detailStockVC.stock = stocksModel[selectedIndexPath.row]
+        }
+    }
     
 
 }

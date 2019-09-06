@@ -48,6 +48,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="egV-6w-bCQ" kind="show" identifier="segueToDetailStocks" id="xp7-aq-5x5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
