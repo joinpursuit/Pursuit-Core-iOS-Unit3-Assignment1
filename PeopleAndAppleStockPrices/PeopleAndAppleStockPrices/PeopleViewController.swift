@@ -10,6 +10,12 @@ import UIKit
 
 class PeopleViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
     
+    var peopleArr = [resultsInfo]() {
+        didSet{
+            peopleTableView.reloadData()
+        }
+    }
+    
     @IBOutlet var userSearchBar: UISearchBar!
     
     @IBOutlet weak var peopleTableView: UITableView!
@@ -20,13 +26,6 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UISearchBar
         peopleTableView.dataSource = self
         userSearchBar.delegate = self
         peopleTableView.delegate = self
-        
-    }
-    
-    var peopleArr = [resultsInfo]() {
-        didSet{
-            peopleTableView.reloadData()
-        }
     }
     
     var userSearchedText: String? {
@@ -39,25 +38,19 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UISearchBar
         guard let searchedText = userSearchedText else {
             return peopleArr
         }
+        if searchedText == ""{
+            return peopleArr
+        }
         return peopleArr.filter({$0.name.first.lowercased().contains(searchedText.lowercased())})
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        loadData()
-        if searchText == ""{
-            return
-        }
-        peopleArr = peopleArr.filter({$0.name.first.lowercased().contains(searchText.lowercased())})
+       userSearchedText = searchText
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = false
-        searchBar.text = ""
-        searchBar.resignFirstResponder()
-        self.peopleTableView.reloadData()
-    }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
+        
         self.peopleTableView.reloadData()
     }
     

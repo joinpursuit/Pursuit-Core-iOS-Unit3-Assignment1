@@ -41,8 +41,8 @@ class StocksViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       //return stockInfo.count
-       return stockInfo[section].date.count
+       return stockInfo.count
+       //return stockInfo[section].date.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
