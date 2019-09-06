@@ -21,17 +21,21 @@ class StockDetailViewController: UIViewController {
         super.viewDidLoad()
         configureLabels()
         loadImage()
+        updateBackgroundColor()
     }
     
     private func configureLabels() {
         dateLabel.text = stock.date
-        openLabel.text = String(format: "%.2f", stock.open)
-        closeLabel.text = String(format: "%.2f", stock.close)
+        openLabel.text = "Open: $\(String(format: "%.2f", stock.open))"
+        closeLabel.text = "Close: $\(String(format: "%.2f", stock.close))"
     }
     
-    //TODO: Download images and add to assets folder
     private func loadImage() {
-//        stockImage.image = UIImage(named: <#T##String#>)
+        if stock.didStockProfit(open: stock.open, close: stock.close) {
+            stockImage.image = UIImage(named: "thumbsUp")
+        } else {
+            stockImage.image = UIImage(named: "thumbsDown")
+        }
 
     }
 

@@ -44,7 +44,11 @@ class StockListViewController: UIViewController {
         guard segue.identifier == "stockCellToDetailSegue" else { fatalError("Unidentified segue") }
         guard let stockDetailsVC = segue.destination as? StockDetailViewController else { fatalError("No destination View Controller") }
         
-        stockDetailsVC.stock = allStocks[selectedIndex.row]
+        //TODO: Refactor two lines of code below as a func to be reused throughout code
+        let stocksForSection = allStocks.filter { $0.dateForHeader == headerNames[selectedIndex.section] }
+        let currentStock = stocksForSection[selectedIndex.row]
+        
+        stockDetailsVC.stock = currentStock
     }
     
 }
