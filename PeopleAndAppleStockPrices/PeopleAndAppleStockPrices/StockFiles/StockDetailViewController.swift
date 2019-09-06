@@ -10,13 +10,29 @@ import Foundation
 import UIKit
 
 class StockDetailViewController: UIViewController {
+    var price: AppleStockPrices!
     
+    @IBOutlet weak var thumbImageOutlet: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var openingLabel: UILabel!
+    @IBOutlet weak var closingLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loadData()
     }
     
+    private func loadData() {
+        if price.open <= price.close {
+        thumbImageOutlet.image = UIImage(named: "thumbsUp")
+            view.backgroundColor = UIColor.green
+        } else {
+            thumbImageOutlet.image = UIImage(named: "thumbsDown")
+            view.backgroundColor = UIColor.red
+        }
+        dateLabel.text = price.date
+        openingLabel.text = "Opening Price: \(price.open) USD"
+        closingLabel.text = "Closing Price: \(price.close) USD"
 }
-
+}

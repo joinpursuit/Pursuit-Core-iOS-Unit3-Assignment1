@@ -16,6 +16,7 @@ struct UserWrapper : Codable {
     static func getUserData(from data: Data) throws -> [User] {
         do {
             let userData = try JSONDecoder().decode(UserWrapper.self, from: data)
+            
             return userData.results
         } catch {
             print(error)
@@ -31,23 +32,16 @@ struct User : Codable {
     let location : LocationWrapper
     let email: String
     let cell: String
-    
-    static func formattedName(index: Int, userArray: [User]) -> String {
-        let fullName = "\(userArray[index].name.title.capitalized). \(userArray[index].name.first.capitalized) \(userArray[index].name.last.capitalized)"
-        return fullName
-    }
-    
-    static func formattedAddress(index: Int, userArray: [User]) -> String {
-        let fullAddress = "\(userArray[index].location.street.capitalized)  \(userArray[index].location.city.capitalized), \(userArray[index].location.state.capitalized)  \(userArray[index].location.postcode.capitalized)"
-        return fullAddress
-    }
-    
 }
 
 struct NameWrapper : Codable {
     let title: String
     let first: String
     let last: String
+    var fullname: String {
+       let name = "\(first.capitalized) \(last.capitalized)"
+        return name
+    }
 }
 
 struct LocationWrapper : Codable {
@@ -55,6 +49,10 @@ struct LocationWrapper : Codable {
     let city: String
     let state: String
     let postcode: String
+    var fullAddress: String {
+        let address = "\(street.capitalized)  \(city.capitalized), \(state.capitalized)  \(postcode)"
+        return address
+    }
 }
 
 

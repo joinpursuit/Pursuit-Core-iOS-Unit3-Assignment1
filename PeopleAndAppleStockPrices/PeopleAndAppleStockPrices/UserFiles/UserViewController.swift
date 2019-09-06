@@ -26,23 +26,11 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
             guard searchString != "" else {
                 return totalPeople
             }
-            if let scopeTitles = searchOutlet.scopeButtonTitles {
-                let currentScopeIndex = searchOutlet.selectedScopeButtonIndex
-                
-                switch scopeTitles[currentScopeIndex] {
-                case "First Name":
-                    let results = totalPeople.filter( {$0.name.first.lowercased().contains(searchString!.lowercased())})
+                    let results = totalPeople.filter( {$0.name.fullname.lowercased().contains(searchString!.lowercased())  })
                     return results
-                case "Last Name":
-                let results = totalPeople.filter( {$0.name.last.lowercased().contains(searchString!.lowercased())})
-                return results
-                default:
-                    return totalPeople
             }
         }
-            return totalPeople
-    }
-}
+
             
             
     @IBOutlet weak var userTableOutlet: UITableView!
@@ -55,9 +43,8 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userTableOutlet.dequeueReusableCell(withIdentifier: "user")
-        
-        cell?.textLabel?.text = User.formattedName(index: indexPath.row, userArray: userSearchResults)
-        cell?.detailTextLabel?.text = User.formattedAddress(index: indexPath.row, userArray: userSearchResults)
+        cell?.textLabel?.text = userSearchResults[indexPath.row].name.fullname
+        cell?.detailTextLabel?.text = userSearchResults[indexPath.row].location.fullAddress
         return cell!
     }
     
@@ -81,7 +68,9 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         do {
             let data = try Data(contentsOf: url)
             let userDataFromJSON = try UserWrapper.getUserData(from: data)
-            totalPeople = userDataFromJSON
+            totalPeople = userDataFromJSON.sorted(by: {(person1, person2) -> Bool in
+                (person1.name.first + person1.name.last) < (person2.name.first + person2.name.last)
+            })
         } catch let jsonError {
             fatalError("Couldn't get data from json file: \(jsonError)")
         }
@@ -93,7 +82,6 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     userTableOutlet.dataSource = self
     searchOutlet.delegate = self
     LoadData()
-    
   }
 
 
