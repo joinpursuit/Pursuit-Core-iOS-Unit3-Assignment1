@@ -40,7 +40,5 @@ class ImageHelper {
             completionHandler(.success(image))
             
             } .resume()
-        
     }
-    
 }

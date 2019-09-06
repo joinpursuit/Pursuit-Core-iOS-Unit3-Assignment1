@@ -34,11 +34,11 @@ class StockListViewController: UIViewController {
     
     private func loadStockData() {
         let stockData = DataAPIClient.getStockDataFromJSON()
-        // refactor later to not force unwrap?
+        // TODO: Refactor later to not force unwrap?
         allStocks = Stock.getAllStocks(from: stockData)!
     }
     
-    //refactor to not use fatalerror
+    // TODO: Refactor to use error codes instead of fatalerror
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedIndex = stockListTableView.indexPathForSelectedRow else { fatalError("No cell was selected") }
         guard segue.identifier == "stockCellToDetailSegue" else { fatalError("Unidentified segue") }

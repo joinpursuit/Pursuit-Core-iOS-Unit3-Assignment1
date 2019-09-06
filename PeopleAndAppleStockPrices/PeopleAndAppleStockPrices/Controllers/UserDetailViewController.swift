@@ -42,5 +42,4 @@ class UserDetailViewController: UIViewController {
             }
         }
     }
-    
 }

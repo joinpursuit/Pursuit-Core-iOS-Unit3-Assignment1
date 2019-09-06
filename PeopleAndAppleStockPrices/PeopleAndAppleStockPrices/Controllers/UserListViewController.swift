@@ -52,11 +52,11 @@ class UserListViewController: UIViewController {
     
     private func loadUserData() {
         let userData = DataAPIClient.getUserDataFromJSON()
-        // refactor later to not force unwrap?
+        // TODO: Refactor to not force unwrap
         allUsers = UserWrapper.getAllUsers(from: userData)!.results
     }
     
-    //refactor to not use fatalerror
+    // TODO: Refactor to use error codes instead of fatalerror
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedIndex = userListTableView.indexPathForSelectedRow else { fatalError("No cell was selected") }
         guard segue.identifier == "userCellToDetailSegue" else { fatalError("Unidentified segue") }
@@ -78,7 +78,6 @@ extension UserListViewController: UITableViewDataSource {
         let currentUser = userSearchResults[indexPath.row]
         let userCell = userListTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         
-        //refactor to capitalize name in models
         userCell.textLabel?.text = currentUser.getFullName(firstName: currentUser.name.firstName, lastName: currentUser.name.lastName)
         userCell.detailTextLabel?.text = currentUser.location.state.capitalized
         

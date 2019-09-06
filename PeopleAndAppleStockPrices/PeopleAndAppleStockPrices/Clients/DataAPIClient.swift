@@ -8,6 +8,8 @@
 
 import Foundation
 
+// TODO: Refactor to use error codes instead of fatalerror
+
 struct DataAPIClient {
     static func getUserDataFromJSON() -> Data {
         guard let pathToUserData = Bundle.main.path(forResource: "userinfo", ofType: "json") else {
