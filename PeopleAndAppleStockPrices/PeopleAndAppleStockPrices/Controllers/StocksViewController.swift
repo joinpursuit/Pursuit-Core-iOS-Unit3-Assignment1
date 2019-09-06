@@ -10,24 +10,55 @@ import UIKit
 
 class StocksViewController: UIViewController {
     
+    // MARK: Outlets
     @IBOutlet weak var stocksTableView: UITableView!
     
-
+    // MARK: Properties
+    var stocksModel = [Stocks]()
+    
+    // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        stocksTableView.dataSource = self
+        stocksTableView.delegate = self
+        loadData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: Private Methods
+    private func loadData() {
+        guard let pathToJSONFile = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else {
+            fatalError("Could not find JSON file")
+        }
+        let url = URL(fileURLWithPath: pathToJSONFile)
+        do {
+            let data = try Data(contentsOf: url)
+            let stocksFromJSON = Stocks.getStocks(from: data)
+            stocksModel = stocksFromJSON
+        } catch {
+            fatalError()
+        }
     }
-    */
 
+    
+
+}
+
+// MARK: Extensions
+extension StocksViewController: UITableViewDelegate {
+    
+}
+
+extension StocksViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stocksModel.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
+        cell.textLabel?.text = stocksModel[indexPath.row].date
+        cell.detailTextLabel?.text = stocksModel[indexPath.row].open.description
+        return cell
+    }
+    
+    
 }
