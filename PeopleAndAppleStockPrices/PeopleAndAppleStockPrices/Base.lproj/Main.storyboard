@@ -72,6 +72,7 @@
                     <connections>
                         <outlet property="randomUserTableView" destination="oOb-bV-Yxp" id="eSC-Pv-Ngt"/>
                         <outlet property="seachingBar" destination="uMw-ho-LVF" id="Bsd-t4-Ehs"/>
+                        <segue destination="ilE-aF-IFL" kind="showDetail" id="iy8-cU-d9Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPc-Fk-DCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,6 +202,7 @@
                     <navigationItem key="navigationItem" id="gmp-Fu-S8Y"/>
                     <connections>
                         <outlet property="stockTableView" destination="dda-C1-t8d" id="2Tp-qz-yB1"/>
+                        <segue destination="cPf-ow-Jev" kind="showDetail" id="cjK-Ac-1b8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXf-JK-V6z" userLabel="First Responder" sceneMemberID="firstResponder"/>
