@@ -44,7 +44,7 @@ struct Stock: Codable {
         return averageStr
     }
     
-    static func didStockProfit(open: Double, close: Double) -> Bool {
+    func didStockProfit(open: Double, close: Double) -> Bool {
         if close > open {
             return true
         }

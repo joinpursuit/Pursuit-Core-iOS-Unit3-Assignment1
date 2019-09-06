@@ -35,4 +35,11 @@ class StockDetailViewController: UIViewController {
 
     }
 
+    private func updateBackgroundColor() {
+        if stock.didStockProfit(open: stock.open, close: stock.close) {
+            self.view.backgroundColor = UIColor.green
+        } else {
+            self.view.backgroundColor = UIColor.red
+        }
+    }
 }

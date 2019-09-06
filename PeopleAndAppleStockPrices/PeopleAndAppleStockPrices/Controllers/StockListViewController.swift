@@ -83,6 +83,12 @@ extension StockListViewController: UITableViewDataSource {
         stockCell.textLabel?.text = currentStock.date
         stockCell.detailTextLabel?.text = "$\(currentStock.open)"
         
+        if currentStock.didStockProfit(open: currentStock.open, close: currentStock.close) {
+            stockCell.backgroundColor = UIColor.green
+        } else {
+            stockCell.backgroundColor = UIColor.red
+        }
+        
         return stockCell
     }
     
