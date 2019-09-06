@@ -71,7 +71,7 @@
                     <navigationItem key="navigationItem" id="nEL-vt-Px2"/>
                     <connections>
                         <outlet property="randomUserTableView" destination="oOb-bV-Yxp" id="eSC-Pv-Ngt"/>
-                        <outlet property="seachingBar" destination="uMw-ho-LVF" id="Bsd-t4-Ehs"/>
+                        <outlet property="searchingBar" destination="uMw-ho-LVF" id="Bsd-t4-Ehs"/>
                         <segue destination="ilE-aF-IFL" kind="showDetail" id="iy8-cU-d9Z"/>
                     </connections>
                 </viewController>

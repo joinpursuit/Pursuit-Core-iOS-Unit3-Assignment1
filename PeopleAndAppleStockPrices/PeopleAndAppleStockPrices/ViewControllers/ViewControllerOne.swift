@@ -12,7 +12,7 @@ import UIKit
 class RandomUserViewController:UIViewController {
     @IBOutlet weak var randomUserTableView: UITableView!
     
-    @IBOutlet weak var seachingBar: UISearchBar!
+    @IBOutlet weak var searchingBar: UISearchBar!
     var rgbColor = RGBValue()
     var randomUser = [Results]() {
         didSet {
@@ -36,9 +36,9 @@ class RandomUserViewController:UIViewController {
             guard searchString != "" else {
                 return randomUser
             }
-            if let scopeVariable = seachingBar.scopeButtonTitles {
+            if let scopeVariable = searchingBar.scopeButtonTitles {
                 
-                let currentscopeIndex = seachingBar.selectedScopeButtonIndex
+                let currentscopeIndex = searchingBar.selectedScopeButtonIndex
                 switch scopeVariable[currentscopeIndex] {
                 case "Names":
                     return randomUser.filter {$0.name.getName().lowercased().replacingOccurrences(of: " ", with: "").contains(searchString.lowercased().replacingOccurrences(of: " ", with: ""))}
@@ -111,7 +111,7 @@ extension RandomUserViewController:UITableViewDataSource {
     func setUp() {
         randomUserTableView.dataSource = self
         randomUserTableView.delegate = self
-        seachingBar.delegate = self
+        searchingBar.delegate = self
         self.navigationItem.title = "Contacts"
         colorGenerator()
         
