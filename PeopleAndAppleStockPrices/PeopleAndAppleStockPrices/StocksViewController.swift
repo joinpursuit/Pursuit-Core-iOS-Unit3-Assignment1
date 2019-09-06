@@ -8,23 +8,50 @@
 
 import UIKit
 
-class StocksViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class StocksViewController: UIViewController, UITableViewDataSource {
+    
+    @IBOutlet weak var StocksTableView: UITableView!
+    
+    var stockInfo = [Stocks]() {
+        didSet{
+            StocksTableView.reloadData()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadStockData()
+        StocksTableView.dataSource = self
+        //        peopleTableView.delegate = self
+        
     }
-    */
-
+    
+    func loadStockData() {
+        guard let pathToData = Bundle.main.path(forResource: "applstockinfo", ofType:"json")
+            else {
+                fatalError("applstockinfo.json file not found")
+        }
+        let internalUrl = URL(fileURLWithPath: pathToData)
+        do {
+            let data = try Data(contentsOf: internalUrl)
+            let stocksFromJSON = try
+                stockInfo = Stocks.getStocksData(data: data)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stockInfo.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = StocksTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
+        let setupInfo = stockInfo[indexPath.row]
+        cell.textLabel?.text = setupInfo.date
+        cell.detailTextLabel?.text = "\(setupInfo.open)"
+        return cell
+    }
+    
 }
+
