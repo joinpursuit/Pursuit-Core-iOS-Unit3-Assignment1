@@ -21,8 +21,29 @@ class StocksViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureStocksTableView()
+        getStocks()
+    }
+    
+    //MARK: DataSource Methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stocks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let stock = stocks[indexPath.row]
+        let cell = stocksTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
+        cell.textLabel?.text = "$" + String(format: "%.2f", stock.open ?? 0)
+        cell.detailTextLabel?.text = stock.date
+        return cell
+    }
+    
+    //MARK: Delegate Methods
+    
+    //MARK: -- Custom Functions
+    private func configureStocksTableView() {
+        stocksTableView.delegate = self
+        stocksTableView.dataSource = self
     }
     
 
