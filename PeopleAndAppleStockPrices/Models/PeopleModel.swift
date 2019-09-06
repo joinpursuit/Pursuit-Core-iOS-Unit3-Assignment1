@@ -31,7 +31,7 @@ struct Location: Codable {
 }
 
 struct Picture: Codable {
-    let thumbnail: String
+    let large: String
 }
 
 class PeopleAPIManager {

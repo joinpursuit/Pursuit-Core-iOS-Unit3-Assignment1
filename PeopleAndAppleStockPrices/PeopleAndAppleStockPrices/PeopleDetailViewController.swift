@@ -20,8 +20,8 @@ class PeopleDetailViewController: UIViewController {
     
     @IBOutlet weak var contactEmail: UILabel!
     
-    func loadImage () {
-        ImageHelper.shared.getImage(urlString: allPeople.picture.thumbnail) {(result) in
+    func loadImage() {
+        ImageHelper.shared.getImage(urlString: allPeople.picture.large) {(result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
@@ -38,7 +38,6 @@ class PeopleDetailViewController: UIViewController {
         contactName.text = "\(allPeople.name.first.capitalized) \(allPeople.name.last.capitalized)"
         contactCity.text = allPeople.location.city
         contactEmail.text = allPeople.email
-      //contactImage.image = allPeople.picture.thumbnail
     }
     
     override func viewDidLoad() {

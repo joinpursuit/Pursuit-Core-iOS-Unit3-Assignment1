@@ -49,8 +49,25 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UISearchBar
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.userSearchedText = searchText
-        
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        self.peopleTableView.reloadData()
+    }
+    
+    
+    //    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    //       self.searchBar.showsCancelButton = true
+    //        self.peopleTableView.reloadData()
+    //    }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+        self.peopleTableView.reloadData()
+    }
+    
     private func loadData() {
         PeopleAPIManager.shared.getPeople {(result) in
             DispatchQueue.main.async {
@@ -76,27 +93,13 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UISearchBar
         return cell
     }
 }
-    extension PeopleViewController: UITableViewDelegate {
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            if let storyBoard = storyboard?.instantiateViewController(withIdentifier: "PeopleDetailViewController") as? PeopleDetailViewController {
-                storyBoard.allPeople = peopleArr[indexPath.row]
-                navigationController?.pushViewController(storyBoard, animated: true)
-            }
+extension PeopleViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let storyBoard = storyboard?.instantiateViewController(withIdentifier: "PeopleDetailViewController") as? PeopleDetailViewController {
+            storyBoard.allPeople = peopleArr[indexPath.row]
+            navigationController?.pushViewController(storyBoard, animated: true)
         }
     }
+}
 
 
-//        ImageHelper.shared.getImage(urlString: person.picture.thumbnail){ (result) in
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .failure(let error):
-//                    print(error)
-//                case .success(let imageFromOnline):
-//                    //PeopleDetailViewController.
-//
-//                    cell.imageView?.image = imageFromOnline
-//                }
-//            }
-//        }
-//        return cell
-//    }
