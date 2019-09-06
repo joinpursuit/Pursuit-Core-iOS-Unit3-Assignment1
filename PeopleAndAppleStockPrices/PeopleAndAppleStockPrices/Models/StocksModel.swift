@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+
 struct Stock: Codable {
     var date: String
     let openPrice: Double
@@ -25,7 +27,7 @@ struct Stock: Codable {
             let newStock = try JSONDecoder().decode([Stock].self, from: data)
             return newStock
         } catch {
-            throw jsonError.decodingError(error)
+            throw AppError.badJsonError
         }
     }
     

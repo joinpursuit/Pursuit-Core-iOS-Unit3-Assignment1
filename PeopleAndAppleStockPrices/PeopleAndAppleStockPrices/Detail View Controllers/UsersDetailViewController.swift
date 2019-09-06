@@ -29,7 +29,7 @@ class UsersDetailViewController: UIViewController {
 
     }
     
-    func setLabels() {
+    private func setLabels() {
         nameLabel.text = user.getFullName()
         phoneLabel.text = user.getPhoneNumber()
         emailLabel.text = user.email
@@ -37,7 +37,7 @@ class UsersDetailViewController: UIViewController {
         
     }
     
-    func loadImage() {
+    private func loadImage() {
         let urlStr = user.picture.picture
         guard let url = URL(string: urlStr) else {return}
         DispatchQueue.global(qos: .userInitiated).async {

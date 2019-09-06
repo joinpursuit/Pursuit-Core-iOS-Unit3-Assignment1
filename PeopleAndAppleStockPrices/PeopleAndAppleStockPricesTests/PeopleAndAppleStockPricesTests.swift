@@ -194,6 +194,4 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         let newNumber = user.getPhoneNumber()
         XCTAssert(newNumber == "017683-99464", "You do not have the correct format for phoneNumber")
     }
-    
-
 }

@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-enum jsonError: Error {
-    case decodingError(Error)
-}
-
 struct UserWrapper: Codable {
     let results: [User]
     
@@ -21,7 +17,7 @@ struct UserWrapper: Codable {
             let newUser = try JSONDecoder().decode(UserWrapper.self, from: data)
             return newUser.results
         } catch {
-            throw jsonError.decodingError(error)
+            throw AppError.badJsonError
         }
     }
 }
