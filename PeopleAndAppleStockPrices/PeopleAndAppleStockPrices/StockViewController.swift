@@ -8,16 +8,38 @@
 
 import UIKit
 
-class StockViewController: UIViewController {
+class StockViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
     
     @IBOutlet weak var stockTableView: UITableView!
     
+    var stockData = [StockInfo](){
+        didSet{
+            stockTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
     
+    private func loadData() {
+        guard let pathToJSONFile = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else{
+            fatalError("Unexpected Error: couldnt find json file")
+        }
+        let url = URL(fileURLWithPath: pathToJSONFile)
+        do{
+            let data = try Data (contentsOf: url)
+            self.stockData = try StockInfo.getStockData(from: data)
+        }catch{
+            fatalError("Unexpected Error")
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
@@ -28,5 +50,13 @@ class StockViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        stockData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 
 }
