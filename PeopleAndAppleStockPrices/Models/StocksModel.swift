@@ -26,3 +26,7 @@ struct Stocks: Codable {
     
     }
 }
+
+
+//(stockData.sorted(by: {(info1, info2) -> Bool in
+//    return info1.date < info2.date}))

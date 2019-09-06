@@ -12,11 +12,13 @@ class StocksViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var StocksTableView: UITableView!
     
-    var stockInfo = [Stocks]() {
+    var stockInfo = [Stocks]().sorted(by: {$0.date > $1.date}) {
         didSet{
             StocksTableView.reloadData()
+            
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
