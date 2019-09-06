@@ -46,6 +46,20 @@ class StocksViewController: UIViewController, UITableViewDataSource, UITableView
         stocksTableView.dataSource = self
     }
     
+    func getStocks() {
+        guard let pathToStocksInfoJSON = Bundle.main.path(forResource: "applstockinfo", ofType: ".json") else { return }
+        let url = URL(fileURLWithPath: pathToStocksInfoJSON)
+        do {
+            let stocksData = try Data(contentsOf: url)
+            let stocksFromJSON = try JSONDecoder().decode([StockPrice].self, from: stocksData)
+            self.stocks = stocksFromJSON.sorted(by: { (stock1, stock2) -> Bool in
+                stock1.date! < stock2.date!
+            })
+        } catch let error {
+            print(error)
+            return
+        }
+    }
 
     /*
     // MARK: - Navigation
