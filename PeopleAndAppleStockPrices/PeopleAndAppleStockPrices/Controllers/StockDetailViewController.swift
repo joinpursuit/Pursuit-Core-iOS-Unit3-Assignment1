@@ -29,6 +29,7 @@ class StockDetailViewController: UIViewController {
         closeLabel.text = String(format: "%.2f", stock.close)
     }
     
+    //TODO: Download images and add to assets folder
     private func loadImage() {
 //        stockImage.image = UIImage(named: <#T##String#>)
 

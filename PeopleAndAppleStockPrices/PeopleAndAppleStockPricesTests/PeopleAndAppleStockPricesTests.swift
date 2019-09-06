@@ -69,5 +69,15 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         
         XCTAssert(actualResult == expectedResult, "Did not get average. Expected: \(expectedResult), got:\(actualResult)")
     }
+    
+    func testDidStockProfit() {
+        let testOpen = 130.0
+        let testClose = 150.0
+        let actualResult: Bool = Stock.didStockProfit(open: testOpen, close: testClose)
+        
+        let expectedResult: Bool = true
+        
+        XCTAssert(actualResult == expectedResult, "")
+    }
 
 }
