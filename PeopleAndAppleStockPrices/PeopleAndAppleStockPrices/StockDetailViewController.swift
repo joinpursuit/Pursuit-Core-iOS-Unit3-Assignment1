@@ -10,6 +10,8 @@ import UIKit
 
 class StockDetailViewController: UIViewController {
     
+    var allStocks: Stocks!
+    
     @IBOutlet weak var DateLabel: UILabel!
     
     @IBOutlet weak var pictureImage: UIImageView!
@@ -20,10 +22,19 @@ class StockDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpLabel()
 
     }
-    
 
 
+    func setUpLabel() {
+        DateLabel.text = allStocks.date
+        openLabel.text = "\(allStocks.open)"
+        closeLabel.text = "\(allStocks.close)"
+        view.backgroundColor = allStocks.changeBackgroundColor()
+        pictureImage.image = allStocks.changeImage()
+    }
 
 }
+
+

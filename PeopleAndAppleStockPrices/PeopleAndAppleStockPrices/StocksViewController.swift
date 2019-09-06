@@ -22,7 +22,7 @@ class StocksViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         loadStockData()
         StocksTableView.dataSource = self
-        //StocksTableView.delegate = self
+        StocksTableView.delegate = self
     }
     
     func loadStockData() {
@@ -44,7 +44,7 @@ class StocksViewController: UIViewController, UITableViewDataSource {
        //return stockInfo.count
        return stockInfo[section].date.count
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
@@ -61,8 +61,8 @@ class StocksViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let rowToSetup = indexPath.row
-        let currentSection = indexPath.section
+       // let rowToSetup = indexPath.row
+        //let currentSection = indexPath.section
        // let dateAtRow = stockInfo[currentSection][rowToSetup]
         let cell = StocksTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
         let setupInfo = stockInfo[indexPath.row]
@@ -70,6 +70,15 @@ class StocksViewController: UIViewController, UITableViewDataSource {
         cell.detailTextLabel?.text = "\(setupInfo.open)"
         return cell
     }
-    
 }
+
+extension StocksViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let storyBoard = storyboard?.instantiateViewController(withIdentifier: "StockDetailViewController") as? StockDetailViewController{
+        storyBoard.allStocks = stockInfo[indexPath.row]
+        navigationController?.pushViewController(storyBoard, animated: true)
+        }
+    }
+}
+
 
