@@ -20,28 +20,31 @@ class PeopleDetailViewController: UIViewController {
     
     @IBOutlet weak var contactEmail: UILabel!
     
-//    ImageHelper.shared.getImage(urlString:person.thumbnail) { (result) in
-//    DispatchQueue.main.async {
-//    switch result {
-//    case .failure(let error):
-//    print(error)
-//    case .success(let imageFromOnline):
-//    contactImage.
-//    }
-//    }
-//    
-//    }
-//    
+    func loadImage () {
+        ImageHelper.shared.getImage(urlString: allPeople.picture.thumbnail) {(result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let imageFromOnline):
+                    self.contactImage.image = imageFromOnline
+                }
+            }
+        }
+    }
+    
+    
     func setUpLabel () {
         contactName.text = "\(allPeople.name.first.capitalized) \(allPeople.name.last.capitalized)"
         contactCity.text = allPeople.location.city
         contactEmail.text = allPeople.email
-        
+      //contactImage.image = allPeople.picture.thumbnail
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLabel()
+        loadImage()
 
     }
 }

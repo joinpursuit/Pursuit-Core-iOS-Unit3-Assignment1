@@ -66,7 +66,7 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UISearchBar
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredPeople.count
-        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = peopleTableView.dequeueReusableCell(withIdentifier: "PeopleCell", for: indexPath)
@@ -75,56 +75,28 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UISearchBar
         cell.detailTextLabel?.text = person.location.state
         return cell
     }
-    
-//    ImageHelper.shared.getImage(urlString:person.thumbnail) { (result) in
-//    DispatchQueue.main.async {
-//    switch result {
-//    case .failure(let error):
-//    print(error)
-//    case .success(let imageFromOnline):
-//    contactImage.
-//    }
-//    }
-//    
-//    }
-    
-    
-    //
-    //    ImageHelper.shared.getImage(urlStr: thisBeer.imageURL) { (result) in
-    //        DispatchQueue.main.async {
-    //            switch result {
-    //            case .failure(let error):
-    //                print(error)
-    //            case .success(let imageFromOnline):
-    //                beerCell.beerImageVIew.image = imageFromOnline
-    //            }
-    //        }
-    //
-    //    }
-    //
-    //
-    //    return beerCell
-    //}
-    //
-    //
-    //
-    //}
-    //
 }
-
-extension PeopleViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let storyBoard = storyboard?.instantiateViewController(withIdentifier: "PeopleDetailViewController") as? PeopleDetailViewController {
-            storyBoard.allPeople = peopleArr[indexPath.row]
-            navigationController?.pushViewController(storyBoard, animated: true)
+    extension PeopleViewController: UITableViewDelegate {
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            if let storyBoard = storyboard?.instantiateViewController(withIdentifier: "PeopleDetailViewController") as? PeopleDetailViewController {
+                storyBoard.allPeople = peopleArr[indexPath.row]
+                navigationController?.pushViewController(storyBoard, animated: true)
+            }
         }
     }
-}
 
 
-
-
-
-
-
-
+//        ImageHelper.shared.getImage(urlString: person.picture.thumbnail){ (result) in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .failure(let error):
+//                    print(error)
+//                case .success(let imageFromOnline):
+//                    //PeopleDetailViewController.
+//
+//                    cell.imageView?.image = imageFromOnline
+//                }
+//            }
+//        }
+//        return cell
+//    }
