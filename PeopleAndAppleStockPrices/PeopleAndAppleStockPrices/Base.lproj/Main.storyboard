@@ -296,22 +296,36 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DbN-1Z-wTL" firstAttribute="leading" secondItem="ThC-pE-K6d" secondAttribute="leading" constant="20" id="0io-0A-GEF"/>
-                            <constraint firstItem="IFS-Zg-4VK" firstAttribute="top" secondItem="7To-zN-aPb" secondAttribute="bottom" constant="27" id="3wf-aK-Wzw"/>
-                            <constraint firstItem="IFS-Zg-4VK" firstAttribute="leading" secondItem="ThC-pE-K6d" secondAttribute="leading" constant="50" id="9Zy-zd-F6q"/>
-                            <constraint firstItem="7To-zN-aPb" firstAttribute="leading" secondItem="ThC-pE-K6d" secondAttribute="leading" constant="50" id="MAI-aY-HKj"/>
-                            <constraint firstItem="ThC-pE-K6d" firstAttribute="bottom" secondItem="e9z-zf-Z1H" secondAttribute="bottom" constant="208" id="Xwh-8G-oHz"/>
-                            <constraint firstItem="e9z-zf-Z1H" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IFS-Zg-4VK" secondAttribute="trailing" constant="8" symbolic="YES" id="aAE-AX-PpM"/>
-                            <constraint firstItem="ThC-pE-K6d" firstAttribute="trailing" secondItem="7To-zN-aPb" secondAttribute="trailing" constant="50" id="bHT-bE-kah"/>
-                            <constraint firstItem="7To-zN-aPb" firstAttribute="top" secondItem="DbN-1Z-wTL" secondAttribute="bottom" constant="33" id="d5J-R0-8jz"/>
-                            <constraint firstItem="ThC-pE-K6d" firstAttribute="bottom" secondItem="IFS-Zg-4VK" secondAttribute="bottom" constant="208" id="f2H-0H-EVv"/>
-                            <constraint firstItem="ThC-pE-K6d" firstAttribute="trailing" secondItem="e9z-zf-Z1H" secondAttribute="trailing" constant="50.5" id="iTp-eL-yKD"/>
-                            <constraint firstItem="ThC-pE-K6d" firstAttribute="trailing" secondItem="DbN-1Z-wTL" secondAttribute="trailing" constant="20" id="kFm-qm-Lvh"/>
-                            <constraint firstItem="e9z-zf-Z1H" firstAttribute="top" secondItem="7To-zN-aPb" secondAttribute="bottom" constant="27" id="prY-I0-wSL"/>
-                            <constraint firstItem="DbN-1Z-wTL" firstAttribute="top" secondItem="ThC-pE-K6d" secondAttribute="top" constant="20" id="wBk-cQ-ivC"/>
+                            <constraint firstItem="e9z-zf-Z1H" firstAttribute="top" secondItem="nCg-Ps-fEp" secondAttribute="bottom" constant="26" id="0Tt-NN-Z2j"/>
+                            <constraint firstItem="IFS-Zg-4VK" firstAttribute="top" secondItem="NNs-Ws-Dww" secondAttribute="bottom" constant="26.5" id="97B-bC-fnd"/>
+                            <constraint firstItem="nCg-Ps-fEp" firstAttribute="leading" secondItem="NNs-Ws-Dww" secondAttribute="trailing" constant="102" id="E4W-Yt-D3c"/>
+                            <constraint firstItem="ThC-pE-K6d" firstAttribute="trailing" secondItem="e9z-zf-Z1H" secondAttribute="trailing" constant="73" id="GhK-ak-6Fa"/>
+                            <constraint firstItem="7To-zN-aPb" firstAttribute="centerX" secondItem="ThC-pE-K6d" secondAttribute="centerX" id="NKM-Ky-Dko"/>
+                            <constraint firstItem="NNs-Ws-Dww" firstAttribute="top" secondItem="7To-zN-aPb" secondAttribute="bottom" constant="40" id="PVA-m9-LNw"/>
+                            <constraint firstItem="IFS-Zg-4VK" firstAttribute="centerY" secondItem="e9z-zf-Z1H" secondAttribute="centerY" id="Xz1-ab-Gh3"/>
+                            <constraint firstItem="DbN-1Z-wTL" firstAttribute="leading" secondItem="ThC-pE-K6d" secondAttribute="leading" constant="20" id="aWa-V4-W4h"/>
+                            <constraint firstItem="ThC-pE-K6d" firstAttribute="trailing" secondItem="nCg-Ps-fEp" secondAttribute="trailing" constant="51" id="cc2-Ia-KcF"/>
+                            <constraint firstItem="IFS-Zg-4VK" firstAttribute="leading" secondItem="ThC-pE-K6d" secondAttribute="leading" constant="77" id="g32-OD-bpv"/>
+                            <constraint firstItem="7To-zN-aPb" firstAttribute="top" secondItem="DbN-1Z-wTL" secondAttribute="bottom" constant="51" id="hUT-Qi-Zam"/>
+                            <constraint firstItem="e9z-zf-Z1H" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IFS-Zg-4VK" secondAttribute="trailing" constant="8" symbolic="YES" id="jCG-s9-Qib"/>
+                            <constraint firstItem="NNs-Ws-Dww" firstAttribute="leading" secondItem="ThC-pE-K6d" secondAttribute="leading" constant="52" id="jHA-2y-T4R"/>
+                            <constraint firstItem="7To-zN-aPb" firstAttribute="top" secondItem="ThC-pE-K6d" secondAttribute="top" constant="350" id="jvY-5f-VHh"/>
+                            <constraint firstItem="ThC-pE-K6d" firstAttribute="bottom" secondItem="e9z-zf-Z1H" secondAttribute="bottom" constant="246.5" id="kpc-To-PU9"/>
+                            <constraint firstItem="NNs-Ws-Dww" firstAttribute="centerY" secondItem="nCg-Ps-fEp" secondAttribute="centerY" id="lqF-Qi-Ljx"/>
+                            <constraint firstItem="ThC-pE-K6d" firstAttribute="trailing" secondItem="DbN-1Z-wTL" secondAttribute="trailing" constant="20" id="t62-SR-rqb"/>
+                            <constraint firstItem="ThC-pE-K6d" firstAttribute="bottom" secondItem="IFS-Zg-4VK" secondAttribute="bottom" constant="246.5" id="uWy-ER-17x"/>
+                            <constraint firstItem="DbN-1Z-wTL" firstAttribute="top" secondItem="ThC-pE-K6d" secondAttribute="top" constant="20" id="wlZ-rf-JXu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ThC-pE-K6d"/>
                     </view>
+                    <connections>
+                        <outlet property="closingLabel" destination="e9z-zf-Z1H" id="dPQ-2g-46F"/>
+                        <outlet property="dateLabel" destination="7To-zN-aPb" id="q5I-8n-IrH"/>
+                        <outlet property="edPriceLabel" destination="nCg-Ps-fEp" id="nBh-fH-AU4"/>
+                        <outlet property="opPriceLabel" destination="NNs-Ws-Dww" id="MiI-X0-zkW"/>
+                        <outlet property="openingLabel" destination="IFS-Zg-4VK" id="5Z3-GS-jeh"/>
+                        <outlet property="stockImageView" destination="DbN-1Z-wTL" id="VMx-Ha-4Yf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmO-Ll-VSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
