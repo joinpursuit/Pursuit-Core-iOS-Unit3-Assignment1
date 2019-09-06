@@ -15,12 +15,16 @@ class stockDetailedViewController: UIViewController {
     
     @IBOutlet weak var stockImage: UIImageView!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    
     var currentStockinfo: Stock!
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateLabel.text = currentStockinfo.date
+        Colors()
         thumbsUpOrThumbsDownImage()
-        UPLabel.text = "\(currentStockinfo.uOpen)"
-        downLabel.text = "\(currentStockinfo.uClose)"
+        UPLabel.text = "Open: \(currentStockinfo.uOpen)"
+        downLabel.text = "Close: \(currentStockinfo.uClose)"
         
     }
     private func thumbsUpOrThumbsDownImage() {
@@ -30,6 +34,13 @@ class stockDetailedViewController: UIViewController {
             stockImage.image = UIImage(named: "thumbsDown")
         }
     }
-
+    private func Colors() {
+        if currentStockinfo.uOpen <
+            currentStockinfo.uClose{
+            self.view.backgroundColor = UIColor.green
+        }else {
+            self.view.backgroundColor = UIColor.red
+        }
+    }
 
 }
