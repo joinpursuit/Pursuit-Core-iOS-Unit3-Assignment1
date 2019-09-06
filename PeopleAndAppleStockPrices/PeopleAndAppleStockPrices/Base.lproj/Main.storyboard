@@ -65,6 +65,9 @@
                         <viewLayoutGuide key="safeArea" id="Nkx-Qj-a5h"/>
                     </view>
                     <navigationItem key="navigationItem" id="pRi-Js-eKa"/>
+                    <connections>
+                        <outlet property="stocksTableView" destination="ee2-AR-8Ef" id="pT0-r2-oI7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpr-KO-VB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
