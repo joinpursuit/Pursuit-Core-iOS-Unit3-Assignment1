@@ -25,7 +25,7 @@ struct Stocks: Codable {
     }
     
     func setImageForStockDVC() -> UIImage {
-        if open > close {
+        if open < close {
             return UIImage(named: "thumbsUp")!
         } else {
             return UIImage(named: "thumbsDown")!
@@ -33,7 +33,7 @@ struct Stocks: Codable {
     }
     
     func setBackgroundColorForStockDVC() -> UIColor {
-        if open > close {
+        if open < close {
             return UIColor.green
         } else {
             return UIColor.red
