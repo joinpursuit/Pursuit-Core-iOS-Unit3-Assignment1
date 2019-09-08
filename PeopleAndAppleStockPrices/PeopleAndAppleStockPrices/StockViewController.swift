@@ -18,6 +18,20 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+//    var sectionNames = [String]()
+//    
+//    func sortBySection(sectionNumber: Int) -> [AppleStockPrices] {
+//        return prices.filter({$0.sectionName == sectionNames[sectionNumber]})
+//    }
+//    
+//    func getSectionNames() {
+//        for i in prices {
+//            if !sectionNames.contains(i.sectionName) {
+//                sectionNames.append(i.sectionName)
+//            }
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stockTableView.delegate = self

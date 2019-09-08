@@ -27,13 +27,30 @@ class StockDetailTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        stockDetailDate.text = stockDetailInfo.date
-        stockDetailOpen.text = "\(stockDetailInfo.open)"
-        stockDetailClose.text = "\(stockDetailInfo.close)"
+        stockDetailDate.text = "Date: \(stockDetailInfo.date)"
+        stockDetailOpen.text = "Open: \(stockDetailInfo.open)"
+        stockDetailClose.text = "Close: \(stockDetailInfo.close)"
+        stockDetailBckView.backgroundColor = getStockColor()
+        stockDetailedImage.image = getStockImage()
         
 
     }
    
+    func getStockColor () -> UIColor {
+        if stockDetailInfo.open > stockDetailInfo.close {
+            return UIColor.green
+        }else{
+            return.red
+        }
+    }
+    
+    func getStockImage () -> UIImage {
+        if stockDetailInfo.open > stockDetailInfo.close {
+            return UIImage(named: "thumbsUp")!
+        }else{
+            return UIImage(named: "thumbsDown")!
+        }
+    }
    
 
 }
