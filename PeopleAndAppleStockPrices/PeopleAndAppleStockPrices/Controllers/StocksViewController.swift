@@ -16,6 +16,7 @@ class StocksViewController: UIViewController {
     // MARK: Properties
     var stocksModel = [Stocks]()
     
+    
     // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()

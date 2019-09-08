@@ -207,6 +207,7 @@
                     <navigationItem key="navigationItem" id="Ce5-Bj-HMz"/>
                     <connections>
                         <outlet property="peopleTableView" destination="ZsA-Pe-55T" id="lca-mO-ROa"/>
+                        <outlet property="searchBarOutlet" destination="W81-QG-5TI" id="GWb-qw-8Gl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6Q-CY-MyV" userLabel="First Responder" sceneMemberID="firstResponder"/>

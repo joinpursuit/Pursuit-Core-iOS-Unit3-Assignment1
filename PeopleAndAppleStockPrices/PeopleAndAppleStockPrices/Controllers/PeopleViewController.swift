@@ -12,17 +12,34 @@ class PeopleViewController: UIViewController {
     
     // MARK: Outlets
     @IBOutlet weak var peopleTableView: UITableView!
-    
+    @IBOutlet weak var searchBarOutlet: UISearchBar!
     
     // MARK: Properties
     var peopleModel = [Person]()
-    
+    var searchString: String? = nil {
+        didSet {
+            self.peopleTableView.reloadData()
+        }
+    }
+    var personSearchResults: [Person] {
+        get {
+            guard let searchString = searchString else {
+                return peopleModel
+            }
+            guard searchString != "" else {
+                return peopleModel
+            }
+            return peopleModel.filter({$0.name.fullyNamed.contains(searchString)})
+        }
+    }
+
     
     // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         peopleTableView.delegate = self
         peopleTableView.dataSource = self
+        searchBarOutlet.delegate = self
         loadData()
     }
     
@@ -51,7 +68,7 @@ class PeopleViewController: UIViewController {
             guard let selectedIndexPath = peopleTableView.indexPathForSelectedRow else {
                 fatalError()
             }
-            detailPeopleVC.person = peopleModel[selectedIndexPath.row]
+            detailPeopleVC.person = personSearchResults[selectedIndexPath.row]
         }
     }
     
@@ -69,13 +86,19 @@ extension PeopleViewController: UITableViewDelegate {
 extension PeopleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return peopleModel.count
+        return personSearchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
-        cell.textLabel?.text = peopleModel[indexPath.row].name.fullyNamed
-        cell.detailTextLabel?.text = peopleModel[indexPath.row].location.city
+        cell.textLabel?.text = personSearchResults[indexPath.row].name.fullyNamed
+        cell.detailTextLabel?.text = personSearchResults[indexPath.row].location.city
         return cell
+    }
+}
+
+extension PeopleViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchString = searchBarOutlet.text
     }
 }
