@@ -12,6 +12,9 @@ class StockDetailTableViewController: UIViewController {
     
     var stockDetailInfo: StockInfo!
     
+
+    
+    
     
     
     @IBOutlet weak var stockDetailedImage: UIImageView!
@@ -51,6 +54,8 @@ class StockDetailTableViewController: UIViewController {
             return UIImage(named: "thumbsDown")!
         }
     }
+    
+
    
 
 }

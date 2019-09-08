@@ -18,25 +18,26 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-//    var sectionNames = [String]()
-//    
-//    func sortBySection(sectionNumber: Int) -> [AppleStockPrices] {
-//        return prices.filter({$0.sectionName == sectionNames[sectionNumber]})
-//    }
-//    
-//    func getSectionNames() {
-//        for i in prices {
-//            if !sectionNames.contains(i.sectionName) {
-//                sectionNames.append(i.sectionName)
-//            }
-//        }
-//    }
+    var sectionNames = [String]()
+    
+    func sortBySection(sectionNumber: Int) -> [StockInfo] {
+        return stockData.filter({$0.sectionName == sectionNames[sectionNumber]})
+    }
+    
+    func getSectionNames() {
+        for i in stockData {
+            if !sectionNames.contains(i.sectionName) {
+                sectionNames.append(i.sectionName)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         stockTableView.delegate = self
         stockTableView.dataSource = self
         loadData()
+        getSectionNames()
     
         // Do any additional setup after loading the view.
     }
@@ -76,15 +77,25 @@ class StockViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return stockData.count
+       return sortBySection(sectionNumber: section).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let stockInfo = stockData[indexPath.row]
+        let sortedStocks = sortBySection(sectionNumber: indexPath.section)
+        let currentStock = sortedStocks[indexPath.row]
         let stockCell = stockTableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
-        stockCell.textLabel?.text = stockInfo.date
-        stockCell.detailTextLabel?.text = "\(stockInfo.open)"
+        stockCell.textLabel?.text = currentStock.date
+        stockCell.detailTextLabel?.text = "\(currentStock.open)"
+        
+        
         return stockCell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionNames.count
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionNames[section]
     }
 
 }

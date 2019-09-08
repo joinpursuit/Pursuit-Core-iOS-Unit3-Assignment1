@@ -26,8 +26,8 @@ class UserDetailTableViewController: UIViewController {
 
         userDetailedImage.image = UIImage(named: "profileImage")
         userDetailName.text = userDetails.name.fullName
-        userDetailEmail.text = userDetails.email
-        userDetailCity.text = userDetails.location.city
+        userDetailEmail.text = userDetails.email.capitalized
+        userDetailCity.text = userDetails.location.city.capitalized
     }
 
    
