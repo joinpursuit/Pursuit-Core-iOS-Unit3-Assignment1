@@ -24,7 +24,27 @@ struct stockInfo: Codable {
         } catch {
             throw ErrorHandling.decodingError
         }
-        
     }
+    
+    
+    /// Trying to figure out how to filter the data from JSON to create table view categories
+    
+//    func decodeStocks() {
+//        guard let pathToJSONFile = Bundle.main.path(forResource: "applstockinfo", ofType: ".json") else {
+//            print("Error finding JSON file")
+//            return
+//        }
+//
+//        let url =  URL(fileURLWithPath: pathToJSONFile)
+//
+//        do {
+//            let data = try Data(contentsOf: url)
+//        } catch {
+//            print("could not decode data")
+//        }
+//    }
+//    
+//    static let seventeen = stockInfo.getStocks(from: data)
+    
 }
 

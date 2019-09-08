@@ -23,7 +23,6 @@ struct User: Codable {
         } catch {
             throw ErrorHandling.decodingError
         }
-        
     }
 }
 
