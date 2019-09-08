@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="717" y="-567"/>
         </scene>
-        <!--View Controller-->
+        <!--User Detail View Controller-->
         <scene sceneID="65z-cU-nfr">
             <objects>
-                <viewController id="lSV-FL-PzD" sceneMemberID="viewController">
+                <viewController id="lSV-FL-PzD" customClass="UserDetailViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wOY-TB-sHO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,6 +128,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gx8-Li-nY4">
+                                <rect key="frame" x="87" y="195" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gbe-hv-d1e">
                                 <rect key="frame" x="186" y="411" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -136,20 +140,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmX-zQ-tWo">
-                                <rect key="frame" x="186" y="455" width="42" height="21"/>
+                                <rect key="frame" x="186" y="166" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gx8-Li-nY4">
-                                <rect key="frame" x="87" y="195" width="240" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZu-cf-Bm5">
+                                <rect key="frame" x="186" y="457" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NsZ-6o-0CX"/>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="CZu-cf-Bm5" id="Qzn-tx-HWM"/>
+                        <outlet property="emailLabel" destination="wJN-e1-SQo" id="PbC-mx-a2w"/>
+                        <outlet property="nameLabel" destination="xmX-zQ-tWo" id="0YY-cl-9B5"/>
+                        <outlet property="phoneLabel" destination="Gbe-hv-d1e" id="2aH-zI-brR"/>
+                        <outlet property="userImage" destination="gx8-Li-nY4" id="ZTL-0g-ksx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isy-9g-uRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,10 +217,10 @@
             </objects>
             <point key="canvasLocation" x="716" y="82"/>
         </scene>
-        <!--View Controller-->
+        <!--Stocks Detail View Controller-->
         <scene sceneID="4HK-Bj-hkM">
             <objects>
-                <viewController id="kSY-UC-Ifm" sceneMemberID="viewController">
+                <viewController id="kSY-UC-Ifm" customClass="StocksDetailViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x3b-Ex-hQK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,6 +254,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8ml-6U-jFF"/>
                     </view>
+                    <connections>
+                        <outlet property="closingPriceLabel" destination="59s-S2-lLm" id="59v-QG-vnw"/>
+                        <outlet property="dateLabel" destination="gdP-p9-UFc" id="DAN-Xn-Wzx"/>
+                        <outlet property="openingPriceLabel" destination="ezI-HI-RrQ" id="wQg-51-3lf"/>
+                        <outlet property="stockImage" destination="1cO-up-fGD" id="CXn-0V-cfC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxM-64-U6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

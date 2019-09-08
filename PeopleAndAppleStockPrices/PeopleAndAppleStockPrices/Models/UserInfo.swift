@@ -15,6 +15,9 @@ struct UserWrapper: Codable {
 struct User: Codable {
     let name: NameWrapper
     let location: LocationWrapper
+    let picture: PictureWrapper
+    let email: String
+    let cell: String
     
     static func getUser(from data: Data) throws -> [User] {
         do {
@@ -29,14 +32,19 @@ struct User: Codable {
 
 struct LocationWrapper: Codable {
     let city: String
+    let state: String
 }
 
 struct NameWrapper: Codable {
-    var firstName: String
-    var lastName: String
+    let firstName: String
+    let lastName: String
     
     private enum CodingKeys: String, CodingKey {
         case firstName = "first"
         case lastName = "last"
     }
+}
+
+struct PictureWrapper: Codable {
+    let medium: String
 }

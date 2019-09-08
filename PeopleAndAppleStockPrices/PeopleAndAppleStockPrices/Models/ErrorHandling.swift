@@ -9,12 +9,9 @@
 import Foundation
 
 enum ErrorHandling: Error {
-    case badURL
+    case badURLError
     case decodingError
-    case noData
-    case networkError
-    case badHTTPResponse
-    case notFound
-    case unauthorized
+    case noDataError
+    case noImageError
     case other(String)
 }

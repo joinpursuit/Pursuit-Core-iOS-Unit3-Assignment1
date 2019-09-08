@@ -52,7 +52,7 @@ class UserInfoTableViewController: UITableViewController {
         let user = userInfo[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         cell.textLabel?.text = "\(user.name.firstName.capitalized) \(user.name.lastName.capitalized)"
-        cell.detailTextLabel?.text = user.location.city.capitalized
+        cell.detailTextLabel?.text = user.location.state.capitalized
         return cell
     }
     /*
