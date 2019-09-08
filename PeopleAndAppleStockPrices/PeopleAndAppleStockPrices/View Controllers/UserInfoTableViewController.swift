@@ -55,14 +55,16 @@ class UserInfoTableViewController: UITableViewController {
         cell.detailTextLabel?.text = user.location.state.capitalized
         return cell
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let location = segue.destination as? UserDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        location.users = userInfo[indexPath.row]
     }
-    */
+    
 
 }

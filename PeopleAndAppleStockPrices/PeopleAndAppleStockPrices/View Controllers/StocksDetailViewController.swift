@@ -15,24 +15,33 @@ class StocksDetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var openingPriceLabel: UILabel!
     @IBOutlet weak var closingPriceLabel: UILabel!
+    var stocks: stockInfo!
     
     
-    
+    func setUpView(){
+        let urlStr = "https://si.wsj.net/public/resources/images/IF-AC796_JUNKST_GR_20161103121700.jpg"
+        guard let url = URL(string: urlStr) else { return }
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let data = try Data(contentsOf: url)
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.stockImage.image = image
+                }
+            } catch {
+                print("could not load image")
+            }
+        }
+        dateLabel.text = stocks.date
+        openingPriceLabel.text = stocks.open.description
+        closingPriceLabel.text = stocks.close.description
+        
+            
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

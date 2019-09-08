@@ -11,10 +11,14 @@ import Foundation
 struct stockInfo: Codable {
     let date: String
     let stockPrice: Double
+    let open: Double
+    let close: Double
     
     private enum CodingKeys: String, CodingKey {
         case date
         case stockPrice = "high"
+        case open
+        case close
     }
     
     static func getStocks(from data: Data) throws -> [stockInfo] {

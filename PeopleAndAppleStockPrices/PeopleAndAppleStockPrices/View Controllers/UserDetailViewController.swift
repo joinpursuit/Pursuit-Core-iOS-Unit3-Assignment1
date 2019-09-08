@@ -15,24 +15,32 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    var users: User!
     
-    
+    func setUpView() {
+        let urlStr = users.picture.medium
+        guard let url = URL(string: urlStr) else { return }
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let data = try Data(contentsOf: url)
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.userImage.image = image
+                }
+            } catch {
+                print("could not load image")
+            }
+        }
+        emailLabel.text = users.email
+        phoneLabel.text = users.cell
+        cityLabel.text = users.location.city.capitalized
+        nameLabel.text = "\(users.name.firstName.capitalized) \(users.name.lastName.capitalized)"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
