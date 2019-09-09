@@ -1,23 +1,27 @@
 //
-//  UserInfoTableViewController.swift
+//  UserViewController.swift
 //  PeopleAndAppleStockPrices
 //
-//  Created by Radharani Ribas-Valongo on 9/6/19.
+//  Created by Radharani Ribas-Valongo on 9/9/19.
 //  Copyright © 2019 Pursuit. All rights reserved.
 //
 
 import UIKit
 
-class UserInfoTableViewController: UITableViewController {
+class UserViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource,UITableViewDelegate {
     
+    //MARK: -- Properties
+    @IBOutlet weak var userTableView: UITableView!
+    @IBOutlet weak var userSearchBar: UITableView!
     var userInfo = [User]() {
         didSet {
-            self.tableView.reloadData()
+            userTableView.reloadData()
         }
     }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        userTableView.dataSource = self
+        userTableView.delegate = self
         loadData()
     }
     
@@ -40,15 +44,15 @@ class UserInfoTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return userInfo.count
     }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = userInfo[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         cell.textLabel?.text = "\(user.name.firstName.capitalized) \(user.name.lastName.capitalized)"
@@ -57,14 +61,13 @@ class UserInfoTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let location = segue.destination as? UserDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+        guard let location = segue.destination as? UserDetailViewController, let indexPath = userTableView.indexPathForSelectedRow else {
             return
         }
         location.users = userInfo[indexPath.row]
     }
-    
 
 }
