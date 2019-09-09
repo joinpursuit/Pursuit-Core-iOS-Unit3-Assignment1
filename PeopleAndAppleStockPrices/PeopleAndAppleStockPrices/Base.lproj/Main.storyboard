@@ -124,8 +124,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="KYB-yt-ERY"/>
                     <connections>
-                        <outlet property="userSearchBar" destination="zCz-8A-TVi" id="eKV-LZ-HR3"/>
-                        <outlet property="userTableView" destination="zCz-8A-TVi" id="X9Q-Lv-Rtl"/>
+                        <outlet property="userSearchBar" destination="3Qt-jJ-Ov2" id="5sj-C6-rF0"/>
+                        <outlet property="userTableView" destination="zCz-8A-TVi" id="mfJ-Ag-KEb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTs-D6-8iQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

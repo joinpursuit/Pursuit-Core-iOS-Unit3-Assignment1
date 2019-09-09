@@ -38,6 +38,9 @@ struct LocationWrapper: Codable {
 struct NameWrapper: Codable {
     let firstName: String
     let lastName: String
+    var fullName: String {
+        return "\(firstName) \(lastName)"
+    }
     
     private enum CodingKeys: String, CodingKey {
         case firstName = "first"
