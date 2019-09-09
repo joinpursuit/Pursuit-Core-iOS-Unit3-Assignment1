@@ -43,6 +43,7 @@
         <!--Users Table View Controller-->
         <scene sceneID="Dcz-kc-s5X">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yhj-NL-67V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="acl-Lr-aeL" customClass="UsersTableViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="syH-ZH-VNm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -75,7 +76,6 @@
                         <outlet property="usersSearchBar" destination="maP-ZA-tgJ" id="wTp-nx-xvU"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yhj-NL-67V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="263.768115942029" y="-469.41964285714283"/>
         </scene>
@@ -96,14 +96,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sul-wi-PS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1562" y="-146"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
         </scene>
         <!--Stocks-->
         <scene sceneID="bNy-hP-UMb">
