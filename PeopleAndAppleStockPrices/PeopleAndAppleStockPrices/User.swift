@@ -21,7 +21,7 @@ struct User: Codable {
         private let firstName: String
         private let lastName: String
         var fullName: String {
-            return "\(firstName) \(lastName)".capitalized
+            return "\(firstName) \(lastName)"
         }
         
         private enum CodingKeys: String, CodingKey {
