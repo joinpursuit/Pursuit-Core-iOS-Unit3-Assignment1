@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Stocks Table View Controller-->
         <scene sceneID="DIE-oJ-Hlp">
             <objects>
-                <viewController id="hQf-BO-jOH" sceneMemberID="viewController">
+                <viewController id="hQf-BO-jOH" customClass="StocksTableViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FBF-gS-yzf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,15 +32,18 @@
                         <viewLayoutGuide key="safeArea" id="jf4-cr-nFc"/>
                     </view>
                     <navigationItem key="navigationItem" id="L9K-vC-DGi"/>
+                    <connections>
+                        <outlet property="stocksTableView" destination="AZG-Td-eeP" id="E4L-GE-uPB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMf-D8-pvM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="263.768115942029" y="176.78571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Users Table View Controller-->
         <scene sceneID="Dcz-kc-s5X">
             <objects>
-                <viewController id="acl-Lr-aeL" sceneMemberID="viewController">
+                <viewController id="acl-Lr-aeL" customClass="UsersTableViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="syH-ZH-VNm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,6 +70,10 @@
                         <viewLayoutGuide key="safeArea" id="knf-10-L7p"/>
                     </view>
                     <navigationItem key="navigationItem" id="L3S-bj-LB1"/>
+                    <connections>
+                        <outlet property="userTableView" destination="5Ek-0g-Ixy" id="8pP-e3-1k6"/>
+                        <outlet property="usersSearchBar" destination="maP-ZA-tgJ" id="wTp-nx-xvU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhj-NL-67V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

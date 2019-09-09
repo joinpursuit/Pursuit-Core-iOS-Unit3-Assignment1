@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		543AB0FC23269265005B0E32 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543AB0FB23269265005B0E32 /* UsersTableViewController.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
-		577E5BEE21BA8BA10083EB97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* ViewController.swift */; };
+		577E5BEE21BA8BA10083EB97 /* StocksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* StocksTableViewController.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
 		577E5BF321BA8BA20083EB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF221BA8BA20083EB97 /* Assets.xcassets */; };
 		577E5BF621BA8BA20083EB97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF421BA8BA20083EB97 /* LaunchScreen.storyboard */; };
@@ -17,9 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		543AB0FB23269265005B0E32 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		577E5BED21BA8BA10083EB97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		577E5BED21BA8BA10083EB97 /* StocksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTableViewController.swift; sourceTree = "<group>"; };
 		577E5BF021BA8BA10083EB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		577E5BF221BA8BA20083EB97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		577E5BF521BA8BA20083EB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,8 +60,9 @@
 		577E5BEA21BA8BA10083EB97 /* PeopleAndAppleStockPrices */ = {
 			isa = PBXGroup;
 			children = (
-				577E5BED21BA8BA10083EB97 /* ViewController.swift */,
+				577E5BED21BA8BA10083EB97 /* StocksTableViewController.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
+				543AB0FB23269265005B0E32 /* UsersTableViewController.swift */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
 			);
@@ -159,8 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				577E5BEE21BA8BA10083EB97 /* ViewController.swift in Sources */,
+				577E5BEE21BA8BA10083EB97 /* StocksTableViewController.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
+				543AB0FC23269265005B0E32 /* UsersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
