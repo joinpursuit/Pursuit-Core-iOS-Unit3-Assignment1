@@ -1,22 +1,5 @@
 [
   {
-    "date": "2017-08-29",
-    "uClose": 163.05,
-    "uOpen": 166.1,
-    "uHigh": 168.31,
-    "uLow": 161,
-    "uVolume": 30184771,
-    "close": 170.64,
-    "open": 164.6,
-    "high": 170.95,
-    "low": 164,
-    "volume": 30067252,
-    "change": 0,
-    "changePercent": 0,
-    "label": "Aug 29, 17",
-    "changeOverTime": 0
-  },
-  {
     "date": "2017-08-30",
     "uClose": 166.33,
     "uOpen": 165.6,
@@ -8549,5 +8532,22 @@
     "changePercent": 0.671,
     "label": "Aug 28, 19",
     "changeOverTime": 0.272285
+  },
+  {
+      "date": "2017-08-29",
+      "uClose": 163.05,
+      "uOpen": 166.1,
+      "uHigh": 168.31,
+      "uLow": 161,
+      "uVolume": 30184771,
+      "close": 170.64,
+      "open": 164.6,
+      "high": 170.95,
+      "low": 164,
+      "volume": 30067252,
+      "change": 0,
+      "changePercent": 0,
+      "label": "Aug 29, 17",
+      "changeOverTime": 0
   }
 ]
