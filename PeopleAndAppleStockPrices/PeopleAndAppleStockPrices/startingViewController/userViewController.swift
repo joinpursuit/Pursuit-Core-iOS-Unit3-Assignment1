@@ -40,7 +40,14 @@ class ViewController: UIViewController {
             user.name.first.lowercased().contains(userSearchTerm.lowercased())
             })
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let jokeDetailVC = segue.destination as? userDetailViewController else {
+            fatalError("Unexpected segue")
+        }
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow
+            else { fatalError("No row selected") }
+        jokeDetailVC.userInfo = filteredPersonArr[selectedIndexPath.row]
+    }
     private func loadData() {
         UserBase.getUser{(result) in
             DispatchQueue.main.async {
@@ -54,14 +61,6 @@ class ViewController: UIViewController {
         }
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let jokeDetailVC = segue.destination as? userDetailViewController else {
-            fatalError("Unexpected segue")
-        }
-        guard let selectedIndexPath = tableView.indexPathForSelectedRow
-            else { fatalError("No row selected") }
-        jokeDetailVC.userInfo = filteredPersonArr[selectedIndexPath.row]
-    }
  
 }
 
@@ -72,7 +71,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userTable")
         cell?.textLabel?.text = filteredPersonArr[indexPath.row].name.FullName()
-        cell?.detailTextLabel?.text = user[indexPath.row].name.title
+        cell?.detailTextLabel?.text = user[indexPath.row].location.city
         return cell!
     }
 }
