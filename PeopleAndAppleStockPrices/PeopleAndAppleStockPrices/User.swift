@@ -21,7 +21,7 @@ struct User: Codable {
         private let firstName: String
         private let lastName: String
         var fullName: String {
-            return "\(firstName) \(lastName)"
+            return "\(firstName) \(lastName)".capitalized
         }
         
         private enum CodingKeys: String, CodingKey {
@@ -40,9 +40,9 @@ struct User: Codable {
     }
     
     static func getUsers() -> [User] {
+
         guard let fileName = Bundle.main.path(forResource: "userinfo", ofType: "json") else {fatalError()}
-        guard let fileURL = URL(string: fileName) else {fatalError()}
-        
+        let fileURL = URL(fileURLWithPath: fileName)
         do {
             let data = try Data(contentsOf: fileURL)
             let userWrapper = try JSONDecoder().decode(UserWrapper.self, from: data)
