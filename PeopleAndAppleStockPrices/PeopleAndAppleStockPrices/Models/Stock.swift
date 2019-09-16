@@ -15,21 +15,13 @@ struct Stock: Codable {
         return date.components(separatedBy: "-")[0]
     }
     
-//    func getStock() -> [String] {
-//
-//    }
-    
     private enum CodingKeys: String, CodingKey {
-        case date, opening = "open", closing = "close"
+        case date
+        case opening = "open"
+        case closing = "close"
     }
     
-    static func getStocks(from data: Data) -> [Stock] {
-        do {
-            let stocks = try
-                JSONDecoder().decode([Stock].self, from: data)
-            return stocks
-        } catch {
-            fatalError("Decoding Error")
-        }
-    }
+    
+    
+    
 }

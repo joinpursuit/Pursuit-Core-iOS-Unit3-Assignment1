@@ -12,14 +12,48 @@
         <!--Stocks View Controller-->
         <scene sceneID="efY-5E-W3P">
             <objects>
-                <viewController id="jED-kJ-Z0g" userLabel="Stocks View Controller" sceneMemberID="viewController">
+                <viewController id="jED-kJ-Z0g" userLabel="Stocks View Controller" customClass="StocksViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="80m-az-9re">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xZS-X5-F9I">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StockCell" textLabel="cZL-Er-Fu5" style="IBUITableViewCellStyleDefault" id="pyJ-iE-Fzh">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pyJ-iE-Fzh" id="chY-Ht-R3z">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cZL-Er-Fu5">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xZS-X5-F9I" firstAttribute="leading" secondItem="3dQ-6f-cms" secondAttribute="leading" id="0AD-qG-LbM"/>
+                            <constraint firstItem="xZS-X5-F9I" firstAttribute="top" secondItem="3dQ-6f-cms" secondAttribute="top" id="gul-dX-0Sz"/>
+                            <constraint firstItem="3dQ-6f-cms" firstAttribute="trailing" secondItem="xZS-X5-F9I" secondAttribute="trailing" id="hJ8-1A-bNf"/>
+                            <constraint firstItem="3dQ-6f-cms" firstAttribute="bottom" secondItem="xZS-X5-F9I" secondAttribute="bottom" id="xRO-Ue-yp1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3dQ-6f-cms"/>
                     </view>
                     <navigationItem key="navigationItem" id="Pmt-XR-wBj"/>
+                    <connections>
+                        <outlet property="stocksTableView" destination="xZS-X5-F9I" id="ubQ-zP-GrW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFw-vF-Hxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
