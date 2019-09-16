@@ -3,13 +3,14 @@ import UIKit
 class StocksViewController: UIViewController {
     
     var stocks = [Stock]()
-    
+    var sectionNames = [String]()
     @IBOutlet weak var stocksTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureStocksTableView()
         getStocks()
+        getSectionNames()
     }
     
     private func configureStocksTableView() {
@@ -17,7 +18,7 @@ class StocksViewController: UIViewController {
         stocksTableView.dataSource = self
     }
     
-    private func getStocks() {
+    func getStocks() {
         guard let fileName = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else {
             fatalError()
         }
@@ -31,26 +32,41 @@ class StocksViewController: UIViewController {
         }
     }
     
+    func getSectionNames() {
+        for stock in stocks {
+            if !sectionNames.contains(stock.header) {
+                sectionNames.append(stock.header)
+            }
+        }
+    }
+    
+    func stockBySection(sectionNumber: Int) -> [Stock] {
+        return stocks.filter({$0.header == sectionNames[sectionNumber]})
+    }
 }
 
 extension StocksViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionNames.count
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "TO-DO"
+        return sectionNames[section]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stocks.count
+        return stockBySection(sectionNumber: section).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = stocksTableView.dequeueReusableCell(withIdentifier: "StockCell", for: indexPath)
-        let stock = stocks[indexPath.row]
+        let stockInSection = stockBySection(sectionNumber: indexPath.section)
+        let stock = stockInSection[indexPath.row]
         
-        cell.textLabel?.text = "\(stock.opening)"
+        cell.textLabel?.text = "\(stock.date)"
+        cell.detailTextLabel?.text = "\(stock.opening)"
         
         return cell
     }
-    
-    
 }

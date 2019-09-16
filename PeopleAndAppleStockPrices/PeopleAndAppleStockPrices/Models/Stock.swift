@@ -1,7 +1,7 @@
 import Foundation
 
 struct Stock: Codable {
-    private let date: String
+    let date: String
     let opening: Double
     let closing: Double
     
@@ -15,13 +15,13 @@ struct Stock: Codable {
         return date.components(separatedBy: "-")[0]
     }
     
+    var header: String {
+        return "\(year) \(month)"
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case date
         case opening = "open"
         case closing = "close"
     }
-    
-    
-    
-    
 }
