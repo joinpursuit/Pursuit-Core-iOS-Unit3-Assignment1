@@ -44,6 +44,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="741-Tu-EPF" kind="show" identifier="StockDetail" id="h7a-sA-sg8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -65,6 +68,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFw-vF-Hxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="526.08695652173913" y="278.57142857142856"/>
+        </scene>
+        <!--Stock Detail View Controller-->
+        <scene sceneID="VCl-Ub-E8f">
+            <objects>
+                <viewController id="741-Tu-EPF" customClass="StockDetailViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4wf-4C-w9U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZq-Z2-Nyo">
+                                <rect key="frame" x="82" y="266" width="250" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wk-U7-9pv">
+                                <rect key="frame" x="127" y="594" width="160" height="19.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jOl-VG-7Ij">
+                                <rect key="frame" x="82" y="325.5" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="6CL-TU-n2t"/>
+                                    <constraint firstAttribute="height" constant="250" id="ejA-pe-1kj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Closing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvL-IW-nh7">
+                                <rect key="frame" x="127" y="623" width="160" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EZq-Z2-Nyo" firstAttribute="top" secondItem="BBE-DA-Viq" secondAttribute="top" constant="178" id="HDy-Cf-wKZ"/>
+                            <constraint firstItem="jOl-VG-7Ij" firstAttribute="centerY" secondItem="BBE-DA-Viq" secondAttribute="centerY" id="PlP-Jm-M8M"/>
+                            <constraint firstItem="jOl-VG-7Ij" firstAttribute="centerX" secondItem="BBE-DA-Viq" secondAttribute="centerX" id="Q3S-RE-y72"/>
+                            <constraint firstItem="EZq-Z2-Nyo" firstAttribute="trailing" secondItem="jOl-VG-7Ij" secondAttribute="trailing" id="bFm-yf-v1K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BBE-DA-Viq"/>
+                    </view>
+                    <connections>
+                        <outlet property="closingOutlet" destination="rvL-IW-nh7" id="I8h-hm-zTr"/>
+                        <outlet property="dateOutlet" destination="EZq-Z2-Nyo" id="kOj-BA-8Td"/>
+                        <outlet property="imageOutlet" destination="jOl-VG-7Ij" id="FiB-Bf-hCc"/>
+                        <outlet property="openingOutlet" destination="4Wk-U7-9pv" id="S8i-qT-kLd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dm3-Bt-5Ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1386.9565217391305" y="278.57142857142856"/>
         </scene>
         <!--Users View Controller-->
         <scene sceneID="QNW-Do-yMi">

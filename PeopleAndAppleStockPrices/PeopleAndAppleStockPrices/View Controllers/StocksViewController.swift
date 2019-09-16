@@ -72,4 +72,24 @@ extension StocksViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else {
+            fatalError("No identifier on segue")
+        }
+        
+        switch segueIdentifier {
+        case "StockDetail":
+            
+            guard let stockDetail = segue.destination as? StockDetailViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = stocksTableView.indexPathForSelectedRow else {
+                fatalError("No row was selected")
+            }
+            stockDetail.stock = stocks[selectedIndexPath.row]
+        default:
+            fatalError("Unexpected segue identifier")
+        }
+    }
 }

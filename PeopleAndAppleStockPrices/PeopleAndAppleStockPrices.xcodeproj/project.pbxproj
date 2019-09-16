@@ -17,6 +17,7 @@
 		EC8AA8E623212F340001C6D4 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8AA8E523212F340001C6D4 /* UsersViewController.swift */; };
 		EC8AA8E8232133300001C6D4 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8AA8E7232133300001C6D4 /* UserDetailViewController.swift */; };
 		EC99E7A7232FDA12005027BA /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC99E7A6232FDA12005027BA /* StocksViewController.swift */; };
+		EC99E7AB2330108B005027BA /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC99E7AA2330108B005027BA /* StockDetailViewController.swift */; };
 		EC9DFBCB2326AF7B00664018 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9DFBCA2326AF7B00664018 /* Stock.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		EC8AA8E523212F340001C6D4 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		EC8AA8E7232133300001C6D4 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		EC99E7A6232FDA12005027BA /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
+		EC99E7AA2330108B005027BA /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		EC9DFBCA2326AF7B00664018 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				EC8AA8E523212F340001C6D4 /* UsersViewController.swift */,
 				EC8AA8E7232133300001C6D4 /* UserDetailViewController.swift */,
 				EC99E7A6232FDA12005027BA /* StocksViewController.swift */,
+				EC99E7AA2330108B005027BA /* StockDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				EC2D9072231F5E26006C60BE /* User.swift in Sources */,
 				EC8AA8E623212F340001C6D4 /* UsersViewController.swift in Sources */,
+				EC99E7AB2330108B005027BA /* StockDetailViewController.swift in Sources */,
 				EC8AA8E8232133300001C6D4 /* UserDetailViewController.swift in Sources */,
 				EC99E7A7232FDA12005027BA /* StocksViewController.swift in Sources */,
 				EC9DFBCB2326AF7B00664018 /* Stock.swift in Sources */,
