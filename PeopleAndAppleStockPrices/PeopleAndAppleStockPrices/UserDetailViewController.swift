@@ -25,8 +25,8 @@ class UserDetailViewController: UIViewController {
     
     private func loadUserData() {
         userImage.image = UIImage(named: "profileImage")
-        userName.text = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
-        userLocation.text = user.location.city.capitalized
+        userName.text = user.name.fullName.capitalized
+        userLocation.text = user.location.address.capitalized
         userEmail.text = user.email
         userCell.text = user.cell
         userGender.text = user.gender.capitalized

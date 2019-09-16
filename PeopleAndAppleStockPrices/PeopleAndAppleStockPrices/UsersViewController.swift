@@ -1,17 +1,31 @@
-//
-//  UsersViewController.swift
-//  PeopleAndAppleStockPrices
-//
-//  Created by Alexander George Legaspi on 9/5/19.
-//  Copyright © 2019 Pursuit. All rights reserved.
-//
-
 import UIKit
 
 class UsersViewController: UIViewController {
     
-    var users = [User]()
+    var users = [User]() {
+        didSet {
+            usersTableView.reloadData()
+        }
+    }
+    
     @IBOutlet weak var usersTableView: UITableView!
+    
+    // SEARCH BAR
+    @IBOutlet weak var userSearchBar: UISearchBar!
+    
+    var searchedText = "" {
+        didSet {
+            usersTableView.reloadData()
+        }
+    }
+    
+    var filteredUsers: [User] {
+        guard searchedText != "" else {
+            return users
+        }
+        return users.filter{$0.name.fullName.lowercased().contains(searchedText.lowercased())}
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +36,7 @@ class UsersViewController: UIViewController {
     private func configureTableView() {
         usersTableView.delegate = self
         usersTableView.dataSource = self
+        userSearchBar.delegate = self
     }
     
     private func loadData() {
@@ -43,13 +58,13 @@ class UsersViewController: UIViewController {
 
 extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return filteredUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = usersTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
         
-        let user = users[indexPath.row]
+        let user = filteredUsers[indexPath.row]
         
         cell.textLabel?.text = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
         cell.detailTextLabel?.text = user.location.city.capitalized
@@ -71,10 +86,18 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
             guard let selectedIndexPath = usersTableView.indexPathForSelectedRow else {
                 fatalError("No row was selected")
             }
-            userDetail.user = users[selectedIndexPath.row]
+            userDetail.user = filteredUsers[selectedIndexPath.row]
         default:
             fatalError("Unexpected segue identifier")
         }
     }
-    
 }
+
+extension UsersViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchedText = userSearchBar.text!
+    }
+}
+
+
+

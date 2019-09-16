@@ -29,8 +29,15 @@ struct User: Codable {
 struct Name: Codable {
     let first: String
     let last: String
+    var fullName: String {
+        return "\(first) \(last)"
+    }
 }
 
 struct Location: Codable {
+    let street: String
     let city: String
+    var address: String {
+        return "\(street), \(city)"
+    }
 }

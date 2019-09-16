@@ -89,6 +89,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="s1e-sH-Gdh"/>
                     <connections>
+                        <outlet property="userSearchBar" destination="wQK-CT-cbO" id="dWw-dq-qrB"/>
                         <outlet property="usersTableView" destination="2hW-aC-IO8" id="5N0-0T-P6J"/>
                     </connections>
                 </viewController>
