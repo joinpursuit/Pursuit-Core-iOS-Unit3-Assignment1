@@ -10,11 +10,11 @@ class StockDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        backgroundColor()
         dateOutlet.text = "\(stock.date)"
         imageOutlet.image = UIImage(named: generateImage())
-        openingOutlet.text = "Opening \(stock.opening)"
-        closingOutlet.text = "Closing \(stock.closing)"
+        openingOutlet.text = "Opening $\(stock.opening)"
+        closingOutlet.text = "Closing $\(stock.closing)"
         
     }
     
@@ -23,6 +23,14 @@ class StockDetailViewController: UIViewController {
             return "thumbsDown"
         } else {
             return "thumbsUp"
+        }
+    }
+    
+    func backgroundColor() {
+        if stock.closing < stock.opening {
+            self.view.backgroundColor = .red
+        } else {
+            self.view.backgroundColor = .green
         }
     }
 
