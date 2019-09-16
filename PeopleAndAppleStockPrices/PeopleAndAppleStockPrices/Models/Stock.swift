@@ -15,6 +15,7 @@ struct Stock: Codable {
         return date.components(separatedBy: "-")[0]
     }
     
+    // header for section in Table View
     var header: String {
         return "\(year) \(month)"
     }

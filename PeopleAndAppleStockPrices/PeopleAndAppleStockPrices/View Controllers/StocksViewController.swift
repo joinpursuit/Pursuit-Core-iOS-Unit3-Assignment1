@@ -18,6 +18,7 @@ class StocksViewController: UIViewController {
         stocksTableView.dataSource = self
     }
     
+    // generate and array of Stocks via local JSON file
     func getStocks() {
         guard let fileName = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else {
             fatalError()
@@ -32,6 +33,7 @@ class StocksViewController: UIViewController {
         }
     }
     
+    // add all unique headers to the sectionNames array
     func getSectionNames() {
         for stock in stocks {
             if !sectionNames.contains(stock.header) {
@@ -40,6 +42,7 @@ class StocksViewController: UIViewController {
         }
     }
     
+    // sort each stock according to corresponding sectionNames.
     func stockBySection(sectionNumber: Int) -> [Stock] {
         return stocks.filter({$0.header == sectionNames[sectionNumber]})
     }
