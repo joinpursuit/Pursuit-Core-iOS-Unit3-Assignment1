@@ -14,6 +14,17 @@ struct Stocks: Codable {
     let open: Double
     let close: Double
     
+    var day: String {
+       return date.components(separatedBy:"-")[2]
+    }
+    var month: String {
+        return date.components(separatedBy:"-")[1]
+    }
+    var year: String {
+       return  date.components(separatedBy:"-")[0]
+    }
+    
+
  func changeBackgroundColor() -> UIColor {
         if open < close {
             return UIColor.green
