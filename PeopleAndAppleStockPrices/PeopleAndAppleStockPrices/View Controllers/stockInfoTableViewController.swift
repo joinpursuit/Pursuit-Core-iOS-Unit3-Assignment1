@@ -10,63 +10,59 @@ import UIKit
 
 class stockInfoTableViewController: UITableViewController {
 
+    //MARK: -- Properties
     
-    var stocks = [stockInfo]() {
+    var stocks = [StocksMonthAndYear]() {
         didSet {
             self.tableView.reloadData()
         }
     }
     
+    //MARK: -- Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
     }
     
     private func loadData() {
-        guard let pathToJSONFile = Bundle.main.path(forResource: "applstockinfo", ofType: ".json") else {
-            print("Error finding JSON file")
-            return
-        }
-        
-        let url =  URL(fileURLWithPath: pathToJSONFile)
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let stocksFromJSON = try stockInfo.getStocks(from: data)
-            stocks = stocksFromJSON
-        } catch {
-            print("could not decode data")
-        }
+        stocks = StockInfo.stocksSorted()
     }
-        
+    
     
 
-    // MARK: - Table view data source
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return stocks.count
-        }
-        
-        
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let stockStuff = stocks[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
-            cell.textLabel?.text = stockStuff.date
-            cell.detailTextLabel?.text = stockStuff.stockPrice.description
-            // Configure the cell...
-            
-            return cell
-        }
+    // MARK: -- Table view data source
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stocks[section].stocks.count
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return stocks.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let stock = stocks[section]
+        return "\(stock.month) \(stock.year). AVG: $\(String(format:"%.2f", stock.getMonthAverage()))"
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let stock = stocks[indexPath.section].stocks[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
+        cell.textLabel?.text = "\(stock.month) \(stock.day), \(stock.year)"
+        cell.detailTextLabel?.text = "$\(stock.open.description)"
+        return cell
+    }
     
 
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let location = segue.destination as? StocksDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
                 return
             }
-        location.stocks = stocks[indexPath.row]
+        
+        location.stock = stocks[indexPath.section].stocks[indexPath.row]
     }
     
 }
+

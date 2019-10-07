@@ -9,17 +9,32 @@
 import UIKit
 
 class UserDetailViewController: UIViewController {
-    //MARK: -- Properties
+    //MARK: -- Outlets
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    //MARK: -- Properties
     var users: User!
     
-    func setUpView() {
+    //MARK: -- Functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpView()
+    }
+    
+    private func setUpView() {
+        emailLabel.text = users.email
+        phoneLabel.text = users.cell
+        cityLabel.text = users.location.city.capitalized
+        nameLabel.text = "\(users.name.firstName.capitalized) \(users.name.lastName.capitalized)"
+        
         let urlStr = users.picture.medium
+        
         guard let url = URL(string: urlStr) else { return }
+        
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 let data = try Data(contentsOf: url)
@@ -31,16 +46,5 @@ class UserDetailViewController: UIViewController {
                 print("could not load image")
             }
         }
-        emailLabel.text = users.email
-        phoneLabel.text = users.cell
-        cityLabel.text = users.location.city.capitalized
-        nameLabel.text = "\(users.name.firstName.capitalized) \(users.name.lastName.capitalized)"
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpView()
-    }
-    
-
 }

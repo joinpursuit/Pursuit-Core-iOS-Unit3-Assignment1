@@ -15,10 +15,12 @@ class StocksDetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var openingPriceLabel: UILabel!
     @IBOutlet weak var closingPriceLabel: UILabel!
-    var stocks: stockInfo!
+    var stock: StockInfo!
     
     
     func setUpView(){
+        
+        
         let urlStr = "https://si.wsj.net/public/resources/images/IF-AC796_JUNKST_GR_20161103121700.jpg"
         guard let url = URL(string: urlStr) else { return }
         DispatchQueue.global(qos: .userInitiated).async {
@@ -32,9 +34,9 @@ class StocksDetailViewController: UIViewController {
                 print("could not load image")
             }
         }
-        dateLabel.text = stocks.date
-        openingPriceLabel.text = stocks.open.description
-        closingPriceLabel.text = stocks.close.description
+        dateLabel.text = "\(stock.month) \(stock.day), \(stock.year)"
+        openingPriceLabel.text = "Open: $\(stock.open.description)"
+        closingPriceLabel.text = "Close: $\(stock.close.description)"
         
             
     }

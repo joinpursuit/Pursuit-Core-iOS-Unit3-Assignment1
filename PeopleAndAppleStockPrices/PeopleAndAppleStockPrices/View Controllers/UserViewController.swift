@@ -10,19 +10,12 @@ import UIKit
 
 class UserViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        userTableView.dataSource = self
-        userSearchBar.delegate = self 
-        loadData()
-    }
     
-    
-    //MARK: -- Properties
+    //MARK: -- Outlets
     @IBOutlet weak var userTableView: UITableView!
     @IBOutlet weak var userSearchBar: UISearchBar!
     
-    
+    //MARK: -- Properties
     var users = [User]() {
         didSet {
             userTableView.reloadData()
@@ -44,6 +37,13 @@ class UserViewController: UIViewController {
         return users.filter { $0.name.fullName.lowercased().contains(searchedText.lowercased())}
     }
     
+    //MARK: -- Functions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userTableView.dataSource = self
+        userSearchBar.delegate = self
+        loadData()
+    }
     
     private func loadData() {
         guard let pathToJSONFile = Bundle.main.path(forResource: "userinfo", ofType: ".json") else {
@@ -63,14 +63,9 @@ class UserViewController: UIViewController {
         
     }
     
-    
-    // MARK: - Table view data source
-    
-    
-    
+
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let location = segue.destination as? UserDetailViewController, let indexPath = userTableView.indexPathForSelectedRow else {
             return
@@ -80,9 +75,10 @@ class UserViewController: UIViewController {
 
 }
 
+//MARK: -- Extensions
+
 extension UserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return filteredUsers.count
     }
     
