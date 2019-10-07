@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D280A2D234BD22200696816 /* PeopleAndAppleStockPricesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D280A2C234BD22200696816 /* PeopleAndAppleStockPricesTests.swift */; };
+		1D280A35234BDEE900696816 /* stockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA435F82322F5BA00E23410 /* stockInfo.swift */; };
 		1DA435F02322D55E00E23410 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA435EF2322D55E00E23410 /* UserInfo.swift */; };
 		1DA435F22322D8B300E23410 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA435F12322D8B300E23410 /* ErrorHandling.swift */; };
 		1DA435F92322F5BA00E23410 /* stockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA435F82322F5BA00E23410 /* stockInfo.swift */; };
@@ -256,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D280A35234BDEE900696816 /* stockInfo.swift in Sources */,
 				1D280A2D234BD22200696816 /* PeopleAndAppleStockPricesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

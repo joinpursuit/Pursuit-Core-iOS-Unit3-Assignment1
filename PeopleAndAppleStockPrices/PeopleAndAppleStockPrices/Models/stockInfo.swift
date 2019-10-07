@@ -42,7 +42,8 @@ struct StockInfo: Codable {
             let stock = try JSONDecoder().decode([StockInfo].self, from: data)
             return stock
         } catch {
-            fatalError("There was an error decoding your stocks JSON file")
+            print(error)
+            return []
         }
     }
     

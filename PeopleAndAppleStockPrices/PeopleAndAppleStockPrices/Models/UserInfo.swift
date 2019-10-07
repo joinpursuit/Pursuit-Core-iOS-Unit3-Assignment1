@@ -19,12 +19,18 @@ struct User: Codable {
     let email: String
     let cell: String
     
-    static func getUser(from data: Data) throws -> [User] {
+    static func getUser() -> [User] {
+        guard let filePath = Bundle.main.path(forResource: "userinfo", ofType: "json") else {
+            fatalError("ERROR: could not find path to JSON file, check for correct naming")
+        }
+        let url = URL(fileURLWithPath: filePath)
         do {
+            let data = try Data(contentsOf: url)
             let user = try JSONDecoder().decode(UserWrapper.self, from: data)
             return user.results
         } catch {
-            throw ErrorHandling.decodingError
+            print(error)
+            return []
         }
     }
 }

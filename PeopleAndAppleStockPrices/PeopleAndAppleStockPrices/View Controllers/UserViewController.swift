@@ -46,20 +46,7 @@ class UserViewController: UIViewController {
     }
     
     private func loadData() {
-        guard let pathToJSONFile = Bundle.main.path(forResource: "userinfo", ofType: ".json") else {
-            print("Error finding JSON file")
-            return
-        }
-        
-        let url =  URL(fileURLWithPath: pathToJSONFile)
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let usersFromJSON = try User.getUser(from: data)
-            users = usersFromJSON
-        } catch {
-            print("could not decode data")
-        }
+        users = User.getUser()
         
     }
     
