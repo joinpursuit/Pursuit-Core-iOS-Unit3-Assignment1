@@ -14,7 +14,15 @@ struct Stock: Codable {
     let date: String
     let uOpen: Double
     let uClose: Double
-    
+    var day: String {
+        return date.components(separatedBy: "-")[2]
+    }
+    var month: String {
+        return date.components(separatedBy: "-")[1]
+    }
+    var year: String {
+        return date.components(separatedBy: "-")[0]
+    }
     
     
     
