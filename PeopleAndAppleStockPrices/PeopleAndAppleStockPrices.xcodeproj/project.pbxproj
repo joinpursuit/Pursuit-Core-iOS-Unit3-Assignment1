@@ -14,14 +14,13 @@
 		577E5BF621BA8BA20083EB97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF421BA8BA20083EB97 /* LaunchScreen.storyboard */; };
 		577E5BFF21BA8C3B0083EB97 /* userinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BFE21BA8C3B0083EB97 /* userinfo.json */; };
 		577E5C0121BA8C5C0083EB97 /* applstockinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5C0021BA8C5C0083EB97 /* applstockinfo.json */; };
-		6B3704822321870600ED2D41 /* stocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3704812321870600ED2D41 /* stocksViewController.swift */; };
 		6B37048C232199A500ED2D41 /* PeopleAndAppleStockPricesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37048B232199A500ED2D41 /* PeopleAndAppleStockPricesTests.swift */; };
 		6B3704932321AA8A00ED2D41 /* contactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF2364E231FF6EA00533960 /* contactsModel.swift */; };
 		6B3704952321BFF600ED2D41 /* stocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3704942321BFF600ED2D41 /* stocksModel.swift */; };
 		6B3704972321D00D00ED2D41 /* stockDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3704962321D00D00ED2D41 /* stockDetailedViewController.swift */; };
 		6B3704CF2322B41C00ED2D41 /* imageble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3704CE2322B41C00ED2D41 /* imageble.swift */; };
+		6BAF83172356240300CEB3EF /* StocksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAF83162356240300CEB3EF /* StocksTableViewController.swift */; };
 		6BF2364F231FF6EA00533960 /* contactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF2364E231FF6EA00533960 /* contactsModel.swift */; };
-		6BF23652231FF84500533960 /* ContactsApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF23651231FF84500533960 /* ContactsApiClient.swift */; };
 		6BF71798232056EA00C4617C /* userDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF71797232056EA00C4617C /* userDetailedViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,15 +44,14 @@
 		577E5BF721BA8BA20083EB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577E5BFE21BA8C3B0083EB97 /* userinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userinfo.json; sourceTree = "<group>"; };
 		577E5C0021BA8C5C0083EB97 /* applstockinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applstockinfo.json; sourceTree = "<group>"; };
-		6B3704812321870600ED2D41 /* stocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stocksViewController.swift; sourceTree = "<group>"; };
 		6B370489232199A400ED2D41 /* PeopleAndAppleStockPricesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeopleAndAppleStockPricesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B37048B232199A500ED2D41 /* PeopleAndAppleStockPricesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAndAppleStockPricesTests.swift; sourceTree = "<group>"; };
 		6B37048D232199A500ED2D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B3704942321BFF600ED2D41 /* stocksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stocksModel.swift; sourceTree = "<group>"; };
 		6B3704962321D00D00ED2D41 /* stockDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stockDetailedViewController.swift; sourceTree = "<group>"; };
 		6B3704CE2322B41C00ED2D41 /* imageble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageble.swift; sourceTree = "<group>"; };
+		6BAF83162356240300CEB3EF /* StocksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StocksTableViewController.swift; path = "../../../../../Downloads/people-and-stocks-debugging-master 3/PeopleAndAppleStockPrices/PeopleAndAppleStockPrices/StocksTableViewController.swift"; sourceTree = "<group>"; };
 		6BF2364E231FF6EA00533960 /* contactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsModel.swift; sourceTree = "<group>"; };
-		6BF23651231FF84500533960 /* ContactsApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsApiClient.swift; sourceTree = "<group>"; };
 		6BF71797232056EA00C4617C /* userDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDetailedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				577E5BED21BA8BA10083EB97 /* ViewController.swift */,
-				6B3704812321870600ED2D41 /* stocksViewController.swift */,
+				6BAF83162356240300CEB3EF /* StocksTableViewController.swift */,
 				6B3704D22322E4E500ED2D41 /* Detailed ViewControllers */,
 			);
 			path = "View Controllers";
@@ -182,7 +180,6 @@
 		6BF23653231FF84D00533960 /* ApiClients */ = {
 			isa = PBXGroup;
 			children = (
-				6BF23651231FF84500533960 /* ContactsApiClient.swift */,
 				6B3704D02322E4B300ED2D41 /* StoryBoard */,
 			);
 			path = ApiClients;
@@ -293,13 +290,12 @@
 			files = (
 				6BF71798232056EA00C4617C /* userDetailedViewController.swift in Sources */,
 				6B3704972321D00D00ED2D41 /* stockDetailedViewController.swift in Sources */,
+				6BAF83172356240300CEB3EF /* StocksTableViewController.swift in Sources */,
 				577E5BEE21BA8BA10083EB97 /* ViewController.swift in Sources */,
 				6BF2364F231FF6EA00533960 /* contactsModel.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
-				6BF23652231FF84500533960 /* ContactsApiClient.swift in Sources */,
 				6B3704952321BFF600ED2D41 /* stocksModel.swift in Sources */,
 				6B3704CF2322B41C00ED2D41 /* imageble.swift in Sources */,
-				6B3704822321870600ED2D41 /* stocksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
