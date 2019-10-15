@@ -240,7 +240,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ayp-Eb-FkO" detailTextLabel="RXm-fS-WkK" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="qd2-ch-UnY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stockCell" textLabel="ayp-Eb-FkO" detailTextLabel="RXm-fS-WkK" rowHeight="115" style="IBUITableViewCellStyleSubtitle" id="qd2-ch-UnY">
                                         <rect key="frame" x="0.0" y="28" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qd2-ch-UnY" id="Kv6-MS-tce">

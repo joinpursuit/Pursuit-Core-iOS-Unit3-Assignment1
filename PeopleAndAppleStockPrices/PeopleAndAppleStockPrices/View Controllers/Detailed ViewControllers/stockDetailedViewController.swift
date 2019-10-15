@@ -18,6 +18,8 @@ class stockDetailedViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     var currentStockinfo: Stock!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dateLabel.text = currentStockinfo.date

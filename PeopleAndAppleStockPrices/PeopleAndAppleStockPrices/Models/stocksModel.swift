@@ -33,6 +33,8 @@ struct Stock: Codable {
                fatalError()
            }
        }
+    
+
  
     
     static func getStocksSortedByMonthAndYear() -> [StocksByMonthAndYear] {
@@ -84,10 +86,12 @@ struct StocksByMonthAndYear {
     let month: String
     let year: String
     let stocks: [Stock]
+
     init(month: String, year: String, stocks: [Stock]) {
         self.month = month
         self.year = year
         self.stocks = stocks.sorted()
+     
     }
     
     func getMonthAverage() -> Double {
