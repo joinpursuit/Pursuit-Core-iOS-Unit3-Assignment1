@@ -18,7 +18,18 @@
 		F1BDA8502396CEEC00E97927 /* userInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA84F2396CEEC00E97927 /* userInfoModel.swift */; };
 		F1BDA8522396D4FC00E97927 /* Bundle+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA8512396D4FC00E97927 /* Bundle+extensions.swift */; };
 		F1BDA8542396E5E200E97927 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA8532396E5E200E97927 /* String+extensions.swift */; };
+		F1BDA88E2397174A00E97927 /* PeopleAndAppleStockPricesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA88D2397174A00E97927 /* PeopleAndAppleStockPricesTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1BDA8902397174A00E97927 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 577E5BE021BA8BA10083EB97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 577E5BE721BA8BA10083EB97;
+			remoteInfo = PeopleAndAppleStockPrices;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,10 +45,20 @@
 		F1BDA84F2396CEEC00E97927 /* userInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfoModel.swift; sourceTree = "<group>"; };
 		F1BDA8512396D4FC00E97927 /* Bundle+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extensions.swift"; sourceTree = "<group>"; };
 		F1BDA8532396E5E200E97927 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
+		F1BDA88B2397174A00E97927 /* PeopleAndAppleStockPricesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeopleAndAppleStockPricesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1BDA88D2397174A00E97927 /* PeopleAndAppleStockPricesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAndAppleStockPricesTests.swift; sourceTree = "<group>"; };
+		F1BDA88F2397174A00E97927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		577E5BE521BA8BA10083EB97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BDA8882397174A00E97927 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				577E5BEA21BA8BA10083EB97 /* PeopleAndAppleStockPrices */,
+				F1BDA88C2397174A00E97927 /* PeopleAndAppleStockPricesTests */,
 				577E5BE921BA8BA10083EB97 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */,
+				F1BDA88B2397174A00E97927 /* PeopleAndAppleStockPricesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +121,15 @@
 			path = json;
 			sourceTree = "<group>";
 		};
+		F1BDA88C2397174A00E97927 /* PeopleAndAppleStockPricesTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDA88D2397174A00E97927 /* PeopleAndAppleStockPricesTests.swift */,
+				F1BDA88F2397174A00E97927 /* Info.plist */,
+			);
+			path = PeopleAndAppleStockPricesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,18 +150,40 @@
 			productReference = 577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F1BDA88A2397174A00E97927 /* PeopleAndAppleStockPricesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1BDA8942397174A00E97927 /* Build configuration list for PBXNativeTarget "PeopleAndAppleStockPricesTests" */;
+			buildPhases = (
+				F1BDA8872397174A00E97927 /* Sources */,
+				F1BDA8882397174A00E97927 /* Frameworks */,
+				F1BDA8892397174A00E97927 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1BDA8912397174A00E97927 /* PBXTargetDependency */,
+			);
+			name = PeopleAndAppleStockPricesTests;
+			productName = PeopleAndAppleStockPricesTests;
+			productReference = F1BDA88B2397174A00E97927 /* PeopleAndAppleStockPricesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		577E5BE021BA8BA10083EB97 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Pursuit;
 				TargetAttributes = {
 					577E5BE721BA8BA10083EB97 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					F1BDA88A2397174A00E97927 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 577E5BE721BA8BA10083EB97;
 					};
 				};
 			};
@@ -147,6 +201,7 @@
 			projectRoot = "";
 			targets = (
 				577E5BE721BA8BA10083EB97 /* PeopleAndAppleStockPrices */,
+				F1BDA88A2397174A00E97927 /* PeopleAndAppleStockPricesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -161,6 +216,13 @@
 				577E5BF621BA8BA20083EB97 /* LaunchScreen.storyboard in Resources */,
 				577E5BF321BA8BA20083EB97 /* Assets.xcassets in Resources */,
 				577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BDA8892397174A00E97927 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +242,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1BDA8872397174A00E97927 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BDA88E2397174A00E97927 /* PeopleAndAppleStockPricesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1BDA8912397174A00E97927 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 577E5BE721BA8BA10083EB97 /* PeopleAndAppleStockPrices */;
+			targetProxy = F1BDA8902397174A00E97927 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		577E5BEF21BA8BA10083EB97 /* Main.storyboard */ = {
@@ -354,6 +432,48 @@
 			};
 			name = Release;
 		};
+		F1BDA8922397174A00E97927 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZLWJATC87;
+				INFOPLIST_FILE = PeopleAndAppleStockPricesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BienbenidoAngeles.PeopleAndAppleStockPricesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PeopleAndAppleStockPrices.app/PeopleAndAppleStockPrices";
+			};
+			name = Debug;
+		};
+		F1BDA8932397174A00E97927 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZLWJATC87;
+				INFOPLIST_FILE = PeopleAndAppleStockPricesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BienbenidoAngeles.PeopleAndAppleStockPricesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PeopleAndAppleStockPrices.app/PeopleAndAppleStockPrices";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -371,6 +491,15 @@
 			buildConfigurations = (
 				577E5BFB21BA8BA20083EB97 /* Debug */,
 				577E5BFC21BA8BA20083EB97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1BDA8942397174A00E97927 /* Build configuration list for PBXNativeTarget "PeopleAndAppleStockPricesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1BDA8922397174A00E97927 /* Debug */,
+				F1BDA8932397174A00E97927 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
