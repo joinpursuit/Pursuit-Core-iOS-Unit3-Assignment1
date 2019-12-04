@@ -14,6 +14,7 @@
 		577E5BF621BA8BA20083EB97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF421BA8BA20083EB97 /* LaunchScreen.storyboard */; };
 		577E5BFF21BA8C3B0083EB97 /* userinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BFE21BA8C3B0083EB97 /* userinfo.json */; };
 		577E5C0121BA8C5C0083EB97 /* applstockinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5C0021BA8C5C0083EB97 /* applstockinfo.json */; };
+		F192E8EB23983DCC002D62A6 /* UIImageView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F192E8EA23983DCC002D62A6 /* UIImageView+extensions.swift */; };
 		F1BDA84E2396CECF00E97927 /* UserInfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA84D2396CECF00E97927 /* UserInfoDetailViewController.swift */; };
 		F1BDA8502396CEEC00E97927 /* userInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA84F2396CEEC00E97927 /* userInfoModel.swift */; };
 		F1BDA8522396D4FC00E97927 /* Bundle+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA8512396D4FC00E97927 /* Bundle+extensions.swift */; };
@@ -41,6 +42,7 @@
 		577E5BF721BA8BA20083EB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577E5BFE21BA8C3B0083EB97 /* userinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userinfo.json; sourceTree = "<group>"; };
 		577E5C0021BA8C5C0083EB97 /* applstockinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applstockinfo.json; sourceTree = "<group>"; };
+		F192E8EA23983DCC002D62A6 /* UIImageView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extensions.swift"; sourceTree = "<group>"; };
 		F1BDA84D2396CECF00E97927 /* UserInfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDetailViewController.swift; sourceTree = "<group>"; };
 		F1BDA84F2396CEEC00E97927 /* userInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfoModel.swift; sourceTree = "<group>"; };
 		F1BDA8512396D4FC00E97927 /* Bundle+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extensions.swift"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
 				F1BDA84F2396CEEC00E97927 /* userInfoModel.swift */,
 				F1BDA8512396D4FC00E97927 /* Bundle+extensions.swift */,
+				F192E8EA23983DCC002D62A6 /* UIImageView+extensions.swift */,
 				F1BDA8532396E5E200E97927 /* String+extensions.swift */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F192E8EB23983DCC002D62A6 /* UIImageView+extensions.swift in Sources */,
 				F1BDA8522396D4FC00E97927 /* Bundle+extensions.swift in Sources */,
 				F1BDA84E2396CECF00E97927 /* UserInfoDetailViewController.swift in Sources */,
 				577E5BEE21BA8BA10083EB97 /* UserInfoViewController.swift in Sources */,
