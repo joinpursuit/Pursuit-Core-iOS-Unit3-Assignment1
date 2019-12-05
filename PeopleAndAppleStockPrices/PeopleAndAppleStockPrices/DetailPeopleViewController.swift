@@ -9,22 +9,25 @@
 import UIKit
 
 class DetailPeopleViewController: UIViewController {
-
+    
+    @IBOutlet weak var defaultImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    var contactsOfUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI() {
+        guard let oneContact = contactsOfUser else {
+            fatalError("coule not get object from prepare for segue")
+        }
+        nameLabel.text = oneContact.name.first.capitalized + " " + oneContact.name.last.capitalized
+        emailLabel.text = oneContact.email
+        cityLabel.text = oneContact.location.city.capitalized
     }
-    */
-
 }

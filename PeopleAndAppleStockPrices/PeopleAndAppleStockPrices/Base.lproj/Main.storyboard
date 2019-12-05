@@ -128,6 +128,12 @@
                         <viewLayoutGuide key="safeArea" id="HHX-Jx-rHw"/>
                     </view>
                     <navigationItem key="navigationItem" id="0y7-Xc-uPj"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="wbY-Ny-Pb7" id="gea-Xf-eB7"/>
+                        <outlet property="defaultImage" destination="UyG-ge-AGa" id="4v7-zz-6Eb"/>
+                        <outlet property="emailLabel" destination="IBj-Wb-SEG" id="l87-Do-920"/>
+                        <outlet property="nameLabel" destination="1nf-Pu-X8t" id="l7Q-pp-hCg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHv-rP-kM9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

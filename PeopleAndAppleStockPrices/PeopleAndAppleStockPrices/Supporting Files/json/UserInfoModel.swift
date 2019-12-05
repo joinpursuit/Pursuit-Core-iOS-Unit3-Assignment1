@@ -44,7 +44,7 @@ struct Episode: Decodable {
 }
 
 extension UserData {
-    static func getUserData() -> [User] {
+    static func getUserData(from: Data) -> [User] {
         var users = [User]()
         
         guard let fileURL = Bundle.main.url(forResource: "userinfo", withExtension: "json") else {
@@ -61,6 +61,7 @@ extension UserData {
         return users
     }
 }
+
 
 
 

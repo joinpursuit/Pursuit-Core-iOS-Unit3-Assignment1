@@ -13,6 +13,9 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let filename = "userinfo"
+    let ext = "json"
+    
     var userContacts = [User]() {
         didSet {
             tableView.reloadData()
@@ -28,7 +31,8 @@ class PeopleViewController: UIViewController {
   }
 
     func loadData() {
-        userContacts = UserData.getUserData()
+        let data = Bundle.readRawJSONData(filename: filename, ext: ext)
+        userContacts = UserData.getUserData(from: data)
     }
      // func loadData() {
     //        let fileNameWars = "starWars"
@@ -36,6 +40,14 @@ class PeopleViewController: UIViewController {
     //        let data = Bundle.readRawJSONData(filename: fileNameWars, ext: ext)
     //        episodes = MovieData.getEpisodes(from: data)
     //    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailPeopleVC = segue.destination as? DetailPeopleViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("verify class name in identity inspector")
+    }
+        let contact = userContacts[indexPath.row]
+        detailPeopleVC.contactsOfUser = contact
+    }
 }
 
 extension PeopleViewController: UITableViewDataSource {
