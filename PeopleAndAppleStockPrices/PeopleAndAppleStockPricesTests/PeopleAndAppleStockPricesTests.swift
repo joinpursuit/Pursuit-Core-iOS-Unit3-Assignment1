@@ -7,27 +7,38 @@
 //
 
 import XCTest
+@testable import PeopleAndAppleStockPrices
+
+let filename = "userinfo"
+let ext = "json"
+let data = Bundle.readRawJSONData(filename: "userinfo", ext: "json")
 
 class PeopleAndAppleStockPricesTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testCountOfContacts() {
+        // arrange
+        let expectedContactsCount = 100
+        
+        // act
+        let contacts = UserData.getUserData(from: data)
+        
+        // assert
+        XCTAssertEqual(contacts.count, expectedContactsCount)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testFirstNameSetup() {
+        // arrange
+        let firstName = UserData.getUserData(from: data).first
+        let expectedName = "Adrian"
+        
+        // act
+        let name = firstName?.name.first ?? "no name"
+        
+        // assert
+        XCTAssertEqual(name, expectedName)
+        
+        
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+  
 
 }
