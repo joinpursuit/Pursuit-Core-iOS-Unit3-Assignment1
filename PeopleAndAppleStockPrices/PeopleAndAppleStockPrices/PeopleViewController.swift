@@ -16,35 +16,37 @@ class PeopleViewController: UIViewController {
     let filename = "userinfo"
     let ext = "json"
     
+    
     var userContacts = [User]() {
         didSet {
             tableView.reloadData()
         }
     }
     
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    tableView.dataSource = self
-    //searchBar.delegate = self
-    loadData()
-
-  }
-
+    var searchQuery = "" {
+        didSet {
+            let data = Bundle.readRawJSONData(filename: filename, ext: ext)
+            userContacts = UserData.getUserData(from: data).filter{$0.fullname.lowercased().contains(searchQuery.lowercased())}
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+        searchBar.delegate = self
+        loadData()
+        
+    }
+    
     func loadData() {
         let data = Bundle.readRawJSONData(filename: filename, ext: ext)
         userContacts = UserData.getUserData(from: data)
     }
-     // func loadData() {
-    //        let fileNameWars = "starWars"
-    //        let ext = "json"
-    //        let data = Bundle.readRawJSONData(filename: fileNameWars, ext: ext)
-    //        episodes = MovieData.getEpisodes(from: data)
-    //    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailPeopleVC = segue.destination as? DetailPeopleViewController, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("verify class name in identity inspector")
-    }
+        }
         let contact = userContacts[indexPath.row]
         detailPeopleVC.contactsOfUser = contact
     }
@@ -62,13 +64,21 @@ extension PeopleViewController: UITableViewDataSource {
         cell.textLabel?.text = contact.name.first.capitalized + " " + contact.name.last.capitalized
         cell.detailTextLabel?.text = contact.location.city.capitalized
         return cell
-        
+    }
+}
+
+extension PeopleViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            loadData()
+            return
+        }
+        searchQuery = searchText
     }
 }
 
 
-
-
-
-
-    
