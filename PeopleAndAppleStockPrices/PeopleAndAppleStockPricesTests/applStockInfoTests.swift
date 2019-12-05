@@ -11,14 +11,53 @@ import XCTest
 
 class applStockInfoTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let filename = "applstockinfo"
+    let ext = "json"
+    
+    func testGetValidURL(){
+        // Arrange
+        
+        // Act
+        let fileURL = Bundle.main.url(forResource: filename, withExtension: ext)
+        
+        // Assert
+        XCTAssertNotNil(fileURL, "Could not find URL")
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testGetValidData() {
+        // Arrange
+        
+        // Act
+        let data = ApplStockInfo.getData(using: filename, with: ext)
+        
+        // Assert
+        XCTAssertNotNil(data, "Could not find data")
+    }
+    
+    func testGetStockInfo() {
+        // Arrange
+        let data = ApplStockInfo.getData(using: filename, with: ext)
+        
+        // Act
+        let stockInfo = ApplStockInfo.getStockInfo(from: data)
+        
+        // Assert
+        XCTAssertGreaterThan(stockInfo.count, 0, "\(stockInfo.count) is not greater than \(0).")
+    }
+    
+    func testIsDataValid() {
+        // Arrange
+        let data = ApplStockInfo.getData(using: filename, with: ext)
+        let expectedVolume = 30067252
+        
+        
+        // Act
+        let stockInfo = ApplStockInfo.getStockInfo(from: data)
+        
+        // Assert
+        XCTAssertEqual(expectedVolume, stockInfo.first?.volume, "\(expectedVolume) is not equal to \(stockInfo.first!.volume)")
+        
     }
     
     
-
 }

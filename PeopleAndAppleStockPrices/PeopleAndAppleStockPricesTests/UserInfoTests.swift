@@ -65,5 +65,18 @@ class UserInfoTests: XCTestCase {
         // Assert
         XCTAssertEqual(expectedFirstName, userFirstName, "\(expectedFirstName) is not equal to \(userFirstName)")
     }
+    
+    func testDisplayDate(){
+        // Arrange
+        let data = UserInfo.getData(from: filename, with: ext)
+        let users = UserInfo.getUsers(using: data)
+        let expectedDate = "July 20, 1990"
+        
+        // Act
+        let testDate = UserInfo.displayDate(date: users.first!.dob.components(separatedBy: " ").first!)
+        
+        // Assert
+        XCTAssertEqual(testDate, expectedDate, "\(testDate) is not equal to \(expectedDate)")
+    }
 
 }
