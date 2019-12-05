@@ -51,16 +51,5 @@ class UserInfoDetailViewController: UIViewController {
         contactLabel.text = "Cell: \(validCell)\nEmail: \(validEmail)"
         addressLabel.text = "\(validCity.capitalizingFirstLetter()), \(validState.capitalizingFirstLetter())"
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
