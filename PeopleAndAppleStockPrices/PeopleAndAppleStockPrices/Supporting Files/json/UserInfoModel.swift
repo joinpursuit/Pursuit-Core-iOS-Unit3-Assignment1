@@ -44,7 +44,7 @@ struct Episode: Decodable {
 }
 
 extension UserData {
-    static func getUserData(from data: Data) -> [User] {
+    static func getUserData() -> [User] {
         var users = [User]()
         
         guard let fileURL = Bundle.main.url(forResource: "userinfo", withExtension: "json") else {
@@ -54,7 +54,7 @@ extension UserData {
             let data = try Data(contentsOf: fileURL)
             
             let userInfo = try JSONDecoder().decode(UserData.self, from: data)
-            users = userInfo.results
+            users = userInfo.results.sorted {$0.name.first < $1.name.first}
         } catch {
             fatalError("failed to load contents \(error)")
         }
@@ -62,21 +62,5 @@ extension UserData {
     }
 }
 
-//extension MovieData {
-//    static func getEpisodes(from data: Data) -> [Episode] {
-//        var movies = [Episode]()
-//
-//        guard let fileURL = Bundle.main.url(forResource: "starWars", withExtension: "json") else {
-//            fatalError("could not locate json file")
-//        }
-//        do {
-//            let data = try Data(contentsOf: fileURL)
-//
-//            let movieInfo = try JSONDecoder().decode(MovieData.self, from: data)
-//            movies = movieInfo.results
-//        } catch {
-//            fatalError("failed to load contents \(error)")
-//        }
-//        return movies
-//    }
-//}
+
+

@@ -13,77 +13,49 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-
+    var userContacts = [User]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.dataSource = self
-    searchBar.delegate = self
+    //searchBar.delegate = self
     loadData()
 
   }
 
     func loadData() {
-        
+        userContacts = UserData.getUserData()
     }
-
+     // func loadData() {
+    //        let fileNameWars = "starWars"
+    //        let ext = "json"
+    //        let data = Bundle.readRawJSONData(filename: fileNameWars, ext: ext)
+    //        episodes = MovieData.getEpisodes(from: data)
+    //    }
 }
 
 extension PeopleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        userContacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        
+        let contact = userContacts[indexPath.row]
+        cell.textLabel?.text = contact.name.first.capitalized + " " + contact.name.last.capitalized
+        cell.detailTextLabel?.text = contact.location.city.capitalized
+        return cell
         
     }
 }
 
-//class StarWarsViewController: UIViewController {
-//    
-//    @IBOutlet weak var tableView: UITableView!
-//    
-//    var episodes = [Episode](){
-//        didSet {
-//            tableView.reloadData()
-//        }
-//    }
-//    
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        tableView.dataSource = self
-//        loadData()
-//    }
-//    
-//    func loadData() {
-//        let fileNameWars = "starWars"
-//        let ext = "json"
-//        let data = Bundle.readRawJSONData(filename: fileNameWars, ext: ext)
-//        episodes = MovieData.getEpisodes(from: data)
-//    }
-//    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let detailMovieVC = segue.destination as? DetailStarWarsViewController, let indexPath = tableView.indexPathForSelectedRow else {
-//            fatalError("verify class name in identity inspector")
-//        }
-//        let episode = episodes[indexPath.row]
-//        detailMovieVC.someEpisode = episode
-//    }
-//}
-//
-//extension StarWarsViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        episodes.count
-//    }
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "starWarsCell", for: indexPath)
-//        
-//        let episode = episodes[indexPath.row]
-//        cell.textLabel?.text = episode.title
-//        return cell
-//    }
-//}
+
+
 
 
 
