@@ -141,11 +141,11 @@
             </objects>
             <point key="canvasLocation" x="2874" y="-147"/>
         </scene>
-        <!--Item-->
+        <!--Users-->
         <scene sceneID="0Y3-aB-w4n">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kaz-hK-qje" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VHS-K9-bJ4"/>
+                    <tabBarItem key="tabBarItem" title="Users" id="VHS-K9-bJ4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kYY-bP-riU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -296,11 +296,11 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="117.85714285714285"/>
         </scene>
-        <!--Item-->
+        <!--Apple stock-->
         <scene sceneID="tE9-RG-9V0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cGY-zz-1ek" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2uL-mU-fr9"/>
+                    <tabBarItem key="tabBarItem" title="Apple stock" id="2uL-mU-fr9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HWs-vO-mQ7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
