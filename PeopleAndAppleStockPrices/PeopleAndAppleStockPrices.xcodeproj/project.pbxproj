@@ -13,6 +13,7 @@
 		0F7B35C32399A45800FA9FCB /* Bundle&Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B35C22399A45800FA9FCB /* Bundle&Extension.swift */; };
 		0F7B35FF239AE51100FA9FCB /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B35FE239AE51100FA9FCB /* StockModel.swift */; };
 		0F7B3601239AEC6100FA9FCB /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B3600239AEC6100FA9FCB /* StockViewController.swift */; };
+		0F996E7F239B163A008BE107 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F996E7E239B163A008BE107 /* StockDetailViewController.swift */; };
 		577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */; };
 		577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */; };
 		577E5BF121BA8BA10083EB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BEF21BA8BA10083EB97 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		0F7B35C22399A45800FA9FCB /* Bundle&Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle&Extension.swift"; sourceTree = "<group>"; };
 		0F7B35FE239AE51100FA9FCB /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
 		0F7B3600239AEC6100FA9FCB /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+		0F996E7E239B163A008BE107 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		577E5BE821BA8BA10083EB97 /* PeopleAndAppleStockPrices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleAndAppleStockPrices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577E5BEB21BA8BA10083EB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				0F7B35C22399A45800FA9FCB /* Bundle&Extension.swift */,
 				577E5BED21BA8BA10083EB97 /* PeopleViewController.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
+				0F996E7E239B163A008BE107 /* StockDetailViewController.swift */,
 				0F7B3600239AEC6100FA9FCB /* StockViewController.swift */,
 				0F7B35FE239AE51100FA9FCB /* StockModel.swift */,
 				0F7B35B0239974AD00FA9FCB /* DetailPeopleViewController.swift */,
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F996E7F239B163A008BE107 /* StockDetailViewController.swift in Sources */,
 				577E5BEE21BA8BA10083EB97 /* PeopleViewController.swift in Sources */,
 				0F7B3601239AEC6100FA9FCB /* StockViewController.swift in Sources */,
 				0F7B35C32399A45800FA9FCB /* Bundle&Extension.swift in Sources */,
