@@ -12,7 +12,15 @@ struct UserData: Decodable {
     let results: [User]
 }
 
-struct User: Decodable {
+struct User: Decodable, Comparable {
+    static func < (lhs: User, rhs: User) -> Bool {
+        return lhs.name.returnFullName() < rhs.name.returnFullName()
+    }
+    
+    static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.name.returnFullName() == rhs.name.returnFullName()
+    }
+    
     let name: Name
     let location: Location
     let email: String
@@ -49,6 +57,14 @@ extension User{
         
         return users
     }
+    
+//    static func getUsersSorted() -> [User]{
+//        let fileName = "userinfo"
+//        let ext = "json"
+//        let data = Bundle.readRawjSONData(filename: fileName, ext: ext)
+//        let users = User.getUsers(from: data).sorted{$0.name.first < $1.name.first}
+//        return users
+//    }
 }
 
 extension Name {

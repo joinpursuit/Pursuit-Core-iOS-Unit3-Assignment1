@@ -14,6 +14,7 @@
 		577E5BF621BA8BA20083EB97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BF421BA8BA20083EB97 /* LaunchScreen.storyboard */; };
 		577E5BFF21BA8C3B0083EB97 /* userinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5BFE21BA8C3B0083EB97 /* userinfo.json */; };
 		577E5C0121BA8C5C0083EB97 /* applstockinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 577E5C0021BA8C5C0083EB97 /* applstockinfo.json */; };
+		F16F3A99239AF2D0002FB004 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16F3A98239AF2D0002FB004 /* Array+Extensions.swift */; };
 		F192E8EB23983DCC002D62A6 /* UIImageView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F192E8EA23983DCC002D62A6 /* UIImageView+extensions.swift */; };
 		F192E8ED23986160002D62A6 /* APPLStockPricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F192E8EC23986160002D62A6 /* APPLStockPricesViewController.swift */; };
 		F192E8EF239861AE002D62A6 /* APPLStockPricesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F192E8EE239861AE002D62A6 /* APPLStockPricesModel.swift */; };
@@ -45,6 +46,7 @@
 		577E5BF721BA8BA20083EB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577E5BFE21BA8C3B0083EB97 /* userinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = userinfo.json; sourceTree = "<group>"; };
 		577E5C0021BA8C5C0083EB97 /* applstockinfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applstockinfo.json; sourceTree = "<group>"; };
+		F16F3A98239AF2D0002FB004 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		F192E8EA23983DCC002D62A6 /* UIImageView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extensions.swift"; sourceTree = "<group>"; };
 		F192E8EC23986160002D62A6 /* APPLStockPricesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPLStockPricesViewController.swift; sourceTree = "<group>"; };
 		F192E8EE239861AE002D62A6 /* APPLStockPricesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPLStockPricesModel.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				F192E91E239980D6002D62A6 /* APPLStockPricesDetailViewController.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
 				F1BDA84F2396CEEC00E97927 /* userInfoModel.swift */,
+				F16F3A98239AF2D0002FB004 /* Array+Extensions.swift */,
 				F192E8EE239861AE002D62A6 /* APPLStockPricesModel.swift */,
 				F1BDA8512396D4FC00E97927 /* Bundle+extensions.swift */,
 				F192E8EA23983DCC002D62A6 /* UIImageView+extensions.swift */,
@@ -248,6 +251,7 @@
 				F192E8EB23983DCC002D62A6 /* UIImageView+extensions.swift in Sources */,
 				F1BDA8522396D4FC00E97927 /* Bundle+extensions.swift in Sources */,
 				F1BDA84E2396CECF00E97927 /* UserInfoDetailViewController.swift in Sources */,
+				F16F3A99239AF2D0002FB004 /* Array+Extensions.swift in Sources */,
 				F192E8EF239861AE002D62A6 /* APPLStockPricesModel.swift in Sources */,
 				577E5BEE21BA8BA10083EB97 /* UserInfoViewController.swift in Sources */,
 				F192E8ED23986160002D62A6 /* APPLStockPricesViewController.swift in Sources */,
