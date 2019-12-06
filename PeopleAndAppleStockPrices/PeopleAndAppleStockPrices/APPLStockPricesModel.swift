@@ -29,37 +29,6 @@ extension StockInfo{
         return stocks
     }
     
-    static func convertDateFromDataToDate(dateString: String) -> Date{
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "YYYY-mm-d"
-        guard let validDate = dateFormat.date(from: dateString) else {
-            return Date()
-        }
-        return validDate
-    }
-    
-    static func convertDateToString(dateObj: Date) -> String{
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "MMMM - YYYY"
-        let validDateAsString = dateFormat.string(from: dateObj)
-        return validDateAsString
-    }
-    
-//    static func convertDateFromDataToString(dateString: String) -> String{
-//        let dateFormat = DateFormatter()
-//        dateFormat.dateFormat = "yyyy-MM-dd"
-//        //dateFormat.dateFormat = "MMMM - YYYY"
-//        guard let validDate = dateFormat.date(from: dateString) else {
-//            return String()
-//        }
-//
-//        let dateFormat1 = DateFormatter()
-//        dateFormat1.dateFormat = "MMMM - YYYY"
-//
-//        let validDateAsString = dateFormat1.string(from: validDate)
-//        return validDateAsString
-//    }
-    
     static func getStockDataAsMatrix() -> [[StockInfo]] {
         let filename = "applstockinfo"
         let ext = "json"
@@ -84,7 +53,7 @@ extension StockInfo{
                 stockMatrix[currentIndex].append(section)
             }
         }
-        dump(stockMatrix)
+        //dump(stockMatrix)
         return stockMatrix
     }
     
