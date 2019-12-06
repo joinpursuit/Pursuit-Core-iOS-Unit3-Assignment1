@@ -30,8 +30,8 @@ extension StockInfo{
     }
     
     static func convertDateFromDataToDate(dateString: String) -> Date{
-        let dateFormat = ISO8601DateFormatter()
-        dateFormat.formatOptions = [.withDashSeparatorInDate, .withFullDate]
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "YYYY-mm-d"
         guard let validDate = dateFormat.date(from: dateString) else {
             return Date()
         }
@@ -45,35 +45,37 @@ extension StockInfo{
         return validDateAsString
     }
     
-    static func convertDateFromDataToString(dateString: String) -> String{
-        let iOSDateFormat = ISO8601DateFormatter()
-        iOSDateFormat.formatOptions = [.withDashSeparatorInDate, .withFullDate]
-        //dateFormat.dateFormat = "MMMM - YYYY"
-        guard let validDate = iOSDateFormat.date(from: dateString) else {
-            return String()
-        }
-        
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "MMMM - YYYY"
-        
-        let validDateAsString = dateFormat.string(from: validDate)
-        return validDateAsString
-    }
+//    static func convertDateFromDataToString(dateString: String) -> String{
+//        let dateFormat = DateFormatter()
+//        dateFormat.dateFormat = "yyyy-MM-dd"
+//        //dateFormat.dateFormat = "MMMM - YYYY"
+//        guard let validDate = dateFormat.date(from: dateString) else {
+//            return String()
+//        }
+//
+//        let dateFormat1 = DateFormatter()
+//        dateFormat1.dateFormat = "MMMM - YYYY"
+//
+//        let validDateAsString = dateFormat1.string(from: validDate)
+//        return validDateAsString
+//    }
     
     static func getStockDataAsMatrix() -> [[StockInfo]] {
         let filename = "applstockinfo"
         let ext = "json"
         let stockData = StockInfo.getStockInfo(filename: filename, ext: ext)
-        let stockDataDateToDate = stockData.map{StockInfo.convertDateFromDataToDate(dateString: $0.date)}
-        let sectionsNameSortedAsString = stockDataDateToDate.sorted{$0 < $1}.map{StockInfo.convertDateToString(dateObj: $0)}
-        let uniqueSections = Set(sectionsNameSortedAsString)
+        
+        let stockDataDateToString = stockData.map{$0.date.convertDateStringtoString()}
+        
+        let uniqueSections = Set(stockDataDateToString)
+        
         var stockMatrix = Array(repeating: [StockInfo](), count: uniqueSections.count)
 
         var currentIndex = 0
-        var currentSection = sectionsNameSortedAsString.first
+        var currentSection = stockDataDateToString.first
         for section in stockData{
-            let stockDate = StockInfo.convertDateFromDataToString(dateString: section.date)
-            
+            let stockDate = section.date.convertDateStringtoString()
+         
             if stockDate == currentSection{
                 stockMatrix[currentIndex].append(section)
             } else {

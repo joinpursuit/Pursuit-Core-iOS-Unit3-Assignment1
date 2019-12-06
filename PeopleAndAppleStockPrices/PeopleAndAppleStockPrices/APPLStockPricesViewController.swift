@@ -61,6 +61,6 @@ extension APPLStockPricesViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(StockInfo.convertDateFromDataToString(dateString: appleStockDay[section].first!.date)) Average: \(StockInfo.averageForMonth(section: appleStockDay[section]))"
+        return "\(appleStockDay[section].first!.date.convertDateStringtoString()) Average: \(StockInfo.averageForMonth(section: appleStockDay[section]))"
     }
 }
