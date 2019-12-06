@@ -9,22 +9,38 @@
 import UIKit
 
 class DetailUserInfoViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    var userInfoInfo: UserDetails?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
 
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI() {
+        guard let user = userInfoInfo else {
+            fatalError("cityweather is nil, verify prepare for seque")
+        }
+        
+        navigationItem.title = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
+        nameLabel.text = "\(user.name.first.capitalized) \(user.name.last.capitalized)"
+        
+        emailLabel.text = user.email
+        cityLabel.text = user.location.city.capitalized
     }
-    */
+
+   
 
 }

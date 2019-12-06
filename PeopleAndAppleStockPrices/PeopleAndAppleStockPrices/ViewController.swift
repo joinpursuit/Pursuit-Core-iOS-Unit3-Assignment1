@@ -21,14 +21,37 @@ class ViewController: UIViewController {
         }
     }
     
+    let filename = "userinfo"
+    let ext  = "json"
+    
+    
+    var searchQuary = "" {
+        didSet {
+            let data = Bundle.readRawJSONData(filename: filename, ext: ext)
+            userInfo = User.getUserInfo(from: data).filter {$0.fullname.lowercased().contains(searchQuary.lowercased())}
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
         tableView.dataSource = self
+        searchBar.delegate = self
+        print(userInfo.count)
     }
     
     func loadData() {
-        userInfo = User.getUserInfo()
+        
+        let data = Bundle.readRawJSONData(filename: filename, ext: ext)
+        userInfo = User.getUserInfo(from: data)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailUserInfoVC = segue.destination as? DetailUserInfoViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("error")
+        }
+        let info = userInfo[indexPath.row]
+        detailUserInfoVC.userInfoInfo = info
     }
     
     
@@ -48,4 +71,16 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            loadData()
+            return
+        }
+        searchQuary = searchText
+    }
+}
