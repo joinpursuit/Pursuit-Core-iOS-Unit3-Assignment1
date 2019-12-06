@@ -71,7 +71,7 @@ extension StockInfo{
 
         var currentIndex = 0
         var currentSection = sectionsNameSortedAsString.first
-        for (index, section) in stockData.enumerated(){
+        for section in stockData{
             let stockDate = StockInfo.convertDateFromDataToString(dateString: section.date)
             
             if stockDate == currentSection{
@@ -81,10 +81,6 @@ extension StockInfo{
                 currentSection = stockDate
                 stockMatrix[currentIndex].append(section)
             }
-//            if index == 2 {
-//                dump(sectionsNameSortedAsString)
-//                break
-//            }
         }
         dump(stockMatrix)
         return stockMatrix
