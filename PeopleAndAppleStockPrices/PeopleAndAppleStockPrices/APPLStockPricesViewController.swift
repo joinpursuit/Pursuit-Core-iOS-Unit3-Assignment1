@@ -10,21 +10,57 @@ import UIKit
 
 class APPLStockPricesViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var tableView:UITableView!
+    
+    var appleStockDay = [[StockInfo]](){
+        didSet{
+            tableView.reloadData()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadData()
+        tableView.dataSource = self
     }
-    */
+    
+    func loadData(){
+        appleStockDay = StockInfo.getStockDataAsMatrix()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let applDVC = segue.destination as? APPLStockPricesDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("failed to segue to detail view controller")
+        }
+        let appleDayHistory  = appleStockDay[indexPath.section][indexPath.row]
+        applDVC.passedApplDay = appleDayHistory
+    }
 
+}
+
+extension APPLStockPricesViewController:UITableViewDataSource{
+    //cell functions
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return appleStockDay[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "applDay", for: indexPath)
+        let appleDayHistory  = appleStockDay[indexPath.section][indexPath.row]
+        cell.textLabel?.text = appleDayHistory.date
+        cell.detailTextLabel?.text = appleDayHistory.open.description
+        return cell
+
+    }
+    
+    //section functions
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return appleStockDay.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "\(StockInfo.convertDateFromDataToString(dateString: appleStockDay[section].first!.date)) Average: \(StockInfo.averageForMonth(section: appleStockDay[section]))"
+    }
 }

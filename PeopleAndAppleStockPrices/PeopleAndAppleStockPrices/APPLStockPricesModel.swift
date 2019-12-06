@@ -30,8 +30,8 @@ extension StockInfo{
     }
     
     static func convertDateFromDataToDate(dateString: String) -> Date{
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "MMMM - YYYY"
+        let dateFormat = ISO8601DateFormatter()
+        dateFormat.formatOptions = [.withDashSeparatorInDate, .withFullDate]
         guard let validDate = dateFormat.date(from: dateString) else {
             return Date()
         }
@@ -46,17 +46,21 @@ extension StockInfo{
     }
     
     static func convertDateFromDataToString(dateString: String) -> String{
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "MMMM - YYYY"
-        guard let validDate = dateFormat.date(from: dateString) else {
+        let iOSDateFormat = ISO8601DateFormatter()
+        iOSDateFormat.formatOptions = [.withDashSeparatorInDate, .withFullDate]
+        //dateFormat.dateFormat = "MMMM - YYYY"
+        guard let validDate = iOSDateFormat.date(from: dateString) else {
             return String()
         }
+        
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "MMMM - YYYY"
         
         let validDateAsString = dateFormat.string(from: validDate)
         return validDateAsString
     }
     
-    func getStockDataAsMatrix() -> [[StockInfo]] {
+    static func getStockDataAsMatrix() -> [[StockInfo]] {
         let filename = "applstockinfo"
         let ext = "json"
         let stockData = StockInfo.getStockInfo(filename: filename, ext: ext)
@@ -64,18 +68,39 @@ extension StockInfo{
         let sectionsNameSortedAsString = stockDataDateToDate.sorted{$0 < $1}.map{StockInfo.convertDateToString(dateObj: $0)}
         let uniqueSections = Set(sectionsNameSortedAsString)
         var stockMatrix = Array(repeating: [StockInfo](), count: uniqueSections.count)
-        
+
         var currentIndex = 0
         var currentSection = sectionsNameSortedAsString.first
-        for section in stockData{
-            if StockInfo.convertDateFromDataToString(dateString: section.date) == currentSection{
+        for (index, section) in stockData.enumerated(){
+            let stockDate = StockInfo.convertDateFromDataToString(dateString: section.date)
+            
+            if stockDate == currentSection{
                 stockMatrix[currentIndex].append(section)
             } else {
                 currentIndex += 1
-                currentSection = StockInfo.convertDateFromDataToString(dateString: section.date)
+                currentSection = stockDate
                 stockMatrix[currentIndex].append(section)
             }
+//            if index == 2 {
+//                dump(sectionsNameSortedAsString)
+//                break
+//            }
         }
+        dump(stockMatrix)
         return stockMatrix
+    }
+    
+    static func averageForMonth(section: [StockInfo]) -> Double{
+        let sum = section.reduce(0.0){$0 + $1.open}
+        let average = sum / Double(section.count)
+        return average
+    }
+    
+    func isStockGreen() -> Bool{
+        if self.changePercent > 0{
+            return false
+        } else {
+            return true
+        }
     }
 }
