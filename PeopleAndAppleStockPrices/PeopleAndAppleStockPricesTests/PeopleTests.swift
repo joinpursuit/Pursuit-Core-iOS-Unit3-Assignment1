@@ -9,7 +9,7 @@
 import XCTest
 @testable import PeopleAndAppleStockPrices
 
-class PeopleAndAppleStockPricesTests: XCTestCase {
+class PeopleTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -44,17 +44,34 @@ class PeopleAndAppleStockPricesTests: XCTestCase {
         XCTAssertGreaterThan(users.count, 0)
     }
     
-    func testGetUsersSorted(){
+    func testcapitalizeFirstLetter(){
+        //Arrange
+        var string = "abc"
+        let expectedString = "Abc"
+        
+        //Act
+        string.capitalizeFirstLetter()
+        
+        //Assert
+        XCTAssertEqual(expectedString, string.capitalizingFirstLetter())
+    }
+    
+    func testReturnFullName(){
         //Arrange
         let filename = "userinfo"
         let ext = "json"
         let data = Bundle.readRawjSONData(filename: filename, ext: ext)
         let users = User.getUsers(from: data)
+        var firstName = users[0].name.first
+        var lastName = users[0].name.last
+        firstName.capitalizeFirstLetter()
+        lastName.capitalizeFirstLetter()
+        let expectedFullName = firstName + " " + lastName
         //Act
-        let sortedUsers = users.sorted{$0.name.first < $1.name.first}
+        let fullName = users[0].name.returnFullName()
         //Assert
         //dump(sortedUsers.isSorted())
-        XCTAssertTrue(sortedUsers.isSorted())
+        XCTAssertEqual(fullName, expectedFullName)
     }
 
 }

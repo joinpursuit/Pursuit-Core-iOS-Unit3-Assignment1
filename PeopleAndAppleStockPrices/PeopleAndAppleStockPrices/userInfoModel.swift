@@ -12,16 +12,16 @@ struct UserData: Decodable {
     let results: [User]
 }
 
-struct User: Decodable, Comparable {
-    static func < (lhs: User, rhs: User) -> Bool {
-        return lhs.name.returnFullName() < rhs.name.returnFullName()
-    }
+struct User: Decodable {
+//    static func < (lhs: User, rhs: User) -> Bool {
+//        return lhs.name.returnFullName() < rhs.name.returnFullName()
+//    }
+//
+//    static func == (lhs: User, rhs: User) -> Bool {
+//        return lhs.name.returnFullName() == rhs.name.returnFullName()
+//    }
     
-    static func == (lhs: User, rhs: User) -> Bool {
-        return lhs.name.returnFullName() == rhs.name.returnFullName()
-    }
-    
-    let name: Name
+    var name: Name
     let location: Location
     let email: String
     let cell: String
@@ -29,8 +29,8 @@ struct User: Decodable, Comparable {
 }
 
 struct Name: Decodable {
-    let first: String
-    let last: String
+    var first: String
+    var last: String
 }
 
 struct Location: Decodable {
