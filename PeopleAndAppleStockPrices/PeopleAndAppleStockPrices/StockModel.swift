@@ -36,33 +36,48 @@ extension StockData {
         return stockData
     }
     
-    
-//    static func classificationSections() -> [StockData] {
-//        // Skip step 1 since our stock data already sorted
-//        var newArrayOfDate = [String]()
-//        var sectionArray = [String]()
-//        // 2. we want to know how many unique classification we have - basically how many new month we have
-//        // so we can use Set to identify how many unique classifications we have - but before we have to remove date first
-//        
-//        let filename = "applstockinfo"
-//        let ext  = "json"
-//        let data = Bundle.readRawJSONData(filename: filename, ext: ext)
-//        let stocks = getStockData(from: data)
-//        let uniqueSections = Set(stocks.map {$0.date})
-//        
-//        
-//        var updatedDate = stocks.first?.date.components(separatedBy: "-")
-//        updatedDate?.popLast()
-//        let newString = updatedDate
-//        
-//         
-//        if     == newString {
-//            
-//        }
-//        
-//        return
-//        
-//    }
+    static func monthSections() -> [[StockData]] {
+        // 1. we will sort dates ascending
+        // our date are sorted already, therefore we can skip this step?
+        // probably in this step we have to loop through our dates and remove last elements
+        
+        let filename = "applstockinfo"
+        let ext  = "json"
+        let data = Bundle.readRawJSONData(filename: filename, ext: ext)
+        let stocks = getStockData(from: data)
+        let uniqueSections = Set(stocks.map {$0.date})
+        
+        var arrayOfDateWithoutDay = [String]()
+        
+        for date in uniqueSections {
+            var updatedDate = date.components(separatedBy: "-")
+            updatedDate.removeLast()
+            let newUpdatedDate = updatedDate.joined(separator: " ")
+            arrayOfDateWithoutDay.append(newUpdatedDate)
+        }
+        
+        var sections = Array(repeating: [StockData](), count: uniqueSections.count)
+        // arrayOfDateWithoutDay = arrayOfDateWithoutDay.sorted()
+        
+        var currentIndex = 0
+        var sectionIndex = 0
+        var currentStock = arrayOfDateWithoutDay[currentIndex]
+        
+        for stock in stocks {
+            var theDate = stock.date.components(separatedBy: "-")
+            theDate.removeLast()
+            let dateWithNewFormat = theDate.joined(separator: " ")
+            if dateWithNewFormat == currentStock {
+                sections[currentIndex].append(stock)
+            } else {
+                currentStock = dateWithNewFormat
+                currentIndex += 1
+                sectionIndex += 1
+                sections[currentIndex].append(stock)
+            }
+        }
+        return sections
+    }
 }
 
 
