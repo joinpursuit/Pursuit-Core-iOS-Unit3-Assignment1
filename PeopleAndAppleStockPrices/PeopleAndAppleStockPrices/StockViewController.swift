@@ -33,6 +33,14 @@ class StockViewController: UIViewController {
         stockData = StockData.getStockData(from: data)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let secondStockVC = segue.destination as? StockDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("verify class name in identity inspector")
+        }
+        
+        let detail = stockData[indexPath.row]
+        secondStockVC.someStock = detail
+    }
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //        guard let detailPeopleVC = segue.destination as? DetailPeopleViewController, let indexPath = tableView.indexPathForSelectedRow else {
     //            fatalError("verify class name in identity inspector")
