@@ -33,8 +33,10 @@ class StockDetailViewController: UIViewController {
         
         if oneStock.close > oneStock.open {
             image.image = UIImage(named: "thumbsUp")
+            view.backgroundColor = .green
         } else {
             image.image = UIImage(named: "thumbsDown")
+            view.backgroundColor = .red
         }
     }
     
