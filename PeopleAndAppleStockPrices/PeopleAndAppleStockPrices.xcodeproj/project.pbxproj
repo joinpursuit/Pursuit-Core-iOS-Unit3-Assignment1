@@ -20,6 +20,7 @@
 		E106456B23A280B80065B0FA /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106456A23A280B80065B0FA /* UserDetailViewController.swift */; };
 		E106456D23A286A80065B0FA /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106456C23A286A80065B0FA /* Stock.swift */; };
 		E106456F23A289340065B0FA /* StockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106456E23A289340065B0FA /* StockTableViewController.swift */; };
+		E1E3966223A2A32B00F0613D /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3966123A2A32B00F0613D /* StockDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E106456C23A286A80065B0FA /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		E106456E23A289340065B0FA /* StockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewController.swift; sourceTree = "<group>"; };
 		E106457423A2899C0065B0FA /* PeopleAndAppleStockPricesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeopleAndAppleStockPricesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E3966123A2A32B00F0613D /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				E106456A23A280B80065B0FA /* UserDetailViewController.swift */,
 				E106456C23A286A80065B0FA /* Stock.swift */,
 				E106456E23A289340065B0FA /* StockTableViewController.swift */,
+				E1E3966123A2A32B00F0613D /* StockDetailViewController.swift */,
 				E106456223A195BB0065B0FA /* combinepractice.swift */,
 				E106456423A19B370065B0FA /* jsonplaceholderservice.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
@@ -230,6 +233,7 @@
 				577E5BEE21BA8BA10083EB97 /* UserTableViewController.swift in Sources */,
 				E106456523A19B370065B0FA /* jsonplaceholderservice.swift in Sources */,
 				E106456B23A280B80065B0FA /* UserDetailViewController.swift in Sources */,
+				E1E3966223A2A32B00F0613D /* StockDetailViewController.swift in Sources */,
 				E106456D23A286A80065B0FA /* Stock.swift in Sources */,
 				E106456F23A289340065B0FA /* StockTableViewController.swift in Sources */,
 				E106456323A195BB0065B0FA /* combinepractice.swift in Sources */,
