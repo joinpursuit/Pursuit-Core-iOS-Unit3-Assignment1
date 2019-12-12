@@ -17,6 +17,7 @@
 		E106456323A195BB0065B0FA /* combinepractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106456223A195BB0065B0FA /* combinepractice.swift */; };
 		E106456523A19B370065B0FA /* jsonplaceholderservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106456423A19B370065B0FA /* jsonplaceholderservice.swift */; };
 		E106456923A274D90065B0FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106456823A274D90065B0FA /* User.swift */; };
+		E106456B23A280B80065B0FA /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106456A23A280B80065B0FA /* UserDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E106456223A195BB0065B0FA /* combinepractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = combinepractice.swift; sourceTree = "<group>"; };
 		E106456423A19B370065B0FA /* jsonplaceholderservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonplaceholderservice.swift; sourceTree = "<group>"; };
 		E106456823A274D90065B0FA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E106456A23A280B80065B0FA /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +66,14 @@
 		577E5BEA21BA8BA10083EB97 /* PeopleAndAppleStockPrices */ = {
 			isa = PBXGroup;
 			children = (
+				E106456823A274D90065B0FA /* User.swift */,
 				577E5BED21BA8BA10083EB97 /* UserTableViewController.swift */,
+				E106456A23A280B80065B0FA /* UserDetailViewController.swift */,
 				E106456223A195BB0065B0FA /* combinepractice.swift */,
 				E106456423A19B370065B0FA /* jsonplaceholderservice.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
 				577E5BF721BA8BA20083EB97 /* Info.plist */,
-				E106456823A274D90065B0FA /* User.swift */,
 			);
 			path = PeopleAndAppleStockPrices;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				577E5BEE21BA8BA10083EB97 /* UserTableViewController.swift in Sources */,
 				E106456523A19B370065B0FA /* jsonplaceholderservice.swift in Sources */,
+				E106456B23A280B80065B0FA /* UserDetailViewController.swift in Sources */,
 				E106456323A195BB0065B0FA /* combinepractice.swift in Sources */,
 				E106456923A274D90065B0FA /* User.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,

@@ -19,8 +19,15 @@ class UserTableViewController: UIViewController {
         }
     }
     
-    var filteredUsers: [User] {
-        users.sorted { $0.name.first < $1.name.last }
+    private var filteredUsers: [User] {
+        guard let query = searchQuery else { return users }
+        return query != "" ? users.filter({$0.name.full.lowercased().contains(query.lowercased())}) : users
+    }
+    
+    private var searchQuery: String? = nil {
+        didSet {
+            tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
@@ -29,6 +36,11 @@ class UserTableViewController: UIViewController {
         configureView()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? UserDetailViewController {
+            destination.user = users[tableView.indexPathForSelectedRow!.row]
+        }
+    }
     private func configureView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -55,15 +67,20 @@ class UserTableViewController: UIViewController {
 extension UserTableViewController: UITableViewDelegate {}
 extension UserTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return filteredUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "User Cell", for: indexPath)
-        cell.textLabel?.text = users[indexPath.row].name.full
-        cell.detailTextLabel?.text = users[indexPath.row].location.city
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Contacts Cell", for: indexPath)
+        cell.textLabel?.text = filteredUsers[indexPath.row].name.full
+        cell.detailTextLabel?.text = filteredUsers[indexPath.row].location.city
         return cell
     }
 }
 
-extension UserTableViewController: UISearchBarDelegate {}
+extension UserTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            searchQuery = searchText
+    
+    }
+}

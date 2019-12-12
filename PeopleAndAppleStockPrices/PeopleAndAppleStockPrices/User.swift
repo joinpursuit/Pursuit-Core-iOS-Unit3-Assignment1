@@ -15,6 +15,8 @@ struct UserWrapper: Codable {
 struct User: Codable {
     let name: Name
     let location: Location
+    let email: String
+    let cell: String
     
     static func getUsers(from data: Data) throws -> [User] {
         do {
@@ -36,5 +38,11 @@ struct Name: Codable {
 }
 
 struct Location: Codable {
+    let street: String
     let city: String
+    let state: String
+    let postcode: String
+    var address: String {
+        "\(street), \(city), \(state), \(postcode)"
+    }
 }
