@@ -82,6 +82,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="33U-31-Yuf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0gW-92-khm">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -94,17 +95,58 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
         </scene>
-        <!--Item-->
+        <!--Stock-->
         <scene sceneID="AWO-Pz-pKH">
             <objects>
-                <viewController id="zLj-CO-RgQ" sceneMemberID="viewController">
+                <viewController id="zLj-CO-RgQ" customClass="StockTableViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gSM-Pq-rUR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qxa-f3-5IG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Stock Cell" textLabel="6n0-X0-jP7" detailTextLabel="tdq-qa-UqL" style="IBUITableViewCellStyleValue1" id="e32-gU-Jbw">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e32-gU-Jbw" id="1l9-D8-5Aw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6n0-X0-jP7">
+                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tdq-qa-UqL">
+                                                    <rect key="frame" x="350" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="b7N-PF-Owh" firstAttribute="bottom" secondItem="Qxa-f3-5IG" secondAttribute="bottom" id="Ymf-iJ-7wT"/>
+                            <constraint firstItem="b7N-PF-Owh" firstAttribute="trailing" secondItem="Qxa-f3-5IG" secondAttribute="trailing" id="pwz-Ds-8Pt"/>
+                            <constraint firstItem="Qxa-f3-5IG" firstAttribute="top" secondItem="b7N-PF-Owh" secondAttribute="top" id="v3M-PL-uVB"/>
+                            <constraint firstItem="Qxa-f3-5IG" firstAttribute="leading" secondItem="b7N-PF-Owh" secondAttribute="leading" id="vrI-lJ-Sec"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b7N-PF-Owh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="I04-Pb-m1k"/>
+                    <tabBarItem key="tabBarItem" title="Stock" image="chart.bar" catalog="system" id="I04-Pb-m1k"/>
+                    <connections>
+                        <outlet property="tableView" destination="Qxa-f3-5IG" id="l3s-9u-bN5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BvU-Ve-e04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,11 +223,11 @@
             </objects>
             <point key="canvasLocation" x="2818.840579710145" y="116.51785714285714"/>
         </scene>
-        <!--Item-->
+        <!--Contacts-->
         <scene sceneID="sVc-TT-3aP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q4F-Jk-ZQ7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5mr-rg-Xg0"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person.circle" catalog="system" id="5mr-rg-Xg0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="azn-at-Ffh">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -202,6 +244,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chart.bar" catalog="system" width="64" height="44"/>
+        <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="profileImage" width="600" height="600"/>
     </resources>
 </document>

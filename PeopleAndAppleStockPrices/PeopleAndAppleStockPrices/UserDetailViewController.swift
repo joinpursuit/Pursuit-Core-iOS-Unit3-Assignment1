@@ -29,6 +29,7 @@ class UserDetailViewController: UIViewController {
         cellLabel.text = user.cell
         emailLabel.text = user.email
         addressLabel.text = user.location.address
+        addressLabel.numberOfLines = 0
     }
     
 

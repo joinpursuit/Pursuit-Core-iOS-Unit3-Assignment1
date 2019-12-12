@@ -43,6 +43,6 @@ struct Location: Codable {
     let state: String
     let postcode: String
     var address: String {
-        "\(street), \(city), \(state), \(postcode)"
+        "\(street.capitalized), \(city.capitalized), \(state.capitalized), \(postcode.uppercased())"
     }
 }
