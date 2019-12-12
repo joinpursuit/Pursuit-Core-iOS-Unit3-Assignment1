@@ -18,38 +18,28 @@ class StockTableViewController: UIViewController {
         }
     }
     
-    private var groupedStocks: [(key: String, value: [Stock])] {
-        let dict = Dictionary(grouping: stocks) {$0.stub}
-        return dict.sorted{ $0.key < $1.key }
-    }
-    
     private var groupedStocksKey: [String] {
-        groupedStocks.map{$0.key}
+        Dictionary(grouping: stocks) {$0.stub}
+            .sorted {$0.key < $1.key }
+            .map {$0.key}
     }
     
-    private var groupedStocksValues: [[Stock]] {
-        groupedStocks.map{$0.value}
+    private var groupedStocks: [[Stock]] {
+        Dictionary(grouping: stocks) {$0.stub}
+            .sorted {$0.key < $1.key }
+            .map {$0.value}
     }
-    
-//    var groupedStocksValues: [[Stock]] {
-//
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
         configureTableView()
-        print(stocks.count)
-        print(groupedStocks.count)
-        print(groupedStocksValues.forEach{print($0.count)})
-//        print(groupedStocksKey)
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? StockDetailViewController {
             let indexPath = tableView.indexPathForSelectedRow!
-            destination.stock = groupedStocksValues[indexPath.section][indexPath.row]
+            destination.stock = groupedStocks[indexPath.section][indexPath.row]
         }
     }
     
@@ -72,24 +62,10 @@ class StockTableViewController: UIViewController {
         }
         
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 extension StockTableViewController: UITableViewDelegate {}
 extension StockTableViewController: UITableViewDataSource {
-    
-    // MARK: - TODO: Implement Tableview.
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return groupedStocksKey[section]
@@ -100,14 +76,14 @@ extension StockTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupedStocksValues[section].count
+        return groupedStocks[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Stock Cell", for: indexPath)
-        cell.textLabel?.text = groupedStocksValues[indexPath.section][indexPath.row].date
+        cell.textLabel?.text = groupedStocks[indexPath.section][indexPath.row].date
         
-        cell.detailTextLabel?.text = String(format: "$ %.2f", groupedStocksValues[indexPath.section][indexPath.row].open)
+        cell.detailTextLabel?.text = String(format: "$ %.2f", groupedStocks[indexPath.section][indexPath.row].open)
         return cell
     }
     

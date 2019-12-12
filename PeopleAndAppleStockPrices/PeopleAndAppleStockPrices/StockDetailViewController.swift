@@ -20,7 +20,6 @@ class StockDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        // Do any additional setup after loading the view.
     }
     
     private func configureView() {
@@ -35,15 +34,4 @@ class StockDetailViewController: UIViewController {
         openLabel.text = String(format: "$ %.2f", stock.open)
         closeLabel.text = String(format: "$ %.2f", stock.close)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
