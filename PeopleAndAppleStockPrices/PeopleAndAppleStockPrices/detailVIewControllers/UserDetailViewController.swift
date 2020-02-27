@@ -8,7 +8,7 @@
 
 import UIKit
 
-class userDetailViewController: UIViewController {
+class UserDetailViewController: UIViewController {
     var userInfo: User!
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var email: UILabel!

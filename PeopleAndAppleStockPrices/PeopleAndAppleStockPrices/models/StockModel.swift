@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct stockWrapper: Codable {
+struct StockWrapper: Codable {
     let date: String
     let open: Double
     let close: Double
@@ -16,10 +16,10 @@ struct stockWrapper: Codable {
     let changePercent: Double
     
     
-    static func getStocks(fron data: Data) -> [stockWrapper]{
+    static func getStocks(fron data: Data) -> [StockWrapper]{
         do {
             let stock = try
-                JSONDecoder().decode([stockWrapper].self, from: data)
+                JSONDecoder().decode([StockWrapper].self, from: data)
             return stock
         } catch let decodeError {
             fatalError("could not decode info\(decodeError)")

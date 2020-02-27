@@ -9,6 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+//MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        loadData()
+        userSearch.delegate = self
+       
+    }
+
+      //MARK: - Variables
     @IBOutlet weak var userSearch: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var user = [User](){
@@ -16,23 +27,6 @@ class ViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        loadData()
-        userSearch.delegate = self
-        let alert = UIAlertController(title: "hey", message: "yoo", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { alert in
-
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
     var userSearchTerm: String? {
         didSet {
             self.tableView.reloadData()
@@ -45,13 +39,25 @@ class ViewController: UIViewController {
         guard userSearchTerm != "" else {
             return user
         }
-        
         return user.filter({
            $0.name.first.lowercased().contains(userSearchTerm.lowercased())
             })
     }
+
+    //MARK: - Regular Functions
+    private func showAlert(){
+                let alert = UIAlertController(title: "hey", message: "yoo", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            present(alert, animated: true, completion: nil)
+    }
+
+ 
+          
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let jokeDetailVC = segue.destination as? userDetailViewController else {
+        guard let jokeDetailVC = segue.destination as? UserDetailViewController else {
             fatalError("Unexpected segue")
         }
         guard let selectedIndexPath = tableView.indexPathForSelectedRow
@@ -74,6 +80,7 @@ class ViewController: UIViewController {
  
 }
 
+//MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredPersonArr.count

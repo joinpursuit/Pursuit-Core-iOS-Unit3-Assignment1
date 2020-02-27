@@ -8,31 +8,38 @@
 
 import UIKit
 
-class stockDetailViewController: UIViewController {
-    var stock: stockWrapper!
+class StockDetailViewController: UIViewController {
     
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var open: UILabel!
-    @IBOutlet weak var close: UILabel!
+    var stock: StockWrapper?
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var stockImage: UIImageView!
+    @IBOutlet weak var openLabel: UILabel!
+    @IBOutlet weak var closeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUp()
-    }
-    func loadUp() {
-        if stock.changePercent > 0{
-             image.image = UIImage(named: "thumbsUp")
-            view.backgroundColor = UIColor.green
-        }else {
-             image.image = UIImage(named: "thumbsDown")
-             view.backgroundColor = UIColor.red
-        }
-    date.text = stock.label
-    open.text = stock.open.description
-    close.text = stock.close.description
+        setUpView()
     }
     
-
-
-}
+    func loadUp() {
+        guard let stock = stock else {return }
+        if stock.changePercent > 0{
+             stockImage.image = UIImage(named: "thumbsUp")
+            view.backgroundColor = UIColor.green
+        }else {
+             stockImage.image = UIImage(named: "thumbsDown")
+             view.backgroundColor = UIColor.red
+        }}
+    private func setUpView(){
+        guard let stock = stock else {
+            navigationItem.title = "Error"
+            return }
+        navigationItem.title = "Stocks"
+        dateLabel.text = stock.label
+        dateLabel.font = .boldSystemFont(ofSize: 18)
+        openLabel.text = "Open: $\(stock.open.description)"
+        closeLabel.text = "Close: $\(stock.close.description)"
+        }
+    }
+    

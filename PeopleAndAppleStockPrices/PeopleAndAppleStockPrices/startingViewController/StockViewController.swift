@@ -9,7 +9,7 @@
 import UIKit
 
 class StockViewController: UIViewController {
- var stock = [stockWrapper]()
+ var stock = [StockWrapper]()
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class StockViewController: UIViewController {
         do {
             let data = try
                 Data(contentsOf: url)
-            let stockJson = try stockWrapper.getStocks(fron: data)
+            let stockJson = try StockWrapper.getStocks(fron: data)
             stock = stockJson
         }
         catch {
@@ -33,7 +33,7 @@ class StockViewController: UIViewController {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let stockVC = segue.destination as? stockDetailViewController else {
+        guard let stockVC = segue.destination as? StockDetailViewController else {
             fatalError("Unexpected segue")
         }
         guard let selectedIndexPath = tableView.indexPathForSelectedRow
