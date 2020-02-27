@@ -22,7 +22,17 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         loadData()
         userSearch.delegate = self
+        let alert = UIAlertController(title: "hey", message: "yoo", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { alert in
+
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
+    
     var userSearchTerm: String? {
         didSet {
             self.tableView.reloadData()
@@ -36,8 +46,8 @@ class ViewController: UIViewController {
             return user
         }
         
-        return user.filter({ (user) -> Bool in
-            user.name.first.lowercased().contains(userSearchTerm.lowercased())
+        return user.filter({
+           $0.name.first.lowercased().contains(userSearchTerm.lowercased())
             })
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

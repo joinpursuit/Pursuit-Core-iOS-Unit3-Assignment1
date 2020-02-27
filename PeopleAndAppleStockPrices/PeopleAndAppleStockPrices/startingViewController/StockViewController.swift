@@ -53,5 +53,6 @@ extension StockViewController: UITableViewDelegate, UITableViewDataSource{
 
         return cell
     }
+   
     
 }
