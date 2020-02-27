@@ -12,11 +12,8 @@ class ViewController: UIViewController {
 //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         loadData()
-        userSearch.delegate = self
-       
+        setUpDelegates()
     }
 
       //MARK: - Variables
@@ -44,38 +41,34 @@ class ViewController: UIViewController {
             })
     }
 
-    //MARK: - Regular Functions
-    private func showAlert(){
-                let alert = UIAlertController(title: "hey", message: "yoo", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-            alert.addAction(okAction)
-            alert.addAction(cancelAction)
-            present(alert, animated: true, completion: nil)
-    }
 
- 
-          
+
+ //MARK: - Controller Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let jokeDetailVC = segue.destination as? UserDetailViewController else {
             fatalError("Unexpected segue")
         }
         guard let selectedIndexPath = tableView.indexPathForSelectedRow
             else { fatalError("No row selected") }
-        jokeDetailVC.userInfo = filteredPersonArr[selectedIndexPath.row]
+            jokeDetailVC.userInfo = filteredPersonArr[selectedIndexPath.row]
     }
+    
     private func loadData() {
-        UserBase.getUser{(result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .failure(let error):
-                    print(error)
-                case .success(let userOnline):
-                    self.user = userOnline
-                }
+        FetchUserData.manager.getUsers{ (result) in
+            switch result{
+            case .failure(let error):
+                print(error)
+            case .success(let userData):
+                self.user = userData
             }
         }
-        
+    }
+    private func setUpDelegates(){
+    tableView.delegate = self
+    tableView.dataSource = self
+    userSearch.delegate = self
+
+
     }
  
 }

@@ -180,11 +180,11 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--Item-->
+        <!--Users-->
         <scene sceneID="Gze-w2-B4g">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i3q-kF-toe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Q9s-9T-DtH"/>
+                    <tabBarItem key="tabBarItem" title="Users" selectedImage="person.fill" catalog="system" id="Q9s-9T-DtH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iXG-H7-MCx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -327,11 +327,11 @@
             </objects>
             <point key="canvasLocation" x="2934.7826086956525" y="735.9375"/>
         </scene>
-        <!--Item-->
+        <!--Stocks-->
         <scene sceneID="oGa-8e-ahQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fHo-vB-FVA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="meY-fc-HhC"/>
+                    <tabBarItem key="tabBarItem" title="Stocks" selectedImage="globe" catalog="system" id="meY-fc-HhC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SID-9z-s8d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -347,4 +347,8 @@
             <point key="canvasLocation" x="1082.608695652174" y="737.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="globe" catalog="system" width="64" height="60"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
