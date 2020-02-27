@@ -15,7 +15,11 @@ static let manager = FetchUserData()
 
  func getUsers(completionHandler: @escaping (Result<[User], AppError>) -> ()) {
     let urlString = "https://randomuser.me/api/?results=500"
-    NetWorkManager.shared.fetchData(urlString: urlString){(result) in
+    guard let url = URL(string: urlString) else {
+         completionHandler(.failure(.badURL))
+                   return
+    }
+    NetworkManager.manager.performDataTask(withUrl: url, andMethod: .get) { (result) in
                   switch result {
                   case .failure(let error) :
                       completionHandler(.failure(error))

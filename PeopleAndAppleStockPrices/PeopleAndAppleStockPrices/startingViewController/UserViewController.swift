@@ -45,12 +45,12 @@ class ViewController: UIViewController {
 
  //MARK: - Controller Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let jokeDetailVC = segue.destination as? UserDetailViewController else {
+        guard let userDetailVC = segue.destination as? UserDetailViewController else {
             fatalError("Unexpected segue")
         }
         guard let selectedIndexPath = tableView.indexPathForSelectedRow
             else { fatalError("No row selected") }
-            jokeDetailVC.userInfo = filteredPersonArr[selectedIndexPath.row]
+            userDetailVC.userInfo = filteredPersonArr[selectedIndexPath.row]
     }
     
     private func loadData() {
@@ -67,8 +67,6 @@ class ViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     userSearch.delegate = self
-
-
     }
  
 }
@@ -79,10 +77,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         return filteredPersonArr.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userTable")
-        cell?.textLabel?.text = filteredPersonArr[indexPath.row].name.FullName()
-        cell?.detailTextLabel?.text = user[indexPath.row].location.city
-        return cell!
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "userTable") else {return UITableViewCell()}
+        cell.textLabel?.text = filteredPersonArr[indexPath.row].name.FullName()
+        cell.detailTextLabel?.text = user[indexPath.row].location.city
+        return cell
     }
 }
 extension ViewController: UISearchBarDelegate{

@@ -14,12 +14,16 @@ class ImageHelper {
     static let shared = ImageHelper()
     
     func fetchImage(urlString: String, completionHandler: @escaping (Result<UIImage,AppError>) -> ()) {
-        NetworkManager.manager.performDataTask(withUrl: urlString, andMethod: .get) { (result) in
+        guard let url = URL(string: urlString) else {
+             completionHandler(.failure(.badURL))
+                       return
+        }
+        NetworkManager.manager.performDataTask(withUrl: url, andMethod: .get) { (result) in
             switch result {
             case .failure(let error):
                 completionHandler(.failure(error))
             case .success(let data):
-                guard let image = UIImage(data: data) else {completionHandler(.failure(.badImageData))
+                guard let image = UIImage(data: data) else {completionHandler(.failure(.badURL))
                     return
                 }
                 completionHandler(.success(image))
