@@ -18,19 +18,10 @@ class StockViewController: UIViewController {
         tableView.dataSource = self
         loadData()
     }
-    private func loadData() {
-        guard let pathToJSONFile = Bundle.main.path(forResource: "applstockinfo", ofType: "json") else {
-            fatalError("coundn't find json file")}
-        let url = URL(fileURLWithPath: pathToJSONFile)
-        do {
-            let data = try
-                Data(contentsOf: url)
-            let stockJson = try StockWrapper.getStocks(fron: data)
-            stock = stockJson
-        }
-        catch {
-            print(error)
-        }
+    
+    private func loadData(){
+        let data = FetchStockData.getStockData()
+        stock = StockWrapper.getStocks(fron: data)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let stockVC = segue.destination as? StockDetailViewController else {

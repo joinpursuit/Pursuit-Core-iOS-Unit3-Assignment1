@@ -13,7 +13,7 @@ class FetchUserData{
 
 static let manager = FetchUserData()
 
- func getUsers(completionHandler: @escaping (Result<[User], AppError>) -> ()) {
+  func getUsers(completionHandler: @escaping (Result<[User],AppError>) -> ()) {
     let urlString = "https://randomuser.me/api/?results=500"
     guard let url = URL(string: urlString) else {
          completionHandler(.failure(.badURL))
@@ -29,6 +29,19 @@ static let manager = FetchUserData()
             }
         }
     }
+    static func getDataFromJSON() -> Data {
+        guard let pathToUserData = Bundle.main.path(forResource: "UserData", ofType: "json") else {
+            fatalError()
+        }
+        let userUrl = URL(fileURLWithPath: pathToUserData)
+        do {
+            let userData = try Data(contentsOf: userUrl)
+            return userData
+        } catch {
+            fatalError("\(error)")
+        }
     }
+}
     
         
+

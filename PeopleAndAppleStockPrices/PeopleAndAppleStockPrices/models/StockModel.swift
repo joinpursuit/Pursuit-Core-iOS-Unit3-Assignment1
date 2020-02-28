@@ -15,7 +15,6 @@ struct StockWrapper: Codable {
     let label: String
     let changePercent: Double
     
-    
     static func getStocks(fron data: Data) -> [StockWrapper]{
         do {
             let stock = try
@@ -25,6 +24,8 @@ struct StockWrapper: Codable {
             fatalError("could not decode info\(decodeError)")
     }
     }
+    
+    
     var month: String {get {
             let arr = date.components(separatedBy: "-")
             return arr[1]}}
