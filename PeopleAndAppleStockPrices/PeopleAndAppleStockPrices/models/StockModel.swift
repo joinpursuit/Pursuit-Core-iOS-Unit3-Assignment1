@@ -25,12 +25,14 @@ struct StockWrapper: Codable {
     }
     }
     
-    
     var month: String {get {
-            let arr = date.components(separatedBy: "-")
-            return arr[1]}}
-    var year: String{get {
-            let arr = date.components(separatedBy: "-")
+            let arr = label.components(separatedBy: " ")
             return arr[0]}}
-    
+    var year: String{get {
+            let arr = label.components(separatedBy: " ")
+            return arr[2]}
+    }
+    var dateForSection: String {get{
+        return "\(month), 20\(year)"
+        }}
 }
