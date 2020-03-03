@@ -34,5 +34,6 @@ struct StockWrapper: Codable {
     }
     var dateForSection: String {get{
         return "\(month), 20\(year)"
-        }}
+        }
+    }
 }

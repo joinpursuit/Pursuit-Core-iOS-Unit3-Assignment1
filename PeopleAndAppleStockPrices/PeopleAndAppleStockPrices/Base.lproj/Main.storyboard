@@ -90,9 +90,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Vb-PB-8LO">
                                 <rect key="frame" x="10" y="318.33333333333331" width="395" height="126.33333333333331"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npw-Yc-mIb">
-                                        <rect key="frame" x="0.0" y="0.0" width="40.666666666666664" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npw-Yc-mIb">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -102,9 +102,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHE-1f-xff">
-                                        <rect key="frame" x="0.0" y="68.333333333333371" width="48.333333333333336" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHE-1f-xff">
+                                        <rect key="frame" x="0.0" y="68.333333333333371" width="57.333333333333336" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -184,7 +184,7 @@
         <scene sceneID="Gze-w2-B4g">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i3q-kF-toe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Users" selectedImage="person.fill" catalog="system" id="Q9s-9T-DtH"/>
+                    <tabBarItem key="tabBarItem" title="Users" image="person" catalog="system" id="Q9s-9T-DtH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iXG-H7-MCx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -331,7 +331,7 @@
         <scene sceneID="oGa-8e-ahQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fHo-vB-FVA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stocks" selectedImage="globe" catalog="system" id="meY-fc-HhC"/>
+                    <tabBarItem key="tabBarItem" title="Stocks" image="globe" catalog="system" id="meY-fc-HhC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SID-9z-s8d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -349,6 +349,6 @@
     </scenes>
     <resources>
         <image name="globe" catalog="system" width="64" height="60"/>
-        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="person" catalog="system" width="64" height="58"/>
     </resources>
 </document>

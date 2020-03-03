@@ -9,19 +9,20 @@
 import UIKit
 
 class StockViewController: UIViewController {
- var stock = [StockWrapper]()
-    var dateTitleSection = [String]()
-    
-    @IBOutlet weak var tableView: UITableView!
-    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        loadData()
-        getDateTitles()
-    }
+          super.viewDidLoad()
+          tableView.delegate = self
+          tableView.dataSource = self
+          loadData()
+          getDateTitles()
+      }
+      //MARK: - Variables
+    var dateTitleSection = [String]()
+    @IBOutlet weak var tableView: UITableView!
+    var stock = [StockWrapper]()
     
+    //MARK: - Regular Functions
     private func loadData(){
         let data = FetchStockData.getStockData()
         stock = StockWrapper.getStocks(fron: data)
@@ -40,7 +41,9 @@ class StockViewController: UIViewController {
             else { fatalError("No row selected") }
         stockVC.stock = stock[selectedIndexPath.row]
     }
+
 }
+//MARK: - UITableViewDelegates
 extension StockViewController: UITableViewDelegate, UITableViewDataSource{
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,7 +62,7 @@ extension StockViewController: UITableViewDelegate, UITableViewDataSource{
        
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
-           let stocksInSection = stock.filter { $0.dateForSection == dateTitleSection[indexPath.section] }
+        let stocksInSection = stock.filter { $0.dateForSection == dateTitleSection[indexPath.section] }
         let stockInfo = stocksInSection[indexPath.row]
            cell.textLabel?.text = stockInfo.date
            cell.detailTextLabel?.text = stockInfo.open.description
